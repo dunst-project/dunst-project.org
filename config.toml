@@ -1,0 +1,9 @@
+languageCode = "en-us"
+title = "Dunst"
+baseurl = "https://dunst-project.org"
+theme = "liquorice"
+
+[[menu.main]]
+    name = "Home"
+    url = "/"
+    weight = -200
