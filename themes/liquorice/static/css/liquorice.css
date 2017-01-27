@@ -110,6 +110,21 @@ p.download {
     text-align: center;
 }
 
+strong.fmiddle {
+    vertical-align: -moz-middle-with-baseline;
+}
+
+span.fa-icons {
+    float:left;
+    font-size:50px;
+    text-align: center;
+    margin: 10px;
+}
+
+div.fcontainer {
+    display: inline-block;
+}
+
 .fa-color {
     color: #484644;
 }
