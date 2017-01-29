@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Dunst</title>
+    <link>https://dunst-project.org/post/index.xml</link>
+    <description>Recent content in Posts on Dunst</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <atom:link href="https://dunst-project.org/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title></title>
+      <link>https://dunst-project.org/post/summary/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dunst-project.org/post/summary/</guid>
+      <description>&lt;p&gt;Dunst is a lightweight replacement for the notification-daemons provided by most desktop environments. It&amp;rsquo;s very customizable, doesn&amp;rsquo;t depend on any toolkits and therefore fits in those windowmanager centric setups we all love to customize to perfection.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Features</title>
+      <link>https://dunst-project.org/post/features/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dunst-project.org/post/features/</guid>
+      <description>&lt;hr /&gt;
+
+&lt;div class=&#34;fcontainer&#34;&gt;
+    &lt;span class=&#34;fa-icons fa-stack fa-3x&#34;&gt;
+        &lt;i class=&#34;fa fa-circle fa-stack-2x&#34;&gt;&lt;/i&gt;
+        &lt;i class=&#34;fa fa-cog fa-stack-1x fa-inverse&#34;&gt;&lt;/i&gt;
+    &lt;/span&gt;
+    &lt;strong class=&#34;fmiddle&#34;&gt;Customizable&lt;/strong&gt;
+    
+   &lt;p&gt;&lt;i&gt;Customize fonts, icons, timeouts and more. Are you not happy with the shorcuts and colors provided?. No worries,
+    you can change all this with a simple configuration file.&lt;/i&gt;&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;hr class=&#34;features&#34;&gt;
+
+&lt;div class=&#34;fcontainer&#34;&gt;
+    &lt;span class=&#34;fa-icons fa-stack fa-3x&#34;&gt;
+        &lt;i class=&#34;fa fa-circle fa-stack-2x&#34;&gt;&lt;/i&gt;
+        &lt;i class=&#34;fa fa-pencil fa-stack-1x fa-inverse&#34;&gt;&lt;/i&gt;
+    &lt;/span&gt;
+    &lt;strong class=&#34;fmiddle&#34;&gt;Rules&lt;/strong&gt;
+    
+    &lt;p&gt;&lt;i&gt;Override colors, icons, timeouts etc. for notifications that match a certain pattern. This can be used to give 
+    messages from your favourite jabber buddies their own color or stop those needs immediate response emails
+    from work from timing out so they are displayed until you manually discard them after you replied.&lt;/i&gt;&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;hr class=&#34;features&#34;&gt;
+
+&lt;div class=&#34;fcontainer&#34;&gt;
+    &lt;span class=&#34;fa-icons fa-stack fa-3x&#34;&gt;
+        &lt;i class=&#34;fa fa-circle fa-stack-2x&#34;&gt;&lt;/i&gt;
+        &lt;i class=&#34;fa fa-desktop fa-stack-1x fa-inverse&#34;&gt;&lt;/i&gt;
+    &lt;/span&gt;
+    &lt;strong class=&#34;fmiddle&#34;&gt;Multimonitor support&lt;/strong&gt;
+    
+    &lt;p&gt;&lt;i&gt;Specify on which monitor the notifications should be displayed or make them follow to the monitor which contains 
+    the mouse cursor or has the window with keyboard focus.&lt;/i&gt;&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;hr class=&#34;features&#34;&gt;
+
+&lt;div class=&#34;fcontainer&#34;&gt;
+    &lt;span class=&#34;fa-icons fa-stack fa-3x&#34;&gt;
+        &lt;i class=&#34;fa fa-circle fa-stack-2x&#34;&gt;&lt;/i&gt;
+        &lt;i class=&#34;fa fa-history fa-stack-1x fa-inverse&#34;&gt;&lt;/i&gt;
+    &lt;/span&gt;
+    &lt;strong class=&#34;fmiddle&#34;&gt;History&lt;/strong&gt;
+    
+    &lt;p&gt;&lt;i&gt;Just saw a notification dissapear in the corner of your eye or haven&#39;t finished reading that one before it timed
+    out? Just press the history keyboard shortcut to redisplay the last message (Use multiple times to go further back
+    in history).&lt;/i&gt;&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;hr class=&#34;features&#34;&gt;
+
+&lt;div class=&#34;fcontainer&#34;&gt;
+    &lt;span class=&#34;fa-icons fa-stack fa-3x&#34;&gt;
+        &lt;i class=&#34;fa fa-circle fa-stack-2x&#34;&gt;&lt;/i&gt;
+        &lt;i class=&#34;fa fa-keyboard-o fa-stack-1x fa-inverse&#34;&gt;&lt;/i&gt;
+    &lt;/span&gt;
+    &lt;strong class=&#34;fmiddle&#34;&gt;Keyboard driven&lt;/strong&gt;
+    
+    &lt;p&gt;&lt;i&gt;Keyboard shortcuts for closing the oldest notification, closing all notifications and history. The mouse can be
+    used too; Left-click to discard clicked notification and right-click to discard all notifications.&lt;/i&gt;&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;hr class=&#34;features&#34;&gt;
+
+&lt;div class=&#34;fcontainer&#34;&gt;
+    &lt;span class=&#34;fa-icons fa-stack fa-3x&#34;&gt;
+        &lt;i class=&#34;fa fa-circle fa-stack-2x&#34;&gt;&lt;/i&gt;
+        &lt;i class=&#34;fa fa-envelope-open fa-stack-1x fa-inverse&#34;&gt;&lt;/i&gt;
+    &lt;/span&gt;
+    &lt;strong class=&#34;fmiddle&#34;&gt;Context Menu&lt;/strong&gt;
+    
+    &lt;p&gt;&lt;i&gt;Open a context menu (using dmenu) via keyboard shortcut for the displayed notifications. Currently it only
+    filters out urls and lets you open them in your browser.&lt;/i&gt;&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;hr class=&#34;features&#34;&gt;
+
+&lt;div class=&#34;fcontainer&#34;&gt;
+    &lt;span class=&#34;fa-icons fa-stack fa-3x&#34;&gt;
+        &lt;i class=&#34;fa fa-circle fa-stack-2x&#34;&gt;&lt;/i&gt;
+        &lt;i class=&#34;fa fa-toggle-on fa-stack-1x fa-inverse&#34;&gt;&lt;/i&gt;
+    &lt;/span&gt;
+    &lt;strong class=&#34;fmiddle&#34;&gt;Scriptable&lt;/strong&gt;
+    
+    &lt;p&gt;&lt;i&gt;Run custom scripts on notifications that match a certain pattern. Let the text of the notification be read
+    to you by espeak or play a song when your significant other signs on in pidgin.&lt;/i&gt;&lt;/p&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Bug reports</title>
+      <link>https://dunst-project.org/post/bugs/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dunst-project.org/post/bugs/</guid>
+      <description>&lt;hr /&gt;
+
+&lt;p&gt;Please use the &lt;a href=&#34;https://github.com/dunst-project/dunst/issues&#34;&gt;issue tracker&lt;/a&gt; provided by GitHub to send us
+bug reports or feature requests. You can also join us at &lt;a href=&#34;irc://irc.freenode.net/#dunst&#34;&gt;#dunst&lt;/a&gt; IRC channel
+on Freenode.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Mantainers</title>
+      <link>https://dunst-project.org/post/mantainers/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dunst-project.org/post/mantainers/</guid>
+      <description>&lt;hr /&gt;
+
+&lt;p&gt;Nikos Tsipinakis &lt;a href=&#34;mailto:nikos@tsipinakis.com&#34;&gt;nikos@tsipinakis.com&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Jonathan Lusso &lt;a href=&#34;mailto:jonilusso@gmail.com&#34;&gt;jonilusso@gmail.com&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Author</title>
+      <link>https://dunst-project.org/post/author/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dunst-project.org/post/author/</guid>
+      <description>&lt;hr /&gt;
+
+&lt;p&gt;Sascha Kruse &lt;a href=&#34;mailto:dunst@knopwob.de&#34;&gt;dunst@knopwob.de&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>License</title>
+      <link>https://dunst-project.org/post/license/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dunst-project.org/post/license/</guid>
+      <description>&lt;hr /&gt;
+
+&lt;p class=&#34;license&#34;&gt;Licenced under the terms of the &lt;a href=&#34;http://opensource.org/licenses/BSD-3-Clause&#34;&gt;3-clause BSD License.&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Copyright &amp;copy; 2013, Sascha Kruse knopwob@gmail.com
+All rights reserved.&lt;/p&gt;
+
+&lt;p&gt;Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.&lt;/li&gt;
+&lt;li&gt;Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.&lt;/li&gt;
+&lt;li&gt;Neither the name of Sascha Kruse nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS &amp;ldquo;AS IS&amp;rdquo; AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
