@@ -58,10 +58,13 @@
       <guid>https://dunst-project.org/changelog/</guid>
       <description>&lt;hr /&gt;
 
-&lt;p&gt;v1.1.0:
-+   fix nasty memory leak
-+   icon support (still work in progress)
-+   fix issue where keybindings arn&amp;rsquo;t working when numlock is activated&lt;/p&gt;
+&lt;p&gt;v1.1.0:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;fix nasty memory leak&lt;/li&gt;
+&lt;li&gt;icon support (still work in progress)&lt;/li&gt;
+&lt;li&gt;fix issue where keybindings arn&amp;rsquo;t working when numlock is activated&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;p&gt;v1.0.0:&lt;/p&gt;
 
