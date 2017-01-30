@@ -6,6 +6,11 @@ type = "Changelog"
 +++
 ***
 
+v1.1.0:
++   fix nasty memory leak
++   icon support (still work in progress)
++   fix issue where keybindings arn't working when numlock is activated
+
 v1.0.0:
 
 +   use pango/cairo as drawing backend
