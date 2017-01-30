@@ -10,7 +10,7 @@ v1.1.0:
 
 +   fix nasty memory leak
 +   icon support (still work in progress)
-+   fix issue where keybindings arn't working when numlock is activated
++   fix issue where keybindings aren't working when numlock is activated
 
 v1.0.0:
 
