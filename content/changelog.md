@@ -1,8 +1,8 @@
 +++
-weight = 2
+weight = 3
 title = "Changelog"
 menu = "main"
-type = "Changelog"
+type = "page"
 +++
 ***
 

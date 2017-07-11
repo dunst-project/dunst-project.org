@@ -1,8 +1,8 @@
 +++
-weight = 1
+weight = 2
 title = "Download"
 menu = "main"
-type = "Download"
+type = "page"
 +++
 ***
 
