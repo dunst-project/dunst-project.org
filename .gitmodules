@@ -1,0 +1,6 @@
+[submodule "themes/liquorice"]
+	path = themes/liquorice
+	url = https://github.com/eliasson/liquorice
+[submodule "static/font-awesome"]
+	path = static/font-awesome
+	url = https://github.com/FortAwesome/Font-Awesome
