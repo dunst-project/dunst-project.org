@@ -69,79 +69,92 @@
 
 <hr />
 
-<p>The current stable version of Dunst is <strong>1.1.0</strong> released on <strong>Jul 30 2014</strong>.</p>
+<p>The current stable version of Dunst is <strong>1.2.0</strong> released on <strong>Jul 12 2017</strong>.</p>
 
 <h1 id="downloads">Downloads</h1>
 
 <ul>
-<li><a href="https://github.com/dunst-project/dunst/archive/v1.1.0.tar.gz">Source tarball</a></li>
+<li><a href="https://github.com/dunst-project/dunst/archive/v1.2.0.tar.gz">Source tarball</a></li>
 <li><a href="https://github.com/dunst-project/dunst">Code repository (Github)</a></li>
 </ul>
 
 <h1 id="release-notes">Release Notes</h1>
 
-<ul>
-<li><p>PACKAGE MAINTAINERS:
-There are new dependencies introduced with this version:</p>
+<p>After about 3 years of inactivity, dunst is back under active development.</p>
+
+<p>Version 1.2 is supposed to be fully backwards compatible with 1.1 but due to
+the number of changes and the time since the last release there may be some
+overlooked breakages. If one is found it should be reported to the bug tracker.</p>
+
+<p>For users:</p>
 
 <ul>
-<li>glib</li>
-<li>pango/cairo</li>
-</ul></li>
+<li><p>Markup</p>
 
-<li><p>The drawing backend was moved from Xlib to Cairo/Pango.
-This change requires some user intervention since Pango
-uses different font strings. For example <code>Monospace-12</code>
-becomes <code>Monospace 12</code>. Font sizes might also get interpreted
-differently.</p></li>
+<p>The <code>allow_markup</code> setting has been deprecated in favour of <code>markup</code> which
+is a multi-value setting that can be used to control much more accurately
+how markup in notifications should be handled. Currently it only supports
+<code>no</code>, <code>strip</code> and <code>full</code> as values but it is planned to be expanded soon.</p>
 
-<li><p>Markup
-Markup within the notification can be interpreted by pango.
-Examples are <code>&lt;i&gt;italic&lt;/i&gt;</code> and <code>&lt;b&gt;bold&lt;/b&gt;</code>. If the Markup
-can&rsquo;t be parsed by pango, the tags are stripped from the
-notification and the text is displayed as plain text. An error
-message gets printed to stdout describing why the markup could
-not be parsed.</p>
+<p>To preserve backwards compatibility, <code>allow_markup</code> is still supported but
+users are encouraged to update their configuration files since it will be
+removed after a few major releases.</p></li>
 
-<p>To make use of markup the option allow_markup must be set in dunstrc.
-If this option is not set, dunst falls back to the old behaviour
-(stripping all tags from the text and display plain text).</p></li>
+<li><p>DPI handling</p>
 
-<li><p>Actions are now supported.
-If a client adds an action to a notification this gets indicated
-by an (A) in front of the notification. In this case the
-context menu shortcut can be used to invoke this action.</p></li>
+<p>The DPI value used is now retrieved from the <code>Xft.dpi</code> X resource if
+available. If not, the default value 96 will be used.</p>
 
-<li><p>Indicator for URLs.
-If dunst detects an URL within the notification this gets indicated
-by an (U) in front of the notification. As with actions the URL can
-be opened with the context menu shortcut. (This requires the browser
-option to be set in the dunstrc).</p></li>
+<p>Additionally, as an experiment a per-monitor dpi setting, which tries to
+calculate an acceptable dpi values for each monitor, has been added to the
+experimental section of the configuration file.</p></li>
 
-<li><p>dunstify ( a drop-in replacement for notify-send)
-Since notify-send lacks some features I need to for testing, I&rsquo;ve
-written dunstify. It supports the same option as notify-send + The
-abillity to print the id of the notification to stdout and to replace
-or close existing notifications.</p>
+<li><p>RandR and Xinerama</p>
 
-<p>Example:</p>
+<p>Dunst switched from using the Xinerama extension to provide multi-monitor
+support to using the more modern RandR extension. While this change won&rsquo;t
+affect the majority of users, some legacy drivers do not support RandR. In
+that case, the <code>force_xinerama</code> option was added as a way to fall back to
+the old method.</p>
 
-<pre><code>id=$(dunstify -p &quot;Replace&quot; &quot;this should get replaced after the sleep&quot;)
-sleep 5
-dunstify -r $id &quot;replacement&quot;
-</code></pre>
+<p>The downside of forcing Xinerama to be used is that dunst won&rsquo;t be able to
+detect when a monitor is added or removed meaning that follow mode might
+break if the screen layout changes.</p></li>
 
-<p>See <code>dunstify --help</code> for additional info.</p>
+<li><p>Frame settings</p>
 
-<p>Since dunstify depends on non-public parts of libnotify it may break
-on every other libnotify version than that version that I use.
-Because of this it does not get build and installed by default.
-It can be build with <code>make dunstify</code>. An installation target does
-not exist.</p>
+<p>All the settings in the frame section of the configuration file have been
+deprecated and have been moved into the global section. The <code>color</code> and <code>size</code>
+settings became <code>frame_color</code> and <code>frame_size</code> respectively. As with
+<code>allow_markup</code>, the old format still works but it&rsquo;ll be removed in one of the
+next major releases.</p></li>
 
-<p>Please don&rsquo;t open bug reports when dunstify doesn&rsquo;t work with your
-version of libnotify</p></li>
+<li><p>Deprecation of urgency-specific command line flags</p>
+
+<p>The urgency specific command line flags (<code>-li,-ni,-ci,-lf,-nf,-cf,-lb,
+-nb,-cb,-lfr,-nfr,-cfr,-lto,-nto,-cto</code>) have been deprecated with no
+plan for a replacement. If you rely on them please respond to issue #328 on
+the bug tracker with your use case.</p></li>
 </ul>
+
+<p>For maintainers:</p>
+
+<ul>
+<li>The project homepage has been changed to <a href="https://dunst-project.org">https://dunst-project.org</a></li>
+
+<li><p>The main repository has been changed to <a href="https://github.com/dunst-project/dunst">https://github.com/dunst-project/dunst</a></p></li>
+
+<li><p>Dependency changes:</p>
+
+<ul>
+<li>Dependency on libraries that were unused in the code but were mentioned as
+dependencies has been dropped. Dunst no longer depends on: libfreetype,
+libxft and libxext.</li>
+<li>Added dependency on libxrandr and libgtk2.0.</li>
+</ul></li>
+</ul>
+
+<p>For a full list of changes see the <a href="/changelog/">changelog</a>.</p>
 
             </div>
         </div>

@@ -69,6 +69,60 @@
 
 <hr />
 
+<h1 id="1-2-0-2017-07-12">1.2.0 - 2017-07-12</h1>
+
+<h3 id="added">Added</h3>
+
+<ul>
+<li><code>always_run_script</code> option to run script even if a notification is suppressed</li>
+<li>Support for more icon file types</li>
+<li>Support for raw icons</li>
+<li><code>hide_duplicate_count</code> option to hide the number of duplicate notifications</li>
+<li>Support for per-urgency frame colours</li>
+<li><code>markup</code> setting for more fine-grained control over how markup is handled</li>
+<li><code>history_ignore</code> rule action to exclude a notification from being added to the history</li>
+<li>Support for setting the dpi value dunst will use for font rendering via the <code>Xft.dpi</code> X resource</li>
+<li>Experimental support for per-monitor dpi calculation</li>
+<li><code>max_icon_size</code> option to scale down icons if they exceed a certain size</li>
+<li>Middle click on notifications can be used to trigger actions</li>
+<li>Systemd service file, installed by default</li>
+<li><code>%n</code> format flag for getting progress value without any extra characters</li>
+</ul>
+
+<h3 id="changed">Changed</h3>
+
+<ul>
+<li>Text and icons are now centred vertically</li>
+<li>Notifications aren&rsquo;t considered duplicate if urgency or icons differ</li>
+<li>The maximum length of a notification is limited to 5000 characters</li>
+<li>The frame width and color settings were moved to the global section as <code>frame_width</code> and <code>frame_color</code> respectively</li>
+<li>Dropped Xinerama in favour of RandR, Xinerama can be enabled with the <code>-force_xinerama</code> option if needed</li>
+</ul>
+
+<h3 id="deprecated">Deprecated</h3>
+
+<ul>
+<li><code>allow_markup</code> is deprecated with <code>markup</code> as its replacement</li>
+<li>The urgency specific command line flags have been deprecated with no replacement, respond to issue #328 on the bug tracker if you depend on them</li>
+</ul>
+
+<h3 id="fixed">Fixed</h3>
+
+<ul>
+<li>Infinite loop if there are 2 configuration file sections with the same name</li>
+<li>URLs with dashes and underscores in them are now parsed properly</li>
+<li>Many memory leaks</li>
+<li>Category based rules were applied without actually matching</li>
+<li>dmenu command not parsing quoted arguments correctly</li>
+<li>Icon alignment with dynamic width</li>
+<li>Issue when loading configuration files with very long lines</li>
+<li>&lsquo;\n&rsquo; is no longer expanded to a newline inside notification text</li>
+<li>Notification window wasn&rsquo;t redrawn if obscured on systems without a compositor</li>
+<li><code>ignore_newline</code> now works regardless of the markup setting</li>
+<li>dmenu process being left as a zombie if no option was selected</li>
+<li>Crash when opening urls parsed from <code>&lt;a href=&quot;&quot;&gt;</code> tags</li>
+</ul>
+
 <h1 id="1-1-0-2014-07-29">1.1.0 - 2014-07-29</h1>
 
 <ul>
