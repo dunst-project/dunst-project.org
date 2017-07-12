@@ -4,3 +4,18 @@ a:hover,
 a:visited {
     color: blue;
 }
+
+pre code {
+    display: block;
+    background-color: #d4d6db;
+    padding: 15px;
+    border-radius: 10px
+}
+
+code {
+    background-color: #d4d6db;
+    padding: 2px;
+    padding-left: 4px;
+    padding-right: 4px;
+    border-radius: 4px
+}
