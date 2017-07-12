@@ -6,69 +6,79 @@ type = "page"
 +++
 ***
 
-The current stable version of Dunst is **1.1.0** released on **Jul 30 2014**.
+The current stable version of Dunst is **1.2.0** released on **Jul 12 2017**.
 
 # Downloads
 
-* [Source tarball](https://github.com/dunst-project/dunst/archive/v1.1.0.tar.gz)
+* [Source tarball](https://github.com/dunst-project/dunst/archive/v1.2.0.tar.gz)
 * [Code repository (Github)](https://github.com/dunst-project/dunst)
 
 # Release Notes
 
-* PACKAGE MAINTAINERS:
-    There are new dependencies introduced with this version:
-    * glib
-    * pango/cairo
+After about 3 years of inactivity, dunst is back under active development.
 
-* The drawing backend was moved from Xlib to Cairo/Pango.
-    This change requires some user intervention since Pango
-    uses different font strings. For example `Monospace-12`
-    becomes `Monospace 12`. Font sizes might also get interpreted
-    differently.
+Version 1.2 is supposed to be fully backwards compatible with 1.1 but due to
+the number of changes and the time since the last release there may be some
+overlooked breakages. If one is found it should be reported to the bug tracker.
+
+For users:
 
 * Markup
-    Markup within the notification can be interpreted by pango.
-    Examples are `<i>italic</i>` and `<b>bold</b>`. If the Markup
-    can't be parsed by pango, the tags are stripped from the
-    notification and the text is displayed as plain text. An error
-    message gets printed to stdout describing why the markup could
-    not be parsed.
 
-    To make use of markup the option allow_markup must be set in dunstrc.
-    If this option is not set, dunst falls back to the old behaviour
-    (stripping all tags from the text and display plain text).
+    The `allow_markup` setting has been deprecated in favour of `markup` which
+    is a multi-value setting that can be used to control much more accurately
+    how markup in notifications should be handled. Currently it only supports
+    `no`, `strip` and `full` as values but it is planned to be expanded soon.
 
-* Actions are now supported.
-    If a client adds an action to a notification this gets indicated
-    by an (A) in front of the notification. In this case the
-    context menu shortcut can be used to invoke this action.
+    To preserve backwards compatibility, `allow_markup` is still supported but
+    users are encouraged to update their configuration files since it will be
+    removed after a few major releases.
 
-* Indicator for URLs.
-    If dunst detects an URL within the notification this gets indicated
-    by an (U) in front of the notification. As with actions the URL can
-    be opened with the context menu shortcut. (This requires the browser
-    option to be set in the dunstrc).
+* DPI handling
 
-* dunstify ( a drop-in replacement for notify-send)
-    Since notify-send lacks some features I need to for testing, I've
-    written dunstify. It supports the same option as notify-send + The
-    abillity to print the id of the notification to stdout and to replace
-    or close existing notifications.
+    The DPI value used is now retrieved from the `Xft.dpi` X resource if
+    available. If not, the default value 96 will be used.
 
-    Example:
-    ```
-   id=$(dunstify -p "Replace" "this should get replaced after the sleep")
-    sleep 5
-    dunstify -r $id "replacement"
-    ```
+    Additionally, as an experiment a per-monitor dpi setting, which tries to
+    calculate an acceptable dpi values for each monitor, has been added to the
+    experimental section of the configuration file.
 
-    See `dunstify --help` for additional info.
+* RandR and Xinerama
 
-    Since dunstify depends on non-public parts of libnotify it may break
-    on every other libnotify version than that version that I use.
-    Because of this it does not get build and installed by default.
-    It can be build with `make dunstify`. An installation target does
-    not exist.
+    Dunst switched from using the Xinerama extension to provide multi-monitor
+    support to using the more modern RandR extension. While this change won't
+    affect the majority of users, some legacy drivers do not support RandR. In
+    that case, the `force_xinerama` option was added as a way to fall back to
+    the old method.
 
-    Please don't open bug reports when dunstify doesn't work with your
-    version of libnotify
+    The downside of forcing Xinerama to be used is that dunst won't be able to
+    detect when a monitor is added or removed meaning that follow mode might
+    break if the screen layout changes.
+
+* Frame settings
+
+    All the settings in the frame section of the configuration file have been
+    deprecated and have been moved into the global section. The `color` and `size`
+    settings became `frame_color` and `frame_size` respectively. As with
+    `allow_markup`, the old format still works but it'll be removed in one of the
+    next major releases.
+
+* Deprecation of urgency-specific command line flags
+
+    The urgency specific command line flags (`-li,-ni,-ci,-lf,-nf,-cf,-lb,
+    -nb,-cb,-lfr,-nfr,-cfr,-lto,-nto,-cto`) have been deprecated with no
+    plan for a replacement. If you rely on them please respond to issue #328 on
+    the bug tracker with your use case.
+
+For maintainers:
+
+* The project homepage has been changed to https://dunst-project.org
+* The main repository has been changed to https://github.com/dunst-project/dunst
+
+* Dependency changes:
+ - Dependency on libraries that were unused in the code but were mentioned as
+   dependencies has been dropped. Dunst no longer depends on: libfreetype,
+   libxft and libxext.
+ - Added dependency on libxrandr and libgtk2.0.
+
+For a full list of changes see the [changelog](/changelog/).
