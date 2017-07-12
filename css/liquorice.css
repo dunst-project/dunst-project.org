@@ -32,7 +32,7 @@ a,
 a:active,
 a:hover,
 a:visited {
-    color: blue;
+    color: #202020;
     text-decoration: none;
     font-weight: bold;
 }
@@ -66,7 +66,7 @@ h1,h2,h3,h4,h5,h6 {
 .li-page-header ul li a:active,
 .li-page-header ul li a:hover,
 .li-page-header ul li a:visited {
-    color: #fff;
+    color: #ccc;
     font-weight: normal;
     text-decoration: none;
 }
@@ -97,44 +97,9 @@ h1,h2,h3,h4,h5,h6 {
     margin-bottom: 32px;
 }
 
-img {
+.li-article img {
+    height: auto;
     max-width: 100%;
-    max-height: 100%;
-}
-
-p.license {
-    text-align: right;
-}
-
-p.download {
-    text-align: center;
-}
-
-strong.fmiddle {
-    vertical-align: -moz-middle-with-baseline;
-}
-
-span.fa-icons {
-    float:left;
-    font-size:50px;
-    text-align: center;
-    margin: 10px;
-}
-
-div.fcontainer {
-    display: inline-block;
-}
-
-.fa-color {
-    color: #484644;
-}
-
-hr.features {
-    border: none;
-    height: 1px;
-    /* Set the hr color */
-    color: #333; /* old IE */
-    background-color: #333; /* Modern Browsers */
 }
 
 .li-article pre {

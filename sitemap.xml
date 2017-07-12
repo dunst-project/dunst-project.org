@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://dunst-project.org/post/summary/</loc>
+    <loc>https://dunst-project.org/screenshots/</loc>
   </url>
   
   <url>
@@ -14,37 +14,7 @@
   </url>
   
   <url>
-    <loc>https://dunst-project.org/post/features/</loc>
-  </url>
-  
-  <url>
-    <loc>https://dunst-project.org/post/bugs/</loc>
-  </url>
-  
-  <url>
-    <loc>https://dunst-project.org/post/mantainers/</loc>
-  </url>
-  
-  <url>
-    <loc>https://dunst-project.org/post/author/</loc>
-  </url>
-  
-  <url>
-    <loc>https://dunst-project.org/post/license/</loc>
-  </url>
-  
-  <url>
     <loc>https://dunst-project.org/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://dunst-project.org/post/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://dunst-project.org/screenshots/</loc>
   </url>
   
 </urlset>
