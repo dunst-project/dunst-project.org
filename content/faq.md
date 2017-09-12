@@ -3,6 +3,7 @@ weight = 3
 title = "FAQ"
 menu = "main"
 type = "page"
+toc = "true"
 +++
 
 # Common problems
