@@ -5,7 +5,7 @@
         <meta http-equiv="content-type" content="text/html; charset=utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
 
-        <title>Screenshots &middot; Dunst</title>
+        <title>FAQ &middot; Dunst</title>
         <link rel='stylesheet' href='//fonts.googleapis.com/css?family=Open+Sans:400,300,600' type='text/css'>
         <link rel="stylesheet" href="https://dunst-project.org/libraries/normalize.3.0.1.css" />
         <link rel="stylesheet" href="https://dunst-project.org/css/liquorice.min.css" />
@@ -68,20 +68,62 @@
     <div class="container">
         <div class="row">
             <div class="sixteen columns">
-            <h1><b>Screenshots</b></h1>
+            <h1><b>FAQ</b></h1>
                 
-                <hr />
+                    <nav id="TableOfContents">
+<ul>
+<li><a href="#common-problems">Common problems</a>
+<ul>
+<li><a href="#cannot-open-display">Cannot open display</a></li>
+<li><a href="#name-lost-is-another-notification-daemon-running">Name Lost. Is Another notification daemon running?</a></li>
+<li><a href="#icons-are-too-big">Icons are too big</a></li>
+<li><a href="#how-to-switch-back-to-notify-osd">How to switch back to notify-osd?</a></li>
+</ul></li>
+</ul>
+</nav>
+                
+                
 
-<style>
-.row img {
-    max-width: 100%;
-    height: auto;
-}
-</style>
+<h1 id="common-problems">Common problems</h1>
 
-<p><a href="/static/image.png"><img src="/static/image.png" alt="alt text" /></a></p>
+<h2 id="cannot-open-display">Cannot open display</h2>
 
-<p>Config file <a href="/static/dunstrc1">here</a></p>
+<p>Dunst was unable to connect to the X server. Make sure that X is running and that the <code>DISPLAY</code> environment variable is correctly set.</p>
+
+<p>If you&rsquo;re using the systemd service, that might mean that dbus isn&rsquo;t setting the right variables, see issue <a href="https://github.com/dunst-project/dunst/issues/347">#347</a> for more details.</p>
+
+<h2 id="name-lost-is-another-notification-daemon-running">Name Lost. Is Another notification daemon running?</h2>
+
+<p>The connection to the dbus daemon failed or another process is using the notification address. Make sure that the <code>DBUS_SESSION_ADDRESS</code> environment variable is set and if not you should consult your distributions documentation on how to properly setup dbus.</p>
+
+<p>Additionally, verify that the output of</p>
+
+<pre><code>gdbus call --session --dest org.freedesktop.DBus --object-path /org/freedesktop/Dbus --method org.freedesktop.DBus.ListNames
+</code></pre>
+
+<p>Does not contain <code>org.freedesktop.Notifications</code>. If it does it means that another notification daemon is already running.</p>
+
+<h2 id="icons-are-too-big">Icons are too big</h2>
+
+<p>Since the 1.2 version release, an option <code>max_icon_size</code> was introduced to scale down icons to a certain size. By default this option is set to 0 (it doesn&rsquo;t scale down icons), to change this behaviour you need to set this option in the global section of the config file. For reference, check out the <a href="https://github.com/dunst-project/dunst/blob/master/dunstrc#L159">dunstrc</a> config example file.</p>
+
+<h2 id="how-to-switch-back-to-notify-osd">How to switch back to notify-osd?</h2>
+
+<p>D-Bus does not know know, which notification daemon it should start. So it decides arbitary, which one to use.</p>
+
+<p>You have to link the D-Bus service file of your preferred notification daemon into your homefolder.</p>
+
+<p>To change the notification daemon back to the default, use open up a shell and execute those two commands:</p>
+
+<pre><code>mkdir -p &quot;${XDG_DATA_HOME:-$HOME/.local/share}/dbus-1/services&quot;
+ln -sfT \
+    &quot;/usr/share/dbus-1/services/${SERVICE:-org.freedesktop.Notifications}.service&quot; \
+    &quot;${XDG_DATA_HOME:-$HOME/.local/share}/dbus-1/services/org.freedesktop.Notifications.service&quot;
+</code></pre>
+
+<p>If you want to switch back to dunst again, first define <code>SERVICE=org.knopwob.dunst</code> and reexecute the <code>ln</code>-command.</p>
+
+<p>For more info, see the discussion in <a href="https://github.com/dunst-project/dunst/issues/363">#363</a>.</p>
 
             </div>
         </div>
