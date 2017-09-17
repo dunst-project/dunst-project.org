@@ -5,6 +5,9 @@
         <div class="row">
             <div class="sixteen columns">
             <h1><b>{{ .Title }}</b></h1>
+                {{ if eq .Params.toc "true" }}
+                    {{.TableOfContents}}
+                {{ end }}
                 {{ .Content }}
             </div>
         </div>
