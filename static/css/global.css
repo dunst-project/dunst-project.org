@@ -5,6 +5,14 @@ a:visited {
     color: blue;
 }
 
+/* Do not show TOC heading in prominent blue */
+#TableOfContents a,
+#TableOfContents a:active,
+#TableOfContents a:hover,
+#TableOfContents a:visited {
+    color: inherit;
+}
+
 pre code {
     display: block;
     background-color: #d4d6db;
