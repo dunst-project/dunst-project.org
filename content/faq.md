@@ -49,3 +49,15 @@ ln -sfT \
 If you want to switch back to dunst again, first define `SERVICE=org.knopwob.dunst` and reexecute the `ln`-command.
 
 For more info, see the discussion in [#363](https://github.com/dunst-project/dunst/issues/363).
+
+# Special usages
+
+## Sending notifications from another user (root)
+
+Your new shell has to be able to execute commands as dunst's user.
+
+```
+alias notify-send="sudo -u USERNAME DISPLAY=:0 notify-send"
+```
+
+Any other combination, executing `notify-send` with the valid `DISPLAY`-variable and user should work.
