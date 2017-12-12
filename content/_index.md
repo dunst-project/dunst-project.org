@@ -102,7 +102,7 @@ Please use the [issue tracker](https://github.com/dunst-project/dunst/issues) pr
 bug reports or feature requests. You can also join us at [#dunst](irc://irc.freenode.net/#dunst) IRC channel
 on Freenode.
 
-## **Mantainers**
+## **Maintainers**
 ***
 
 Nikos Tsipinakis <nikos@tsipinakis.com>
