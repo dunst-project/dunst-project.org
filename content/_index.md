@@ -1,5 +1,5 @@
 +++
-weight = 0
+weight = -1
 title = "Home"
 menu = "main"
 type = "page"
