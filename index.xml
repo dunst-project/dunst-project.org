@@ -2,11 +2,13 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Home on Dunst</title>
-    <link>https://dunst-project.org/index.xml</link>
+    <link>https://dunst-project.org/</link>
     <description>Recent content in Home on Dunst</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <atom:link href="https://dunst-project.org/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="https://dunst-project.org/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>Screenshots</title>
@@ -14,19 +16,8 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://dunst-project.org/screenshots/</guid>
-      <description>&lt;hr /&gt;
-
-&lt;style&gt;
-.row img {
-    max-width: 100%;
-    height: auto;
-}
-&lt;/style&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://dunst-project.org/static/image.png&#34;&gt;&lt;img src=&#34;https://dunst-project.org/static/image.png&#34; alt=&#34;alt text&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Config file &lt;a href=&#34;https://dunst-project.org/static/dunstrc1&#34;&gt;here&lt;/a&gt;&lt;/p&gt;
-</description>
+      <description>.row img { max-width: 100%; height: auto; }  
+Config file here</description>
     </item>
     
     <item>
@@ -35,97 +26,9 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://dunst-project.org/download/</guid>
-      <description>
-
-&lt;hr /&gt;
-
-&lt;p&gt;The current stable version of Dunst is &lt;strong&gt;1.2.0&lt;/strong&gt; released on &lt;strong&gt;Jul 12 2017&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;h1 id=&#34;downloads&#34;&gt;Downloads&lt;/h1&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/dunst-project/dunst/archive/v1.2.0.tar.gz&#34;&gt;Source tarball&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/dunst-project/dunst&#34;&gt;Code repository (Github)&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&#34;release-notes&#34;&gt;Release Notes&lt;/h1&gt;
-
-&lt;p&gt;After about 3 years of inactivity, dunst is back under active development.&lt;/p&gt;
-
-&lt;p&gt;Version 1.2 is supposed to be fully backwards compatible with 1.1 but due to
-the number of changes and the time since the last release there may be some
-overlooked breakages. If one is found it should be reported to the bug tracker.&lt;/p&gt;
-
-&lt;p&gt;For users:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;Markup&lt;/p&gt;
-
-&lt;p&gt;The &lt;code&gt;allow_markup&lt;/code&gt; setting has been deprecated in favour of &lt;code&gt;markup&lt;/code&gt; which
-is a multi-value setting that can be used to control much more accurately
-how markup in notifications should be handled. Currently it only supports
-&lt;code&gt;no&lt;/code&gt;, &lt;code&gt;strip&lt;/code&gt; and &lt;code&gt;full&lt;/code&gt; as values but it is planned to be expanded soon.&lt;/p&gt;
-
-&lt;p&gt;To preserve backwards compatibility, &lt;code&gt;allow_markup&lt;/code&gt; is still supported but
-users are encouraged to update their configuration files since it will be
-removed after a few major releases.&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;DPI handling&lt;/p&gt;
-
-&lt;p&gt;The DPI value used is now retrieved from the &lt;code&gt;Xft.dpi&lt;/code&gt; X resource if
-available. If not, the default value 96 will be used.&lt;/p&gt;
-
-&lt;p&gt;Additionally, as an experiment a per-monitor dpi setting, which tries to
-calculate an acceptable dpi values for each monitor, has been added to the
-experimental section of the configuration file.&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;RandR and Xinerama&lt;/p&gt;
-
-&lt;p&gt;Dunst switched from using the Xinerama extension to provide multi-monitor
-support to using the more modern RandR extension. While this change won&amp;rsquo;t
-affect the majority of users, some legacy drivers do not support RandR. In
-that case, the &lt;code&gt;force_xinerama&lt;/code&gt; option was added as a way to fall back to
-the old method.&lt;/p&gt;
-
-&lt;p&gt;The downside of forcing Xinerama to be used is that dunst won&amp;rsquo;t be able to
-detect when a monitor is added or removed meaning that follow mode might
-break if the screen layout changes.&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Frame settings&lt;/p&gt;
-
-&lt;p&gt;All the settings in the frame section of the configuration file have been
-deprecated and have been moved into the global section. The &lt;code&gt;color&lt;/code&gt; and &lt;code&gt;size&lt;/code&gt;
-settings became &lt;code&gt;frame_color&lt;/code&gt; and &lt;code&gt;frame_size&lt;/code&gt; respectively. As with
-&lt;code&gt;allow_markup&lt;/code&gt;, the old format still works but it&amp;rsquo;ll be removed in one of the
-next major releases.&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Deprecation of urgency-specific command line flags&lt;/p&gt;
-
-&lt;p&gt;The urgency specific command line flags (&lt;code&gt;-li,-ni,-ci,-lf,-nf,-cf,-lb,
--nb,-cb,-lfr,-nfr,-cfr,-lto,-nto,-cto&lt;/code&gt;) have been deprecated with no
-plan for a replacement. If you rely on them please respond to issue #328 on
-the bug tracker with your use case.&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;For maintainers:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;The project homepage has been changed to &lt;a href=&#34;https://dunst-project.org&#34;&gt;https://dunst-project.org&lt;/a&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;The main repository has been changed to &lt;a href=&#34;https://github.com/dunst-project/dunst&#34;&gt;https://github.com/dunst-project/dunst&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Dependency changes:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Dependency on libraries that were unused in the code but were mentioned as
-dependencies has been dropped. Dunst no longer depends on: libfreetype,
-libxft and libxext.&lt;/li&gt;
-&lt;li&gt;Added dependency on libxrandr and libgtk2.0.&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;For a full list of changes see the &lt;a href=&#34;https://dunst-project.org/changelog/&#34;&gt;changelog&lt;/a&gt;.&lt;/p&gt;
-</description>
+      <description>The current stable version of Dunst is 1.2.0 released on Jul 12 2017.
+Downloads  Source tarball Code repository (Github)  Release Notes After about 3 years of inactivity, dunst is back under active development.
+Version 1.2 is supposed to be fully backwards compatible with 1.1 but due to the number of changes and the time since the last release there may be some overlooked breakages. If one is found it should be reported to the bug tracker.</description>
     </item>
     
     <item>
@@ -134,141 +37,7 @@ libxft and libxext.&lt;/li&gt;
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://dunst-project.org/changelog/</guid>
-      <description>
-
-&lt;hr /&gt;
-
-&lt;h1 id=&#34;1-2-0-2017-07-12&#34;&gt;1.2.0 - 2017-07-12&lt;/h1&gt;
-
-&lt;h3 id=&#34;added&#34;&gt;Added&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;always_run_script&lt;/code&gt; option to run script even if a notification is suppressed&lt;/li&gt;
-&lt;li&gt;Support for more icon file types&lt;/li&gt;
-&lt;li&gt;Support for raw icons&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;hide_duplicate_count&lt;/code&gt; option to hide the number of duplicate notifications&lt;/li&gt;
-&lt;li&gt;Support for per-urgency frame colours&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;markup&lt;/code&gt; setting for more fine-grained control over how markup is handled&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;history_ignore&lt;/code&gt; rule action to exclude a notification from being added to the history&lt;/li&gt;
-&lt;li&gt;Support for setting the dpi value dunst will use for font rendering via the &lt;code&gt;Xft.dpi&lt;/code&gt; X resource&lt;/li&gt;
-&lt;li&gt;Experimental support for per-monitor dpi calculation&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;max_icon_size&lt;/code&gt; option to scale down icons if they exceed a certain size&lt;/li&gt;
-&lt;li&gt;Middle click on notifications can be used to trigger actions&lt;/li&gt;
-&lt;li&gt;Systemd service file, installed by default&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;%n&lt;/code&gt; format flag for getting progress value without any extra characters&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&#34;changed&#34;&gt;Changed&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Text and icons are now centred vertically&lt;/li&gt;
-&lt;li&gt;Notifications aren&amp;rsquo;t considered duplicate if urgency or icons differ&lt;/li&gt;
-&lt;li&gt;The maximum length of a notification is limited to 5000 characters&lt;/li&gt;
-&lt;li&gt;The frame width and color settings were moved to the global section as &lt;code&gt;frame_width&lt;/code&gt; and &lt;code&gt;frame_color&lt;/code&gt; respectively&lt;/li&gt;
-&lt;li&gt;Dropped Xinerama in favour of RandR, Xinerama can be enabled with the &lt;code&gt;-force_xinerama&lt;/code&gt; option if needed&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&#34;deprecated&#34;&gt;Deprecated&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;allow_markup&lt;/code&gt; is deprecated with &lt;code&gt;markup&lt;/code&gt; as its replacement&lt;/li&gt;
-&lt;li&gt;The urgency specific command line flags have been deprecated with no replacement, respond to issue #328 on the bug tracker if you depend on them&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&#34;fixed&#34;&gt;Fixed&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Infinite loop if there are 2 configuration file sections with the same name&lt;/li&gt;
-&lt;li&gt;URLs with dashes and underscores in them are now parsed properly&lt;/li&gt;
-&lt;li&gt;Many memory leaks&lt;/li&gt;
-&lt;li&gt;Category based rules were applied without actually matching&lt;/li&gt;
-&lt;li&gt;dmenu command not parsing quoted arguments correctly&lt;/li&gt;
-&lt;li&gt;Icon alignment with dynamic width&lt;/li&gt;
-&lt;li&gt;Issue when loading configuration files with very long lines&lt;/li&gt;
-&lt;li&gt;&amp;lsquo;\n&amp;rsquo; is no longer expanded to a newline inside notification text&lt;/li&gt;
-&lt;li&gt;Notification window wasn&amp;rsquo;t redrawn if obscured on systems without a compositor&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;ignore_newline&lt;/code&gt; now works regardless of the markup setting&lt;/li&gt;
-&lt;li&gt;dmenu process being left as a zombie if no option was selected&lt;/li&gt;
-&lt;li&gt;Crash when opening urls parsed from &lt;code&gt;&amp;lt;a href=&amp;quot;&amp;quot;&amp;gt;&lt;/code&gt; tags&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&#34;1-1-0-2014-07-29&#34;&gt;1.1.0 - 2014-07-29&lt;/h1&gt;
-
-&lt;ul&gt;
-&lt;li&gt;fix nasty memory leak&lt;/li&gt;
-&lt;li&gt;icon support (still work in progress)&lt;/li&gt;
-&lt;li&gt;fix issue where keybindings aren&amp;rsquo;t working when numlock is activated&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&#34;1-0-0-2013-04-15&#34;&gt;1.0.0 - 2013-04-15&lt;/h1&gt;
-
-&lt;ul&gt;
-&lt;li&gt;use pango/cairo as drawing backend&lt;/li&gt;
-&lt;li&gt;make use of pangos ability to parse markup&lt;/li&gt;
-&lt;li&gt;support for actions via context menu&lt;/li&gt;
-&lt;li&gt;indicator for actions/urls found&lt;/li&gt;
-&lt;li&gt;use blocking I/O. No more waking up the CPU multiple times per second to check for new dbus messages&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&#34;0-5-0-2013-01-26&#34;&gt;0.5.0 - 2013-01-26&lt;/h1&gt;
-
-&lt;ul&gt;
-&lt;li&gt;new default dunstrc&lt;/li&gt;
-&lt;li&gt;frames for window&lt;/li&gt;
-&lt;li&gt;trigger scripts on matching notifications&lt;/li&gt;
-&lt;li&gt;context menu for urls (using dmenu)&lt;/li&gt;
-&lt;li&gt;pause and resume function&lt;/li&gt;
-&lt;li&gt;use own code for ini parsing (this removes inih)&lt;/li&gt;
-&lt;li&gt;progress hints&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&#34;0-4-0-2012-09-27&#34;&gt;0.4.0 - 2012-09-27&lt;/h1&gt;
-
-&lt;ul&gt;
-&lt;li&gt;separator between notifications&lt;/li&gt;
-&lt;li&gt;word wrap long lines&lt;/li&gt;
-&lt;li&gt;real transparance&lt;/li&gt;
-&lt;li&gt;bouncing text (alternative to word_wrap)&lt;/li&gt;
-&lt;li&gt;new option for line height&lt;/li&gt;
-&lt;li&gt;better multihead support&lt;/li&gt;
-&lt;li&gt;don&amp;rsquo;t die when keybindings can&amp;rsquo;t be grabbed&lt;/li&gt;
-&lt;li&gt;bugfix: forgetting geometry&lt;/li&gt;
-&lt;li&gt;(optional) static configuration&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&#34;0-3-1-2012-08-02&#34;&gt;0.3.1 - 2012-08-02&lt;/h1&gt;
-
-&lt;ul&gt;
-&lt;li&gt;fix -mon option&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&#34;0-3-0-2012-07-30&#34;&gt;0.3.0 - 2012-07-30&lt;/h1&gt;
-
-&lt;ul&gt;
-&lt;li&gt;full support for Desktop Notification Specification (mandatory parts)&lt;/li&gt;
-&lt;li&gt;option to select monitor on which notifications are shown&lt;/li&gt;
-&lt;li&gt;follow focus&lt;/li&gt;
-&lt;li&gt;oneline mode&lt;/li&gt;
-&lt;li&gt;text alignment&lt;/li&gt;
-&lt;li&gt;show age of notifications&lt;/li&gt;
-&lt;li&gt;sticky history&lt;/li&gt;
-&lt;li&gt;filter duplicate messages&lt;/li&gt;
-&lt;li&gt;keybinding to close all notifications&lt;/li&gt;
-&lt;li&gt;new way to specify keybindings&lt;/li&gt;
-&lt;li&gt;cleanup / bugfixes etc.&lt;/li&gt;
-&lt;li&gt;added dunst.service&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&#34;0-2-0-2012-06-26&#34;&gt;0.2.0 - 2012-06-26&lt;/h1&gt;
-
-&lt;ul&gt;
-&lt;li&gt;introduction of dunstrc&lt;/li&gt;
-&lt;li&gt;removed static configuration via config.h&lt;/li&gt;
-&lt;li&gt;don&amp;rsquo;t timeout when user is idle&lt;/li&gt;
-&lt;li&gt;xft-support&lt;/li&gt;
-&lt;li&gt;history (a.k.a. redisplay old notifications)&lt;/li&gt;
-&lt;/ul&gt;
-</description>
+      <description>1.2.0 - 2017-07-12 Added  always_run_script option to run script even if a notification is suppressed Support for more icon file types Support for raw icons hide_duplicate_count option to hide the number of duplicate notifications Support for per-urgency frame colours markup setting for more fine-grained control over how markup is handled history_ignore rule action to exclude a notification from being added to the history Support for setting the dpi value dunst will use for font rendering via the Xft.</description>
     </item>
     
     <item>
@@ -277,49 +46,9 @@ libxft and libxext.&lt;/li&gt;
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://dunst-project.org/faq/</guid>
-      <description>
-
-&lt;h1 id=&#34;common-problems&#34;&gt;Common problems&lt;/h1&gt;
-
-&lt;h2 id=&#34;cannot-open-display&#34;&gt;Cannot open display&lt;/h2&gt;
-
-&lt;p&gt;Dunst was unable to connect to the X server. Make sure that X is running and that the &lt;code&gt;DISPLAY&lt;/code&gt; environment variable is correctly set.&lt;/p&gt;
-
-&lt;p&gt;If you&amp;rsquo;re using the systemd service, that might mean that dbus isn&amp;rsquo;t setting the right variables, see issue &lt;a href=&#34;https://github.com/dunst-project/dunst/issues/347&#34;&gt;#347&lt;/a&gt; for more details.&lt;/p&gt;
-
-&lt;h2 id=&#34;name-lost-is-another-notification-daemon-running&#34;&gt;Name Lost. Is Another notification daemon running?&lt;/h2&gt;
-
-&lt;p&gt;The connection to the dbus daemon failed or another process is using the notification address. Make sure that the &lt;code&gt;DBUS_SESSION_ADDRESS&lt;/code&gt; environment variable is set and if not you should consult your distributions documentation on how to properly setup dbus.&lt;/p&gt;
-
-&lt;p&gt;Additionally, verify that the output of&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;gdbus call --session --dest org.freedesktop.DBus --object-path /org/freedesktop/Dbus --method org.freedesktop.DBus.ListNames
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Does not contain &lt;code&gt;org.freedesktop.Notifications&lt;/code&gt;. If it does it means that another notification daemon is already running.&lt;/p&gt;
-
-&lt;h2 id=&#34;icons-are-too-big&#34;&gt;Icons are too big&lt;/h2&gt;
-
-&lt;p&gt;Since the 1.2 version release, an option &lt;code&gt;max_icon_size&lt;/code&gt; was introduced to scale down icons to a certain size. By default this option is set to 0 (it doesn&amp;rsquo;t scale down icons), to change this behaviour you need to set this option in the global section of the config file. For reference, check out the &lt;a href=&#34;https://github.com/dunst-project/dunst/blob/master/dunstrc#L159&#34;&gt;dunstrc&lt;/a&gt; config example file.&lt;/p&gt;
-
-&lt;h2 id=&#34;how-to-switch-back-to-notify-osd&#34;&gt;How to switch back to notify-osd?&lt;/h2&gt;
-
-&lt;p&gt;D-Bus does not know know, which notification daemon it should start. So it decides arbitary, which one to use.&lt;/p&gt;
-
-&lt;p&gt;You have to link the D-Bus service file of your preferred notification daemon into your homefolder.&lt;/p&gt;
-
-&lt;p&gt;To change the notification daemon back to the default, use open up a shell and execute those two commands:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;mkdir -p &amp;quot;${XDG_DATA_HOME:-$HOME/.local/share}/dbus-1/services&amp;quot;
-ln -sfT \
-    &amp;quot;/usr/share/dbus-1/services/${SERVICE:-org.freedesktop.Notifications}.service&amp;quot; \
-    &amp;quot;${XDG_DATA_HOME:-$HOME/.local/share}/dbus-1/services/org.freedesktop.Notifications.service&amp;quot;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;If you want to switch back to dunst again, first define &lt;code&gt;SERVICE=org.knopwob.dunst&lt;/code&gt; and reexecute the &lt;code&gt;ln&lt;/code&gt;-command.&lt;/p&gt;
-
-&lt;p&gt;For more info, see the discussion in &lt;a href=&#34;https://github.com/dunst-project/dunst/issues/363&#34;&gt;#363&lt;/a&gt;.&lt;/p&gt;
-</description>
+      <description>Common problems Cannot open display Dunst was unable to connect to the X server. Make sure that X is running and that the DISPLAY environment variable is correctly set.
+If you&amp;rsquo;re using the systemd service, that might mean that dbus isn&amp;rsquo;t setting the right variables, see issue #347 for more details.
+Name Lost. Is Another notification daemon running? The connection to the dbus daemon failed or another process is using the notification address.</description>
     </item>
     
   </channel>

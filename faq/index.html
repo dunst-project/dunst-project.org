@@ -79,6 +79,10 @@
 <li><a href="#icons-are-too-big">Icons are too big</a></li>
 <li><a href="#how-to-switch-back-to-notify-osd">How to switch back to notify-osd?</a></li>
 </ul></li>
+<li><a href="#special-usages">Special usages</a>
+<ul>
+<li><a href="#sending-notifications-from-another-user-root">Sending notifications from another user (root)</a></li>
+</ul></li>
 </ul>
 </nav>
                 
@@ -124,6 +128,17 @@ ln -sfT \
 <p>If you want to switch back to dunst again, first define <code>SERVICE=org.knopwob.dunst</code> and reexecute the <code>ln</code>-command.</p>
 
 <p>For more info, see the discussion in <a href="https://github.com/dunst-project/dunst/issues/363">#363</a>.</p>
+
+<h1 id="special-usages">Special usages</h1>
+
+<h2 id="sending-notifications-from-another-user-root">Sending notifications from another user (root)</h2>
+
+<p>Your new shell has to be able to execute commands as dunst&rsquo;s user.</p>
+
+<pre><code>alias notify-send=&quot;sudo -u USERNAME DISPLAY=:0 notify-send&quot;
+</code></pre>
+
+<p>Any other combination, executing <code>notify-send</code> with the valid <code>DISPLAY</code>-variable and user should work.</p>
 
             </div>
         </div>
