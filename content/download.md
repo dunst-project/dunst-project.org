@@ -6,79 +6,68 @@ type = "page"
 +++
 ***
 
-The current stable version of Dunst is **1.2.0** released on **Jul 12 2017**.
+The current stable version of Dunst is **1.3.0** released on **Jan 5 2018**.
 
 # Downloads
 
-* [Source tarball](https://github.com/dunst-project/dunst/archive/v1.2.0.tar.gz)
+* [Source tarball](https://github.com/dunst-project/dunst/archive/v1.3.0.tar.gz)
 * [Code repository (Github)](https://github.com/dunst-project/dunst)
 
 # Release Notes
 
-After about 3 years of inactivity, dunst is back under active development.
-
-Version 1.2 is supposed to be fully backwards compatible with 1.1 but due to
-the number of changes and the time since the last release there may be some
-overlooked breakages. If one is found it should be reported to the bug tracker.
+Version 1.3 is supposed to be fully backwards compatible with 1.2.
 
 For users:
 
-* Markup
+* Behavioural changes
 
-    The `allow_markup` setting has been deprecated in favour of `markup` which
-    is a multi-value setting that can be used to control much more accurately
-    how markup in notifications should be handled. Currently it only supports
-    `no`, `strip` and `full` as values but it is planned to be expanded soon.
+    Dunst respects the timeout with millisecond accuracy now. Notifications with
+    a one second timeout are not shown up to three seconds.
+    Additionally you can specify timeout values in milliseconds, seconds, minutes,
+    hours or days using the ms, s, h, or d suffix in the config value
+    respectively.
 
-    To preserve backwards compatibility, `allow_markup` is still supported but
-    users are encouraged to update their configuration files since it will be
-    removed after a few major releases.
+    Transient notifications time out ignoring the `idle_threshold` setting and are not
+    saved in history. This can be overridden with a rule containing `set_transient = no`.
+    In the same vein there is the `match_transient` condition to match transient
+    notifications via rules.
 
-* DPI handling
+    A prefixed tilde (`~/`) in path settings (browser, dmenu, script) is interpreted as the
+    home folder of the user.
 
-    The DPI value used is now retrieved from the `Xft.dpi` X resource if
-    available. If not, the default value 96 will be used.
+* Configuration Options
 
-    Additionally, as an experiment a per-monitor dpi setting, which tries to
-    calculate an acceptable dpi values for each monitor, has been added to the
-    experimental section of the configuration file.
+    `icon_folders` got deprecated and renamed to `icon_path`. `icon_folders` is still
+    supported, but will get removed in future.
 
-* RandR and Xinerama
-
-    Dunst switched from using the Xinerama extension to provide multi-monitor
-    support to using the more modern RandR extension. While this change won't
-    affect the majority of users, some legacy drivers do not support RandR. In
-    that case, the `force_xinerama` option was added as a way to fall back to
-    the old method.
-
-    The downside of forcing Xinerama to be used is that dunst won't be able to
-    detect when a monitor is added or removed meaning that follow mode might
-    break if the screen layout changes.
-
-* Frame settings
-
-    All the settings in the frame section of the configuration file have been
-    deprecated and have been moved into the global section. The `color` and `size`
-    settings became `frame_color` and `frame_size` respectively. As with
-    `allow_markup`, the old format still works but it'll be removed in one of the
-    next major releases.
-
-* Deprecation of urgency-specific command line flags
-
-    The urgency specific command line flags (`-li,-ni,-ci,-lf,-nf,-cf,-lb,
-    -nb,-cb,-lfr,-nfr,-cfr,-lto,-nto,-cto`) have been deprecated with no
-    plan for a replacement. If you rely on them please respond to issue #328 on
-    the bug tracker with your use case.
+    The option `ellipsize` got introduced. It controls where to ellipsize the text of
+    an overlong notification if `word_wrap=no`.
 
 For maintainers:
 
-* The project homepage has been changed to https://dunst-project.org
-* The main repository has been changed to https://github.com/dunst-project/dunst
+* Dependencies
 
-* Dependency changes:
- - Dependency on libraries that were unused in the code but were mentioned as
-   dependencies has been dropped. Dunst no longer depends on: libfreetype,
-   libxft and libxext.
- - Added dependency on libxrandr and libgtk2.0.
+    The GTK3+ dependency got removed. Instead of this gdk-pixbuf is required
+    explicitly. This had been a transient dependency before.
 
-For a full list of changes see the [changelog](/changelog/).
+    In the Makefile, libxrandr is now specified to require version 1.5 or newer.
+    The dependency on libxrandr >= 1.5 is not new, Dunst 1.2.0 required it too
+    but there was no active check for it.
+
+* Installation process
+
+    The internals of dunst's make installation process have slightly changed. The
+    install routine won't install the service files for DBus and systemd in a hardcoded
+    subdirectory of $PREFIX. It'll now query the `dbus-1` and `systemd` pkg-config
+    packages for those paths and will put it there.
+
+    To overwrite the pkg-config values, you can manually specify another path.
+    Use `SERVICEDIR_(DBUS|SYSTEMD)` vars as parameters to your make calls.
+
+    For all introduced variables, see [the README](https://github.com/dunst-project/dunst/blob/v1.3.0/README.md).
+
+* Portability
+
+    GNU-specific functions have been disabled to make dunst portable to nongnu libc's.
+
+For a full list of changes see [CHANGELOG](/changelog/).
