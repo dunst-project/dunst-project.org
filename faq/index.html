@@ -75,6 +75,8 @@
 <li><a href="#common-problems">Common problems</a>
 <ul>
 <li><a href="#cannot-open-display">Cannot open display</a></li>
+<li><a href="#cannot-connect-to-dbus">Cannot connect to DBus</a></li>
+<li><a href="#cannot-acquire-org-freedesktop-notifications">Cannot acquire &lsquo;org.freedesktop.Notifications&rsquo;</a></li>
 <li><a href="#name-lost-is-another-notification-daemon-running">Name Lost. Is Another notification daemon running?</a></li>
 <li><a href="#icons-are-too-big">Icons are too big</a></li>
 <li><a href="#how-to-switch-back-to-notify-osd">How to switch back to notify-osd?</a></li>
@@ -96,9 +98,27 @@
 
 <p>If you&rsquo;re using the systemd service, that might mean that dbus isn&rsquo;t setting the right variables, see issue <a href="https://github.com/dunst-project/dunst/issues/347">#347</a> for more details.</p>
 
+<h2 id="cannot-connect-to-dbus">Cannot connect to DBus</h2>
+
+<p>Dunst cannot connect to you session bus at all. The session bus might not even exist.</p>
+
+<p>Please check all these conditions:</p>
+
+<ul>
+<li>dbus packages are really installed</li>
+<li>dbus is running</li>
+<li>The env variable <code>DBUS_SESSION_BUS_ADDRESS</code> is really set</li>
+</ul>
+
+<h2 id="cannot-acquire-org-freedesktop-notifications">Cannot acquire &lsquo;org.freedesktop.Notifications&rsquo;</h2>
+
+<p>Another notification daemon is already running, which is listening for notifications. Usually this is another daemon, which got autostarted or is dunst itself.</p>
+
+<p>Usually, dunst also prints the PID of this process, which will give you more possibilities to investigate. Maybe you want to simply <code>kill</code> this PID and then start dunst.</p>
+
 <h2 id="name-lost-is-another-notification-daemon-running">Name Lost. Is Another notification daemon running?</h2>
 
-<p>The connection to the dbus daemon failed or another process is using the notification address. Make sure that the <code>DBUS_SESSION_ADDRESS</code> environment variable is set and if not you should consult your distributions documentation on how to properly setup dbus.</p>
+<p>The connection to the dbus daemon failed or another process is using the notification address. Make sure that the <code>DBUS_SESSION_BUS_ADDRESS</code> environment variable is set and if not you should consult your distributions documentation on how to properly setup dbus.</p>
 
 <p>Additionally, verify that the output of</p>
 

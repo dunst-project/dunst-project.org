@@ -74,92 +74,77 @@
 
 <hr />
 
-<p>The current stable version of Dunst is <strong>1.2.0</strong> released on <strong>Jul 12 2017</strong>.</p>
+<p>The current stable version of Dunst is <strong>1.3.0</strong> released on <strong>Jan 5 2018</strong>.</p>
 
 <h1 id="downloads">Downloads</h1>
 
 <ul>
-<li><a href="https://github.com/dunst-project/dunst/archive/v1.2.0.tar.gz">Source tarball</a></li>
+<li><a href="https://github.com/dunst-project/dunst/archive/v1.3.0.tar.gz">Source tarball</a></li>
 <li><a href="https://github.com/dunst-project/dunst">Code repository (Github)</a></li>
 </ul>
 
 <h1 id="release-notes">Release Notes</h1>
 
-<p>After about 3 years of inactivity, dunst is back under active development.</p>
-
-<p>Version 1.2 is supposed to be fully backwards compatible with 1.1 but due to
-the number of changes and the time since the last release there may be some
-overlooked breakages. If one is found it should be reported to the bug tracker.</p>
+<p>Version 1.3 is supposed to be fully backwards compatible with 1.2.</p>
 
 <p>For users:</p>
 
 <ul>
-<li><p>Markup</p>
+<li><p>Behavioural changes</p>
 
-<p>The <code>allow_markup</code> setting has been deprecated in favour of <code>markup</code> which
-is a multi-value setting that can be used to control much more accurately
-how markup in notifications should be handled. Currently it only supports
-<code>no</code>, <code>strip</code> and <code>full</code> as values but it is planned to be expanded soon.</p>
+<p>Dunst respects the timeout with millisecond accuracy now. Notifications with
+a one second timeout are not shown up to three seconds.
+Additionally you can specify timeout values in milliseconds, seconds, minutes,
+hours or days using the ms, s, h, or d suffix in the config value
+respectively.</p>
 
-<p>To preserve backwards compatibility, <code>allow_markup</code> is still supported but
-users are encouraged to update their configuration files since it will be
-removed after a few major releases.</p></li>
+<p>Transient notifications time out ignoring the <code>idle_threshold</code> setting and are not
+saved in history. This can be overridden with a rule containing <code>set_transient = no</code>.
+In the same vein there is the <code>match_transient</code> condition to match transient
+notifications via rules.</p>
 
-<li><p>DPI handling</p>
+<p>A prefixed tilde (<code>~/</code>) in path settings (browser, dmenu, script) is interpreted as the
+home folder of the user.</p></li>
 
-<p>The DPI value used is now retrieved from the <code>Xft.dpi</code> X resource if
-available. If not, the default value 96 will be used.</p>
+<li><p>Configuration Options</p>
 
-<p>Additionally, as an experiment a per-monitor dpi setting, which tries to
-calculate an acceptable dpi values for each monitor, has been added to the
-experimental section of the configuration file.</p></li>
+<p><code>icon_folders</code> got deprecated and renamed to <code>icon_path</code>. <code>icon_folders</code> is still
+supported, but will get removed in future.</p>
 
-<li><p>RandR and Xinerama</p>
-
-<p>Dunst switched from using the Xinerama extension to provide multi-monitor
-support to using the more modern RandR extension. While this change won&rsquo;t
-affect the majority of users, some legacy drivers do not support RandR. In
-that case, the <code>force_xinerama</code> option was added as a way to fall back to
-the old method.</p>
-
-<p>The downside of forcing Xinerama to be used is that dunst won&rsquo;t be able to
-detect when a monitor is added or removed meaning that follow mode might
-break if the screen layout changes.</p></li>
-
-<li><p>Frame settings</p>
-
-<p>All the settings in the frame section of the configuration file have been
-deprecated and have been moved into the global section. The <code>color</code> and <code>size</code>
-settings became <code>frame_color</code> and <code>frame_size</code> respectively. As with
-<code>allow_markup</code>, the old format still works but it&rsquo;ll be removed in one of the
-next major releases.</p></li>
-
-<li><p>Deprecation of urgency-specific command line flags</p>
-
-<p>The urgency specific command line flags (<code>-li,-ni,-ci,-lf,-nf,-cf,-lb,
--nb,-cb,-lfr,-nfr,-cfr,-lto,-nto,-cto</code>) have been deprecated with no
-plan for a replacement. If you rely on them please respond to issue #328 on
-the bug tracker with your use case.</p></li>
+<p>The option <code>ellipsize</code> got introduced. It controls where to ellipsize the text of
+an overlong notification if <code>word_wrap=no</code>.</p></li>
 </ul>
 
 <p>For maintainers:</p>
 
 <ul>
-<li>The project homepage has been changed to <a href="https://dunst-project.org">https://dunst-project.org</a></li>
+<li><p>Dependencies</p>
 
-<li><p>The main repository has been changed to <a href="https://github.com/dunst-project/dunst">https://github.com/dunst-project/dunst</a></p></li>
+<p>The GTK3+ dependency got removed. Instead of this gdk-pixbuf is required
+explicitly. This had been a transient dependency before.</p>
 
-<li><p>Dependency changes:</p>
+<p>In the Makefile, libxrandr is now specified to require version 1.5 or newer.
+The dependency on libxrandr &gt;= 1.5 is not new, Dunst 1.2.0 required it too
+but there was no active check for it.</p></li>
 
-<ul>
-<li>Dependency on libraries that were unused in the code but were mentioned as
-dependencies has been dropped. Dunst no longer depends on: libfreetype,
-libxft and libxext.</li>
-<li>Added dependency on libxrandr and libgtk2.0.</li>
-</ul></li>
+<li><p>Installation process</p>
+
+<p>The internals of dunst&rsquo;s make installation process have slightly changed. The
+install routine won&rsquo;t install the service files for DBus and systemd in a hardcoded
+subdirectory of $PREFIX. It&rsquo;ll now query the <code>dbus-1</code> and <code>systemd</code> pkg-config
+packages for those paths and will put it there.</p>
+
+<p>To overwrite the pkg-config values, you can manually specify another path.
+Use <code>SERVICEDIR_(DBUS|SYSTEMD)</code> vars as parameters to your make calls.</p>
+
+<p>For all introduced variables, see <a href="https://github.com/dunst-project/dunst/blob/v1.3.0/README.md">the README</a>.</p></li>
+
+<li><p>Portability</p>
+
+<p>GNU-specific functions have been disabled to make dunst portable to nongnu libc&rsquo;s.</p></li>
 </ul>
 
-<p>For a full list of changes see the <a href="/changelog/">changelog</a>.</p>
+<p>For a full list of changes see <a href="/changelog/">CHANGELOG</a>.</p>
 
             </div>
         </div>

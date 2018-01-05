@@ -26,9 +26,11 @@ Config file here</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://dunst-project.org/download/</guid>
-      <description>The current stable version of Dunst is 1.2.0 released on Jul 12 2017.
-Downloads  Source tarball Code repository (Github)  Release Notes After about 3 years of inactivity, dunst is back under active development.
-Version 1.2 is supposed to be fully backwards compatible with 1.1 but due to the number of changes and the time since the last release there may be some overlooked breakages. If one is found it should be reported to the bug tracker.</description>
+      <description>The current stable version of Dunst is 1.3.0 released on Jan 5 2018.
+Downloads  Source tarball Code repository (Github)  Release Notes Version 1.3 is supposed to be fully backwards compatible with 1.2.
+For users:
+ Behavioural changes
+Dunst respects the timeout with millisecond accuracy now. Notifications with a one second timeout are not shown up to three seconds. Additionally you can specify timeout values in milliseconds, seconds, minutes, hours or days using the ms, s, h, or d suffix in the config value respectively.</description>
     </item>
     
     <item>
@@ -37,7 +39,7 @@ Version 1.2 is supposed to be fully backwards compatible with 1.1 but due to the
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://dunst-project.org/changelog/</guid>
-      <description>1.2.0 - 2017-07-12 Added  always_run_script option to run script even if a notification is suppressed Support for more icon file types Support for raw icons hide_duplicate_count option to hide the number of duplicate notifications Support for per-urgency frame colours markup setting for more fine-grained control over how markup is handled history_ignore rule action to exclude a notification from being added to the history Support for setting the dpi value dunst will use for font rendering via the Xft.</description>
+      <description>1.3.0 - 2018-01-05 Added  ellipsize option to control how long lines should be ellipsized when word_wrap is set to false (#374) A beginning tilde of a path is now expanded to the home of the current user (#351) The image-path hint is now respected, as GApplications send their icon only via this link (#447) The (legacy) image_data hint is now respected (#353) If dunst can&amp;rsquo;t acquire the DBus name, dunst prints the PID of the process holding the name (#458 #460) Increased accuracy of timeouts by using microseconds internally (#379 #291) Support for specifying timeout values in milliseconds, minutes, hours, or days.</description>
     </item>
     
     <item>
@@ -48,7 +50,7 @@ Version 1.2 is supposed to be fully backwards compatible with 1.1 but due to the
       <guid>https://dunst-project.org/faq/</guid>
       <description>Common problems Cannot open display Dunst was unable to connect to the X server. Make sure that X is running and that the DISPLAY environment variable is correctly set.
 If you&amp;rsquo;re using the systemd service, that might mean that dbus isn&amp;rsquo;t setting the right variables, see issue #347 for more details.
-Name Lost. Is Another notification daemon running? The connection to the dbus daemon failed or another process is using the notification address.</description>
+Cannot connect to DBus Dunst cannot connect to you session bus at all. The session bus might not even exist.</description>
     </item>
     
   </channel>

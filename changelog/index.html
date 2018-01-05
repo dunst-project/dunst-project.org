@@ -74,9 +74,54 @@
 
 <hr />
 
-<h1 id="1-2-0-2017-07-12">1.2.0 - 2017-07-12</h1>
+<h2 id="1-3-0-2018-01-05">1.3.0 - 2018-01-05</h2>
 
 <h3 id="added">Added</h3>
+
+<ul>
+<li><code>ellipsize</code> option to control how long lines should be ellipsized when <code>word_wrap</code> is set to <code>false</code> (#374)</li>
+<li>A beginning tilde of a path is now expanded to the home of the current user (#351)</li>
+<li>The image-path hint is now respected, as GApplications send their icon only via this link (#447)</li>
+<li>The (legacy) image_data hint is now respected (#353)</li>
+<li>If dunst can&rsquo;t acquire the DBus name, dunst prints the PID of the process holding the name (#458 #460)</li>
+<li>Increased accuracy of timeouts by using microseconds internally (#379 #291)</li>
+<li>Support for specifying timeout values in milliseconds, minutes, hours, or days. (#379)</li>
+<li>Support for HTML img tags (via context menu) (#428)</li>
+</ul>
+
+<h3 id="fixed">Fixed</h3>
+
+<ul>
+<li><code>new_icon</code> rule being ignored on notifications that had a raw icon (#423)</li>
+<li>Format strings being replaced recursively in some cases (#322 #365)</li>
+<li>DBus related memory leaks (#397)</li>
+<li>Crash on X11 servers with RandR support less than 1.5. (#413 #364)</li>
+<li>Silently reading the default config file, if <code>-conf</code> did not specify a valid file (#452)</li>
+<li>Notification window flickering when a notification is replaced (#320 #415)</li>
+<li>Inaccurate timeout in some cases (#291 #379)</li>
+</ul>
+
+<h3 id="changed">Changed</h3>
+
+<ul>
+<li>Transient hints are now handled (#343 #310)
+An additional rule option (<code>match_transient</code> and <code>set_transient</code>) is added
+to optionally reset the transient setting</li>
+<li>HTML links are now referred to by their text in the context menu rather than numbers (#428)</li>
+<li><code>icon_folders</code> setting renamed to <code>icon_path</code> (#170)</li>
+<li><code>config.def.h</code> and <code>config.h</code> got merged (#371)</li>
+<li>The dependency on GTK3+ has been removed. Instead of GTK3+, dunst now
+requires gdk-pixbuf which had been a transient dependency before. (#334
+#376)</li>
+<li>The <code>_GNU_SOURCE</code> macros had been removed to make dunst portable to nonGNU systems (#403)</li>
+<li>Internal refactorings of the notification queue handling. (#411)</li>
+<li>Dunst does now install the systemd and dbus service files into their proper location given
+by pkg-config. Use <code>SERVICEDIR_(DBUS|SYSTEMD)</code> params to overwrite them. (#463)</li>
+</ul>
+
+<h1 id="1-2-0-2017-07-12">1.2.0 - 2017-07-12</h1>
+
+<h3 id="added-1">Added</h3>
 
 <ul>
 <li><code>always_run_script</code> option to run script even if a notification is suppressed</li>
@@ -94,7 +139,7 @@
 <li><code>%n</code> format flag for getting progress value without any extra characters</li>
 </ul>
 
-<h3 id="changed">Changed</h3>
+<h3 id="changed-1">Changed</h3>
 
 <ul>
 <li>Text and icons are now centred vertically</li>
@@ -111,7 +156,7 @@
 <li>The urgency specific command line flags have been deprecated with no replacement, respond to issue #328 on the bug tracker if you depend on them</li>
 </ul>
 
-<h3 id="fixed">Fixed</h3>
+<h3 id="fixed-1">Fixed</h3>
 
 <ul>
 <li>Infinite loop if there are 2 configuration file sections with the same name</li>
