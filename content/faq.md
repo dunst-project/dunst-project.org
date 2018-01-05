@@ -14,9 +14,25 @@ Dunst was unable to connect to the X server. Make sure that X is running and tha
 
 If you're using the systemd service, that might mean that dbus isn't setting the right variables, see issue [#347](https://github.com/dunst-project/dunst/issues/347) for more details.
 
+## Cannot connect to DBus
+
+Dunst cannot connect to you session bus at all. The session bus might not even exist.
+
+Please check all these conditions:
+
+- dbus packages are really installed
+- dbus is running
+- The env variable `DBUS_SESSION_BUS_ADDRESS` is really set
+
+## Cannot acquire 'org.freedesktop.Notifications'
+
+Another notification daemon is already running, which is listening for notifications. Usually this is another daemon, which got autostarted or is dunst itself.
+
+Usually, dunst also prints the PID of this process, which will give you more possibilities to investigate. Maybe you want to simply `kill` this PID and then start dunst.
+
 ## Name Lost. Is Another notification daemon running?
 
-The connection to the dbus daemon failed or another process is using the notification address. Make sure that the `DBUS_SESSION_ADDRESS` environment variable is set and if not you should consult your distributions documentation on how to properly setup dbus.
+The connection to the dbus daemon failed or another process is using the notification address. Make sure that the `DBUS_SESSION_BUS_ADDRESS` environment variable is set and if not you should consult your distributions documentation on how to properly setup dbus.
 
 Additionally, verify that the output of
 
