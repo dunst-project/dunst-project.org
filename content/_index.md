@@ -17,7 +17,7 @@ Dunst is a lightweight replacement for the notification-daemons provided by most
         <i class="fa fa-cog fa-stack-1x fa-inverse"></i>
     </span>
     <strong class="fmiddle">Customizable</strong>
-   <p><i>Customize fonts, icons, timeouts and more. Are you not happy with the shorcuts and colors provided?. No worries,
+   <p><i>Customize fonts, icons, timeouts and more. Are you not happy with the shortcuts and colors provided?. No worries,
     you can change all this with a simple configuration file.</i></p>
 </div>
 
