@@ -153,12 +153,14 @@ ln -sfT \
 
 <h2 id="sending-notifications-from-another-user-root">Sending notifications from another user (root)</h2>
 
-<p>Your new shell has to be able to execute commands as dunst&rsquo;s user.</p>
+<p>Your new shell has to be able to execute commands as dunst&rsquo;s user and you have to export the <code>DBUS_SESSION_BUS_ADDRESS</code> environment variable with the same content it would have in your desktop session.</p>
 
-<pre><code>alias notify-send=&quot;sudo -u USERNAME DISPLAY=:0 notify-send&quot;
+<p>Usually, the environment variable&rsquo;s content is <code>DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/&lt;UID&gt;/bus</code>. On older systems, this may not be the case and may change on a per-session basis.</p>
+
+<pre><code>alias notify-send=&quot;sudo -u USERNAME DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/&lt;UID&gt;/bus notify-send&quot;
 </code></pre>
 
-<p>Any other combination, executing <code>notify-send</code> with the valid <code>DISPLAY</code>-variable and user should work.</p>
+<p>Any other combination, executing <code>notify-send</code> with the valid <code>DBUS_SESSION_BUS_ADDRESS</code>-variable and user should work.</p>
 
             </div>
         </div>
