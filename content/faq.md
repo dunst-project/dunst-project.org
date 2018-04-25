@@ -70,10 +70,12 @@ For more info, see the discussion in [#363](https://github.com/dunst-project/dun
 
 ## Sending notifications from another user (root)
 
-Your new shell has to be able to execute commands as dunst's user.
+Your new shell has to be able to execute commands as dunst's user and you have to export the `DBUS_SESSION_BUS_ADDRESS` environment variable with the same content it would have in your desktop session.
+
+Usually, the environment variable's content is `DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/<UID>/bus`. On older systems, this may not be the case and may change on a per-session basis.
 
 ```
-alias notify-send="sudo -u USERNAME DISPLAY=:0 notify-send"
+alias notify-send="sudo -u USERNAME DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/<UID>/bus notify-send"
 ```
 
-Any other combination, executing `notify-send` with the valid `DISPLAY`-variable and user should work.
+Any other combination, executing `notify-send` with the valid `DBUS_SESSION_BUS_ADDRESS`-variable and user should work.
