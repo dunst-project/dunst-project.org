@@ -48,7 +48,7 @@ Version 1.3 is supposed to be fully backwards compatible with 1.2.</description>
       <guid>https://dunst-project.org/faq/</guid>
       <description>Common problems Cannot open display Dunst was unable to connect to the X server. Make sure that X is running and that the DISPLAY environment variable is correctly set.
 If you&amp;rsquo;re using the systemd service, that might mean that dbus isn&amp;rsquo;t setting the right variables, see issue #347 for more details.
-Cannot connect to DBus Dunst cannot connect to you session bus at all. The session bus might not even exist.</description>
+Cannot connect to DBus Dunst cannot connect to your session bus at all. The session bus might not even exist.</description>
     </item>
     
   </channel>
