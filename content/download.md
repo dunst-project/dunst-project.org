@@ -6,20 +6,25 @@ type = "page"
 +++
 ***
 
-The current stable version of Dunst is **1.3.1** released on **Jan 30 2018**.
+The current stable version of Dunst is **1.3.2** released on **May 6 2018**.
 
 # Downloads
 
-* [Source tarball](https://github.com/dunst-project/dunst/archive/v1.3.1.tar.gz)
+* [Source tarball](https://github.com/dunst-project/dunst/archive/v1.3.2.tar.gz)
 * [Code repository (Github)](https://github.com/dunst-project/dunst)
 
 # Release Notes
 
+## Bugfix releases
+
+Version 1.3.2 fixes a crash when trying to load an invalid or corrupt icon file.
+
 Version 1.3.1 addresses a race condition that can cause the service file to be
-empty upon installation. It contains no other changes, refer to the release
-notes for 1.3 bellow for more info on 1.3.
+empty upon installation.
 
 ---
+
+## v1.3 release notes
 
 Version 1.3 is supposed to be fully backwards compatible with 1.2.
 
