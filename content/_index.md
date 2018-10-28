@@ -6,7 +6,10 @@ type = "page"
 css = [ "home.css" ]
 +++
 
-Dunst is a lightweight replacement for the notification-daemons provided by most desktop environments. It's very customizable, doesn't depend on any toolkits and therefore fits in those window manager centric setups we all love to customize to perfection.
+Dunst is a lightweight replacement for the notification daemons provided by most
+desktop environments. It's very customizable, isn't dependent on any toolkits,
+and therefore fits into those window manager centric setups we all love to
+customize to perfection.
 
 ## **Features**
 ***
@@ -16,9 +19,10 @@ Dunst is a lightweight replacement for the notification-daemons provided by most
         <i class="fa fa-circle fa-stack-2x"></i>
         <i class="fa fa-cog fa-stack-1x fa-inverse"></i>
     </span>
-    <strong class="fmiddle">Customizable</strong>
-   <p><i>Customize fonts, icons, timeouts and more. Are you not happy with the shortcuts and colors provided?. No worries,
-    you can change all this with a simple configuration file.</i></p>
+    <strong class="fmiddle">Customizability</strong>
+   <p><i>Customize fonts, icons, timeouts, and more. Are you unhappy with the
+   default shortcuts and colors? No worries, you can change these all with a
+   simple configuration file tweak.</i></p>
 </div>
 
 <hr class="features">
@@ -29,9 +33,10 @@ Dunst is a lightweight replacement for the notification-daemons provided by most
         <i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
     </span>
     <strong class="fmiddle">Rules</strong>
-    <p><i>Override colors, icons, timeouts etc. for notifications that match a certain pattern. This can be used to give 
-    messages from your favourite jabber buddies their own color or stop those needs immediate response emails
-    from work from timing out so they are displayed until you manually discard them after you replied.</i></p>
+    <p><i>Change the look or behavior of notifications matching a specified
+    pattern. You could use this to change the color of message notifications
+    from your favorite jabber buddies, or to prevent important work email
+    notifications from disappearing until you manually dismiss them.</i></p>
 </div>
 
 <hr class="features">
@@ -41,9 +46,9 @@ Dunst is a lightweight replacement for the notification-daemons provided by most
         <i class="fa fa-circle fa-stack-2x"></i>
         <i class="fa fa-desktop fa-stack-1x fa-inverse"></i>
     </span>
-    <strong class="fmiddle">Multimonitor support</strong>
-    <p><i>Specify on which monitor the notifications should be displayed or make them follow to the monitor which contains 
-    the mouse cursor or has the window with keyboard focus.</i></p>
+    <strong class="fmiddle">Multi-monitor Support</strong>
+    <p><i>Specify the monitor that notifications should display on, or have them
+    appear on the monitor with keyboard or mouse focus.</i></p>
 </div>
 
 <hr class="features">
@@ -54,9 +59,9 @@ Dunst is a lightweight replacement for the notification-daemons provided by most
         <i class="fa fa-history fa-stack-1x fa-inverse"></i>
     </span>
     <strong class="fmiddle">History</strong>
-    <p><i>Just saw a notification dissapear in the corner of your eye or haven't finished reading that one before it timed
-    out? Just press the history keyboard shortcut to redisplay the last message (Use multiple times to go further back
-    in history).</i></p>
+    <p><i>Catch an unread notification disappearing from the corner of your eye?
+    Just tap a keyboard shortcut to replay the last notification, or continue
+    tapping to see your notification history.</i></p>
 </div>
 
 <hr class="features">
@@ -66,9 +71,11 @@ Dunst is a lightweight replacement for the notification-daemons provided by most
         <i class="fa fa-circle fa-stack-2x"></i>
         <i class="fa fa-keyboard-o fa-stack-1x fa-inverse"></i>
     </span>
-    <strong class="fmiddle">Keyboard driven</strong>
-    <p><i>Keyboard shortcuts for closing the oldest notification, closing all notifications and history. The mouse can be
-    used too; Left-click to discard clicked notification and right-click to discard all notifications.</i></p>
+    <strong class="fmiddle">Keyboard-Driven</strong>
+    <p><i>Keyboard shortcuts can be bound to commands like closing the oldest
+    notification, closing all notifications, and showing history. The mouse can
+    be used too - left-click to dismiss a notification, or right-click to
+    dismiss them all.</i></p>
 </div>
 
 <hr class="features">
@@ -79,8 +86,9 @@ Dunst is a lightweight replacement for the notification-daemons provided by most
         <i class="fa fa-envelope-open fa-stack-1x fa-inverse"></i>
     </span>
     <strong class="fmiddle">Context Menu</strong>
-    <p><i>Open a context menu (using dmenu) via keyboard shortcut for the displayed notifications. Currently it only
-    filters out urls and lets you open them in your browser.</i></p>
+    <p><i>Use a keyboard shortcut to open a context menu (via dmenu) for the
+    currently displayed notifications. Right now, it allows you to open
+    notifications' URLs in the browser.</i></p>
 </div>
 
 <hr class="features">
@@ -91,16 +99,17 @@ Dunst is a lightweight replacement for the notification-daemons provided by most
         <i class="fa fa-toggle-on fa-stack-1x fa-inverse"></i>
     </span>
     <strong class="fmiddle">Scriptable</strong>
-    <p><i>Run custom scripts on notifications that match a certain pattern. Let the text of the notification be read
-    to you by espeak or play a song when your significant other signs on in pidgin.</i></p>
+    <p><i>Run custom scripts on notifications matching a specified pattern. Have
+    espeak read out your notifications, or play a song when your significant
+    other signs on in pidgin!</i></p>
 </div>
 
 ## **Bug reports**
 ***
 
-Please use the [issue tracker](https://github.com/dunst-project/dunst/issues) provided by GitHub to send us
-bug reports or feature requests. You can also join us at [#dunst](irc://irc.freenode.net/#dunst) IRC channel
-on Freenode.
+Please use the [issue tracker](https://github.com/dunst-project/dunst/issues)
+on GitHub to send us bug reports or feature requests. You can also join us at
+the [#dunst](irc://irc.freenode.net/#dunst) IRC channel on Freenode.
 
 ## **Maintainers**
 ***
