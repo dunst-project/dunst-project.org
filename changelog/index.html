@@ -74,9 +74,57 @@
 
 <hr />
 
-<h2 id="1-3-2-2018-05-06">1.3.2 - 2018-05-06</h2>
+<h2 id="1-4-0-2019-03-30">1.4.0 - 2019-03-30</h2>
+
+<h3 id="added">Added</h3>
+
+<ul>
+<li>Add support to override <code>frame_color</code> via rules (#498)</li>
+<li>Support for round corners (#420)</li>
+<li>Ability to reference <code>$HOME</code> in icon paths with <code>~/</code> (#520)</li>
+<li>Support to customize the mouse bindings (#530)</li>
+<li>Command to toggle pause status (#535)</li>
+<li>Ability to automatically replace similar notifications (like volume changes)
+via <code>stack_tag</code> (#552)</li>
+<li>Comparison of raw icons for duplicate notifications (#571)</li>
+<li>Introduce new desktop-entry filter (#470)</li>
+<li><code>fullscreen</code> rule to hide notifications when a fullscreen window is active (#472)</li>
+<li>Added <code>skip_display</code> rule option to skip initial notification display, and
+include the notification in the history. (#590)</li>
+</ul>
 
 <h3 id="fixed">Fixed</h3>
+
+<ul>
+<li>Notification age not counting the time while the computer was suspended (#492)</li>
+<li>Dunst losing always-on-top status on a window manager restart (#160)</li>
+<li>Xpm icons not being recognized</li>
+<li>When new notifications arrive, but display is full, important notifications don&rsquo;t
+have to wait for a timeout in a displayed notification (#541)</li>
+<li>Dunst hanging while the context menu is open (#456)</li>
+<li>Having &amp; inside a notification breaking markup (#546)</li>
+<li><code>&lt;I&gt; more</code> notifications don&rsquo;t occupy space anymore, if there is only a single
+notification waiting to get displayed. The notification gets displayed directly (#467)</li>
+<li>Segfault when comparing icon name with a notification with a raw icon (#536)</li>
+<li>Icon size can no longer be larger than the notification when a fixed width is specified (#540)</li>
+</ul>
+
+<h3 id="changed">Changed</h3>
+
+<ul>
+<li>Transient notifications no longer skip history by default (#508)</li>
+<li>The notification summary no longer accepts markup (#497)</li>
+</ul>
+
+<h3 id="removed">Removed</h3>
+
+<ul>
+<li>Dependency on libxdg-basedir (#550)</li>
+</ul>
+
+<h2 id="1-3-2-2018-05-06">1.3.2 - 2018-05-06</h2>
+
+<h3 id="fixed-1">Fixed</h3>
 
 <ul>
 <li>Crash when trying to load an invalid or corrupt icon (#512)</li>
@@ -84,7 +132,7 @@
 
 <h2 id="1-3-1-2018-01-30">1.3.1 - 2018-01-30</h2>
 
-<h3 id="fixed-1">Fixed</h3>
+<h3 id="fixed-2">Fixed</h3>
 
 <ul>
 <li>Race condition resulting in the service files being empty (#488)</li>
@@ -92,7 +140,7 @@
 
 <h2 id="1-3-0-2018-01-05">1.3.0 - 2018-01-05</h2>
 
-<h3 id="added">Added</h3>
+<h3 id="added-1">Added</h3>
 
 <ul>
 <li><code>ellipsize</code> option to control how long lines should be ellipsized when <code>word_wrap</code> is set to <code>false</code> (#374)</li>
@@ -105,7 +153,7 @@
 <li>Support for HTML img tags (via context menu) (#428)</li>
 </ul>
 
-<h3 id="fixed-2">Fixed</h3>
+<h3 id="fixed-3">Fixed</h3>
 
 <ul>
 <li><code>new_icon</code> rule being ignored on notifications that had a raw icon (#423)</li>
@@ -117,7 +165,7 @@
 <li>Inaccurate timeout in some cases (#291 #379)</li>
 </ul>
 
-<h3 id="changed">Changed</h3>
+<h3 id="changed-1">Changed</h3>
 
 <ul>
 <li>Transient hints are now handled (#343 #310)
@@ -137,7 +185,7 @@ by pkg-config. Use <code>SERVICEDIR_(DBUS|SYSTEMD)</code> params to overwrite th
 
 <h1 id="1-2-0-2017-07-12">1.2.0 - 2017-07-12</h1>
 
-<h3 id="added-1">Added</h3>
+<h3 id="added-2">Added</h3>
 
 <ul>
 <li><code>always_run_script</code> option to run script even if a notification is suppressed</li>
@@ -155,7 +203,7 @@ by pkg-config. Use <code>SERVICEDIR_(DBUS|SYSTEMD)</code> params to overwrite th
 <li><code>%n</code> format flag for getting progress value without any extra characters</li>
 </ul>
 
-<h3 id="changed-1">Changed</h3>
+<h3 id="changed-2">Changed</h3>
 
 <ul>
 <li>Text and icons are now centred vertically</li>
@@ -172,7 +220,7 @@ by pkg-config. Use <code>SERVICEDIR_(DBUS|SYSTEMD)</code> params to overwrite th
 <li>The urgency specific command line flags have been deprecated with no replacement, respond to issue #328 on the bug tracker if you depend on them</li>
 </ul>
 
-<h3 id="fixed-3">Fixed</h3>
+<h3 id="fixed-4">Fixed</h3>
 
 <ul>
 <li>Infinite loop if there are 2 configuration file sections with the same name</li>

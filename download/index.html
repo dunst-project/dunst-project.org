@@ -74,7 +74,7 @@
 
 <hr />
 
-<p>The current stable version of Dunst is <strong>1.3.2</strong> released on <strong>May 6 2018</strong>.</p>
+<p>The current stable version of Dunst is <strong>1.4.0</strong> released on <strong>Mar 30 2019</strong>.</p>
 
 <h1 id="downloads">Downloads</h1>
 
@@ -85,77 +85,33 @@
 
 <h1 id="release-notes">Release Notes</h1>
 
-<h2 id="bugfix-releases">Bugfix releases</h2>
-
-<p>Version 1.3.2 fixes a crash when trying to load an invalid or corrupt icon file.</p>
-
-<p>Version 1.3.1 addresses a race condition that can cause the service file to be
-empty upon installation.</p>
-
-<hr />
-
-<h2 id="v1-3-release-notes">v1.3 release notes</h2>
-
-<p>Version 1.3 is supposed to be fully backwards compatible with 1.2.</p>
+<p>There has been significant internal refactoring since the last release which
+might have introduced some new bugs. Be sure to report anything you find.
+However, as usual, there has been a lot of bug-fixing and a lot of new features
+have been added as well. Look at the <a href="/changelog/">full changelog</a> for a breakdown.
+Some important points to note:</p>
 
 <p>For users:</p>
 
 <ul>
 <li><p>Behavioural changes</p>
 
-<p>Dunst respects the timeout with millisecond accuracy now. Notifications with
-a one second timeout are not shown up to three seconds.
-Additionally you can specify timeout values in milliseconds, seconds, minutes,
-hours or days using the ms, s, h, or d suffix in the config value
-respectively.</p>
+<p>In the previous release we introduced support for clients to mark
+notifications as &lsquo;transient&rsquo;. Transient notifications used to 1) bypass
+idle_threshold and 2) not be saved in history.
+The latter behaviour has been disabled by default and can be re-created using
+rules if necessary. Transient notifications will now only bypass
+idle_threshold.</p>
 
-<p>Transient notifications time out ignoring the <code>idle_threshold</code> setting and are not
-saved in history. This can be overridden with a rule containing <code>set_transient = no</code>.
-In the same vein there is the <code>match_transient</code> condition to match transient
-notifications via rules.</p>
-
-<p>A prefixed tilde (<code>~/</code>) in path settings (browser, dmenu, script) is interpreted as the
-home folder of the user.</p></li>
-
-<li><p>Configuration Options</p>
-
-<p><code>icon_folders</code> got deprecated and renamed to <code>icon_path</code>. <code>icon_folders</code> is still
-supported, but will get removed in future.</p>
-
-<p>The option <code>ellipsize</code> got introduced. It controls where to ellipsize the text of
-an overlong notification if <code>word_wrap=no</code>.</p></li>
+<p>Additionally, to be compliant with the notification spec, the notification
+summary no longer accepts markup.</p></li>
 </ul>
 
 <p>For maintainers:</p>
 
 <ul>
-<li><p>Dependencies</p>
-
-<p>The GTK3+ dependency got removed. Instead of this gdk-pixbuf is required
-explicitly. This had been a transient dependency before.</p>
-
-<p>In the Makefile, libxrandr is now specified to require version 1.5 or newer.
-The dependency on libxrandr &gt;= 1.5 is not new, Dunst 1.2.0 required it too
-but there was no active check for it.</p></li>
-
-<li><p>Installation process</p>
-
-<p>The internals of dunst&rsquo;s make installation process have slightly changed. The
-install routine won&rsquo;t install the service files for DBus and systemd in a hardcoded
-subdirectory of $PREFIX. It&rsquo;ll now query the <code>dbus-1</code> and <code>systemd</code> pkg-config
-packages for those paths and will put it there.</p>
-
-<p>To overwrite the pkg-config values, you can manually specify another path.
-Use <code>SERVICEDIR_(DBUS|SYSTEMD)</code> vars as parameters to your make calls.</p>
-
-<p>For all introduced variables, see <a href="https://github.com/dunst-project/dunst/blob/v1.3.0/README.md">the README</a>.</p></li>
-
-<li><p>Portability</p>
-
-<p>GNU-specific functions have been disabled to make dunst portable to nongnu libc&rsquo;s.</p></li>
+<li>Dependency on libxdg-basedir has been removed</li>
 </ul>
-
-<p>For a full list of changes see <a href="/changelog/">CHANGELOG</a>.</p>
 
             </div>
         </div>
