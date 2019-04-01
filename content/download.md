@@ -10,7 +10,7 @@ The current stable version of Dunst is **1.4.0** released on **Mar 30 2019**.
 
 # Downloads
 
-* [Source tarball](https://github.com/dunst-project/dunst/archive/v1.3.2.tar.gz)
+* [Source tarball](https://github.com/dunst-project/dunst/archive/v1.4.0.tar.gz)
 * [Code repository (Github)](https://github.com/dunst-project/dunst)
 
 # Release Notes
