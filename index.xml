@@ -26,8 +26,9 @@ Config file here</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://dunst-project.org/download/</guid>
-      <description>The current stable version of Dunst is 1.4.0 released on Mar 30 2019.
-Downloads  Source tarball Code repository (Github)  Release Notes There has been significant internal refactoring since the last release which might have introduced some new bugs. Be sure to report anything you find. However, as usual, there has been a lot of bug-fixing and a lot of new features have been added as well. Look at the full changelog for a breakdown.</description>
+      <description>The current stable version of Dunst is 1.4.1 released on Jul 03 2019.
+Downloads  Source tarball Code repository (Github)  Release Notes v1.4.1 This is a bugfix only release see the changelog for details.
+v1.4.0 There has been significant internal refactoring since the last release which might have introduced some new bugs. Be sure to report anything you find. However, as usual, there has been a lot of bug-fixing and a lot of new features have been added as well.</description>
     </item>
     
     <item>
@@ -36,7 +37,7 @@ Downloads  Source tarball Code repository (Github)  Release Notes There has been
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://dunst-project.org/changelog/</guid>
-      <description>1.4.0 - 2019-03-30 Added  Add support to override frame_color via rules (#498) Support for round corners (#420) Ability to reference $HOME in icon paths with ~/ (#520) Support to customize the mouse bindings (#530) Command to toggle pause status (#535) Ability to automatically replace similar notifications (like volume changes) via stack_tag (#552) Comparison of raw icons for duplicate notifications (#571) Introduce new desktop-entry filter (#470) fullscreen rule to hide notifications when a fullscreen window is active (#472) Added skip_display rule option to skip initial notification display, and include the notification in the history.</description>
+      <description>1.4.1 - 2019-07-03 Fixed  max_icon_size not working with dynamic width (#614) Failure to parse color strings with trailing comments in the config (#626) Negative width in geometry being ignored (#628) Incorrect handling of the argument terminator -- in dunstify Crash when changing DPI while no notifications are displayed (#630) Fullscreen status change not being detected in some cases (#613)  1.4.0 - 2019-03-30 Added  Add support to override frame_color via rules (#498) Support for round corners (#420) Ability to reference $HOME in icon paths with ~/ (#520) Support to customize the mouse bindings (#530) Command to toggle pause status (#535) Ability to automatically replace similar notifications (like volume changes) via stack_tag (#552) Comparison of raw icons for duplicate notifications (#571) Introduce new desktop-entry filter (#470) fullscreen rule to hide notifications when a fullscreen window is active (#472) Added skip_display rule option to skip initial notification display, and include the notification in the history.</description>
     </item>
     
     <item>
