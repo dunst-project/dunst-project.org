@@ -41,6 +41,17 @@ v1.4.0 There has been significant internal refactoring since the last release wh
     </item>
     
     <item>
+      <title>Documentation</title>
+      <link>https://dunst-project.org/documentation/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dunst-project.org/documentation/</guid>
+      <description>NAME SYNOPSIS DESCRIPTION COMMAND LINE OPTIONS CONFIGURATION  Command line Global section Shortcut section Urgency sections   HISTORY RULES  SCRIPTING   COLORS  NOTIFY-SEND   ACTIONS TIME FORMAT MISCELLANEOUS FILES AUTHORS REPORTING BUGS COPYRIGHT SEE ALSO  NAME dunst - A customizable and lightweight notification-daemon
+SYNOPSIS dunst [-conf file] [-font font] [-geometry geom] [-format fmt] [-follow mode] [-monitor n] [-history_length n] ...
+DESCRIPTION Dunst is a highly configurable and lightweight notification daemon.</description>
+    </item>
+    
+    <item>
       <title>FAQ</title>
       <link>https://dunst-project.org/faq/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
