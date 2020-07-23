@@ -78,50 +78,34 @@
 
 <hr />
 
-<p>The current stable version of Dunst is <strong>1.4.1</strong> released on <strong>Jul 03 2019</strong>.</p>
+<p>The current stable version of Dunst is <strong>1.5.0</strong> released on <strong>Jul 23 2020</strong>.</p>
 
 <h1 id="downloads">Downloads</h1>
 
 <ul>
-<li><a href="https://github.com/dunst-project/dunst/archive/v1.4.1.tar.gz">Source tarball</a></li>
+<li><a href="https://github.com/dunst-project/dunst/archive/v1.5.0.tar.gz">Source tarball</a></li>
 <li><a href="https://github.com/dunst-project/dunst">Code repository (Github)</a></li>
 </ul>
 
 <h1 id="release-notes">Release Notes</h1>
 
-<h2 id="v1-4-1">v1.4.1</h2>
-
-<p>This is a bugfix only release see the <a href="/changelog/">changelog</a> for details.</p>
-
-<h2 id="v1-4-0">v1.4.0</h2>
-
-<p>There has been significant internal refactoring since the last release which
-might have introduced some new bugs. Be sure to report anything you find.
-However, as usual, there has been a lot of bug-fixing and a lot of new features
-have been added as well. Look at the <a href="/changelog/">full changelog</a> for a breakdown.
-Some important points to note:</p>
-
 <p>For users:</p>
 
-<ul>
-<li><p>Behavioural changes</p>
+<p>The most important update from the previous version is the addition of the
+dunstctl command and dunstify utility, a drop-in notify-send replacement (which
+existed for a while, but wasn&rsquo;t installed by default).
+The internal keyboard shortcut support in dunst is now considered deprecated
+and should be replaced by dunstctl calls. You can use the configuration of your
+WM or DE to bind these to shortcuts of your choice.</p>
 
-<p>In the previous release we introduced support for clients to mark
-notifications as &lsquo;transient&rsquo;. Transient notifications used to 1) bypass
-idle_threshold and 2) not be saved in history.
-The latter behaviour has been disabled by default and can be re-created using
-rules if necessary. Transient notifications will now only bypass
-idle_threshold.</p>
-
-<p>Additionally, to be compliant with the notification spec, the notification
-summary no longer accepts markup.</p></li>
-</ul>
+<p>Additionally, another long requested feature implemented is RGBA/transparency
+support. Given an active compositor you can now add an optional transparency
+component to all colors in #RRGGBBAA format.</p>
 
 <p>For maintainers:</p>
 
-<ul>
-<li>Dependency on libxdg-basedir has been removed</li>
-</ul>
+<p>As mentioned above, two new binaries are now installed by default, dunstctl and dunstify.
+libnotify has been added as a dependency as it&rsquo;s used internally by dunstify.</p>
 
             </div>
         </div>

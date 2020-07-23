@@ -78,9 +78,39 @@
 
 <hr />
 
-<h2 id="1-4-1-2019-07-03">1.4.1 - 2019-07-03</h2>
+<h2 id="1-5-0-2020-07-23">1.5.0 - 2020-07-23</h2>
+
+<h3 id="added">Added</h3>
+
+<ul>
+<li><code>min_icon_size</code> option to automatically scale up icons to a desired value (#674)</li>
+<li><code>vertical_alignment</code> option to control the text/icon alignment within the notification (#684)</li>
+<li>Ability to configure multiple actions for each mouse event (#705)</li>
+<li><code>dunstctl</code> command line control client (#651)</li>
+<li>RGBA support for all color strings (#717)</li>
+<li>Ability to run multiple scripts for each notification</li>
+<li><code>ignore_dbusclose</code> setting (#732)</li>
+</ul>
+
+<h3 id="changed">Changed</h3>
+
+<ul>
+<li><code>dunstify</code> notification client is now installed by default (#701)</li>
+<li>Keyboard follow mode falls back to the monitor with the mouse if no window has keyboard focus (#708)</li>
+</ul>
 
 <h3 id="fixed">Fixed</h3>
+
+<ul>
+<li>Overflow when setting a &gt;=40 minute timeout (#646)</li>
+<li>Unset configuration options not falling back to default values (#649)</li>
+<li>Crash when <code>$HOME</code> environment variable is unset (#693)</li>
+<li>Lack of antialiasing with round corners enabled (#713)</li>
+</ul>
+
+<h2 id="1-4-1-2019-07-03">1.4.1 - 2019-07-03</h2>
+
+<h3 id="fixed-1">Fixed</h3>
 
 <ul>
 <li><code>max_icon_size</code> not working with dynamic width (#614)</li>
@@ -93,7 +123,7 @@
 
 <h2 id="1-4-0-2019-03-30">1.4.0 - 2019-03-30</h2>
 
-<h3 id="added">Added</h3>
+<h3 id="added-1">Added</h3>
 
 <ul>
 <li>Add support to override <code>frame_color</code> via rules (#498)</li>
@@ -110,7 +140,7 @@ via <code>stack_tag</code> (#552)</li>
 include the notification in the history. (#590)</li>
 </ul>
 
-<h3 id="fixed-1">Fixed</h3>
+<h3 id="fixed-2">Fixed</h3>
 
 <ul>
 <li>Notification age not counting the time while the computer was suspended (#492)</li>
@@ -126,7 +156,7 @@ notification waiting to get displayed. The notification gets displayed directly 
 <li>Icon size can no longer be larger than the notification when a fixed width is specified (#540)</li>
 </ul>
 
-<h3 id="changed">Changed</h3>
+<h3 id="changed-1">Changed</h3>
 
 <ul>
 <li>Transient notifications no longer skip history by default (#508)</li>
@@ -141,7 +171,7 @@ notification waiting to get displayed. The notification gets displayed directly 
 
 <h2 id="1-3-2-2018-05-06">1.3.2 - 2018-05-06</h2>
 
-<h3 id="fixed-2">Fixed</h3>
+<h3 id="fixed-3">Fixed</h3>
 
 <ul>
 <li>Crash when trying to load an invalid or corrupt icon (#512)</li>
@@ -149,7 +179,7 @@ notification waiting to get displayed. The notification gets displayed directly 
 
 <h2 id="1-3-1-2018-01-30">1.3.1 - 2018-01-30</h2>
 
-<h3 id="fixed-3">Fixed</h3>
+<h3 id="fixed-4">Fixed</h3>
 
 <ul>
 <li>Race condition resulting in the service files being empty (#488)</li>
@@ -157,7 +187,7 @@ notification waiting to get displayed. The notification gets displayed directly 
 
 <h2 id="1-3-0-2018-01-05">1.3.0 - 2018-01-05</h2>
 
-<h3 id="added-1">Added</h3>
+<h3 id="added-2">Added</h3>
 
 <ul>
 <li><code>ellipsize</code> option to control how long lines should be ellipsized when <code>word_wrap</code> is set to <code>false</code> (#374)</li>
@@ -170,7 +200,7 @@ notification waiting to get displayed. The notification gets displayed directly 
 <li>Support for HTML img tags (via context menu) (#428)</li>
 </ul>
 
-<h3 id="fixed-4">Fixed</h3>
+<h3 id="fixed-5">Fixed</h3>
 
 <ul>
 <li><code>new_icon</code> rule being ignored on notifications that had a raw icon (#423)</li>
@@ -182,7 +212,7 @@ notification waiting to get displayed. The notification gets displayed directly 
 <li>Inaccurate timeout in some cases (#291 #379)</li>
 </ul>
 
-<h3 id="changed-1">Changed</h3>
+<h3 id="changed-2">Changed</h3>
 
 <ul>
 <li>Transient hints are now handled (#343 #310)
@@ -202,7 +232,7 @@ by pkg-config. Use <code>SERVICEDIR_(DBUS|SYSTEMD)</code> params to overwrite th
 
 <h1 id="1-2-0-2017-07-12">1.2.0 - 2017-07-12</h1>
 
-<h3 id="added-2">Added</h3>
+<h3 id="added-3">Added</h3>
 
 <ul>
 <li><code>always_run_script</code> option to run script even if a notification is suppressed</li>
@@ -220,7 +250,7 @@ by pkg-config. Use <code>SERVICEDIR_(DBUS|SYSTEMD)</code> params to overwrite th
 <li><code>%n</code> format flag for getting progress value without any extra characters</li>
 </ul>
 
-<h3 id="changed-2">Changed</h3>
+<h3 id="changed-3">Changed</h3>
 
 <ul>
 <li>Text and icons are now centred vertically</li>
@@ -237,7 +267,7 @@ by pkg-config. Use <code>SERVICEDIR_(DBUS|SYSTEMD)</code> params to overwrite th
 <li>The urgency specific command line flags have been deprecated with no replacement, respond to issue #328 on the bug tracker if you depend on them</li>
 </ul>
 
-<h3 id="fixed-5">Fixed</h3>
+<h3 id="fixed-6">Fixed</h3>
 
 <ul>
 <li>Infinite loop if there are 2 configuration file sections with the same name</li>
