@@ -15,10 +15,11 @@ toc = "true"
     <ul>
       <li><a href="#Command-line">Command line</a></li>
       <li><a href="#Global-section">Global section</a></li>
-      <li><a href="#Shortcut-section">Shortcut section</a></li>
+      <li><a href="#Shortcut-section-DEPRECATED-SEE-DUNSTCTL">Shortcut section DEPRECATED SEE DUNSTCTL</a></li>
       <li><a href="#Urgency-sections">Urgency sections</a></li>
     </ul>
   </li>
+  <li><a href="#DUNSTCTL">DUNSTCTL</a></li>
   <li><a href="#HISTORY">HISTORY</a></li>
   <li><a href="#RULES">RULES</a>
     <ul>
@@ -323,7 +324,7 @@ toc = "true"
     &lt;s&gt;strikethrough&lt;/s&gt;
     &lt;u&gt;underline&lt;/u&gt;</code></pre>
 
-<p>For a complete reference see &lt;http://developer.gnome.org/pango/stable/PangoMarkupFormat.html&gt;</p>
+<p>For a complete reference see &lt;https://developer.gnome.org/pango/stable/pango-Markup.html&gt;</p>
 
 </dd>
 <dt id="strip"><b>strip</b></dt>
@@ -401,6 +402,12 @@ toc = "true"
 <p>Defines how the text should be aligned within the notification.</p>
 
 </dd>
+<dt id="vertical_alignment-values:-top-center-bottom-default:-center"><b>vertical_alignment</b> (values: [top/center/bottom], default: center)</dt>
+<dd>
+
+<p>Defines how the text and icon should be aligned vertically within the notification. If icons are disabled, this option has no effect.</p>
+
+</dd>
 <dt id="show_age_threshold-default:--1"><b>show_age_threshold</b> (default: -1)</dt>
 <dd>
 
@@ -457,12 +464,24 @@ toc = "true"
 <p>Defines the position of the icon in the notification window. Setting it to off disables icons.</p>
 
 </dd>
+<dt id="min_icon_size-default:-0"><b>min_icon_size</b> (default: 0)</dt>
+<dd>
+
+<p>Defines the minimum size in pixels for the icons. If the icon is larger than or equal to the specified value it won&#39;t be affected. If it&#39;s smaller then it will be scaled up so that the smaller axis is equivalent to the specified size.</p>
+
+<p>Set to 0 to disable icon upscaling. (default)</p>
+
+<p>If <b>icon_position</b> is set to off, this setting is ignored.</p>
+
+</dd>
 <dt id="max_icon_size-default:-0"><b>max_icon_size</b> (default: 0)</dt>
 <dd>
 
-<p>Defines the maximum size in pixels for the icons. If the icon is smaller than the specified value it won&#39;t be affected. If it&#39;s larger then it will be scaled down so that the larger axis is equivalent to the specified size.</p>
+<p>Defines the maximum size in pixels for the icons. If the icon is smaller than or equal to the specified value it won&#39;t be affected. If it&#39;s larger then it will be scaled down so that the larger axis is equivalent to the specified size.</p>
 
-<p>Set to 0 to disable icon scaling. (default)</p>
+<p>Set to 0 to disable icon downscaling. (default)</p>
+
+<p>If both <b>min_icon_size</b> and <b>max_icon_size</b> are enabled, the latter gets the last say.</p>
 
 <p>If <b>icon_position</b> is set to off, this setting is ignored.</p>
 
@@ -581,9 +600,15 @@ toc = "true"
 </dl>
 
 </dd>
+<dt id="ignore_dbusclose-default:-false"><b>ignore_dbusclose</b> (default: false)</dt>
+<dd>
+
+<p>Ignore the dbus closeNotification message. This is useful to enforce the timeout set by dunst configuration. Without this parameter, an application may close the notification sent before the user defined timeout.</p>
+
+</dd>
 </dl>
 
-<h2 id="Shortcut-section">Shortcut section</h2>
+<h2 id="Shortcut-section-DEPRECATED-SEE-DUNSTCTL">Shortcut section <b>DEPRECATED SEE DUNSTCTL</b></h2>
 
 <p>Keyboard shortcuts are defined in the following format: &quot;Modifier+key&quot; where the modifier is one of ctrl,mod1,mod2,mod3,mod4 and key is any keyboard key.</p>
 
@@ -676,6 +701,10 @@ toc = "true"
 
 </dd>
 </dl>
+
+<h1 id="DUNSTCTL">DUNSTCTL</h1>
+
+<p>Dunst now contains a command line control command that can be used to interact with it. It supports all functions previously done only via keyboard shortcuts but also has a lot of extra functionality. So see more see the dunstctl man page.</p>
 
 <h1 id="HISTORY">HISTORY</h1>
 
@@ -807,7 +836,7 @@ toc = "true"
 
 <p>One of show, delay, or pushback.</p>
 
-<p>This attribute speicifies how notifications are handled if a fullscreen window is focused. By default it&#39;s set to show so notifications are being shown.</p>
+<p>This attribute specifies how notifications are handled if a fullscreen window is focused. By default it&#39;s set to show so notifications are being shown.</p>
 
 <p>Other possible values are delay: Already shown notifications are continued to be displayed until they are dismissed or time out but new notifications will be held back and displayed when the focus to the fullscreen window is lost.</p>
 
@@ -883,6 +912,8 @@ toc = "true"
 
 <p>Colors are interpreted as X11 color values. This includes both verbatim color names such as &quot;Yellow&quot;, &quot;Blue&quot;, &quot;White&quot;, etc as well as #RGB and #RRGGBB values.</p>
 
+<p>You may also specify a transparency component in #RGBA or #RRGGBBAA format.</p>
+
 <p><b>NOTE</b>: &#39;#&#39; is interpreted as a comment, to use it the entire value needs to be in quotes like so: separator_color=&quot;#123456&quot;</p>
 
 <h2 id="NOTIFY-SEND">NOTIFY-SEND</h2>
@@ -925,7 +956,7 @@ toc = "true"
 
 <h1 id="MISCELLANEOUS">MISCELLANEOUS</h1>
 
-<p>Dunst can be paused by sending a notification with a summary of &quot;DUNST_COMMAND_PAUSE&quot;, resumed with a summary of &quot;DUNST_COMMAND_RESUME&quot; and toggled with a summary of &quot;DUNST_COMMAND_TOGGLE&quot;. Alternatively you can send SIGUSR1 and SIGUSR2 to pause and unpause respectively. For Example:</p>
+<p>Dunst can be paused via the `dunstctl set-paused true` command. To unpause dunst use `dunstctl set-paused false`. Alternatively you can send SIGUSR1 and SIGUSR2 to pause and unpause respectively. For Example:</p>
 
 <dl>
 
@@ -965,4 +996,4 @@ toc = "true"
 
 <h1 id="SEE-ALSO">SEE ALSO</h1>
 
-<p>dwm(1), dmenu(1), twmn(1), notify-send(1)</p>
+<p>dunstctl(1), dwm(1), dmenu(1), twmn(1), notify-send(1)</p>
