@@ -54,7 +54,7 @@ ignore_newline = no
 
 # Hide duplicate's count and stack them
 stack_duplicates = yes
-hide_duplicates_count = yes
+hide_duplicate_count = yes
 
 
 # The geometry of the window:
