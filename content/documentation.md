@@ -446,7 +446,7 @@ toc = "true"
 <p>Two notifications are considered duplicate if the name of the program that sent it, summary, body, icon and urgency are all identical.</p>
 
 </dd>
-<dt id="hide_duplicates_count-values:-true-false-default:-false"><b>hide_duplicates_count</b> (values: [true/false], default: false)</dt>
+<dt id="hide_duplicate_count-values:-true-false-default:-false"><b>hide_duplicate_count</b> (values: [true/false], default: false)</dt>
 <dd>
 
 <p>Hide the count of stacked duplicate notifications.</p>
@@ -852,7 +852,7 @@ toc = "true"
 <dt id="set_stack_tag"><code>set_stack_tag</code></dt>
 <dd>
 
-<p>Sets the stack tag for the notification, notifications with the same (non-empty) stack tag will replace each-other so only the newest one is visible. This can be useful for example in volume or brightness notifications where only want one of the same type visible.</p>
+<p>Sets the stack tag for the notification, notifications with the same (non-empty) stack tag will replace each-other so only the newest one is visible. This can be useful for example in volume or brightness notifications where you only want one of the same type visible.</p>
 
 <p>The stack tag can be set by the client with the &#39;synchronous&#39;, &#39;private-synchronous&#39; &#39;x-canonical-private-synchronous&#39; or the &#39;x-dunst-stack-tag&#39; hints.</p>
 
