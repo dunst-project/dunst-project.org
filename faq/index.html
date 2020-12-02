@@ -85,6 +85,10 @@
 <li><a href="#icons-are-too-big">Icons are too big</a></li>
 <li><a href="#how-to-switch-back-to-notify-osd">How to switch back to notify-osd?</a></li>
 </ul></li>
+<li><a href="#mouse-operations">Mouse operations</a>
+<ul>
+<li><a href="#clicking-on-a-notification-with-a-message-like-click-here-does-nothing">Clicking on a notification with a message like &ldquo;click here&rdquo; does nothing</a></li>
+</ul></li>
 <li><a href="#special-usages">Special usages</a>
 <ul>
 <li><a href="#sending-notifications-from-another-user-root">Sending notifications from another user (root)</a></li>
@@ -152,6 +156,14 @@ ln -sfT \
 <p>If you want to switch back to dunst again, first define <code>SERVICE=org.knopwob.dunst</code> and re-execute the <code>ln</code> command.</p>
 
 <p>For more info, see the discussion in <a href="https://github.com/dunst-project/dunst/issues/363">#363</a>.</p>
+
+<h1 id="mouse-operations">Mouse operations</h1>
+
+<h2 id="clicking-on-a-notification-with-a-message-like-click-here-does-nothing">Clicking on a notification with a message like &ldquo;click here&rdquo; does nothing</h2>
+
+<p>Regular left click on dunst is assigned to the action &ldquo;close the notification&rdquo; by default. To invoke the default action for the notification, please try middle click or executing a command line <code>dunstctl action</code> via a custom keyboard shortcut instead.</p>
+
+<p>If you like the behavior similar to the one on other platforms like Windows (regular left click to invoke the default action), setting <a href="https://github.com/dunst-project/dunst/blob/732227eff5df7afa3f44bc7f2cc661b22b4e3f0b/dunstrc#L273">the option <code>mouse_left_click</code> in the dunstrc</a> to <code>do_action, close_current</code> will help you.</p>
 
 <h1 id="special-usages">Special usages</h1>
 
