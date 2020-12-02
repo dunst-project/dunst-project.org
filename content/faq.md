@@ -69,7 +69,7 @@ For more info, see the discussion in [#363](https://github.com/dunst-project/dun
 
 ## Clicking on a notification with a message like "click here" does nothing
 
-Regular left click on dunst is assigned to the action "close the notification" by default. To invoke the default action for the notification, please try middle click or executing a command line `dunstctl action` via a custom keybaord shortcut instead.
+Regular left click on dunst is assigned to the action "close the notification" by default. To invoke the default action for the notification, please try middle click or executing a command line `dunstctl action` via a custom keyboard shortcut instead.
 
 If you like the behavior similar to the one on other platforms like Windows (regular left click to invoke the default action), setting [the option `mouse_left_click` in the dunstrc](https://github.com/dunst-project/dunst/blob/732227eff5df7afa3f44bc7f2cc661b22b4e3f0b/dunstrc#L273) to `do_action, close_current` will help you.
 
