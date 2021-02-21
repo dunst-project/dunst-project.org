@@ -26,7 +26,7 @@ Config file here</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://dunst-project.org/download/</guid>
-      <description>The current stable version of Dunst is 1.6.0 released on Feb 21 2021.
+      <description>The current stable version of Dunst is 1.6.1 released on Feb 21 2021.
 Downloads  Source tarball Code repository (Github)  Release Notes For users:
 The most important update from the previous version is the addition of the dunstctl command and dunstify utility, a drop-in notify-send replacement (which existed for a while, but wasn&amp;rsquo;t installed by default). The internal keyboard shortcut support in dunst is now considered deprecated and should be replaced by dunstctl calls.</description>
     </item>
@@ -37,7 +37,7 @@ The most important update from the previous version is the addition of the dunst
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://dunst-project.org/changelog/</guid>
-      <description>1.6.0 - 2021-02-21: Added  Wayland support. Dunst now runs natively on wayland. This fixes several bugs with dunst on wayland and allows idle detection. (#781) A progress bar, useful for showing volume or brightness in notifications (#775) A script in contrib for using the progress bar (#791) dunstctl count for showing the number of notifications (#793) Expose environment variables info about the notification to scripts (#802) text_icon_padding for adding padding between the notification icon and text (#810)  Changed  Dunst now installs a system-wide config in /etc/dunst/dunstrc (#798) Move part of the man page to dunst(5) (#799)  Fixed  history_ignore flag broken when using multiple rules (#747) Divide by zero in radius calculation (#750) Monitor setting overriding follow_mode (#755) Incorrect monitor usage when using multiple X11 screens (#762) Emit signal when paused property changes (#766) dunstify can pass empty appname to libnotify (#768) Incorrect handling of &amp;lsquo;do_action, close&amp;rsquo; mouse action (#778)  Removed  DUNST_COMMAND_{PAUSE,RESUME,TOGGLE} (#830)  1.</description>
+      <description>1.6.1 - 2021-02-21: Fixed  Incorrect version in Makefile  1.6.0 - 2021-02-21: Added  Wayland support. Dunst now runs natively on wayland. This fixes several bugs with dunst on wayland and allows idle detection. (#781) A progress bar, useful for showing volume or brightness in notifications (#775) A script in contrib for using the progress bar (#791) dunstctl count for showing the number of notifications (#793) Expose environment variables info about the notification to scripts (#802) text_icon_padding for adding padding between the notification icon and text (#810)  Changed  Dunst now installs a system-wide config in /etc/dunst/dunstrc (#798) Move part of the man page to dunst(5) (#799)  Fixed  history_ignore flag broken when using multiple rules (#747) Divide by zero in radius calculation (#750) Monitor setting overriding follow_mode (#755) Incorrect monitor usage when using multiple X11 screens (#762) Emit signal when paused property changes (#766) dunstify can pass empty appname to libnotify (#768) Incorrect handling of &amp;lsquo;do_action, close&amp;rsquo; mouse action (#778)  Removed  DUNST_COMMAND_{PAUSE,RESUME,TOGGLE} (#830)  1.</description>
     </item>
     
     <item>
