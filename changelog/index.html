@@ -78,9 +78,49 @@
 
 <hr />
 
-<h2 id="1-5-0-2020-07-23">1.5.0 - 2020-07-23</h2>
+<h2 id="1-6-0-2021-02-21">1.6.0 - 2021-02-21:</h2>
 
 <h3 id="added">Added</h3>
+
+<ul>
+<li>Wayland support. Dunst now runs natively on wayland. This fixes several bugs
+with dunst on wayland and allows idle detection. (#781)</li>
+<li>A progress bar, useful for showing volume or brightness in notifications (#775)</li>
+<li>A script in contrib for using the progress bar (#791)</li>
+<li><code>dunstctl count</code> for showing the number of notifications (#793)</li>
+<li>Expose environment variables info about the notification to scripts (#802)</li>
+<li><code>text_icon_padding</code> for adding padding between the notification icon and text
+(#810)</li>
+</ul>
+
+<h3 id="changed">Changed</h3>
+
+<ul>
+<li>Dunst now installs a system-wide config in <code>/etc/dunst/dunstrc</code> (#798)</li>
+<li>Move part of the man page to dunst(5) (#799)</li>
+</ul>
+
+<h3 id="fixed">Fixed</h3>
+
+<ul>
+<li><code>history_ignore</code> flag broken when using multiple rules (#747)</li>
+<li>Divide by zero in radius calculation (#750)</li>
+<li>Monitor setting overriding <code>follow_mode</code> (#755)</li>
+<li>Incorrect monitor usage when using multiple X11 screens (#762)</li>
+<li>Emit signal when <code>paused</code> property changes (#766)</li>
+<li><code>dunstify</code> can pass empty appname to libnotify (#768)</li>
+<li>Incorrect handling of &lsquo;do_action, close&rsquo; mouse action (#778)</li>
+</ul>
+
+<h1 id="removed">Removed</h1>
+
+<ul>
+<li><code>DUNST_COMMAND_{PAUSE,RESUME,TOGGLE}</code> (#830)</li>
+</ul>
+
+<h2 id="1-5-0-2020-07-23">1.5.0 - 2020-07-23</h2>
+
+<h3 id="added-1">Added</h3>
 
 <ul>
 <li><code>min_icon_size</code> option to automatically scale up icons to a desired value (#674)</li>
@@ -92,14 +132,14 @@
 <li><code>ignore_dbusclose</code> setting (#732)</li>
 </ul>
 
-<h3 id="changed">Changed</h3>
+<h3 id="changed-1">Changed</h3>
 
 <ul>
 <li><code>dunstify</code> notification client is now installed by default (#701)</li>
 <li>Keyboard follow mode falls back to the monitor with the mouse if no window has keyboard focus (#708)</li>
 </ul>
 
-<h3 id="fixed">Fixed</h3>
+<h3 id="fixed-1">Fixed</h3>
 
 <ul>
 <li>Overflow when setting a &gt;=40 minute timeout (#646)</li>
@@ -110,7 +150,7 @@
 
 <h2 id="1-4-1-2019-07-03">1.4.1 - 2019-07-03</h2>
 
-<h3 id="fixed-1">Fixed</h3>
+<h3 id="fixed-2">Fixed</h3>
 
 <ul>
 <li><code>max_icon_size</code> not working with dynamic width (#614)</li>
@@ -123,7 +163,7 @@
 
 <h2 id="1-4-0-2019-03-30">1.4.0 - 2019-03-30</h2>
 
-<h3 id="added-1">Added</h3>
+<h3 id="added-2">Added</h3>
 
 <ul>
 <li>Add support to override <code>frame_color</code> via rules (#498)</li>
@@ -140,7 +180,7 @@ via <code>stack_tag</code> (#552)</li>
 include the notification in the history. (#590)</li>
 </ul>
 
-<h3 id="fixed-2">Fixed</h3>
+<h3 id="fixed-3">Fixed</h3>
 
 <ul>
 <li>Notification age not counting the time while the computer was suspended (#492)</li>
@@ -156,14 +196,14 @@ notification waiting to get displayed. The notification gets displayed directly 
 <li>Icon size can no longer be larger than the notification when a fixed width is specified (#540)</li>
 </ul>
 
-<h3 id="changed-1">Changed</h3>
+<h3 id="changed-2">Changed</h3>
 
 <ul>
 <li>Transient notifications no longer skip history by default (#508)</li>
 <li>The notification summary no longer accepts markup (#497)</li>
 </ul>
 
-<h3 id="removed">Removed</h3>
+<h3 id="removed-1">Removed</h3>
 
 <ul>
 <li>Dependency on libxdg-basedir (#550)</li>
@@ -171,7 +211,7 @@ notification waiting to get displayed. The notification gets displayed directly 
 
 <h2 id="1-3-2-2018-05-06">1.3.2 - 2018-05-06</h2>
 
-<h3 id="fixed-3">Fixed</h3>
+<h3 id="fixed-4">Fixed</h3>
 
 <ul>
 <li>Crash when trying to load an invalid or corrupt icon (#512)</li>
@@ -179,7 +219,7 @@ notification waiting to get displayed. The notification gets displayed directly 
 
 <h2 id="1-3-1-2018-01-30">1.3.1 - 2018-01-30</h2>
 
-<h3 id="fixed-4">Fixed</h3>
+<h3 id="fixed-5">Fixed</h3>
 
 <ul>
 <li>Race condition resulting in the service files being empty (#488)</li>
@@ -187,7 +227,7 @@ notification waiting to get displayed. The notification gets displayed directly 
 
 <h2 id="1-3-0-2018-01-05">1.3.0 - 2018-01-05</h2>
 
-<h3 id="added-2">Added</h3>
+<h3 id="added-3">Added</h3>
 
 <ul>
 <li><code>ellipsize</code> option to control how long lines should be ellipsized when <code>word_wrap</code> is set to <code>false</code> (#374)</li>
@@ -200,7 +240,7 @@ notification waiting to get displayed. The notification gets displayed directly 
 <li>Support for HTML img tags (via context menu) (#428)</li>
 </ul>
 
-<h3 id="fixed-5">Fixed</h3>
+<h3 id="fixed-6">Fixed</h3>
 
 <ul>
 <li><code>new_icon</code> rule being ignored on notifications that had a raw icon (#423)</li>
@@ -212,7 +252,7 @@ notification waiting to get displayed. The notification gets displayed directly 
 <li>Inaccurate timeout in some cases (#291 #379)</li>
 </ul>
 
-<h3 id="changed-2">Changed</h3>
+<h3 id="changed-3">Changed</h3>
 
 <ul>
 <li>Transient hints are now handled (#343 #310)
@@ -232,7 +272,7 @@ by pkg-config. Use <code>SERVICEDIR_(DBUS|SYSTEMD)</code> params to overwrite th
 
 <h1 id="1-2-0-2017-07-12">1.2.0 - 2017-07-12</h1>
 
-<h3 id="added-3">Added</h3>
+<h3 id="added-4">Added</h3>
 
 <ul>
 <li><code>always_run_script</code> option to run script even if a notification is suppressed</li>
@@ -250,7 +290,7 @@ by pkg-config. Use <code>SERVICEDIR_(DBUS|SYSTEMD)</code> params to overwrite th
 <li><code>%n</code> format flag for getting progress value without any extra characters</li>
 </ul>
 
-<h3 id="changed-3">Changed</h3>
+<h3 id="changed-4">Changed</h3>
 
 <ul>
 <li>Text and icons are now centred vertically</li>
@@ -267,7 +307,7 @@ by pkg-config. Use <code>SERVICEDIR_(DBUS|SYSTEMD)</code> params to overwrite th
 <li>The urgency specific command line flags have been deprecated with no replacement, respond to issue #328 on the bug tracker if you depend on them</li>
 </ul>
 
-<h3 id="fixed-6">Fixed</h3>
+<h3 id="fixed-7">Fixed</h3>
 
 <ul>
 <li>Infinite loop if there are 2 configuration file sections with the same name</li>

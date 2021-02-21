@@ -26,7 +26,7 @@ Config file here</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://dunst-project.org/download/</guid>
-      <description>The current stable version of Dunst is 1.5.0 released on Jul 23 2020.
+      <description>The current stable version of Dunst is 1.6.0 released on Feb 21 2021.
 Downloads  Source tarball Code repository (Github)  Release Notes For users:
 The most important update from the previous version is the addition of the dunstctl command and dunstify utility, a drop-in notify-send replacement (which existed for a while, but wasn&amp;rsquo;t installed by default). The internal keyboard shortcut support in dunst is now considered deprecated and should be replaced by dunstctl calls.</description>
     </item>
@@ -37,7 +37,7 @@ The most important update from the previous version is the addition of the dunst
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://dunst-project.org/changelog/</guid>
-      <description>1.5.0 - 2020-07-23 Added  min_icon_size option to automatically scale up icons to a desired value (#674) vertical_alignment option to control the text/icon alignment within the notification (#684) Ability to configure multiple actions for each mouse event (#705) dunstctl command line control client (#651) RGBA support for all color strings (#717) Ability to run multiple scripts for each notification ignore_dbusclose setting (#732)  Changed  dunstify notification client is now installed by default (#701) Keyboard follow mode falls back to the monitor with the mouse if no window has keyboard focus (#708)  Fixed  Overflow when setting a &amp;gt;=40 minute timeout (#646) Unset configuration options not falling back to default values (#649) Crash when $HOME environment variable is unset (#693) Lack of antialiasing with round corners enabled (#713)  1.</description>
+      <description>1.6.0 - 2021-02-21: Added  Wayland support. Dunst now runs natively on wayland. This fixes several bugs with dunst on wayland and allows idle detection. (#781) A progress bar, useful for showing volume or brightness in notifications (#775) A script in contrib for using the progress bar (#791) dunstctl count for showing the number of notifications (#793) Expose environment variables info about the notification to scripts (#802) text_icon_padding for adding padding between the notification icon and text (#810)  Changed  Dunst now installs a system-wide config in /etc/dunst/dunstrc (#798) Move part of the man page to dunst(5) (#799)  Fixed  history_ignore flag broken when using multiple rules (#747) Divide by zero in radius calculation (#750) Monitor setting overriding follow_mode (#755) Incorrect monitor usage when using multiple X11 screens (#762) Emit signal when paused property changes (#766) dunstify can pass empty appname to libnotify (#768) Incorrect handling of &amp;lsquo;do_action, close&amp;rsquo; mouse action (#778)  Removed  DUNST_COMMAND_{PAUSE,RESUME,TOGGLE} (#830)  1.</description>
     </item>
     
     <item>
@@ -46,8 +46,8 @@ The most important update from the previous version is the addition of the dunst
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://dunst-project.org/documentation/</guid>
-      <description>NAME SYNOPSIS DESCRIPTION COMMAND LINE OPTIONS CONFIGURATION  Command line Global section Shortcut section DEPRECATED SEE DUNSTCTL Urgency sections   DUNSTCTL HISTORY RULES  SCRIPTING   COLORS  NOTIFY-SEND   ACTIONS TIME FORMAT MISCELLANEOUS FILES AUTHORS REPORTING BUGS COPYRIGHT SEE ALSO  NAME dunst - A customizable and lightweight notification-daemon
-SYNOPSIS dunst [-conf file] [-font font] [-geometry geom] [-format fmt] [-follow mode] [-monitor n] [-history_length n] ...</description>
+      <description>NAME DESCRIPTION  Global section Shortcut section DEPRECATED SEE DUNSTCTL (X11 only) Urgency sections   DUNSTCTL HISTORY WAYLAND RULES  SCRIPTING   COLORS  NOTIFY-SEND   ACTIONS TIME FORMAT MISCELLANEOUS FILES AUTHORS REPORTING BUGS COPYRIGHT SEE ALSO  NAME dunst - configuration file
+DESCRIPTION An example configuration file is included (usually /etc/dunst/dunstrc). Note: this was previously /usr/share/dunst/dunstrc. To change the configuration, copy this file to ~/.config/dunst/dunstrc and edit it accordingly.</description>
     </item>
     
     <item>

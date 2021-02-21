@@ -78,19 +78,16 @@
                 
                 <ul id="index">
   <li><a href="#NAME">NAME</a></li>
-  <li><a href="#SYNOPSIS">SYNOPSIS</a></li>
-  <li><a href="#DESCRIPTION">DESCRIPTION</a></li>
-  <li><a href="#COMMAND-LINE-OPTIONS">COMMAND LINE OPTIONS</a></li>
-  <li><a href="#CONFIGURATION">CONFIGURATION</a>
+  <li><a href="#DESCRIPTION">DESCRIPTION</a>
     <ul>
-      <li><a href="#Command-line">Command line</a></li>
       <li><a href="#Global-section">Global section</a></li>
-      <li><a href="#Shortcut-section-DEPRECATED-SEE-DUNSTCTL">Shortcut section DEPRECATED SEE DUNSTCTL</a></li>
+      <li><a href="#Shortcut-section-DEPRECATED-SEE-DUNSTCTL-X11-only">Shortcut section DEPRECATED SEE DUNSTCTL (X11 only)</a></li>
       <li><a href="#Urgency-sections">Urgency sections</a></li>
     </ul>
   </li>
   <li><a href="#DUNSTCTL">DUNSTCTL</a></li>
   <li><a href="#HISTORY">HISTORY</a></li>
+  <li><a href="#WAYLAND">WAYLAND</a></li>
   <li><a href="#RULES">RULES</a>
     <ul>
       <li><a href="#SCRIPTING">SCRIPTING</a></li>
@@ -113,69 +110,17 @@
 
 <h1 id="NAME">NAME</h1>
 
-<p>dunst - A customizable and lightweight notification-daemon</p>
-
-<h1 id="SYNOPSIS">SYNOPSIS</h1>
-
-<p>dunst [-conf file] [-font font] [-geometry geom] [-format fmt] [-follow mode] [-monitor n] [-history_length n] ...</p>
+<p>dunst - configuration file</p>
 
 <h1 id="DESCRIPTION">DESCRIPTION</h1>
 
-<p>Dunst is a highly configurable and lightweight notification daemon.</p>
+<p>An example configuration file is included (usually /etc/dunst/dunstrc). Note: this was previously /usr/share/dunst/dunstrc. To change the configuration, copy this file to ~/.config/dunst/dunstrc and edit it accordingly.</p>
 
-<h1 id="COMMAND-LINE-OPTIONS">COMMAND LINE OPTIONS</h1>
-
-<dl>
-
-<dt id="h---help"><b>-h/--help</b></dt>
-<dd>
-
-<p>List all command line flags</p>
-
-</dd>
-<dt id="conf--config-file"><b>-conf/-config file</b></dt>
-<dd>
-
-<p>Use alternative config file.</p>
-
-</dd>
-<dt id="v---version"><b>-v/--version</b></dt>
-<dd>
-
-<p>Print version information.</p>
-
-</dd>
-<dt id="print"><b>-print</b></dt>
-<dd>
-
-<p>Print notifications to stdout. This might be useful for logging, setting up rules or using the output in other scripts.</p>
-
-</dd>
-</dl>
-
-<h1 id="CONFIGURATION">CONFIGURATION</h1>
-
-<p>An example configuration file is included (usually /usr/share/dunst/dunstrc). To change the configuration, copy this file to ~/.config/dunst/dunstrc and edit it accordingly.</p>
-
-<p>The configuration is divided into sections in an ini-like format. The &#39;global&#39; section contains most general settings while the &#39;shortcuts&#39; sections contains all keyboard configuration and the &#39;experimental&#39; section all the features that have not yet been tested thoroughly.</p>
+<p>The configuration is divided into sections in an ini-like format. The &#39;global&#39; section contains most general settings while the setions &#39;urgency_low&#39;, &#39;urgency_normal&#39; and &#39;urgency_critical&#39; are for low, normal and critical urgency notifications respectively. The &#39;shortcuts&#39; section (deprecated) contains all keyboard configuration and the &#39;experimental&#39; section all the features that have not yet been tested thoroughly.</p>
 
 <p>Any section that is not one of the above is assumed to be a rule, see RULES for more details.</p>
 
 <p>For backwards compatibility reasons the section name &#39;frame&#39; is considered bound and can&#39;t be used as a rule.</p>
-
-<h2 id="Command-line">Command line</h2>
-
-<p>Each configuration option in the global section can be overridden from the command line by adding a single dash in front of it&#39;s name. For example the font option can be overridden by running</p>
-
-<pre><code>    $ dunst -font &quot;LiberationSans Mono 4&quot;</code></pre>
-
-<p>Configuration options that take boolean values can only currently be set to &quot;true&quot; through the command line via the same method. e.g.</p>
-
-<pre><code>    $ dunst -shrink</code></pre>
-
-<p>This is a known limitation of the way command line parameters are parsed and will be changed in the future.</p>
-
-<p>Available settings per section:</p>
 
 <h2 id="Global-section">Global section</h2>
 
@@ -191,6 +136,8 @@
 <dd>
 
 <p>Defines where the notifications should be placed in a multi-monitor setup. All values except <i>none</i> override the <b>monitor</b> setting.</p>
+
+<p>On Wayland there is no difference between mouse and keyboard focus. When either of the is used, the compositor will choose an output. This will generally be the output last interacted with.</p>
 
 <dl>
 
@@ -249,6 +196,36 @@
 </dl>
 
 <p></dd>
+<dt id="progress_bar-values:-true-false-default:-true"><b>progress_bar</b> (values: [true/false], default: true)</dt>
+<dd></p>
+
+<p>When an integer value is passed to dunst as a hint (see <b>NOTIFY-SEND</b>), a progress bar will be drawn at the bottom of the notification. This behavior can be turned off by setting this setting to false.</p>
+
+<p></dd>
+<dt id="progress_bar_height-default:-10"><b>progress_bar_height</b> (default: 10)</dt>
+<dd></p>
+
+<p>The height of the progress bar in pixel. This includes the frame. Make sure this value is bigger than twice the frame width.</p>
+
+<p></dd>
+<dt id="progress_bar_min_width-default:-150"><b>progress_bar_min_width</b> (default: 150)</dt>
+<dd></p>
+
+<p>The minimum width of the progress bar in pixels. The notification is rescaled to fit the bar.</p>
+
+<p></dd>
+<dt id="progress_bar_max_width-default:-300"><b>progress_bar_max_width</b> (default: 300)</dt>
+<dd></p>
+
+<p>The maximum width of the progress bar in pixels. The notification is resized to fit the progress bar.</p>
+
+<p></dd>
+<dt id="progress_bar_frame_width-default:-1"><b>progress_bar_frame_width</b> (default: 1)</dt>
+<dd></p>
+
+<p>The frame width of the progress bar in pixels. This value should be smaller than half of the progress bar height.</p>
+
+<p></dd>
 <dt id="indicate_hidden-values:-true-false-default:-true"><b>indicate_hidden</b> (values: [true/false], default: true)</dt>
 <dd></p>
 
@@ -295,6 +272,24 @@
 <dd></p>
 
 <p>The distance in pixels from the content to the border of the window in the horizontal axis</p>
+
+<p></dd>
+<dt id="text_icon_padding-default:-0"><b>text_icon_padding</b> (default: 0)</dt>
+<dd></p>
+
+<p>The distance in pixels from the text to the icon (or vice versa) in the horizontal axis.</p>
+
+<p>Setting this to a non-zero value overwrites any padding that horizontal_padding was adding between the notification text and icon.</p>
+
+<p>So for example setting</p>
+
+<pre><code>    text_icon_padding=10
+    horizontal_padding=10</code></pre>
+
+<p>is equivalent to</p>
+
+<pre><code>    text_icon_padding=0
+    horizontal_padding=10</code></pre>
 
 <p></dd>
 <dt id="frame_width-default:-0"><b>frame_width</b> (default: 0)</dt>
@@ -357,6 +352,28 @@
 <p>Set to 0 to disable.</p>
 
 <p>A client can mark a notification as transient to bypass this setting and timeout anyway. Use a rule with &#39;set_transient = no&#39; to disable this behavior.</p>
+
+<p>Note: this doesn&#39;t work on xwayland.</p>
+
+<p></dd>
+<dt id="layer-Wayland-only"><b>layer</b> (Wayland only)</dt>
+<dd></p>
+
+<p>One of bottom, top or overlay.</p>
+
+<p>Place dunst notifications on the selected layer. Using overlay will cause notifications to be displayed above fullscreen windows, though this may also occur at top depending on your compositor.</p>
+
+<p>In Wayland, Notifications won&#39;t be delayed when in fullscreen (like when setting <b>fullscreen</b> to pushback in X11). This is a Wayland limitation.</p>
+
+<p>The bottom layer is below all windows and above the background.</p>
+
+<p>Default: overlay</p>
+
+<p></dd>
+<dt id="force_xwayland-values:-true-false-default:-false-Wayland-only"><b>force_xwayland</b> (values: [true/false], default: false) (Wayland only)</dt>
+<dd></p>
+
+<p>Force the use of X11 output, even on a wayland compositor. This setting has no effect when not using a Wayland compositor.</p>
 
 <p></dd>
 <dt id="font-default:-Monospace-8"><b>font</b> (default: &quot;Monospace 8&quot;)</dt>
@@ -618,7 +635,7 @@
 <p>Do not display log messages, which have lower precedence than specified verbosity. This won&#39;t affect printing notifications on the terminal. Use the &#39;-print&#39; option for this.</p>
 
 <p></dd>
-<dt id="force_xinerama-values:-true-false-default:-false"><b>force_xinerama</b> (values: [true/false], default: false)</dt>
+<dt id="force_xinerama-values:-true-false-default:-false-X11-only"><b>force_xinerama</b> (values: [true/false], default: false) (X11 only)</dt>
 <dd></p>
 
 <p>Use the Xinerama extension instead of RandR for multi-monitor support. This setting is provided for compatibility with older nVidia drivers that do not support RandR and using it on systems that support RandR is highly discouraged.</p>
@@ -678,7 +695,7 @@
 <p></dd>
 </dl></p>
 
-<h2 id="Shortcut-section-DEPRECATED-SEE-DUNSTCTL">Shortcut section <b>DEPRECATED SEE DUNSTCTL</b></h2>
+<h2 id="Shortcut-section-DEPRECATED-SEE-DUNSTCTL-X11-only">Shortcut section <b>DEPRECATED SEE DUNSTCTL</b> (X11 only)</h2>
 
 <p>Keyboard shortcuts are defined in the following format: &quot;Modifier+key&quot; where the modifier is one of ctrl,mod1,mod2,mod3,mod4 and key is any keyboard key.</p>
 
@@ -720,7 +737,7 @@
 
 <h2 id="Urgency-sections">Urgency sections</h2>
 
-<p>The urgency sections work in a similar way to rules and can be used to specify attributes for the different urgency levels of notifications (low, normal, critical). Currently only the background, foreground, timeout, frame_color and icon attributes can be modified.</p>
+<p>The urgency sections work in a similar way to rules and can be used to specify attributes for the different urgency levels of notifications (low, normal, critical). Currently only the background, foreground, hightlight, timeout, frame_color and icon attributes can be modified.</p>
 
 <p>The urgency sections are urgency_low, urgency_normal, urgency_critical for low, normal and critical urgency respectively.</p>
 
@@ -756,6 +773,14 @@
 <p>See COLORS for the value format.</p>
 
 </dd>
+<dt id="lh-nh-ch-color"><b>-lh/nh/ch color</b></dt>
+<dd>
+
+<p>Defines the highlight color for low, normal and critical notifications respectively.</p>
+
+<p>See COLORS for the value format.</p>
+
+</dd>
 <dt id="lfr-nfr-cfr-color"><b>-lfr/nfr/cfr color</b></dt>
 <dd>
 
@@ -774,13 +799,21 @@
 
 <h1 id="DUNSTCTL">DUNSTCTL</h1>
 
-<p>Dunst now contains a command line control command that can be used to interact with it. It supports all functions previously done only via keyboard shortcuts but also has a lot of extra functionality. So see more see the dunstctl man page.</p>
+<p>Dunst now contains a command line control command that can be used to interact with it. It supports all functions previously done only via keyboard shortcuts but also has a lot of extra functionality. So see more see dunstctl(1).</p>
 
 <h1 id="HISTORY">HISTORY</h1>
 
-<p>Dunst saves a number of notifications (specified by <b>history_length</b>) in memory. These notifications can be recalled (i.e. redisplayed) by pressing the <b>history_key</b> (see the shortcuts section), whether these notifications will time out like if they have been just send depends on the value of the <b>sticky_history</b> setting.</p>
+<p>Dunst saves a number of notifications (specified by <b>history_length</b>) in memory. These notifications can be recalled (i.e. redisplayed) by calling <b>dunstctl history</b> (see dunstctl(1)). Whether these notifications will time out like if they have been just send depends on the value of the <b>sticky_history</b> setting.</p>
 
 <p>Past notifications are redisplayed in a first-in-last-out order, meaning that pressing the history key once will bring up the most recent notification that had been closed/timed out.</p>
+
+<h1 id="WAYLAND">WAYLAND</h1>
+
+<p>Dunst has Wayland support since version 1.6.0. Because the Wayland protocol is more focused on security, some things that are possible in X11 are not possible in Wayland. Those differences are reflected in the configuration. The main things that change are that dunst on Wayland cannot use global hotkeys (they are deprecated anyways, use dunstctl) and it cannot detect if an application is fullscreen. If you want to see notifications when in fullscreen, set <b>layer = overlay</b> in the global options.</p>
+
+<p>Note that the same limitations exist when using xwayland. If something doesn&#39;t quite work in Wayland, please file a bug report. In the mean time, you can try if the X11 output does work on wayland. Use <b>force_xwayland = true</b> for that.</p>
+
+<p>If you have your dunst notifications on the same side of your display as your status bar, you might notice that your notifications appear a bit higher or lower than on X11. This is because the notification cannot be placed on top of your status bar. The notifications are placed relative to your status bar, making them appear higher or lower by the height of your status bar. We cannot do anything about that behavior, so you will need to change your <b>geometry</b> variable accordingly.</p>
 
 <h1 id="RULES">RULES</h1>
 
@@ -886,7 +919,13 @@
 <dt id="foreground1"><code>foreground</code></dt>
 <dd>
 
-<p>The background color of the notification. See COLORS for possible values.</p>
+<p>The foreground color of the notification. See COLORS for possible values.</p>
+
+</dd>
+<dt id="highlight"><code>highlight</code></dt>
+<dd>
+
+<p>The highlight color of the notification. This color is used for coloring the progress bar. See COLORS for possible values.</p>
 
 </dd>
 <dt id="format"><code>format</code></dt>
@@ -901,7 +940,7 @@
 <p>The frame color color of the notification. See COLORS for possible values.</p>
 
 </dd>
-<dt id="fullscreen"><code>fullscreen</code></dt>
+<dt id="fullscreen-X11-only"><code>fullscreen</code> (X11 only)</dt>
 <dd>
 
 <p>One of show, delay, or pushback.</p>
@@ -911,6 +950,10 @@
 <p>Other possible values are delay: Already shown notifications are continued to be displayed until they are dismissed or time out but new notifications will be held back and displayed when the focus to the fullscreen window is lost.</p>
 
 <p>Or pushback which is equivalent to delay with the difference that already existing notifications are paused and hidden until the focus to the fullscreen window is lost.</p>
+
+<p>See <b>layer</b> to change fullscreen behavior in Wayland</p>
+
+<p>Default: show</p>
 
 </dd>
 <dt id="new_icon"><code>new_icon</code></dt>
@@ -970,9 +1013,13 @@
 
 <p>Within rules you can specify a script to be run every time the rule is matched by assigning the &#39;script&#39; option to the name of the script to be run.</p>
 
-<p>When the script is called details of the notification that triggered it will be passed via command line parameters in the following order: appname, summary, body, icon, urgency.</p>
+<p>When the script is called details of the notification that triggered it will be passed via environment variables. The following variables are available: <b>DUNST_APP_NAME</b>, <b>DUNST_SUMMARY</b>, <b>DUNST_BODY</b>, <b>DUNST_ICON_PATH</b>, <b>DUNST_URGENCY</b>, <b>DUNST_ID</b>, <b>DUNST_PROGRESS</b>, <b>DUNST_CATEGORY</b>, <b>DUNST_STACK_TAG</b>, <b>DUNST_URLS</b>, <b>DUNST_TIMEOUT</b>, <b>DUNST_TIMESTAMP</b> and <b>DUNST_STACK_TAG</b>.</p>
 
-<p>Where icon is the absolute path to the icon file if there is one and urgency is one of &quot;LOW&quot;, &quot;NORMAL&quot; or &quot;CRITICAL&quot;.</p>
+<p>Another, less recommended way to get notifcations details from a script is via command line parameters. These are passed to the script in the following order: <b>appname</b>, <b>summary</b>, <b>body</b>, <b>icon_path</b>, <b>urgency</b>.</p>
+
+<p>Where <b>DUNST_ICON_PATH</b> or <b>icon_path</b> is the absolute path to the icon file if there is one. <b>DUNST_URGENCY</b> or <b>urgency</b> is one of &quot;LOW&quot;, &quot;NORMAL&quot; or &quot;CRITICAL&quot;. <b>DUNST_URLS</b> is a newline-separated list of urls associated with the notification.</p>
+
+<p>Note that some variables may be empty.</p>
 
 <p>If the notification is suppressed, the script will not be run unless <b>always_run_scripts</b> is set to true.</p>
 
@@ -1044,11 +1091,27 @@
 
 <h1 id="FILES">FILES</h1>
 
+<p>These are the places where dunst will look for a configuration file. They are listed here in order and if dunst finds one of them, it will stop looking for more.</p>
+
 <p>$XDG_CONFIG_HOME/dunst/dunstrc</p>
+
+<p>$HOME/.config/dunst/dunstrc</p>
 
 <p>-or-</p>
 
-<p>$HOME/.config/dunst/dunstrc</p>
+<p>$XDG_CONFIG_HOME/dunst/dunstrc</p>
+
+<p>/etc/xdg/dunst/dunstrc</p>
+
+<dl>
+
+<dt id="etc-dunst-dunstrc">/etc/dunst/dunstrc</dt>
+<dd>
+
+<p>This is where the default config file is located</p>
+
+</dd>
+</dl>
 
 <h1 id="AUTHORS">AUTHORS</h1>
 
