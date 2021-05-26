@@ -109,7 +109,7 @@ customize to perfection.
 
 Please use the [issue tracker](https://github.com/dunst-project/dunst/issues)
 on GitHub to send us bug reports or feature requests. You can also join us at
-the [#dunst](irc://irc.freenode.net/#dunst) IRC channel on Freenode.
+the [#dunst](irc://irc.libera.chat/#dunst) IRC channel on Libera.
 
 ## **Maintainers**
 ***
