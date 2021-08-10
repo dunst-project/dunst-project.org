@@ -8,11 +8,16 @@ toc = "true"
 
 # Common problems
 
-## Cannot open display
+## Errors about missing or failing to open a display
 
-Dunst was unable to connect to the X server. Make sure that X is running and that the `DISPLAY` environment variable is correctly set.
+Depending on the setup dunst was unable to connect to the X server or the wayland compositor in use. In case of X make sure that X is running and that the `DISPLAY` environment variable is correctly set. For a wayland based setup the `WAYLAND_DISPLAY` environment variable needs to be set to a valid value.
 
-If you're using the systemd service, that might mean that dbus isn't setting the right variables, see issue [#347](https://github.com/dunst-project/dunst/issues/347) for more details.
+If dunst should be automatically started by dbus or via the systemd service, it is important to know that both don't inherit environment variables set by a shell.
+There are various ways to make them aware if they're missing.  
+For a X based setup either use `systemctl --user import-environment DISPLAY` or add a call to `/etc/X11/xinit/xinitrc.d/50-systemd-user.sh` in xinitrc.  
+With a wayland setup `systemctl --user import-environment WAYLAND_DISPLAY` would be used instead.  
+If systemd knows about those environment variables, dbus should too.
+But if there are still issues with the dbus session then `dbus-update-activation-environment --systemd --all` can be used to update the current session.
 
 ## Cannot connect to DBus
 
