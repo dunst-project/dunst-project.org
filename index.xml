@@ -1,23 +1,18 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Home on Dunst</title>
     <link>https://dunst-project.org/</link>
     <description>Recent content in Home on Dunst</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    
-	<atom:link href="https://dunst-project.org/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <language>en-us</language><atom:link href="https://dunst-project.org/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Screenshots</title>
       <link>https://dunst-project.org/screenshots/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://dunst-project.org/screenshots/</guid>
-      <description>.row img { max-width: 100%; height: auto; }  
-Config file here</description>
+      <description> Config file here</description>
     </item>
     
     <item>
@@ -46,8 +41,7 @@ The most important update from the previous version is the addition of the dunst
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://dunst-project.org/documentation/</guid>
-      <description>NAME DESCRIPTION  Global section Shortcut section DEPRECATED SEE DUNSTCTL (X11 only) Urgency sections   DUNSTCTL HISTORY WAYLAND RULES  SCRIPTING   COLORS  NOTIFY-SEND   ACTIONS TIME FORMAT MISCELLANEOUS FILES AUTHORS REPORTING BUGS COPYRIGHT SEE ALSO  NAME dunst - configuration file
-DESCRIPTION An example configuration file is included (usually /etc/dunst/dunstrc). Note: this was previously /usr/share/dunst/dunstrc. To change the configuration, copy this file to ~/.config/dunst/dunstrc and edit it accordingly.</description>
+      <description></description>
     </item>
     
     <item>
@@ -56,9 +50,8 @@ DESCRIPTION An example configuration file is included (usually /etc/dunst/dunstr
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://dunst-project.org/faq/</guid>
-      <description>Common problems Cannot open display Dunst was unable to connect to the X server. Make sure that X is running and that the DISPLAY environment variable is correctly set.
-If you&amp;rsquo;re using the systemd service, that might mean that dbus isn&amp;rsquo;t setting the right variables, see issue #347 for more details.
-Cannot connect to DBus Dunst cannot connect to your session bus at all. The session bus might not even exist.</description>
+      <description>Common problems Errors about missing or failing to open a display Depending on the setup dunst was unable to connect to the X server or the wayland compositor in use. In case of X make sure that X is running and that the DISPLAY environment variable is correctly set. For a wayland based setup the WAYLAND_DISPLAY environment variable needs to be set to a valid value.
+If dunst should be automatically started by dbus or via the systemd service, it is important to know that both don&amp;rsquo;t inherit environment variables set by a shell.</description>
     </item>
     
   </channel>
