@@ -2,3 +2,8 @@ languageCode = "en-us"
 title = "Dunst"
 baseurl = "https://dunst-project.org"
 theme = "liquorice"
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
