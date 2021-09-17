@@ -12,7 +12,8 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://dunst-project.org/screenshots/</guid>
-      <description> Config file here</description>
+      <description>.row img { max-width: 100%; height: auto; }  
+Config file here</description>
     </item>
     
     <item>
@@ -41,7 +42,8 @@ The most important update from the previous version is the addition of the dunst
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://dunst-project.org/documentation/</guid>
-      <description></description>
+      <description>NAME DESCRIPTION  Global section Shortcut section DEPRECATED SEE DUNSTCTL (X11 only) Urgency sections   DUNSTCTL HISTORY WAYLAND RULES  SCRIPTING   COLORS  NOTIFY-SEND   ACTIONS TIME FORMAT MISCELLANEOUS FILES AUTHORS REPORTING BUGS COPYRIGHT SEE ALSO  NAME dunst - configuration file
+DESCRIPTION An example configuration file is included (usually /etc/dunst/dunstrc). Note: this was previously /usr/share/dunst/dunstrc. To change the configuration, copy this file to ~/.config/dunst/dunstrc and edit it accordingly.</description>
     </item>
     
     <item>
