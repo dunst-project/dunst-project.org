@@ -6,29 +6,38 @@ type = "page"
 +++
 ***
 
-The current stable version of Dunst is **1.6.1** released on **Feb 21 2021**.
+The current stable version of Dunst is **1.7.0** released on **Oct 19 2021**.
 
 # Downloads
 
-* [Source tarball](https://github.com/dunst-project/dunst/archive/v1.6.1.tar.gz)
+* [Source tarball](https://github.com/dunst-project/dunst/archive/v1.7.0.tar.gz)
 * [Code repository (Github)](https://github.com/dunst-project/dunst)
 
 # Release Notes
 
+This release was long overdue. There have been a lot of changes in the mean
+time. For a full list of changes, see the changelog.
+
 For users:
 
-The most important update from the previous version is the addition of the
-dunstctl command and dunstify utility, a drop-in notify-send replacement (which
-existed for a while, but wasn't installed by default).
-The internal keyboard shortcut support in dunst is now considered deprecated
-and should be replaced by dunstctl calls. You can use the configuration of your
-WM or DE to bind these to shortcuts of your choice.
+The wayland support of v1.6.0 was already pretty good, but this release added
+fullscreen detection and improved the stability.
 
-Additionally, another long requested feature implemented is RGBA/transparency
-support. Given an active compositor you can now add an optional transparency
-component to all colors in #RRGGBBAA format.
+This release added a few improvements to the wayland support. Dunst now
+automatically falls back to X11 when the wayland compositor doesn't support the
+neccesary protocols.
 
 For maintainers:
 
-As mentioned above, two new binaries are now installed by default, dunstctl and dunstify.
-libnotify has been added as a dependency as it's used internally by dunstify.
+Previously the readme said dunst depended on GTK3, which hasn't been the case
+for a while. Make sure that GTK3 is not included as a dependency.
+
+The default program for opening URL's in notifications has been changed from
+firefox to xdg-open.
+
+The Makefile and dunstrc searching has been significantly changed to be more
+compliant with the XDG spec. The default config directory, `SYSCONFDIR`, has
+been changed from "/etc" to "${PREFIX}/etc/xdg/". To change back to the old
+behaviour, run make with: `make SYSCONFDIR="/etc"` (make sure to pass the same
+variables to make in subsequent calls). Take a look at the "Make parameters"
+section of the readme and the FILES section of the man page for more details.
