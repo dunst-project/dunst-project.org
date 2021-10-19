@@ -81,7 +81,6 @@
   <li><a href="#DESCRIPTION">DESCRIPTION</a>
     <ul>
       <li><a href="#Global-section">Global section</a></li>
-      <li><a href="#Shortcut-section-DEPRECATED-SEE-DUNSTCTL-X11-only">Shortcut section DEPRECATED SEE DUNSTCTL (X11 only)</a></li>
       <li><a href="#Urgency-sections">Urgency sections</a></li>
     </ul>
   </li>
@@ -100,8 +99,6 @@
   </li>
   <li><a href="#ACTIONS">ACTIONS</a></li>
   <li><a href="#TIME-FORMAT">TIME FORMAT</a></li>
-  <li><a href="#MISCELLANEOUS">MISCELLANEOUS</a></li>
-  <li><a href="#FILES">FILES</a></li>
   <li><a href="#AUTHORS">AUTHORS</a></li>
   <li><a href="#REPORTING-BUGS">REPORTING BUGS</a></li>
   <li><a href="#COPYRIGHT">COPYRIGHT</a></li>
@@ -110,10 +107,10 @@
 <h1 id="NAME">NAME</h1>
 <p>dunst - configuration file</p>
 <h1 id="DESCRIPTION">DESCRIPTION</h1>
-<p>An example configuration file is included (usually /etc/dunst/dunstrc). Note: this was previously /usr/share/dunst/dunstrc. To change the configuration, copy this file to ~/.config/dunst/dunstrc and edit it accordingly.</p>
-<p>The configuration is divided into sections in an ini-like format. The &#39;global&#39; section contains most general settings while the setions &#39;urgency_low&#39;, &#39;urgency_normal&#39; and &#39;urgency_critical&#39; are for low, normal and critical urgency notifications respectively. The &#39;shortcuts&#39; section (deprecated) contains all keyboard configuration and the &#39;experimental&#39; section all the features that have not yet been tested thoroughly.</p>
-<p>Any section that is not one of the above is assumed to be a rule, see RULES for more details.</p>
-<p>For backwards compatibility reasons the section name &#39;frame&#39; is considered bound and can&#39;t be used as a rule.</p>
+<p>The configuration is divided into sections in an ini-like format. Every section start with the section&#39;s name in square brackets. After that is a list of key-value pairs that specify the settings. Whitespace is purely cosmetic and doesn&#39;t matter for the result.</p>
+<p>The &#39;global&#39; section contains the general settings applying to all of dunst. The rest of the settings can be specified via rules and can be located in any section. These rules can change a notification based on it&#39;s properties. There are filtering rules and modifying rules. The filtering rules specify on what notifications the rule is applied and the modifying rules specify what is changed about the matching notifications. Some special sections have implied filters that cannot be changed. The &quot;global&quot; section, for example has no filters, thus applies to all notifications.</p>
+<p>See RULES for more details.</p>
+<p>The &#39;experimental&#39; section contains all the features that have not yet been tested thoroughly and may be changed at any time.</p>
 <h2 id="Global-section">Global section</h2>
 <dl>
 <dt id="monitor-default:-0"><b>monitor</b> (default: 0)</dt>
@@ -139,26 +136,35 @@
 </dd>
 </dl>
 </dd>
-<dt id="geometry-format:-width-x-height---x---y-default:-0x0-0-0"><b>geometry</b> (format: [{width}][x{height}][+/-{x}[+/-{y}]], default: &quot;0x0+0-0&quot;)</dt>
+<dt id="geometry-DEPRECATED"><b>geometry</b> DEPRECATED</dt>
 <dd>
-<p>The geometry of the window the notifications will be displayed in.</p>
-<dl>
+<p>This setting is deprecated. It&#39;s split up into <b>width</b>, <b>height</b>, <b>origin</b>, <b>notification_limit</b> and <b>offset</b>.</p>
+</dd>
 <dt id="width"><b>width</b></dt>
 <dd>
-<p>The width of the notification window in pixels. A negative value sets the width to the screen width <b>minus the absolute value of the width</b>. If the width is omitted then the window expands to cover the whole screen. If it&#39;s 0 the window expands to the width of the longest message being displayed.</p>
+<p>The width of the notification window in pixels. This can be a single number to specify a constant width or two numbers for the minimum and maximum width. The notification will expand from the minimum width as neccesary.</p>
+<p>Examples: width = 300 # constant width of 300 width = (0, 300) # width between 0 and 300</p>
 </dd>
 <dt id="height"><b>height</b></dt>
 <dd>
-<p>The number of notifications that can appear at one time. When this limit is reached any additional notifications will be queued and displayed when the currently displayed ones either time out or are manually dismissed. If <b>indicate_hidden</b> is true, then the specified limit is reduced by 1 and the last notification is a message informing how many hidden notifications are waiting to be displayed. See the <b>indicate_hidden</b> entry for more information.</p>
-<p>The physical(pixel) height of the notifications vary depending on the number of lines that need to be displayed.</p>
-<p>See <b>notification_height</b> for changing the physical height.</p>
+<p>The maximum height of a single notification.</p>
 </dd>
-<dt id="x-y"><b>x/y</b></dt>
+<dt id="notification_limit-default:-0"><b>notification_limit</b> (default: 0)</dt>
 <dd>
-<p>Respectively the horizontal and vertical offset in pixels from the corner of the screen that the notification should be drawn at. For the horizontal(x) offset, a positive value is measured from the left of the screen while a negative one from the right. For the vertical(y) offset, a positive value is measured from the top while a negative from the bottom.</p>
-<p>It&#39;s important to note that the positive and negative sign <b>DOES</b> affect the position even if the offset is 0. For example, a horizontal offset of +0 puts the notification on the left border of the screen while a horizontal offset of -0 at the right border. The same goes for the vertical offset.</p>
+<p>The number of notifications that can appear at one time. When this limit is reached any additional notifications will be queued and displayed when the currently displayed ones either time out or are manually dismissed. The value 0 means no limit. If <b>indicate_hidden</b> is true, then the specified limit is reduced by 1 and the last notification is a message informing how many hidden notifications are waiting to be displayed. See the <b>indicate_hidden</b> entry for more information.</p>
 </dd>
-</dl>
+<dt id="origin-default:-top-right"><b>origin</b> (default: top-right)</dt>
+<dd>
+<p>The origin of the notification window on the screen. It can then be moved with offset. Origin can be one of: top-left top-center top-right bottom-left bottom-center bottom-right left-center center right-center</p>
+</dd>
+<dt id="offset-format:-horizontal-vertical"><b>offset</b> format: (horizontal, vertical)</dt>
+<dd>
+<p>Respectively the horizontal and vertical offset in pixels from the corner of the screen specified by <b>origin</b>. Both values should always be positive or zero.</p>
+<p>Examples: origin = top-right offset = 10x300 # a margin of 10 pixels from the right and 300 pixels from the top</p>
+</dd>
+<dt id="scale-default:-0-X11-only"><b>scale</b> (default: 0, X11 only)</dt>
+<dd>
+<p>Specifies a scale factor for dimensions to adapt notifications to HiDPI screens. This scales the notification geometry and it&#39;s contents. It is not recommended to use a fractional scaling factor, as this may result in things being one pixel off. Try to use a whole number scaling factor and adjust the font size and other sizes as needed. If 0 is specified, the scale factor is auto-detected.</p>
 </dd>
 <dt id="progress_bar-values:-true-false-default:-true"><b>progress_bar</b> (values: [true/false], default: true)</dt>
 <dd>
@@ -182,17 +188,13 @@
 </dd>
 <dt id="indicate_hidden-values:-true-false-default:-true"><b>indicate_hidden</b> (values: [true/false], default: true)</dt>
 <dd>
-<p>If this is set to true, a notification indicating how many notifications are not being displayed due to the notification limit (see <b>geometry</b>) will be shown <b>in place of the last notification slot</b>.</p>
-<p>Meaning that if this is enabled the number of visible notifications will be 1 less than what is specified in geometry, the last slot will be taken by the hidden count.</p>
+<p>If this is set to true, a notification indicating how many notifications are not being displayed due to the notification limit (see <b>notification_limit</b>) will be shown <b>in place of the last notification slot</b>.</p>
+<p>Meaning that if this is enabled the number of visible notifications will be 1 less than what is specified by <b>notification_limit</b>, the last slot will be taken by the hidden count.</p>
 </dd>
-<dt id="shrink-values:-true-false-default:-false"><b>shrink</b> (values: [true/false], default: false)</dt>
-<dd>
-<p>Shrink window if it&#39;s smaller than the width. Will be ignored if width is 0.</p>
-<p>This is used mainly in order to have the shrinking benefit of dynamic width (see geometry) while also having an upper bound on how long a notification can get before wrapping.</p>
-</dd>
-<dt id="transparency-default:-0"><b>transparency</b> (default: 0)</dt>
+<dt id="transparency-default:-0-X11-only"><b>transparency</b> (default: 0) (X11 only)</dt>
 <dd>
 <p>A 0-100 range on how transparent the notification window should be, with 0 being fully opaque and 100 invisible.</p>
+<p>To make windows transparent on wayland, set the transparency part of a color, see COLORS.</p>
 <p>This setting will only work if a compositor is running.</p>
 </dd>
 <dt id="notification_height-default:-0"><b>notification_height</b> (default: 0)</dt>
@@ -216,11 +218,11 @@
 <p>The distance in pixels from the text to the icon (or vice versa) in the horizontal axis.</p>
 <p>Setting this to a non-zero value overwrites any padding that horizontal_padding was adding between the notification text and icon.</p>
 <p>So for example setting</p>
-<pre><code>    text_icon_padding=10
-    horizontal_padding=10</code></pre>
+<pre><code>text_icon_padding=10
+horizontal_padding=10</code></pre>
 <p>is equivalent to</p>
-<pre><code>    text_icon_padding=0
-    horizontal_padding=10</code></pre>
+<pre><code>text_icon_padding=0
+horizontal_padding=10</code></pre>
 </dd>
 <dt id="frame_width-default:-0"><b>frame_width</b> (default: 0)</dt>
 <dd>
@@ -267,7 +269,6 @@
 <dd>
 <p>One of bottom, top or overlay.</p>
 <p>Place dunst notifications on the selected layer. Using overlay will cause notifications to be displayed above fullscreen windows, though this may also occur at top depending on your compositor.</p>
-<p>In Wayland, Notifications won&#39;t be delayed when in fullscreen (like when setting <b>fullscreen</b> to pushback in X11). This is a Wayland limitation.</p>
 <p>The bottom layer is below all windows and above the background.</p>
 <p>Default: overlay</p>
 </dd>
@@ -293,10 +294,10 @@
 <dt id="full"><b>full</b></dt>
 <dd>
 <p>Allow a small subset of html markup in notifications</p>
-<pre><code>    &lt;b&gt;bold&lt;/b&gt;
-    &lt;i&gt;italic&lt;/i&gt;
-    &lt;s&gt;strikethrough&lt;/s&gt;
-    &lt;u&gt;underline&lt;/u&gt;</code></pre>
+<pre><code>&lt;b&gt;bold&lt;/b&gt;
+&lt;i&gt;italic&lt;/i&gt;
+&lt;s&gt;strikethrough&lt;/s&gt;
+&lt;u&gt;underline&lt;/u&gt;</code></pre>
 <p>For a complete reference see &lt;https://developer.gnome.org/pango/stable/pango-Markup.html&gt;</p>
 </dd>
 <dt id="strip"><b>strip</b></dt>
@@ -345,10 +346,6 @@
 </dl>
 <p>If any of these exists in the format but hasn&#39;t been specified in the notification (e.g. no icon has been set), the placeholders will simply be removed from the format.</p>
 </dd>
-<dt id="alignment-values:-left-center-right-default:-left"><b>alignment</b> (values: [left/center/right], default: left)</dt>
-<dd>
-<p>Defines how the text should be aligned within the notification.</p>
-</dd>
 <dt id="vertical_alignment-values:-top-center-bottom-default:-center"><b>vertical_alignment</b> (values: [top/center/bottom], default: center)</dt>
 <dd>
 <p>Defines how the text and icon should be aligned vertically within the notification. If icons are disabled, this option has no effect.</p>
@@ -357,16 +354,6 @@
 <dd>
 <p>Show age of message if message is older than this time. See TIME FORMAT for valid times.</p>
 <p>Set to -1 to disable.</p>
-</dd>
-<dt id="word_wrap-values:-true-false-default:-false"><b>word_wrap</b> (values: [true/false], default: false)</dt>
-<dd>
-<p>Specifies how very long lines should be handled</p>
-<p>If it&#39;s set to false, long lines will be truncated and ellipsized.</p>
-<p>If it&#39;s set to true, long lines will be broken into multiple lines expanding the notification window height as necessary for them to fit.</p>
-</dd>
-<dt id="ellipsize-values:-start-middle-end-default:-middle"><b>ellipsize</b> (values: [start/middle/end], default: middle)</dt>
-<dd>
-<p>If word_wrap is set to false, specifies where truncated lines should be ellipsized.</p>
 </dd>
 <dt id="ignore_newline-values:-true-false-default:-false"><b>ignore_newline</b> (values: [true/false], default: false)</dt>
 <dd>
@@ -419,7 +406,7 @@
 <dd>
 <p>The command that will be run when opening the context menu. Should be either a dmenu command or a dmenu-compatible menu.</p>
 </dd>
-<dt id="browser-default:-usr-bin-firefox"><b>browser</b> (default: &quot;/usr/bin/firefox&quot;)</dt>
+<dt id="browser-default:-usr-bin-xdg-open"><b>browser</b> (default: &quot;/usr/bin/xdg-open&quot;)</dt>
 <dd>
 <p>The command that will be run when opening a URL. The URL to be opened will be appended to the end of the value of this setting.</p>
 </dd>
@@ -435,14 +422,6 @@
 <dd>
 <p>Defines the class of notification windows spawned by dunst. (First part of WM_CLASS). There should be no need to modify this setting for regular use.</p>
 </dd>
-<dt id="startup_notification-values:-true-false-default:-false"><b>startup_notification</b> (values: [true/false], default: false)</dt>
-<dd>
-<p>Display a notification on startup. This is usually used for debugging and there shouldn&#39;t be any need to use this option.</p>
-</dd>
-<dt id="verbosity-values:-crit-warn-mesg-info-debug-default-mesg"><b>verbosity</b> (values: &#39;crit&#39;, &#39;warn&#39;, &#39;mesg&#39;, &#39;info&#39;, &#39;debug&#39; default &#39;mesg&#39;)</dt>
-<dd>
-<p>Do not display log messages, which have lower precedence than specified verbosity. This won&#39;t affect printing notifications on the terminal. Use the &#39;-print&#39; option for this.</p>
-</dd>
 <dt id="force_xinerama-values:-true-false-default:-false-X11-only"><b>force_xinerama</b> (values: [true/false], default: false) (X11 only)</dt>
 <dd>
 <p>Use the Xinerama extension instead of RandR for multi-monitor support. This setting is provided for compatibility with older nVidia drivers that do not support RandR and using it on systems that support RandR is highly discouraged.</p>
@@ -454,9 +433,9 @@
 <p>By enabling this setting the outer border and the frame will be shaped. If you have multiple notifications, the whole window is shaped, not every single notification.</p>
 <p>To avoid the corners clipping the icon or text the corner radius will be automatically lowered to half of the notification height if it exceeds it.</p>
 </dd>
-<dt id="mouse_left-middle-right_click-values:-none-do_action-close_current-close_all"><b>mouse_left/middle/right_click</b> (values: [none/do_action/close_current/close_all])</dt>
+<dt id="mouse_left-middle-right_click-values:-none-do_action-close_current-close_all-context-context_all"><b>mouse_left/middle/right_click</b> (values: [none/do_action/close_current/close_all/context/context_all])</dt>
 <dd>
-<p>Defines action of mouse click.</p>
+<p>Defines action of mouse click. A touch input in Wayland acts as a mouse left click.</p>
 <dl>
 <dt id="none1"><b>none</b></dt>
 <dd>
@@ -464,7 +443,11 @@
 </dd>
 <dt id="do_action-default-for-mouse_middle_click"><b>do_action</b> (default for mouse_middle_click)</dt>
 <dd>
-<p>If the notification has exactly one action, or one is marked as default, invoke it. If there are multiple and no default, open the context menu.</p>
+<p>Invoke the action determined by the action_name rule. If there is no such action, open the context menu.</p>
+</dd>
+<dt id="open_url"><b>open_url</b></dt>
+<dd>
+<p>If the notification has exactly one url, open it. If there are multiple ones, open the context menu.</p>
 </dd>
 <dt id="close_current-default-for-mouse_left_click"><b>close_current</b> (default for mouse_left_click)</dt>
 <dd>
@@ -474,35 +457,19 @@
 <dd>
 <p>Close all notifications.</p>
 </dd>
+<dt id="context"><b>context</b></dt>
+<dd>
+<p>Open context menu for the notification.</p>
+</dd>
+<dt id="context_all"><b>context_all</b></dt>
+<dd>
+<p>Open context menu for all notifications.</p>
+</dd>
 </dl>
 </dd>
 <dt id="ignore_dbusclose-default:-false"><b>ignore_dbusclose</b> (default: false)</dt>
 <dd>
 <p>Ignore the dbus closeNotification message. This is useful to enforce the timeout set by dunst configuration. Without this parameter, an application may close the notification sent before the user defined timeout.</p>
-</dd>
-</dl>
-<h2 id="Shortcut-section-DEPRECATED-SEE-DUNSTCTL-X11-only">Shortcut section <b>DEPRECATED SEE DUNSTCTL</b> (X11 only)</h2>
-<p>Keyboard shortcuts are defined in the following format: &quot;Modifier+key&quot; where the modifier is one of ctrl,mod1,mod2,mod3,mod4 and key is any keyboard key.</p>
-<dl>
-<dt id="close"><b>close</b></dt>
-<dd>
-<p><b>command line flag</b>: -key &lt;key&gt;</p>
-<p>Specifies the keyboard shortcut for closing a notification.</p>
-</dd>
-<dt id="close_all"><b>close_all</b></dt>
-<dd>
-<p><b>command line flag</b>: -all_key &lt;key&gt;</p>
-<p>Specifies the keyboard shortcut for closing all currently displayed notifications.</p>
-</dd>
-<dt id="history"><b>history</b></dt>
-<dd>
-<p><b>command line flag</b>: -history_key &lt;key&gt;</p>
-<p>Specifies the keyboard shortcut for recalling a single notification from history.</p>
-</dd>
-<dt id="context"><b>context</b></dt>
-<dd>
-<p><b>command line flag</b>: -context_key &lt;key&gt;</p>
-<p>Specifies the keyboard shortcut that opens the context menu.</p>
 </dd>
 </dl>
 <h2 id="Urgency-sections">Urgency sections</h2>
@@ -543,17 +510,30 @@
 </dd>
 </dl>
 <h1 id="DUNSTCTL">DUNSTCTL</h1>
-<p>Dunst now contains a command line control command that can be used to interact with it. It supports all functions previously done only via keyboard shortcuts but also has a lot of extra functionality. So see more see dunstctl(1).</p>
+<p>Dunst now contains a command line control command that can be used to interact with it. It supports all functions previously done only via keyboard shortcuts but also has a lot of extra functionality. For more information, see dunstctl(1).</p>
 <h1 id="HISTORY">HISTORY</h1>
-<p>Dunst saves a number of notifications (specified by <b>history_length</b>) in memory. These notifications can be recalled (i.e. redisplayed) by calling <b>dunstctl history</b> (see dunstctl(1)). Whether these notifications will time out like if they have been just send depends on the value of the <b>sticky_history</b> setting.</p>
+<p>Dunst saves a number of notifications (specified by <b>history_length</b>) in memory. These notifications can be recalled (i.e. redisplayed) by calling <b>dunstctl history</b> (see dunstctl(1)). Whether these notifications will time out like if they have been just send depends on the value of the <b>sticky_history</b> setting. Actions are invalidated once the notification is closed, so you cannot execute that action when you bring back a notification from history.</p>
 <p>Past notifications are redisplayed in a first-in-last-out order, meaning that pressing the history key once will bring up the most recent notification that had been closed/timed out.</p>
 <h1 id="WAYLAND">WAYLAND</h1>
-<p>Dunst has Wayland support since version 1.6.0. Because the Wayland protocol is more focused on security, some things that are possible in X11 are not possible in Wayland. Those differences are reflected in the configuration. The main things that change are that dunst on Wayland cannot use global hotkeys (they are deprecated anyways, use dunstctl) and it cannot detect if an application is fullscreen. If you want to see notifications when in fullscreen, set <b>layer = overlay</b> in the global options.</p>
+<p>Dunst has Wayland support since version 1.6.0. Because the Wayland protocol is more focused on security, some things that are possible in X11 are not possible in Wayland. Those differences are reflected in the configuration. The main things that change are that dunst on Wayland cannot use global hotkeys (they are deprecated anyways, use dunstctl).</p>
+<p>Some dunst features on wayland might need your compositor to support a certain protocol. Dunst will warn you if an optional feature isn&#39;t supported and will disable the corresponding functionality.</p>
+<p>Fullscreen detection works on wayland with some limitations (see <b>fullscreen</b>). If you want notifications to appear over fullscreen windows, set <b>layer = overlay</b> in the global options.</p>
 <p>Note that the same limitations exist when using xwayland. If something doesn&#39;t quite work in Wayland, please file a bug report. In the mean time, you can try if the X11 output does work on wayland. Use <b>force_xwayland = true</b> for that.</p>
-<p>If you have your dunst notifications on the same side of your display as your status bar, you might notice that your notifications appear a bit higher or lower than on X11. This is because the notification cannot be placed on top of your status bar. The notifications are placed relative to your status bar, making them appear higher or lower by the height of your status bar. We cannot do anything about that behavior, so you will need to change your <b>geometry</b> variable accordingly.</p>
+<p>If you have your dunst notifications on the same side of your display as your status bar, you might notice that your notifications appear a bit higher or lower than on X11. This is because the notification cannot be placed on top of your status bar. The notifications are placed relative to your status bar, making them appear higher or lower by the height of your status bar. We cannot do anything about that behavior.</p>
 <h1 id="RULES">RULES</h1>
-<p>Rules allow the conditional modification of notifications. They are defined by creating a section in the configuration file that has any name that is not already used internally (i.e. any name other than &#39;global&#39;, &#39;experimental&#39;, &#39;frame&#39;, &#39;shortcuts&#39;, &#39;urgency_low&#39;, &#39;urgency_normal&#39; and &#39;urgency_critical&#39;).</p>
-<p>There are 2 parts in configuring a rule: Defining the filters that control when a rule should apply and then the actions that should be taken when the rule is matched.</p>
+<p>Rules allow the conditional modification of notifications. They can be located in a section with any name, even the special sections. The special sections do not allow filters to be added, since they have implied filters by default.</p>
+<dl>
+<dt id="global">&#39;global&#39;</dt>
+<dd>
+<p>No filters, matches all notifications.</p>
+</dd>
+<dt id="urgency_low-urgency_normal-and-urgency_critical">&#39;urgency_low&#39;, &#39;urgency_normal&#39; and &#39;urgency_critical&#39;</dt>
+<dd>
+<p>Matches low, normal or critical urgency respectively.</p>
+</dd>
+</dl>
+<p>There are 2 parts in configuring a rule: Defining the filters that controls when a rule should apply and then the actions that should be taken when the rule is matched. It&#39;s also possible to not specify any filters, in which case the rule will match all notifications.</p>
+<p>Rules are applied in order of appearance. Beware: if a notification is changed by a rule, it may affect if it&#39;s being matched by a later rule.</p>
 <dl>
 <dt id="filtering"><b>filtering</b></dt>
 <dd>
@@ -601,7 +581,7 @@
 <p><code>msg_urgency</code> is the urgency of the notification, it is named so to not conflict with trying to modify the urgency.</p>
 <p>Instead of the appname filter, it&#39;s recommended to use the desktop_entry filter.</p>
 <p>To define a matching rule simply assign the specified value to the value that should be matched, for example:</p>
-<pre><code>    appname=&quot;notify-send&quot;</code></pre>
+<pre><code>appname=&quot;notify-send&quot;</code></pre>
 <p>Matches only messages that were send via notify-send. If multiple filter expressions are present, all of them have to match for the rule to be applied (logical AND).</p>
 <p>Shell-like globing is supported.</p>
 </dd>
@@ -629,13 +609,13 @@
 <dd>
 <p>The frame color color of the notification. See COLORS for possible values.</p>
 </dd>
-<dt id="fullscreen-X11-only"><code>fullscreen</code> (X11 only)</dt>
+<dt id="fullscreen"><code>fullscreen</code></dt>
 <dd>
 <p>One of show, delay, or pushback.</p>
 <p>This attribute specifies how notifications are handled if a fullscreen window is focused. By default it&#39;s set to show so notifications are being shown.</p>
 <p>Other possible values are delay: Already shown notifications are continued to be displayed until they are dismissed or time out but new notifications will be held back and displayed when the focus to the fullscreen window is lost.</p>
 <p>Or pushback which is equivalent to delay with the difference that already existing notifications are paused and hidden until the focus to the fullscreen window is lost.</p>
-<p>See <b>layer</b> to change fullscreen behavior in Wayland</p>
+<p>On wayland, if <b>follow</b> is set to mouse or keyboard, the output where the notification is located cannot be determined. So dunst will delay or pushback if any of the outputs is fullscreen. Since the fullscreen protocol is fairly new, you will need a recent version of a compositor that supports it. At the time of writing, you will need the git version of sway. See also <b>layer</b> to change if notifications appear above fullscreen windows in Wayland.</p>
 <p>Default: show</p>
 </dd>
 <dt id="new_icon"><code>new_icon</code></dt>
@@ -644,7 +624,7 @@
 </dd>
 <dt id="set_stack_tag"><code>set_stack_tag</code></dt>
 <dd>
-<p>Sets the stack tag for the notification, notifications with the same (non-empty) stack tag will replace each-other so only the newest one is visible. This can be useful for example in volume or brightness notifications where you only want one of the same type visible.</p>
+<p>Sets the stack tag for the notification, notifications with the same (non-empty) stack tag and the same appid will replace each-other so only the newest one is visible. This can be useful for example in volume or brightness notifications where you only want one of the same type visible.</p>
 <p>The stack tag can be set by the client with the &#39;synchronous&#39;, &#39;private-synchronous&#39; &#39;x-canonical-private-synchronous&#39; or the &#39;x-dunst-stack-tag&#39; hints.</p>
 </dd>
 <dt id="set_transient"><code>set_transient</code></dt>
@@ -664,6 +644,27 @@
 <dt id="skip_display"><code>skip_display</code></dt>
 <dd>
 <p>Setting this to true will prevent the notification from being displayed initially but will be saved in history for later viewing.</p>
+</dd>
+<dt id="history_ignore"><code>history_ignore</code></dt>
+<dd>
+<p>Setting this to true will display the notification initially, but stop it from being recalled via the history.</p>
+</dd>
+<dt id="action_name"><code>action_name</code></dt>
+<dd>
+<p>Sets the name of the action to be invoked on do_action. If not specified, the action set as default action or the only available action will be invoked.</p>
+<p>Default: &quot;default&quot;</p>
+</dd>
+<dt id="word_wrap-values:-true-false-default:-true"><b>word_wrap</b> (values: [true/false], default: true)</dt>
+<dd>
+<p>Specifies whether to wrap the text if the lines get longer than the maximum notification width. If it&#39;s set to true, long lines will be broken into multiple lines expanding the notification window height as necessary for them to fit. If the text doesn&#39;t fit in the window, it will be ellipsize according to ellipsize.</p>
+</dd>
+<dt id="ellipsize-values:-start-middle-end-default:-middle"><b>ellipsize</b> (values: [start/middle/end], default: middle)</dt>
+<dd>
+<p>Specifies where truncated lines should be ellipsized.</p>
+</dd>
+<dt id="alignment-values:-left-center-right-default:-left"><b>alignment</b> (values: [left/center/right], default: left)</dt>
+<dd>
+<p>Defines how the text should be aligned within the notification.</p>
 </dd>
 </dl>
 <p>As with the filtering attributes, each one corresponds to the respective notification attribute to be modified.</p>
@@ -685,6 +686,41 @@
 <p><b>NOTE</b>: &#39;#&#39; is interpreted as a comment, to use it the entire value needs to be in quotes like so: separator_color=&quot;#123456&quot;</p>
 <h2 id="NOTIFY-SEND">NOTIFY-SEND</h2>
 <p>dunst is able to get different colors for a message via notify-send. In order to do that you have to add a hint via the -h option. The progress value can be set with a hint, too.</p>
+<p><b>All hints</b></p>
+<p>See RULES for more detailed explanations for some options.</p>
+<dl>
+<dt id="fgcolor:-Foreground-cololor"><b>fgcolor</b>: Foreground cololor</dt>
+<dd>
+</dd>
+<dt id="bgcolor:-Background-color"><b>bgcolor</b>: Background color</dt>
+<dd>
+</dd>
+<dt id="frcolor:-Frame-color"><b>frcolor</b>: Frame color</dt>
+<dd>
+</dd>
+<dt id="hlcolor:-Highlight-color"><b>hlcolor</b>: Highlight color</dt>
+<dd>
+</dd>
+<dt id="value:-Progress-value"><b>value</b>: Progress value.</dt>
+<dd>
+</dd>
+<dt id="image-path:-Icon-name.-This-may-be-a-path-or-just-the-icon-name"><b>image-path</b>: Icon name. This may be a path or just the icon name.</dt>
+<dd>
+</dd>
+<dt id="image-data:-A-stream-of-raw-image-data"><b>image-data</b>: A stream of raw image data.</dt>
+<dd>
+</dd>
+<dt id="category:-The-category"><b>category</b>: The category.</dt>
+<dd>
+</dd>
+<dt id="desktop_entry:-The-desktop-entry"><b>desktop_entry</b>: The desktop entry.</dt>
+<dd>
+</dd>
+<dt id="transient:-The-transient-value"><b>transient</b>: The transient value.</dt>
+<dd>
+</dd>
+</dl>
+<p><b>Examples</b></p>
 <dl>
 <dt id="notify-send--h-string:fgcolor:-ff4444">notify-send -h string:fgcolor:#ff4444</dt>
 <dd>
@@ -705,30 +741,6 @@
 <p>A time can be any decimal integer value suffixed with a time unit. If no unit given, seconds (&quot;s&quot;) is taken as default.</p>
 <p>Time units understood by dunst are &quot;ms&quot;, &quot;s&quot;, &quot;m&quot;, &quot;h&quot; and &quot;d&quot;.</p>
 <p>Example time: &quot;1000ms&quot; &quot;10m&quot;</p>
-<h1 id="MISCELLANEOUS">MISCELLANEOUS</h1>
-<p>Dunst can be paused via the `dunstctl set-paused true` command. To unpause dunst use `dunstctl set-paused false`. Alternatively you can send SIGUSR1 and SIGUSR2 to pause and unpause respectively. For Example:</p>
-<dl>
-<dt id="killall--SIGUSR1-dunst-pause">killall -SIGUSR1 dunst # pause</dt>
-<dd>
-</dd>
-<dt id="killall--SIGUSR2-dunst-resume">killall -SIGUSR2 dunst # resume</dt>
-<dd>
-</dd>
-</dl>
-<p>When paused dunst will not display any notifications but keep all notifications in a queue. This can for example be wrapped around a screen locker (i3lock, slock) to prevent flickering of notifications through the lock and to read all missed notifications after returning to the computer.</p>
-<h1 id="FILES">FILES</h1>
-<p>These are the places where dunst will look for a configuration file. They are listed here in order and if dunst finds one of them, it will stop looking for more.</p>
-<p>$XDG_CONFIG_HOME/dunst/dunstrc</p>
-<p>$HOME/.config/dunst/dunstrc</p>
-<p>-or-</p>
-<p>$XDG_CONFIG_HOME/dunst/dunstrc</p>
-<p>/etc/xdg/dunst/dunstrc</p>
-<dl>
-<dt id="etc-dunst-dunstrc">/etc/dunst/dunstrc</dt>
-<dd>
-<p>This is where the default config file is located</p>
-</dd>
-</dl>
 <h1 id="AUTHORS">AUTHORS</h1>
 <p>Written by Sascha Kruse &lt;knopwob@googlemail.com&gt;</p>
 <h1 id="REPORTING-BUGS">REPORTING BUGS</h1>
@@ -737,7 +749,9 @@
 <p>Copyright 2013 Sascha Kruse and contributors (see LICENSE for licensing information)</p>
 <p>If you feel that copyrights are violated, please send me an email.</p>
 <h1 id="SEE-ALSO">SEE ALSO</h1>
-<p>dunstctl(1), dwm(1), dmenu(1), twmn(1), notify-send(1)</p>
+<p>dunst(1), dunstctl(1), dmenu(1), notify-send(1)</p>
+</body>
+</html>
 
             </div>
         </div>
