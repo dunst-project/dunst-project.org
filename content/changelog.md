@@ -1,10 +1,25 @@
-+++
-weight = 3
-title = "Changelog"
-menu = "main"
-type = "page"
-+++
-***
+# Dunst changelog
+
+## 1.7.1 -- 2021-11-01
+
+### Added
+- Script environment variable `DUNST_DESKTOP_ENTRY`. (#874)
+- Rule `set_category` for change a notifications category with rules. (1b72b2a)
+
+### Fixed
+- Dunst not building with WAYLAND=0. (#938)
+- Wrong icon being shown in chromium-based browsers. (#939)
+- `set_stack_tag` not working anymore. (#942)
+- Outdated documentation. (#943, #944 and more)
+- Empty strings not being allowed in settings. (#946)
+- Dunst crashing when compositor doesn't support `zwlr_foreign_toplevel_v1`. (#948)
+- Xmore notifications showing a progress bar and icon. (#915)
+- Markup is now a rule again. Before this was undocumented behaviour. (#955)
+- Double free when setting `XDG_CONFIG_DIR`. (#957)
+- Dunst crashing on some compositors. (#948)
+- Dunst not exiting when wayland compositor quits. (#961)
+- Now the separators are not responsive to mouse clicks anymore. (#960)
+- Mouse action stopping the rest of the actions. (bf58928)
 
 ## 1.7.0 -- 2021-10-19:
 
@@ -35,8 +50,9 @@ type = "page"
   in the `[global]` section as well (see above). (#937 and #803)
 - The appid's now also need to match when stacking notifications. (#886)
 - `xdg-open` is now being used by default for opening URL's. (#889)
-- `geometry` has been replaced by `origin`, `width`, `height`, `offset` and
-  `notification_height`. This allows for more flexible geometry settings. (#855)
+- `geometry` and `notification_height` have been replaced by `origin`, `width`,
+  `height`, `offset` and `notification_limit`. This allows for more flexible
+  geometry settings. (#855)
 - There were a bunch of changes in the installation and default locations. See
   the release notes for more information.
 - Upon seeing invalid markup, dunst is a bit smarter in stripping the markup.
@@ -212,7 +228,7 @@ type = "page"
 - Dunst does now install the systemd and dbus service files into their proper location given
   by pkg-config. Use `SERVICEDIR_(DBUS|SYSTEMD)` params to overwrite them. (#463)
 
-# 1.2.0 - 2017-07-12
+## 1.2.0 - 2017-07-12
 
 ### Added
 - `always_run_script` option to run script even if a notification is suppressed
@@ -254,19 +270,19 @@ type = "page"
 - dmenu process being left as a zombie if no option was selected
 - Crash when opening urls parsed from `<a href="">` tags
 
-# 1.1.0 - 2014-07-29
+## 1.1.0 - 2014-07-29
 - fix nasty memory leak
 - icon support (still work in progress)
 - fix issue where keybindings aren't working when numlock is activated
 
-# 1.0.0 - 2013-04-15
+## 1.0.0 - 2013-04-15
 - use pango/cairo as drawing backend
 - make use of pangos ability to parse markup
 - support for actions via context menu
 - indicator for actions/urls found
 - use blocking I/O. No more waking up the CPU multiple times per second to check for new dbus messages
 
-# 0.5.0 - 2013-01-26
+## 0.5.0 - 2013-01-26
 - new default dunstrc
 - frames for window
 - trigger scripts on matching notifications
@@ -275,7 +291,7 @@ type = "page"
 - use own code for ini parsing (this removes inih)
 - progress hints
 
-# 0.4.0 - 2012-09-27
+## 0.4.0 - 2012-09-27
 - separator between notifications
 - word wrap long lines
 - real transparance
@@ -286,10 +302,10 @@ type = "page"
 - bugfix: forgetting geometry
 - (optional) static configuration
 
-# 0.3.1 - 2012-08-02
+## 0.3.1 - 2012-08-02
 - fix -mon option
 
-# 0.3.0 - 2012-07-30
+## 0.3.0 - 2012-07-30
 - full support for Desktop Notification Specification (mandatory parts)
 - option to select monitor on which notifications are shown
 - follow focus
@@ -303,7 +319,7 @@ type = "page"
 - cleanup / bugfixes etc.
 - added dunst.service
 
-# 0.2.0 - 2012-06-26
+## 0.2.0 - 2012-06-26
 - introduction of dunstrc
 - removed static configuration via config.h
 - don't timeout when user is idle

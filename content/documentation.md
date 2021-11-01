@@ -6,6 +6,19 @@ type = "page"
 toc = "true"
 +++
 
+<?xml version="1.0" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>dunst - configuration file</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link rev="made" href="mailto:" />
+</head>
+
+<body>
+
+
+
 <ul id="index">
   <li><a href="#NAME">NAME</a></li>
   <li><a href="#DESCRIPTION">DESCRIPTION</a>
@@ -183,12 +196,6 @@ toc = "true"
 <p>This setting will only work if a compositor is running.</p>
 
 </dd>
-<dt id="notification_height-default:-0"><b>notification_height</b> (default: 0)</dt>
-<dd>
-
-<p>The minimum height of the notification window in pixels. If the text and padding cannot fit in within the height specified by this value, the height will be increased as needed.</p>
-
-</dd>
 <dt id="separator_height-default:-2"><b>separator_height</b> (default: 2)</dt>
 <dd>
 
@@ -319,49 +326,6 @@ horizontal_padding=10</code></pre>
 <dd>
 
 <p>The amount of extra spacing between text lines in pixels. Set to 0 to disable.</p>
-
-</dd>
-<dt id="markup-values:-full-strip-no-default:-no"><b>markup</b> (values: [full/strip/no], default: no)</dt>
-<dd>
-
-<p>Defines how markup in notifications is handled.</p>
-
-<p>It&#39;s important to note that markup in the format option will be parsed regardless of what this is set to.</p>
-
-<p>Possible values:</p>
-
-<dl>
-
-<dt id="full"><b>full</b></dt>
-<dd>
-
-<p>Allow a small subset of html markup in notifications</p>
-
-<pre><code>&lt;b&gt;bold&lt;/b&gt;
-&lt;i&gt;italic&lt;/i&gt;
-&lt;s&gt;strikethrough&lt;/s&gt;
-&lt;u&gt;underline&lt;/u&gt;</code></pre>
-
-<p>For a complete reference see &lt;https://developer.gnome.org/pango/stable/pango-Markup.html&gt;</p>
-
-</dd>
-<dt id="strip"><b>strip</b></dt>
-<dd>
-
-<p>This setting is provided for compatibility with some broken clients that send markup even though it&#39;s not enabled on the server.</p>
-
-<p>Dunst will try to strip the markup but the parsing is simplistic so using this option outside of matching rules for specific applications <b>IS GREATLY DISCOURAGED</b>.</p>
-
-<p>See RULES</p>
-
-</dd>
-<dt id="no"><b>no</b></dt>
-<dd>
-
-<p>Disable markup parsing, incoming notifications will be treated as plain text. Dunst will not advertise that it can parse markup if this is set as a global setting.</p>
-
-</dd>
-</dl>
 
 </dd>
 <dt id="format-default:-s-b"><b>format</b> (default: &quot;%s %b&quot;)</dt>
@@ -742,7 +706,7 @@ horizontal_padding=10</code></pre>
 <dt id="category"><code>category</code></dt>
 <dd>
 
-<p>The category of the notification as defined by the notification spec. See https://developer.gnome.org/notification-spec/#categories</p>
+<p>The category of the notification as defined by the notification spec. See https://specifications.freedesktop.org/notification-spec/latest/ar01s06.html.</p>
 
 </dd>
 <dt id="desktop_entry"><code>desktop_entry</code></dt>
@@ -875,6 +839,12 @@ horizontal_padding=10</code></pre>
 <p>By default notifications are _not_ considered transient but clients can set the value of this by specifying the &#39;transient&#39; hint when sending notifications.</p>
 
 </dd>
+<dt id="set_category"><code>set_category</code></dt>
+<dd>
+
+<p>Sets the category of the notification. See https://specifications.freedesktop.org/notification-spec/latest/ar01s06.html for a list of standard categories.</p>
+
+</dd>
 <dt id="timeout"><code>timeout</code></dt>
 <dd>
 
@@ -927,6 +897,49 @@ horizontal_padding=10</code></pre>
 <p>Defines how the text should be aligned within the notification.</p>
 
 </dd>
+<dt id="markup-values:-full-strip-no-default:-no"><b>markup</b> (values: [full/strip/no], default: no)</dt>
+<dd>
+
+<p>Defines how markup in notifications is handled.</p>
+
+<p>It&#39;s important to note that markup in the format option will be parsed regardless of what this is set to.</p>
+
+<p>Possible values:</p>
+
+<dl>
+
+<dt id="full"><b>full</b></dt>
+<dd>
+
+<p>Allow a small subset of html markup in notifications</p>
+
+<pre><code>&lt;b&gt;bold&lt;/b&gt;
+&lt;i&gt;italic&lt;/i&gt;
+&lt;s&gt;strikethrough&lt;/s&gt;
+&lt;u&gt;underline&lt;/u&gt;</code></pre>
+
+<p>For a complete reference see &lt;https://docs.gtk.org/Pango/pango_markup.html&gt;</p>
+
+</dd>
+<dt id="strip"><b>strip</b></dt>
+<dd>
+
+<p>This setting is provided for compatibility with some broken clients that send markup even though it&#39;s not enabled on the server.</p>
+
+<p>Dunst will try to strip the markup but the parsing is simplistic so using this option outside of matching rules for specific applications <b>IS GREATLY DISCOURAGED</b>.</p>
+
+<p>See RULES</p>
+
+</dd>
+<dt id="no"><b>no</b></dt>
+<dd>
+
+<p>Disable markup parsing, incoming notifications will be treated as plain text. Dunst will not advertise that it can parse markup if this is set as a global setting.</p>
+
+</dd>
+</dl>
+
+</dd>
 </dl>
 
 <p>As with the filtering attributes, each one corresponds to the respective notification attribute to be modified.</p>
@@ -942,7 +955,7 @@ horizontal_padding=10</code></pre>
 
 <p>Within rules you can specify a script to be run every time the rule is matched by assigning the &#39;script&#39; option to the name of the script to be run.</p>
 
-<p>When the script is called details of the notification that triggered it will be passed via environment variables. The following variables are available: <b>DUNST_APP_NAME</b>, <b>DUNST_SUMMARY</b>, <b>DUNST_BODY</b>, <b>DUNST_ICON_PATH</b>, <b>DUNST_URGENCY</b>, <b>DUNST_ID</b>, <b>DUNST_PROGRESS</b>, <b>DUNST_CATEGORY</b>, <b>DUNST_STACK_TAG</b>, <b>DUNST_URLS</b>, <b>DUNST_TIMEOUT</b>, <b>DUNST_TIMESTAMP</b> and <b>DUNST_STACK_TAG</b>.</p>
+<p>When the script is called details of the notification that triggered it will be passed via environment variables. The following variables are available: <b>DUNST_APP_NAME</b>, <b>DUNST_SUMMARY</b>, <b>DUNST_BODY</b>, <b>DUNST_ICON_PATH</b>, <b>DUNST_URGENCY</b>, <b>DUNST_ID</b>, <b>DUNST_PROGRESS</b>, <b>DUNST_CATEGORY</b>, <b>DUNST_STACK_TAG</b>, <b>DUNST_URLS</b>, <b>DUNST_TIMEOUT</b>, <b>DUNST_TIMESTAMP</b>, <b>DUNST_DESKTOP_ENTRY</b>, and <b>DUNST_STACK_TAG</b>.</p>
 
 <p>Another, less recommended way to get notifcations details from a script is via command line parameters. These are passed to the script in the following order: <b>appname</b>, <b>summary</b>, <b>body</b>, <b>icon_path</b>, <b>urgency</b>.</p>
 
@@ -1004,7 +1017,7 @@ horizontal_padding=10</code></pre>
 <dd>
 
 </dd>
-<dt id="desktop_entry:-The-desktop-entry"><b>desktop_entry</b>: The desktop entry.</dt>
+<dt id="desktop-entry:-The-desktop-entry"><b>desktop-entry</b>: The desktop entry.</dt>
 <dd>
 
 </dd>
