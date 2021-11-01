@@ -8,11 +8,12 @@
   </url><url>
     <loc>https://dunst-project.org/download/</loc>
   </url><url>
-    <loc>https://dunst-project.org/changelog/</loc>
-  </url><url>
     <loc>https://dunst-project.org/documentation/</loc>
   </url><url>
     <loc>https://dunst-project.org/faq/</loc>
+  </url><url>
+    <loc>https://dunst-project.org/changelog/</loc>
+    <priority>0</priority>
   </url><url>
     <loc>https://dunst-project.org/categories/</loc>
   </url><url>

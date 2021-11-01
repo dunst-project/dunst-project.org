@@ -22,19 +22,10 @@ Config file here</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://dunst-project.org/download/</guid>
-      <description>The current stable version of Dunst is 1.7.0 released on Oct 19 2021.
-Downloads  Source tarball Code repository (Github)  Release Notes This release was long overdue. There have been a lot of changes in the mean time. For a full list of changes, see the changelog.
+      <description>The current stable version of Dunst is 1.7.1 released on Nov 1 2021.
+Downloads  Source tarball Code repository (Github)  Release Notes for v1.7.0 This release was long overdue. There have been a lot of changes in the mean time. For a full list of changes, see the changelog.
 For users:
 The wayland support of v1.6.0 was already pretty good, but this release added fullscreen detection and improved the stability.</description>
-    </item>
-    
-    <item>
-      <title>Changelog</title>
-      <link>https://dunst-project.org/changelog/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://dunst-project.org/changelog/</guid>
-      <description>1.7.0 &amp;ndash; 2021-10-19: Added  context and context_all mouse actions for opening the context menu (#848) open_url mouse action for opening url&amp;rsquo;s in a notification (#848) action_name rule for setting a default action to perform when using do_action (#848) HiDPI support for both Wayland and X11. On wayland the scale can be set from your compositor&amp;rsquo;s settings and is automatically picked up by dunst. On X11 dunst will guess the scale based on the DPI of the screen.</description>
     </item>
     
     <item>
@@ -43,8 +34,8 @@ The wayland support of v1.6.0 was already pretty good, but this release added fu
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://dunst-project.org/documentation/</guid>
-      <description>NAME DESCRIPTION  Global section Urgency sections   DUNSTCTL HISTORY WAYLAND RULES  SCRIPTING   COLORS  NOTIFY-SEND   ACTIONS TIME FORMAT AUTHORS REPORTING BUGS COPYRIGHT SEE ALSO  NAME dunst - configuration file
-DESCRIPTION The configuration is divided into sections in an ini-like format. Every section start with the section&amp;#39;s name in square brackets. After that is a list of key-value pairs that specify the settings. Whitespace is purely cosmetic and doesn&amp;#39;t matter for the result.</description>
+      <description>dunst - configuration file   NAME DESCRIPTION  Global section Urgency sections   DUNSTCTL HISTORY WAYLAND RULES  SCRIPTING   COLORS  NOTIFY-SEND   ACTIONS TIME FORMAT AUTHORS REPORTING BUGS COPYRIGHT SEE ALSO  NAME dunst - configuration file
+DESCRIPTION The configuration is divided into sections in an ini-like format. Every section start with the section&amp;#39;s name in square brackets. After that is a list of key-value pairs that specify the settings.</description>
     </item>
     
     <item>
@@ -55,6 +46,15 @@ DESCRIPTION The configuration is divided into sections in an ini-like format. Ev
       <guid>https://dunst-project.org/faq/</guid>
       <description>Common problems Errors about missing or failing to open a display Depending on the setup dunst was unable to connect to the X server or the wayland compositor in use. In case of X make sure that X is running and that the DISPLAY environment variable is correctly set. For a wayland based setup the WAYLAND_DISPLAY environment variable needs to be set to a valid value.
 If dunst should be automatically started by dbus or via the systemd service, it is important to know that both don&amp;rsquo;t inherit environment variables set by a shell.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://dunst-project.org/changelog/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dunst-project.org/changelog/</guid>
+      <description>Dunst changelog 1.7.1 &amp;ndash; 2021-11-01 Added  Script environment variable DUNST_DESKTOP_ENTRY. (#874) Rule set_category for change a notifications category with rules. (1b72b2a)  Fixed  Dunst not building with WAYLAND=0. (#938) Wrong icon being shown in chromium-based browsers. (#939) set_stack_tag not working anymore. (#942) Outdated documentation. (#943, #944 and more) Empty strings not being allowed in settings. (#946) Dunst crashing when compositor doesn&amp;rsquo;t support zwlr_foreign_toplevel_v1. (#948) Xmore notifications showing a progress bar and icon.</description>
     </item>
     
   </channel>

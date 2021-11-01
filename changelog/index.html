@@ -5,7 +5,7 @@
         <meta http-equiv="content-type" content="text/html; charset=utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
 
-        <title>Changelog &middot; Dunst</title>
+        <title> &middot; Dunst</title>
         <link rel='stylesheet' href='//fonts.googleapis.com/css?family=Open+Sans:400,300,600' type='text/css'>
         <link rel="stylesheet" href="https://dunst-project.org/libraries/normalize.3.0.1.css" />
         <link rel="stylesheet" href="https://dunst-project.org/css/liquorice.min.css" />
@@ -36,8 +36,6 @@
                         
                             <li><a href="/download/"> Download </a></li>
                         
-                            <li><a href="/changelog/"> Changelog </a></li>
-                        
                             <li><a href="/documentation/"> Documentation </a></li>
                         
                             <li><a href="/faq/"> FAQ </a></li>
@@ -56,8 +54,6 @@
                     
                         <li><a href="/download/"> Download </a></li>
                     
-                        <li><a href="/changelog/"> Changelog </a></li>
-                    
                         <li><a href="/documentation/"> Documentation </a></li>
                     
                         <li><a href="/faq/"> FAQ </a></li>
@@ -72,11 +68,33 @@
     <div class="container">
         <div class="row">
             <div class="sixteen columns">
-            <h1><b>Changelog</b></h1>
+            <h1><b></b></h1>
                 
-                <hr>
-<h2 id="170----2021-10-19">1.7.0 &ndash; 2021-10-19:</h2>
+                <h1 id="dunst-changelog">Dunst changelog</h1>
+<h2 id="171----2021-11-01">1.7.1 &ndash; 2021-11-01</h2>
 <h3 id="added">Added</h3>
+<ul>
+<li>Script environment variable <code>DUNST_DESKTOP_ENTRY</code>. (#874)</li>
+<li>Rule <code>set_category</code> for change a notifications category with rules. (1b72b2a)</li>
+</ul>
+<h3 id="fixed">Fixed</h3>
+<ul>
+<li>Dunst not building with WAYLAND=0. (#938)</li>
+<li>Wrong icon being shown in chromium-based browsers. (#939)</li>
+<li><code>set_stack_tag</code> not working anymore. (#942)</li>
+<li>Outdated documentation. (#943, #944 and more)</li>
+<li>Empty strings not being allowed in settings. (#946)</li>
+<li>Dunst crashing when compositor doesn&rsquo;t support <code>zwlr_foreign_toplevel_v1</code>. (#948)</li>
+<li>Xmore notifications showing a progress bar and icon. (#915)</li>
+<li>Markup is now a rule again. Before this was undocumented behaviour. (#955)</li>
+<li>Double free when setting <code>XDG_CONFIG_DIR</code>. (#957)</li>
+<li>Dunst crashing on some compositors. (#948)</li>
+<li>Dunst not exiting when wayland compositor quits. (#961)</li>
+<li>Now the separators are not responsive to mouse clicks anymore. (#960)</li>
+<li>Mouse action stopping the rest of the actions. (bf58928)</li>
+</ul>
+<h2 id="170----2021-10-19">1.7.0 &ndash; 2021-10-19:</h2>
+<h3 id="added-1">Added</h3>
 <ul>
 <li><code>context</code> and <code>context_all</code> mouse actions for opening the context menu (#848)</li>
 <li><code>open_url</code> mouse action for opening url&rsquo;s in a notification (#848)</li>
@@ -105,13 +123,14 @@ apply to all the notifications. (#803)</li>
 in the <code>[global]</code> section as well (see above). (#937 and #803)</li>
 <li>The appid&rsquo;s now also need to match when stacking notifications. (#886)</li>
 <li><code>xdg-open</code> is now being used by default for opening URL&rsquo;s. (#889)</li>
-<li><code>geometry</code> has been replaced by <code>origin</code>, <code>width</code>, <code>height</code>, <code>offset</code> and
-<code>notification_height</code>. This allows for more flexible geometry settings. (#855)</li>
+<li><code>geometry</code> and <code>notification_height</code> have been replaced by <code>origin</code>, <code>width</code>,
+<code>height</code>, <code>offset</code> and <code>notification_limit</code>. This allows for more flexible
+geometry settings. (#855)</li>
 <li>There were a bunch of changes in the installation and default locations. See
 the release notes for more information.</li>
 <li>Upon seeing invalid markup, dunst is a bit smarter in stripping the markup.</li>
 </ul>
-<h3 id="fixed">Fixed</h3>
+<h3 id="fixed-1">Fixed</h3>
 <ul>
 <li>Lots of debug messages when <code>idle_timeout=0</code> (#814)</li>
 <li><code>follow=none</code> not working on Wayland (#814)</li>
@@ -131,12 +150,12 @@ manager and <code>dunstctl</code> to replace it. (#803)</li>
 <li>Setting settings via <code>config.h</code>. (#803)</li>
 </ul>
 <h2 id="161---2021-02-21">1.6.1 - 2021-02-21:</h2>
-<h3 id="fixed-1">Fixed</h3>
+<h3 id="fixed-2">Fixed</h3>
 <ul>
 <li>Incorrect version in Makefile</li>
 </ul>
 <h2 id="160---2021-02-21">1.6.0 - 2021-02-21:</h2>
-<h3 id="added-1">Added</h3>
+<h3 id="added-2">Added</h3>
 <ul>
 <li>Wayland support. Dunst now runs natively on wayland. This fixes several bugs
 with dunst on wayland and allows idle detection. (#781)</li>
@@ -152,7 +171,7 @@ with dunst on wayland and allows idle detection. (#781)</li>
 <li>Dunst now installs a system-wide config in <code>/etc/dunst/dunstrc</code> (#798)</li>
 <li>Move part of the man page to dunst(5) (#799)</li>
 </ul>
-<h3 id="fixed-2">Fixed</h3>
+<h3 id="fixed-3">Fixed</h3>
 <ul>
 <li><code>history_ignore</code> flag broken when using multiple rules (#747)</li>
 <li>Divide by zero in radius calculation (#750)</li>
@@ -167,7 +186,7 @@ with dunst on wayland and allows idle detection. (#781)</li>
 <li><code>DUNST_COMMAND_{PAUSE,RESUME,TOGGLE}</code> (#830)</li>
 </ul>
 <h2 id="150---2020-07-23">1.5.0 - 2020-07-23</h2>
-<h3 id="added-2">Added</h3>
+<h3 id="added-3">Added</h3>
 <ul>
 <li><code>min_icon_size</code> option to automatically scale up icons to a desired value (#674)</li>
 <li><code>vertical_alignment</code> option to control the text/icon alignment within the notification (#684)</li>
@@ -182,7 +201,7 @@ with dunst on wayland and allows idle detection. (#781)</li>
 <li><code>dunstify</code> notification client is now installed by default (#701)</li>
 <li>Keyboard follow mode falls back to the monitor with the mouse if no window has keyboard focus (#708)</li>
 </ul>
-<h3 id="fixed-3">Fixed</h3>
+<h3 id="fixed-4">Fixed</h3>
 <ul>
 <li>Overflow when setting a &gt;=40 minute timeout (#646)</li>
 <li>Unset configuration options not falling back to default values (#649)</li>
@@ -190,7 +209,7 @@ with dunst on wayland and allows idle detection. (#781)</li>
 <li>Lack of antialiasing with round corners enabled (#713)</li>
 </ul>
 <h2 id="141---2019-07-03">1.4.1 - 2019-07-03</h2>
-<h3 id="fixed-4">Fixed</h3>
+<h3 id="fixed-5">Fixed</h3>
 <ul>
 <li><code>max_icon_size</code> not working with dynamic width (#614)</li>
 <li>Failure to parse color strings with trailing comments in the config (#626)</li>
@@ -200,7 +219,7 @@ with dunst on wayland and allows idle detection. (#781)</li>
 <li>Fullscreen status change not being detected in some cases (#613)</li>
 </ul>
 <h2 id="140---2019-03-30">1.4.0 - 2019-03-30</h2>
-<h3 id="added-3">Added</h3>
+<h3 id="added-4">Added</h3>
 <ul>
 <li>Add support to override <code>frame_color</code> via rules (#498)</li>
 <li>Support for round corners (#420)</li>
@@ -215,7 +234,7 @@ via <code>stack_tag</code> (#552)</li>
 <li>Added <code>skip_display</code> rule option to skip initial notification display, and
 include the notification in the history. (#590)</li>
 </ul>
-<h3 id="fixed-5">Fixed</h3>
+<h3 id="fixed-6">Fixed</h3>
 <ul>
 <li>Notification age not counting the time while the computer was suspended (#492)</li>
 <li>Dunst losing always-on-top status on a window manager restart (#160)</li>
@@ -239,17 +258,17 @@ notification waiting to get displayed. The notification gets displayed directly 
 <li>Dependency on libxdg-basedir (#550)</li>
 </ul>
 <h2 id="132---2018-05-06">1.3.2 - 2018-05-06</h2>
-<h3 id="fixed-6">Fixed</h3>
+<h3 id="fixed-7">Fixed</h3>
 <ul>
 <li>Crash when trying to load an invalid or corrupt icon (#512)</li>
 </ul>
 <h2 id="131---2018-01-30">1.3.1 - 2018-01-30</h2>
-<h3 id="fixed-7">Fixed</h3>
+<h3 id="fixed-8">Fixed</h3>
 <ul>
 <li>Race condition resulting in the service files being empty (#488)</li>
 </ul>
 <h2 id="130---2018-01-05">1.3.0 - 2018-01-05</h2>
-<h3 id="added-4">Added</h3>
+<h3 id="added-5">Added</h3>
 <ul>
 <li><code>ellipsize</code> option to control how long lines should be ellipsized when <code>word_wrap</code> is set to <code>false</code> (#374)</li>
 <li>A beginning tilde of a path is now expanded to the home of the current user (#351)</li>
@@ -260,7 +279,7 @@ notification waiting to get displayed. The notification gets displayed directly 
 <li>Support for specifying timeout values in milliseconds, minutes, hours, or days. (#379)</li>
 <li>Support for HTML img tags (via context menu) (#428)</li>
 </ul>
-<h3 id="fixed-8">Fixed</h3>
+<h3 id="fixed-9">Fixed</h3>
 <ul>
 <li><code>new_icon</code> rule being ignored on notifications that had a raw icon (#423)</li>
 <li>Format strings being replaced recursively in some cases (#322 #365)</li>
@@ -286,8 +305,8 @@ requires gdk-pixbuf which had been a transient dependency before. (#334
 <li>Dunst does now install the systemd and dbus service files into their proper location given
 by pkg-config. Use <code>SERVICEDIR_(DBUS|SYSTEMD)</code> params to overwrite them. (#463)</li>
 </ul>
-<h1 id="120---2017-07-12">1.2.0 - 2017-07-12</h1>
-<h3 id="added-5">Added</h3>
+<h2 id="120---2017-07-12">1.2.0 - 2017-07-12</h2>
+<h3 id="added-6">Added</h3>
 <ul>
 <li><code>always_run_script</code> option to run script even if a notification is suppressed</li>
 <li>Support for more icon file types</li>
@@ -316,7 +335,7 @@ by pkg-config. Use <code>SERVICEDIR_(DBUS|SYSTEMD)</code> params to overwrite th
 <li><code>allow_markup</code> is deprecated with <code>markup</code> as its replacement</li>
 <li>The urgency specific command line flags have been deprecated with no replacement, respond to issue #328 on the bug tracker if you depend on them</li>
 </ul>
-<h3 id="fixed-9">Fixed</h3>
+<h3 id="fixed-10">Fixed</h3>
 <ul>
 <li>Infinite loop if there are 2 configuration file sections with the same name</li>
 <li>URLs with dashes and underscores in them are now parsed properly</li>
@@ -331,13 +350,13 @@ by pkg-config. Use <code>SERVICEDIR_(DBUS|SYSTEMD)</code> params to overwrite th
 <li>dmenu process being left as a zombie if no option was selected</li>
 <li>Crash when opening urls parsed from <code>&lt;a href=&quot;&quot;&gt;</code> tags</li>
 </ul>
-<h1 id="110---2014-07-29">1.1.0 - 2014-07-29</h1>
+<h2 id="110---2014-07-29">1.1.0 - 2014-07-29</h2>
 <ul>
 <li>fix nasty memory leak</li>
 <li>icon support (still work in progress)</li>
 <li>fix issue where keybindings aren&rsquo;t working when numlock is activated</li>
 </ul>
-<h1 id="100---2013-04-15">1.0.0 - 2013-04-15</h1>
+<h2 id="100---2013-04-15">1.0.0 - 2013-04-15</h2>
 <ul>
 <li>use pango/cairo as drawing backend</li>
 <li>make use of pangos ability to parse markup</li>
@@ -345,7 +364,7 @@ by pkg-config. Use <code>SERVICEDIR_(DBUS|SYSTEMD)</code> params to overwrite th
 <li>indicator for actions/urls found</li>
 <li>use blocking I/O. No more waking up the CPU multiple times per second to check for new dbus messages</li>
 </ul>
-<h1 id="050---2013-01-26">0.5.0 - 2013-01-26</h1>
+<h2 id="050---2013-01-26">0.5.0 - 2013-01-26</h2>
 <ul>
 <li>new default dunstrc</li>
 <li>frames for window</li>
@@ -355,7 +374,7 @@ by pkg-config. Use <code>SERVICEDIR_(DBUS|SYSTEMD)</code> params to overwrite th
 <li>use own code for ini parsing (this removes inih)</li>
 <li>progress hints</li>
 </ul>
-<h1 id="040---2012-09-27">0.4.0 - 2012-09-27</h1>
+<h2 id="040---2012-09-27">0.4.0 - 2012-09-27</h2>
 <ul>
 <li>separator between notifications</li>
 <li>word wrap long lines</li>
@@ -367,11 +386,11 @@ by pkg-config. Use <code>SERVICEDIR_(DBUS|SYSTEMD)</code> params to overwrite th
 <li>bugfix: forgetting geometry</li>
 <li>(optional) static configuration</li>
 </ul>
-<h1 id="031---2012-08-02">0.3.1 - 2012-08-02</h1>
+<h2 id="031---2012-08-02">0.3.1 - 2012-08-02</h2>
 <ul>
 <li>fix -mon option</li>
 </ul>
-<h1 id="030---2012-07-30">0.3.0 - 2012-07-30</h1>
+<h2 id="030---2012-07-30">0.3.0 - 2012-07-30</h2>
 <ul>
 <li>full support for Desktop Notification Specification (mandatory parts)</li>
 <li>option to select monitor on which notifications are shown</li>
@@ -386,7 +405,7 @@ by pkg-config. Use <code>SERVICEDIR_(DBUS|SYSTEMD)</code> params to overwrite th
 <li>cleanup / bugfixes etc.</li>
 <li>added dunst.service</li>
 </ul>
-<h1 id="020---2012-06-26">0.2.0 - 2012-06-26</h1>
+<h2 id="020---2012-06-26">0.2.0 - 2012-06-26</h2>
 <ul>
 <li>introduction of dunstrc</li>
 <li>removed static configuration via config.h</li>
