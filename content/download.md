@@ -6,11 +6,11 @@ type = "page"
 +++
 ***
 
-The current stable version of Dunst is **1.7.1** released on **Nov 1 2021**.
+The current stable version of Dunst is **1.7.2** released on **Nov 30 2021**.
 
 # Downloads
 
-* [Source tarball](https://github.com/dunst-project/dunst/archive/v1.7.1.tar.gz)
+* [Source tarball](https://github.com/dunst-project/dunst/archive/v1.7.2.tar.gz)
 * [Code repository (Github)](https://github.com/dunst-project/dunst)
 
 # Release Notes for v1.7.0

@@ -42,6 +42,7 @@ toc = "true"
   </li>
   <li><a href="#ACTIONS">ACTIONS</a></li>
   <li><a href="#TIME-FORMAT">TIME FORMAT</a></li>
+  <li><a href="#MISCELLANEOUS">MISCELLANEOUS</a></li>
   <li><a href="#AUTHORS">AUTHORS</a></li>
   <li><a href="#REPORTING-BUGS">REPORTING BUGS</a></li>
   <li><a href="#COPYRIGHT">COPYRIGHT</a></li>
@@ -60,7 +61,7 @@ toc = "true"
 
 <p>See RULES for more details.</p>
 
-<p>The &#39;experimental&#39; section contains all the features that have not yet been tested thoroughly and may be changed at any time.</p>
+<p>All experimental settings are marked with <i>Experimental</i></p>
 
 <h2 id="Global-section">Global section</h2>
 
@@ -105,7 +106,7 @@ toc = "true"
 <dt id="geometry-DEPRECATED"><b>geometry</b> DEPRECATED</dt>
 <dd>
 
-<p>This setting is deprecated. It&#39;s split up into <b>width</b>, <b>height</b>, <b>origin</b>, <b>notification_limit</b> and <b>offset</b>.</p>
+<p>This setting is deprecated and removed. It&#39;s split up into <b>width</b>, <b>height</b>, <b>origin</b>, <b>notification_limit</b> and <b>offset</b>.</p>
 
 </dd>
 <dt id="width"><b>width</b></dt>
@@ -114,6 +115,8 @@ toc = "true"
 <p>The width of the notification window in pixels. This can be a single number to specify a constant width or two numbers for the minimum and maximum width. The notification will expand from the minimum width as neccesary.</p>
 
 <p>Examples: width = 300 # constant width of 300 width = (0, 300) # width between 0 and 300</p>
+
+<p>When setting a width bigger than the screen, dunst will clamp the width to the screen width. So if you want the notifcation to stretch the entire screen dynamically, you may set the width to a high enough number, which none of your screens exceed (e.g. 10000).</p>
 
 </dd>
 <dt id="height"><b>height</b></dt>
@@ -202,13 +205,13 @@ toc = "true"
 <p>The height in pixels of the separator between notifications, if set to 0 there will be no separating line between notifications.</p>
 
 </dd>
-<dt id="padding-default:-0"><b>padding</b> (default: 0)</dt>
+<dt id="padding-default:-8"><b>padding</b> (default: 8)</dt>
 <dd>
 
 <p>The distance in pixels from the content to the separator/border of the window in the vertical axis</p>
 
 </dd>
-<dt id="horizontal_padding-default:-0"><b>horizontal_padding</b> (default: 0)</dt>
+<dt id="horizontal_padding-default:-8"><b>horizontal_padding</b> (default: 8)</dt>
 <dd>
 
 <p>The distance in pixels from the content to the border of the window in the horizontal axis</p>
@@ -232,16 +235,10 @@ horizontal_padding=10</code></pre>
 horizontal_padding=10</code></pre>
 
 </dd>
-<dt id="frame_width-default:-0"><b>frame_width</b> (default: 0)</dt>
+<dt id="frame_width-default:-3"><b>frame_width</b> (default: 3)</dt>
 <dd>
 
 <p>Defines width in pixels of frame around the notification window. Set to 0 to disable.</p>
-
-</dd>
-<dt id="frame_color-color-default:-888888"><b>frame_color color</b> (default: #888888)</dt>
-<dd>
-
-<p>Defines color of the frame around the notification window. See COLORS.</p>
 
 </dd>
 <dt id="separator_color-values:-auto-foreground-frame-RRGGBB-default:-auto"><b>separator_color</b> (values: [auto/foreground/frame/#RRGGBB] default: auto)</dt>
@@ -451,7 +448,29 @@ horizontal_padding=10</code></pre>
 
 <p>Can be set to a colon-separated list of paths to search for icons to use with notifications.</p>
 
-<p>Dunst doesn&#39;t currently do any type of icon lookup outside of these directories.</p>
+<p>Dunst doens&#39;t search outside of these direcories. For a recursive icon lookup system, see <b>enable_recursive_icon_lookup</b>. This new system will eventually replace this and will need new settings.</p>
+
+</dd>
+<dt id="icon_theme-default:-Adwaita-example:-Adwaita-breeze-Experimental"><b>icon_theme</b> (default: &quot;Adwaita&quot;, example: &quot;Adwaita, breeze&quot;) <i>Experimental</i></dt>
+<dd>
+
+<p>Comma-separated of names of the the themes to use for looking up icons. This has to be the name of the directory in which the theme is located, not the human-friendly name of the theme. So for example, the theme <b>Breeze Dark</b> is located in <i>/usr/share/icons/breeze-dark</i>. In this case you have to set the theme to <b>breeze-dark</b>.</p>
+
+<p>The first theme in the list is the most important. Only if the icon cannot be found in that theme, the next theme will be tried.</p>
+
+<p>Dunst will look for the themes in <b>XDG_DATA_HOME/icons</b> and <b>$XDG_DATA_DIRS/icons</b> as specified in the icon theme specification: https://specifications.freedesktop.org/icon-theme-spec/icon-theme-spec-latest.html.</p>
+
+<p>If the theme inherits from other themes, they will be used as a backup.</p>
+
+<p>This setting is experimental and not enabled by default. See <b>enable_recursive_icon_lookup</b> for how to enable it.</p>
+
+</dd>
+<dt id="enable_recursive_icon_lookup-default:-false-Experimental"><b>enable_recursive_icon_lookup</b> (default: false) <i>Experimental</i></dt>
+<dd>
+
+<p>This setting enables the new icon lookup method. This new system will eventually be the old icon lookup.</p>
+
+<p>Currently icons are looked up in the <b>icon_path</b> and scaled according to <b>min_icon_size</b> and <b>max_icon_size</b>. Since the <b>icon_path</b> wasn&#39;t recursive, one had to add a ton of paths to this list. This has been drastically simplified by the new lookup method. Now you only have to set <b>icon_theme</b> to the name of the theme and <b>icon_size</b> to the icon size you want. To enable this new behaviour, set <b>enable_recursive_icon_lookup</b> to true in the <i>[experimental]</i> section. See the respective settings for more details.</p>
 
 </dd>
 <dt id="sticky_history-values:-true-false-default:-true"><b>sticky_history</b> (values: [true/false], default: true)</dt>
@@ -588,10 +607,10 @@ horizontal_padding=10</code></pre>
 
 <dl>
 
-<dt id="li-ni-ci-icon"><b>-li/ni/ci icon</b></dt>
+<dt id="li-ni-ci-icon-DEPRECATED"><b>-li/ni/ci icon</b> DEPRECATED</dt>
 <dd>
 
-<p>Defines the icon for low, normal and critical notifications respectively.</p>
+<p>Defines the icon for low, normal and critical notifications respectively. This setting will be replaced by the <b>default_icon</b> setting, so it&#39;s recommended to replace it as soon as possible.</p>
 
 <p>Where <i>icon</i> is a path to an image file containing the icon.</p>
 
@@ -718,7 +737,7 @@ horizontal_padding=10</code></pre>
 <dt id="icon"><code>icon</code></dt>
 <dd>
 
-<p>The icon of the notification in the form of a file path. Can be empty if no icon is available or a raw icon is used instead.</p>
+<p>The icon of the notification in the form of a file path. Can be empty if no icon is available or a raw icon is used instead. This setting is not to be confused with the icon setting in the urgency section.</p>
 
 </dd>
 <dt id="match_transient"><code>match_transient</code></dt>
@@ -820,7 +839,13 @@ horizontal_padding=10</code></pre>
 <dt id="new_icon"><code>new_icon</code></dt>
 <dd>
 
-<p>Updates the icon of the notification, it should be a path to a valid image.</p>
+<p>Updates the icon of the notification, it should be a path or a name for a valid image. This overrides the icon that was sent with dunstify or another notification tool.</p>
+
+</dd>
+<dt id="default_icon"><code>default_icon</code></dt>
+<dd>
+
+<p>Sets the default icon of the notification, it should be a path or a name for a valid image. This does <b>not</b> override the icon that was sent with dunstify or another notification tool.</p>
 
 </dd>
 <dt id="set_stack_tag"><code>set_stack_tag</code></dt>
@@ -938,6 +963,14 @@ horizontal_padding=10</code></pre>
 
 </dd>
 </dl>
+
+</dd>
+<dt id="icon_size-default:-32-Experimental"><b>icon_size</b> (default: 32) <i>Experimental</i></dt>
+<dd>
+
+<p>The size of the icon in pixels. This is commonly a multiple of 2, for example: 16, 32 or 64. This size is used for searching the right icon in <b>icon_theme</b>. If no icon of the right size can be found, no icon is displayed. When passing a full icon path to dunst the icon will be used even when it&#39;s not the right size. The icon is then scaled to be of size <b>icon_size</b>.</p>
+
+<p>This setting is experimental and not enabled by default. See <b>enable_recursive_icon_lookup</b> for how to enable it.</p>
 
 </dd>
 </dl>
@@ -1062,6 +1095,10 @@ horizontal_padding=10</code></pre>
 <p>Time units understood by dunst are &quot;ms&quot;, &quot;s&quot;, &quot;m&quot;, &quot;h&quot; and &quot;d&quot;.</p>
 
 <p>Example time: &quot;1000ms&quot; &quot;10m&quot;</p>
+
+<h1 id="MISCELLANEOUS">MISCELLANEOUS</h1>
+
+<p>Dunst used to provide shortcuts to act on notifications via key-bindings, but it has now been moved to its own utility. For more information, see the manual for dunstctl(1).</p>
 
 <h1 id="AUTHORS">AUTHORS</h1>
 
