@@ -22,7 +22,7 @@ Config file here</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://dunst-project.org/download/</guid>
-      <description>The current stable version of Dunst is 1.7.1 released on Nov 1 2021.
+      <description>The current stable version of Dunst is 1.7.2 released on Nov 30 2021.
 Downloads  Source tarball Code repository (Github)  Release Notes for v1.7.0 This release was long overdue. There have been a lot of changes in the mean time. For a full list of changes, see the changelog.
 For users:
 The wayland support of v1.6.0 was already pretty good, but this release added fullscreen detection and improved the stability.</description>
@@ -34,8 +34,17 @@ The wayland support of v1.6.0 was already pretty good, but this release added fu
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://dunst-project.org/documentation/</guid>
-      <description>dunst - configuration file   NAME DESCRIPTION  Global section Urgency sections   DUNSTCTL HISTORY WAYLAND RULES  SCRIPTING   COLORS  NOTIFY-SEND   ACTIONS TIME FORMAT AUTHORS REPORTING BUGS COPYRIGHT SEE ALSO  NAME dunst - configuration file
+      <description>dunst - configuration file   NAME DESCRIPTION  Global section Urgency sections   DUNSTCTL HISTORY WAYLAND RULES  SCRIPTING   COLORS  NOTIFY-SEND   ACTIONS TIME FORMAT MISCELLANEOUS AUTHORS REPORTING BUGS COPYRIGHT SEE ALSO  NAME dunst - configuration file
 DESCRIPTION The configuration is divided into sections in an ini-like format. Every section start with the section&amp;#39;s name in square brackets. After that is a list of key-value pairs that specify the settings.</description>
+    </item>
+    
+    <item>
+      <title>Documentation</title>
+      <link>https://dunst-project.org/documentation_header/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dunst-project.org/documentation_header/</guid>
+      <description></description>
     </item>
     
     <item>
@@ -54,7 +63,7 @@ If dunst should be automatically started by dbus or via the systemd service, it 
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://dunst-project.org/changelog/</guid>
-      <description>Dunst changelog 1.7.1 &amp;ndash; 2021-11-01 Added  Script environment variable DUNST_DESKTOP_ENTRY. (#874) Rule set_category for change a notifications category with rules. (1b72b2a)  Fixed  Dunst not building with WAYLAND=0. (#938) Wrong icon being shown in chromium-based browsers. (#939) set_stack_tag not working anymore. (#942) Outdated documentation. (#943, #944 and more) Empty strings not being allowed in settings. (#946) Dunst crashing when compositor doesn&amp;rsquo;t support zwlr_foreign_toplevel_v1. (#948) Xmore notifications showing a progress bar and icon.</description>
+      <description>Dunst changelog 1.7.2 &amp;ndash; 2021-11-30 Added  Experimental recursive icon lookup. This is not enabled by default and can be enabled by setting enable_recursive_icon_lookup=true. Setting icon sizes still doesn&amp;rsquo;t work entirely as it&amp;rsquo;s supposed to and will be improved in future releases. (#965) You can now enable or disable rules on the fly with dunstctl rule $name$ enable/disable. (#981) dunstctl history lists your notification history in JSON format for processing by scripts.</description>
     </item>
     
   </channel>
