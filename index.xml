@@ -39,15 +39,6 @@ DESCRIPTION The configuration is divided into sections in an ini-like format. Ev
     </item>
     
     <item>
-      <title>Documentation</title>
-      <link>https://dunst-project.org/documentation_header/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://dunst-project.org/documentation_header/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>FAQ</title>
       <link>https://dunst-project.org/faq/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
