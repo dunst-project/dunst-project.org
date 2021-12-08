@@ -40,4 +40,4 @@ sleep 2
 nvim content/download.md
 
 cp "$REPO/CHANGELOG.md" "content/changelog.md"
-pod2html < "$REPO/docs/dunst.5.pod" | cat  "content/documentation_header.md" - > "content/documentation.md"
+pod2html < "$REPO/docs/dunst.5.pod" | cat  "helper_files/documentation_header.md" - > "content/documentation.md"
