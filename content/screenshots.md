@@ -15,4 +15,4 @@ type = "page"
 
 <a href="/static/image.png">![alt text](/static/image.png)</a>
 
-Config file <a href="/static/dunstrc1">here</a>
+Updated config file <a href="/static/dunstrc1">here</a>
