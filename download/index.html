@@ -71,32 +71,25 @@
             <h1><b>Download</b></h1>
                 
                 <hr>
-<p>The current stable version of Dunst is <strong>1.7.3</strong> released on <strong>Dec 8 2021</strong>.</p>
+<p>The current stable version of Dunst is <strong>1.8.0</strong> released on <strong>Feb 24 2022</strong>.</p>
 <h1 id="downloads">Downloads</h1>
 <ul>
-<li><a href="https://github.com/dunst-project/dunst/archive/v1.7.3.tar.gz">Source tarball</a></li>
+<li><a href="https://github.com/dunst-project/dunst/archive/v1.8.0.tar.gz">Source tarball</a></li>
 <li><a href="https://github.com/dunst-project/dunst">Code repository (Github)</a></li>
 </ul>
-<h1 id="release-notes-for-v170">Release Notes for v1.7.0</h1>
-<p>This release was long overdue. There have been a lot of changes in the mean
-time. For a full list of changes, see the changelog.</p>
+<h1 id="release-notes-for-v180">Release Notes For v1.8.0</h1>
+<p>Lots of exciting and useful features are being added to dunst, all while making
+dunst even more configurable and reliable.</p>
 <p>For users:</p>
-<p>The wayland support of v1.6.0 was already pretty good, but this release added
-fullscreen detection and improved the stability.</p>
-<p>This release added a few improvements to the wayland support. Dunst now
-automatically falls back to X11 when the wayland compositor doesn&rsquo;t support the
-neccesary protocols.</p>
+<p>This release re-adds the keyboard shortcuts for those who have been missing
+them. Also, support for drop-in files has been implemented. Files placed in
+dunstrc.d/*.conf will be read after the main dunstrc. This may be useful for
+theming (with pywal or otherwise). In the future we will add example drop-in
+files for different default themes and special configuration.</p>
 <p>For maintainers:</p>
-<p>Previously the readme said dunst depended on GTK3, which hasn&rsquo;t been the case
-for a while. Make sure that GTK3 is not included as a dependency.</p>
-<p>The default program for opening URL&rsquo;s in notifications has been changed from
-firefox to xdg-open.</p>
-<p>The Makefile and dunstrc searching has been significantly changed to be more
-compliant with the XDG spec. The default config directory, <code>SYSCONFDIR</code>, has
-been changed from &ldquo;/etc&rdquo; to &ldquo;${PREFIX}/etc/xdg/&rdquo;. To change back to the old
-behaviour, run make with: <code>make SYSCONFDIR=&quot;/etc&quot;</code> (make sure to pass the same
-variables to make in subsequent calls). Take a look at the &ldquo;Make parameters&rdquo;
-section of the readme and the FILES section of the man page for more details.</p>
+<p>Not much has been changed for maintainers. Maybe you&rsquo;ll find the drop-in files
+useful for distro-specific fixes. Note that only the files in the directory of
+the used dunstrc will be read (see dunst(1) for documentation).</p>
 
             </div>
         </div>

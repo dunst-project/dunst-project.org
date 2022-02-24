@@ -13,7 +13,7 @@
       
       <guid>https://dunst-project.org/screenshots/</guid>
       <description>.row img { max-width: 100%; height: auto; }  
-Config file here</description>
+Updated config file here</description>
     </item>
     
     <item>
@@ -22,10 +22,10 @@ Config file here</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://dunst-project.org/download/</guid>
-      <description>The current stable version of Dunst is 1.7.3 released on Dec 8 2021.
-Downloads  Source tarball Code repository (Github)  Release Notes for v1.7.0 This release was long overdue. There have been a lot of changes in the mean time. For a full list of changes, see the changelog.
+      <description>The current stable version of Dunst is 1.8.0 released on Feb 24 2022.
+Downloads  Source tarball Code repository (Github)  Release Notes For v1.8.0 Lots of exciting and useful features are being added to dunst, all while making dunst even more configurable and reliable.
 For users:
-The wayland support of v1.6.0 was already pretty good, but this release added fullscreen detection and improved the stability.</description>
+This release re-adds the keyboard shortcuts for those who have been missing them. Also, support for drop-in files has been implemented. Files placed in dunstrc.</description>
     </item>
     
     <item>
@@ -34,7 +34,7 @@ The wayland support of v1.6.0 was already pretty good, but this release added fu
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://dunst-project.org/documentation/</guid>
-      <description>dunst - configuration file   NAME DESCRIPTION  Global section Urgency sections   DUNSTCTL HISTORY WAYLAND RULES  SCRIPTING   COLORS  NOTIFY-SEND   ACTIONS TIME FORMAT MISCELLANEOUS AUTHORS REPORTING BUGS COPYRIGHT SEE ALSO  NAME dunst - configuration file
+      <description>dunst - configuration file   NAME DESCRIPTION  Global section Keyboard shortcuts (X11 only) Urgency sections   DUNSTCTL HISTORY WAYLAND RULES  SCRIPTING   COLORS  NOTIFY-SEND   ACTIONS TIME FORMAT AUTHORS REPORTING BUGS COPYRIGHT SEE ALSO  NAME dunst - configuration file
 DESCRIPTION The configuration is divided into sections in an ini-like format. Every section start with the section&amp;#39;s name in square brackets. After that is a list of key-value pairs that specify the settings.</description>
     </item>
     
@@ -54,7 +54,7 @@ If dunst should be automatically started by dbus or via the systemd service, it 
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://dunst-project.org/changelog/</guid>
-      <description>Dunst changelog 1.7.3 &amp;ndash; 2021-12-08 Added Changed  follow is now none again by default. This was the case before v1.7.0 as well. (#990).  Fixed  dunstctl action is now working again. Segfault in experimental icon lookup when an inherited theme doesn&amp;rsquo;t exist. icon_position = off not being respected (#996).  1.7.2 &amp;ndash; 2021-11-30 Added  Experimental recursive icon lookup. This is not enabled by default and can be enabled by setting enable_recursive_icon_lookup=true.</description>
+      <description>Dunst changelog 1.8.0 &amp;ndash; 2022-02-24 Added  Implemented progress_bar_min_width. Before it was an unused setting. (#1006) progress_bar_horizontal_alignment for changing the alignment of the progress bar. (#1021) Support for config drop-ins. You can add as many configuration files as you want in dunstrc.d. See the man page dunst(1) for more information. This was done with help from @WhitePeter. (#997) Thanks to @m-barlett you can place your icons at the center of your notifications with icon_position = top.</description>
     </item>
     
   </channel>
