@@ -24,6 +24,7 @@ toc = "true"
   <li><a href="#DESCRIPTION">DESCRIPTION</a>
     <ul>
       <li><a href="#Global-section">Global section</a></li>
+      <li><a href="#Keyboard-shortcuts-X11-only">Keyboard shortcuts (X11 only)</a></li>
       <li><a href="#Urgency-sections">Urgency sections</a></li>
     </ul>
   </li>
@@ -42,7 +43,6 @@ toc = "true"
   </li>
   <li><a href="#ACTIONS">ACTIONS</a></li>
   <li><a href="#TIME-FORMAT">TIME FORMAT</a></li>
-  <li><a href="#MISCELLANEOUS">MISCELLANEOUS</a></li>
   <li><a href="#AUTHORS">AUTHORS</a></li>
   <li><a href="#REPORTING-BUGS">REPORTING BUGS</a></li>
   <li><a href="#COPYRIGHT">COPYRIGHT</a></li>
@@ -103,10 +103,22 @@ toc = "true"
 </dl>
 
 </dd>
+<dt id="enable_posix_regex-default:-false"><b>enable_posix_regex</b> (default: false)</dt>
+<dd>
+
+<p>When set to true (recommended), you can use POSIX regular expressions for filtering rules. It uses the POSIX Extended Regular Expression syntax: https://en.m.wikibooks.org/wiki/Regular_Expressions/POSIX-Extended_Regular_Expressions.</p>
+
+<p>If this is set to false (not recommended), dunst will us fnmatch(3) for matching strings. Dunst doesn&#39;t pass any flags to fnmatch, so you cannot make use of extended patterns.</p>
+
+<p>The POSIX syntax is more powerful and will eventually become the default. The main differences between POSIX and fnmatch(3) is that POSIX uses &quot;.*&quot; for wildcards instead of &quot;*&quot; and POSIX allows for partial matches without needing wildcards. This means that the pattern &quot;abc&quot; will match all strings that contain &quot;abc&quot;, like &quot;abcdef&quot;.</p>
+
+</dd>
 <dt id="geometry-DEPRECATED"><b>geometry</b> DEPRECATED</dt>
 <dd>
 
-<p>This setting is deprecated and removed. It&#39;s split up into <b>width</b>, <b>height</b>, <b>origin</b>, <b>notification_limit</b> and <b>offset</b>.</p>
+<p>This setting is deprecated and removed. It&#39;s split up into <b>width</b>, <b>height</b>, <b>origin</b>, <b>notification_limit</b> and <b>offset</b>. For quickly transitioning to the new syntax, you can take the numbers from your old geometry config as follows: geometry = &lt;width&gt;x&lt;height&gt;+&lt;offset&gt;</p>
+
+<p>In the new config you can then set the following variables (make sure to remove any negative signs) width = &lt;width&gt; height = &lt;height&gt; offset = &lt;offset&gt; origin = top-right # or top-left, or any other direction you prefer</p>
 
 </dd>
 <dt id="width"><b>width</b></dt>
@@ -140,7 +152,7 @@ toc = "true"
 <dt id="offset-format:-horizontal-vertical"><b>offset</b> format: (horizontal, vertical)</dt>
 <dd>
 
-<p>Respectively the horizontal and vertical offset in pixels from the corner of the screen specified by <b>origin</b>. Both values should always be positive or zero.</p>
+<p>Respectively the horizontal and vertical offset in pixels from the corner of the screen specified by <b>origin</b>. A negative offset will lead to the notification being off screen.</p>
 
 <p>Examples: origin = top-right offset = 10x300 # a margin of 10 pixels from the right and 300 pixels from the top</p>
 
@@ -155,6 +167,12 @@ toc = "true"
 <dd>
 
 <p>When an integer value is passed to dunst as a hint (see <b>NOTIFY-SEND</b>), a progress bar will be drawn at the bottom of the notification. This behavior can be turned off by setting this setting to false.</p>
+
+</dd>
+<dt id="progress_bar_horizontal_alignment-values:-left-center-right-default:-center"><b>progress_bar_horizontal_alignment</b> (values: [left/center/right], default: center)</dt>
+<dd>
+
+<p>Horizontal alignment of the progress bar. The progress bar will always keep a distance of <b>horizontal_padding</b> from the edge of the notification.</p>
 
 </dd>
 <dt id="progress_bar_height-default:-10"><b>progress_bar_height</b> (default: 10)</dt>
@@ -241,7 +259,7 @@ horizontal_padding=10</code></pre>
 <p>Defines width in pixels of frame around the notification window. Set to 0 to disable.</p>
 
 </dd>
-<dt id="separator_color-values:-auto-foreground-frame-RRGGBB-default:-auto"><b>separator_color</b> (values: [auto/foreground/frame/#RRGGBB] default: auto)</dt>
+<dt id="separator_color-values:-auto-foreground-frame-RRGGBB-default:-frame"><b>separator_color</b> (values: [auto/foreground/frame/#RRGGBB] default: frame)</dt>
 <dd>
 
 <p>Sets the color of the separator line between two notifications.</p>
@@ -325,7 +343,7 @@ horizontal_padding=10</code></pre>
 <p>The amount of extra spacing between text lines in pixels. Set to 0 to disable.</p>
 
 </dd>
-<dt id="format-default:-s-b"><b>format</b> (default: &quot;%s %b&quot;)</dt>
+<dt id="format-default:-b-s-b-n-b"><b>format</b> (default: &quot;&lt;b&gt;%s&lt;/b&gt;\n%b&quot;)</dt>
 <dd>
 
 <p>Specifies how the various attributes of the notification should be formatted on the notification window.</p>
@@ -381,7 +399,7 @@ horizontal_padding=10</code></pre>
 <p>Defines how the text and icon should be aligned vertically within the notification. If icons are disabled, this option has no effect.</p>
 
 </dd>
-<dt id="show_age_threshold-default:--1"><b>show_age_threshold</b> (default: -1)</dt>
+<dt id="show_age_threshold-default:-60"><b>show_age_threshold</b> (default: 60)</dt>
 <dd>
 
 <p>Show age of message if message is older than this time. See TIME FORMAT for valid times.</p>
@@ -415,12 +433,6 @@ horizontal_padding=10</code></pre>
 <p>Show an indicator if a notification contains actions and/or open-able URLs. See ACTIONS below for further details.</p>
 
 </dd>
-<dt id="icon_position-values:-left-right-off-default:-off"><b>icon_position</b> (values: [left/right/off], default: off)</dt>
-<dd>
-
-<p>Defines the position of the icon in the notification window. Setting it to off disables icons.</p>
-
-</dd>
 <dt id="min_icon_size-default:-0"><b>min_icon_size</b> (default: 0)</dt>
 <dd>
 
@@ -431,12 +443,12 @@ horizontal_padding=10</code></pre>
 <p>If <b>icon_position</b> is set to off, this setting is ignored.</p>
 
 </dd>
-<dt id="max_icon_size-default:-0"><b>max_icon_size</b> (default: 0)</dt>
+<dt id="max_icon_size-default:-32"><b>max_icon_size</b> (default: 32)</dt>
 <dd>
 
 <p>Defines the maximum size in pixels for the icons. If the icon is smaller than or equal to the specified value it won&#39;t be affected. If it&#39;s larger then it will be scaled down so that the larger axis is equivalent to the specified size.</p>
 
-<p>Set to 0 to disable icon downscaling. (default)</p>
+<p>Set to 0 to disable icon downscaling.</p>
 
 <p>If both <b>min_icon_size</b> and <b>max_icon_size</b> are enabled, the latter gets the last say.</p>
 
@@ -485,7 +497,7 @@ horizontal_padding=10</code></pre>
 <p>Maximum number of notifications that will be kept in history. After that limit is reached, older notifications will be deleted once a new one arrives. See HISTORY.</p>
 
 </dd>
-<dt id="dmenu-default:-usr-bin-dmenu"><b>dmenu</b> (default: &quot;/usr/bin/dmenu&quot;)</dt>
+<dt id="dmenu-default:-usr-bin-dmenu--p-dunst"><b>dmenu</b> (default: &quot;/usr/bin/dmenu -p dunst&quot;)</dt>
 <dd>
 
 <p>The command that will be run when opening the context menu. Should be either a dmenu command or a dmenu-compatible menu.</p>
@@ -593,6 +605,42 @@ horizontal_padding=10</code></pre>
 </dd>
 </dl>
 
+<h2 id="Keyboard-shortcuts-X11-only">Keyboard shortcuts (X11 only)</h2>
+
+<p>Keyboard shortcuts are defined in the following format: &quot;Modifier+key&quot; where the modifier is one of ctrl,mod1,mod2,mod3,mod4 and key is any keyboard key.</p>
+
+<p>Note that the keyboard shortcuts have been moved to the <b>global</b> section of the config for consistency with other settings.</p>
+
+<p>Alternatively you can also define shortcuts inside your window manager and bind them to dunstctl(1) commands.</p>
+
+<dl>
+
+<dt id="close"><b>close</b></dt>
+<dd>
+
+<p>Specifies the keyboard shortcut for closing a notification.</p>
+
+</dd>
+<dt id="close_all"><b>close_all</b></dt>
+<dd>
+
+<p>Specifies the keyboard shortcut for closing all currently displayed notifications.</p>
+
+</dd>
+<dt id="history"><b>history</b></dt>
+<dd>
+
+<p>Specifies the keyboard shortcut for recalling a single notification from history.</p>
+
+</dd>
+<dt id="context1"><b>context</b></dt>
+<dd>
+
+<p>Specifies the keyboard shortcut that opens the context menu.</p>
+
+</dd>
+</dl>
+
 <h2 id="Urgency-sections">Urgency sections</h2>
 
 <p>The urgency sections work in a similar way to rules and can be used to specify attributes for the different urgency levels of notifications (low, normal, critical). Currently only the background, foreground, hightlight, timeout, frame_color and icon attributes can be modified.</p>
@@ -601,9 +649,7 @@ horizontal_padding=10</code></pre>
 
 <p>See the example configuration file for examples.</p>
 
-<p>Additionally, you can override these settings via the following command line flags:</p>
-
-<p>Please note these flags may be removed in the future. See issue #328 in the bug tracker for discussions (See REPORTING BUGS).</p>
+<p>The flags for setting the colors notifications of different urgencies have been removed. See issue #328 in the bug tracker for discussions (See REPORTING BUGS).</p>
 
 <dl>
 
@@ -615,7 +661,7 @@ horizontal_padding=10</code></pre>
 <p>Where <i>icon</i> is a path to an image file containing the icon.</p>
 
 </dd>
-<dt id="lf-nf-cf-color"><b>-lf/nf/cf color</b></dt>
+<dt id="lf-nf-cf-color-REMOVED"><b>-lf/nf/cf color</b> REMOVED</dt>
 <dd>
 
 <p>Defines the foreground color for low, normal and critical notifications respectively.</p>
@@ -623,7 +669,7 @@ horizontal_padding=10</code></pre>
 <p>See COLORS for the value format.</p>
 
 </dd>
-<dt id="lb-nb-cb-color"><b>-lb/nb/cb color</b></dt>
+<dt id="lb-nb-cb-color-REMOVED"><b>-lb/nb/cb color</b> REMOVED</dt>
 <dd>
 
 <p>Defines the background color for low, normal and critical notifications respectively.</p>
@@ -631,7 +677,7 @@ horizontal_padding=10</code></pre>
 <p>See COLORS for the value format.</p>
 
 </dd>
-<dt id="lh-nh-ch-color"><b>-lh/nh/ch color</b></dt>
+<dt id="lh-nh-ch-color-REMOVED"><b>-lh/nh/ch color</b> REMOVED</dt>
 <dd>
 
 <p>Defines the highlight color for low, normal and critical notifications respectively.</p>
@@ -639,7 +685,7 @@ horizontal_padding=10</code></pre>
 <p>See COLORS for the value format.</p>
 
 </dd>
-<dt id="lfr-nfr-cfr-color"><b>-lfr/nfr/cfr color</b></dt>
+<dt id="lfr-nfr-cfr-color-REMOVED"><b>-lfr/nfr/cfr color</b> REMOVED</dt>
 <dd>
 
 <p>Defines the frame color for low, normal and critical notifications respectively.</p>
@@ -647,7 +693,7 @@ horizontal_padding=10</code></pre>
 <p>See COLORS for more information</p>
 
 </dd>
-<dt id="lto-nto-cto-secs"><b>-lto/nto/cto secs</b></dt>
+<dt id="lto-nto-cto-secs-REMOVED"><b>-lto/nto/cto secs</b> REMOVED</dt>
 <dd>
 
 <p>Defines the timeout time for low, normal and critical notifications respectively. See TIME FORMAT for valid times.</p>
@@ -706,7 +752,11 @@ horizontal_padding=10</code></pre>
 <dt id="filtering"><b>filtering</b></dt>
 <dd>
 
-<p>Notifications can be matched for any of the following attributes:</p>
+<p>With filtering rules you can match notifications to apply rules to only a subset of notifications.</p>
+
+<p>For filtering rules that filter based on strings you can use regular expressions. It&#39;s recommended to set <b>enable_posix_regex</b> to true. You can then use the POSIX Extended Regular Expression syntax: https://en.m.wikibooks.org/wiki/Regular_Expressions/POSIX-Extended_Regular_Expressions.</p>
+
+<p>Notifications can be matched for any of the following attributes.</p>
 
 <dl>
 
@@ -842,6 +892,12 @@ horizontal_padding=10</code></pre>
 <p>Updates the icon of the notification, it should be a path or a name for a valid image. This overrides the icon that was sent with dunstify or another notification tool.</p>
 
 </dd>
+<dt id="icon_position-values:-left-right-top-off-default:-left"><code>icon_position</code> (values: [left/right/top/off], default: left)</dt>
+<dd>
+
+<p>Defines the position of the icon in the notification window. Setting it to off disables icons.</p>
+
+</dd>
 <dt id="default_icon"><code>default_icon</code></dt>
 <dd>
 
@@ -920,6 +976,12 @@ horizontal_padding=10</code></pre>
 <dd>
 
 <p>Defines how the text should be aligned within the notification.</p>
+
+</dd>
+<dt id="hide_text-values:-true-false-default:-false"><b>hide_text</b> (values: [true/false], default: false)</dt>
+<dd>
+
+<p>Setting this to true will skip displaying any text related to the notification. The notification icon and progress bar will still be displayed. This option may be useful for notifications where an icon or progress bar may be sufficient information for the notification, such as audio volume or brightness level.</p>
 
 </dd>
 <dt id="markup-values:-full-strip-no-default:-no"><b>markup</b> (values: [full/strip/no], default: no)</dt>
@@ -1095,10 +1157,6 @@ horizontal_padding=10</code></pre>
 <p>Time units understood by dunst are &quot;ms&quot;, &quot;s&quot;, &quot;m&quot;, &quot;h&quot; and &quot;d&quot;.</p>
 
 <p>Example time: &quot;1000ms&quot; &quot;10m&quot;</p>
-
-<h1 id="MISCELLANEOUS">MISCELLANEOUS</h1>
-
-<p>Dunst used to provide shortcuts to act on notifications via key-bindings, but it has now been moved to its own utility. For more information, see the manual for dunstctl(1).</p>
 
 <h1 id="AUTHORS">AUTHORS</h1>
 

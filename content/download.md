@@ -6,38 +6,28 @@ type = "page"
 +++
 ***
 
-The current stable version of Dunst is **1.7.3** released on **Dec 8 2021**.
+The current stable version of Dunst is **1.8.0** released on **Feb 24 2022**.
 
 # Downloads
 
-* [Source tarball](https://github.com/dunst-project/dunst/archive/v1.7.3.tar.gz)
+* [Source tarball](https://github.com/dunst-project/dunst/archive/v1.8.0.tar.gz)
 * [Code repository (Github)](https://github.com/dunst-project/dunst)
 
-# Release Notes for v1.7.0
+# Release Notes For v1.8.0
 
-This release was long overdue. There have been a lot of changes in the mean
-time. For a full list of changes, see the changelog.
+Lots of exciting and useful features are being added to dunst, all while making
+dunst even more configurable and reliable.
 
 For users:
 
-The wayland support of v1.6.0 was already pretty good, but this release added
-fullscreen detection and improved the stability.
-
-This release added a few improvements to the wayland support. Dunst now
-automatically falls back to X11 when the wayland compositor doesn't support the
-neccesary protocols.
+This release re-adds the keyboard shortcuts for those who have been missing
+them. Also, support for drop-in files has been implemented. Files placed in
+dunstrc.d/\*.conf will be read after the main dunstrc. This may be useful for
+theming (with pywal or otherwise). In the future we will add example drop-in
+files for different default themes and special configuration.
 
 For maintainers:
 
-Previously the readme said dunst depended on GTK3, which hasn't been the case
-for a while. Make sure that GTK3 is not included as a dependency.
-
-The default program for opening URL's in notifications has been changed from
-firefox to xdg-open.
-
-The Makefile and dunstrc searching has been significantly changed to be more
-compliant with the XDG spec. The default config directory, `SYSCONFDIR`, has
-been changed from "/etc" to "${PREFIX}/etc/xdg/". To change back to the old
-behaviour, run make with: `make SYSCONFDIR="/etc"` (make sure to pass the same
-variables to make in subsequent calls). Take a look at the "Make parameters"
-section of the readme and the FILES section of the man page for more details.
+Not much has been changed for maintainers. Maybe you'll find the drop-in files
+useful for distro-specific fixes. Note that only the files in the directory of
+the used dunstrc will be read (see dunst(1) for documentation).
