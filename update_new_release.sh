@@ -7,8 +7,9 @@ OLDVER="$1"
 NEWVER="$2"
 
 usage(){
-        echo "Usage: $(basename $0) OLDVER NEWVER
-        Versions should be given in the format: x.y.z"
+        echo "Usage: REPO=../dunst $(basename $0) OLDVER NEWVER
+        Versions should be given in the format: x.y.z
+        The REPO variable should point to the dunst git repository that is currently in the latest master"
         exit
 } 
 
@@ -35,7 +36,7 @@ fi
 
 sed -i "s/$OLDVER/$NEWVER/g" "content/download.md"
 
-echo "Change release date"
+echo "Manually change the release date in the download file please. Opening in nvim..."
 sleep 2
 nvim content/download.md
 
