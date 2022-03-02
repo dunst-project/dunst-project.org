@@ -22,7 +22,7 @@ Updated config file here</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://dunst-project.org/download/</guid>
-      <description>The current stable version of Dunst is 1.8.0 released on Feb 24 2022.
+      <description>The current stable version of Dunst is 1.8.1 released on Mar 2 2022.
 Downloads  Source tarball Code repository (Github)  Release Notes For v1.8.0 Lots of exciting and useful features are being added to dunst, all while making dunst even more configurable and reliable.
 For users:
 This release re-adds the keyboard shortcuts for those who have been missing them. Also, support for drop-in files has been implemented. Files placed in dunstrc.</description>
@@ -54,7 +54,7 @@ If dunst should be automatically started by dbus or via the systemd service, it 
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://dunst-project.org/changelog/</guid>
-      <description>Dunst changelog 1.8.0 &amp;ndash; 2022-02-24 Added  Implemented progress_bar_min_width. Before it was an unused setting. (#1006) progress_bar_horizontal_alignment for changing the alignment of the progress bar. (#1021) Support for config drop-ins. You can add as many configuration files as you want in dunstrc.d. See the man page dunst(1) for more information. This was done with help from @WhitePeter. (#997) Thanks to @m-barlett you can place your icons at the center of your notifications with icon_position = top.</description>
+      <description>Dunst changelog 1.8.1 &amp;ndash; 2022-03-02 Fixed  Dunst sometimes not using the right config file, sometimes falling back to the internal defaults.  1.8.0 &amp;ndash; 2022-02-24 Added  Implemented progress_bar_min_width. Before it was an unused setting. (#1006) progress_bar_horizontal_alignment for changing the alignment of the progress bar. (#1021) Support for config drop-ins. You can add as many configuration files as you want in dunstrc.d. See the man page dunst(1) for more information.</description>
     </item>
     
   </channel>
