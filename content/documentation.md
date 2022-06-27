@@ -220,7 +220,7 @@ toc = "true"
 <dt id="separator_height-default:-2"><b>separator_height</b> (default: 2)</dt>
 <dd>
 
-<p>The height in pixels of the separator between notifications, if set to 0 there will be no separating line between notifications.</p>
+<p>The height in pixels of the separator between notifications, if set to 0 there will be no separating line between notifications. This setting will be ignored if <b>gap_size</b> is greater than 0.</p>
 
 </dd>
 <dt id="padding-default:-8"><b>padding</b> (default: 8)</dt>
@@ -257,6 +257,16 @@ horizontal_padding=10</code></pre>
 <dd>
 
 <p>Defines width in pixels of frame around the notification window. Set to 0 to disable.</p>
+
+</dd>
+<dt id="gap_size-default:-0"><b>gap_size</b> (default: 0)</dt>
+<dd>
+
+<p>Size of gap to display between notifications.</p>
+
+<p>If value is greater than 0, <b>separator_height</b> will be ignored and a border of size <b>frame_width</b> will be drawn around each notification instead.</p>
+
+<p>This setting requires a compositor and any applications displayed between the gaps are not currently clickable.</p>
 
 </dd>
 <dt id="separator_color-values:-auto-foreground-frame-RRGGBB-default:-frame"><b>separator_color</b> (values: [auto/foreground/frame/#RRGGBB] default: frame)</dt>
@@ -354,6 +364,8 @@ horizontal_padding=10</code></pre>
 
 <p>If any of the following strings are present, they will be replaced with the equivalent notification attribute.</p>
 
+<p>For a complete markup reference, see &lt;https://docs.gtk.org/Pango/pango_markup.html&gt;.</p>
+
 <dl>
 
 <dt id="a-appname"><b>%a</b> appname</dt>
@@ -433,28 +445,6 @@ horizontal_padding=10</code></pre>
 <p>Show an indicator if a notification contains actions and/or open-able URLs. See ACTIONS below for further details.</p>
 
 </dd>
-<dt id="min_icon_size-default:-0"><b>min_icon_size</b> (default: 0)</dt>
-<dd>
-
-<p>Defines the minimum size in pixels for the icons. If the icon is larger than or equal to the specified value it won&#39;t be affected. If it&#39;s smaller then it will be scaled up so that the smaller axis is equivalent to the specified size.</p>
-
-<p>Set to 0 to disable icon upscaling. (default)</p>
-
-<p>If <b>icon_position</b> is set to off, this setting is ignored.</p>
-
-</dd>
-<dt id="max_icon_size-default:-32"><b>max_icon_size</b> (default: 32)</dt>
-<dd>
-
-<p>Defines the maximum size in pixels for the icons. If the icon is smaller than or equal to the specified value it won&#39;t be affected. If it&#39;s larger then it will be scaled down so that the larger axis is equivalent to the specified size.</p>
-
-<p>Set to 0 to disable icon downscaling.</p>
-
-<p>If both <b>min_icon_size</b> and <b>max_icon_size</b> are enabled, the latter gets the last say.</p>
-
-<p>If <b>icon_position</b> is set to off, this setting is ignored.</p>
-
-</dd>
 <dt id="icon_path-default:-usr-share-icons-gnome-16x16-status-:-usr-share-icons-gnome-16x16-devices"><b>icon_path</b> (default: &quot;/usr/share/icons/gnome/16x16/status/:/usr/share/icons/gnome/16x16/devices/&quot;)</dt>
 <dd>
 
@@ -463,7 +453,7 @@ horizontal_padding=10</code></pre>
 <p>Dunst doens&#39;t search outside of these direcories. For a recursive icon lookup system, see <b>enable_recursive_icon_lookup</b>. This new system will eventually replace this and will need new settings.</p>
 
 </dd>
-<dt id="icon_theme-default:-Adwaita-example:-Adwaita-breeze-Experimental"><b>icon_theme</b> (default: &quot;Adwaita&quot;, example: &quot;Adwaita, breeze&quot;) <i>Experimental</i></dt>
+<dt id="icon_theme-default:-Adwaita-example:-Adwaita-breeze"><b>icon_theme</b> (default: &quot;Adwaita&quot;, example: &quot;Adwaita, breeze&quot;)</dt>
 <dd>
 
 <p>Comma-separated of names of the the themes to use for looking up icons. This has to be the name of the directory in which the theme is located, not the human-friendly name of the theme. So for example, the theme <b>Breeze Dark</b> is located in <i>/usr/share/icons/breeze-dark</i>. In this case you have to set the theme to <b>breeze-dark</b>.</p>
@@ -477,12 +467,12 @@ horizontal_padding=10</code></pre>
 <p>This setting is experimental and not enabled by default. See <b>enable_recursive_icon_lookup</b> for how to enable it.</p>
 
 </dd>
-<dt id="enable_recursive_icon_lookup-default:-false-Experimental"><b>enable_recursive_icon_lookup</b> (default: false) <i>Experimental</i></dt>
+<dt id="enable_recursive_icon_lookup-default:-false"><b>enable_recursive_icon_lookup</b> (default: false)</dt>
 <dd>
 
 <p>This setting enables the new icon lookup method. This new system will eventually be the old icon lookup.</p>
 
-<p>Currently icons are looked up in the <b>icon_path</b> and scaled according to <b>min_icon_size</b> and <b>max_icon_size</b>. Since the <b>icon_path</b> wasn&#39;t recursive, one had to add a ton of paths to this list. This has been drastically simplified by the new lookup method. Now you only have to set <b>icon_theme</b> to the name of the theme and <b>icon_size</b> to the icon size you want. To enable this new behaviour, set <b>enable_recursive_icon_lookup</b> to true in the <i>[experimental]</i> section. See the respective settings for more details.</p>
+<p>Currently icons are looked up in the <b>icon_path</b>. Since the <b>icon_path</b> wasn&#39;t recursive, one had to add a ton of paths to this list. This has been drastically simplified by the new lookup method. Now you only have to set <b>icon_theme</b> to the name of the theme you want. To enable this new behaviour, set <b>enable_recursive_icon_lookup</b> to true in the <i>[experimental]</i> section. See the respective settings for more details.</p>
 
 </dd>
 <dt id="sticky_history-values:-true-false-default:-true"><b>sticky_history</b> (values: [true/false], default: true)</dt>
@@ -798,6 +788,14 @@ horizontal_padding=10</code></pre>
 <p>See <code>set_transient</code> for more details about this attribute.</p>
 
 </dd>
+<dt id="match_dbus_timeout"><code>match_dbus_timeout</code></dt>
+<dd>
+
+<p>Matches the dbus timeout of the notification as set by the client or by some other rule.</p>
+
+<p>See <code>override_dbus_timeout</code> for more details about this attribute.</p>
+
+</dd>
 <dt id="msg_urgency"><code>msg_urgency</code></dt>
 <dd>
 
@@ -886,6 +884,28 @@ horizontal_padding=10</code></pre>
 <p>Default: show</p>
 
 </dd>
+<dt id="min_icon_size-default:-32"><b>min_icon_size</b> (default: 32)</dt>
+<dd>
+
+<p>Defines the minimum size in pixels for the icons. If the icon is larger than or equal to the specified value it won&#39;t be affected. If it&#39;s smaller then it will be scaled up so that the smaller axis is equivalent to the specified size.</p>
+
+<p>When using recursive icon lookup (see <b>enable_recursive_icon_lookup</b>), all icons from a theme will be this size.</p>
+
+<p>If <b>icon_position</b> is set to off, this setting is ignored.</p>
+
+</dd>
+<dt id="max_icon_size-default:-128"><b>max_icon_size</b> (default: 128)</dt>
+<dd>
+
+<p>Defines the maximum size in pixels for the icons. If the icon is smaller than or equal to the specified value it won&#39;t be affected. If it&#39;s larger then it will be scaled down so that the larger axis is equivalent to the specified size.</p>
+
+<p>Set to 0 to disable icon downscaling.</p>
+
+<p>If both <b>min_icon_size</b> and <b>max_icon_size</b> are enabled, the latter gets the last say.</p>
+
+<p>If <b>icon_position</b> is set to off, this setting is ignored.</p>
+
+</dd>
 <dt id="new_icon"><code>new_icon</code></dt>
 <dd>
 
@@ -930,6 +950,12 @@ horizontal_padding=10</code></pre>
 <dd>
 
 <p>Equivalent to the <code>timeout</code> setting in the urgency sections.</p>
+
+</dd>
+<dt id="override_dbus_timeout"><code>override_dbus_timeout</code></dt>
+<dd>
+
+<p>Overrides the timeout specified in dbus. This takes precedence over <code>timeout</code>.</p>
 
 </dd>
 <dt id="urgency"><code>urgency</code></dt>
@@ -1025,14 +1051,6 @@ horizontal_padding=10</code></pre>
 
 </dd>
 </dl>
-
-</dd>
-<dt id="icon_size-default:-32-Experimental"><b>icon_size</b> (default: 32) <i>Experimental</i></dt>
-<dd>
-
-<p>The size of the icon in pixels. This is commonly a multiple of 2, for example: 16, 32 or 64. This size is used for searching the right icon in <b>icon_theme</b>. If no icon of the right size can be found, no icon is displayed. When passing a full icon path to dunst the icon will be used even when it&#39;s not the right size. The icon is then scaled to be of size <b>icon_size</b>.</p>
-
-<p>This setting is experimental and not enabled by default. See <b>enable_recursive_icon_lookup</b> for how to enable it.</p>
 
 </dd>
 </dl>
