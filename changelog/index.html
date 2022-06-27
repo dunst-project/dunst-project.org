@@ -71,14 +71,50 @@
             <h1><b></b></h1>
                 
                 <h1 id="dunst-changelog">Dunst changelog</h1>
-<h2 id="181----2022-03-02">1.8.1 &ndash; 2022-03-02</h2>
+<h2 id="190----2022-06-27">1.9.0 &ndash; 2022-06-27</h2>
+<h3 id="added">Added</h3>
+<ul>
+<li><code>override_dbus_timeout</code> setting to override the notification timeout set via
+dbus. (#1035)</li>
+<li>Support notification gaps via the <code>gap_size</code> setting. Note that since the
+notifications are not separate windows, you cannot click in between the
+notifications. (#1053)</li>
+<li>Make <code>min_icon_size</code> and <code>max_icon_size</code> a rule for even more flexibility
+(#1069)</li>
+</ul>
+<h3 id="changed">Changed</h3>
+<ul>
+<li>The window offset is now scaled according to <code>scale</code> as well. This way
+notification stay visually in the same place on higher DPI screens. (#1039)</li>
+<li>For the recursive icon lookup, revert to using <code>min_icon_size</code> and
+<code>max_icon_size</code> instead of <code>icon_size</code>. <code>min_icon_size</code> is used as the size to
+look for in icon themes. This way of defining icon size is more flexible and
+compatible with the old icon lookup. The new icon lookup should now be
+superior for all use cases. (#1069)</li>
+<li>Recursive icon lookup is no longer experimental.</li>
+<li>Recursive icon lookup is enabled in the default dunstrc. This does not change
+your settings when you have a custom dunstrc.</li>
+</ul>
 <h3 id="fixed">Fixed</h3>
+<ul>
+<li>Added back the <code>action_name</code> setting that was accidentally dropped. (#1051)</li>
+<li>Broken <code>dunstctl history</code>. (#1060)</li>
+<li>Merged a few wayland fixes from mako (<a href="https://github.com/emersion/mako">https://github.com/emersion/mako</a>)
+(#1067)</li>
+<li><code>follow=keyboard</code>: Fix regression where we don&rsquo;t fall back to mouse (#1062)</li>
+<li>Raw icons not being scaled according to icon size (#1043)</li>
+<li>Notifications not disappearing. For some people notifications would sometimes
+stay on screen until a new notification appeared. This should not happen
+anymore (#1073).</li>
+</ul>
+<h2 id="181----2022-03-02">1.8.1 &ndash; 2022-03-02</h2>
+<h3 id="fixed-1">Fixed</h3>
 <ul>
 <li>Dunst sometimes not using the right config file, sometimes falling back to the
 internal defaults.</li>
 </ul>
 <h2 id="180----2022-02-24">1.8.0 &ndash; 2022-02-24</h2>
-<h3 id="added">Added</h3>
+<h3 id="added-1">Added</h3>
 <ul>
 <li>Implemented <code>progress_bar_min_width</code>. Before it was an unused setting. (#1006)</li>
 <li><code>progress_bar_horizontal_alignment</code> for changing the alignment of the progress
@@ -98,7 +134,7 @@ with the keyboard shortcuts was possible with dunstctl on X11. Mainly
 activating a keyboard shortcut only when notifications are on screen. Thanks
 to @wgmayer0 for testing. (#1033).</li>
 </ul>
-<h3 id="changed">Changed</h3>
+<h3 id="changed-1">Changed</h3>
 <ul>
 <li>Improved the man page regarding transitioning from the old geometry.</li>
 <li>The default alignment of the progress bar is now center instead of left.</li>
@@ -112,7 +148,7 @@ notification window slightly off-screen if you so like. (#1027)</li>
 <li>As mentioned above, the keyboard shortcuts have been moved to the <code>[global]</code>
 section. Please move your settings there.</li>
 </ul>
-<h3 id="fixed-1">Fixed</h3>
+<h3 id="fixed-2">Fixed</h3>
 <ul>
 <li>Crash when <code>open_url</code> was used without URL&rsquo;s. (#1000)</li>
 <li>Icons sometimes being incorrectly sized with the new icon lookup. (#1003)</li>
@@ -125,19 +161,19 @@ by dunst not going to sleep when waiting for a response. (#898)</li>
 more)</li>
 </ul>
 <h2 id="173----2021-12-08">1.7.3 &ndash; 2021-12-08</h2>
-<h3 id="added-1">Added</h3>
-<h3 id="changed-1">Changed</h3>
+<h3 id="added-2">Added</h3>
+<h3 id="changed-2">Changed</h3>
 <ul>
 <li><code>follow</code> is now <code>none</code> again by default. This was the case before v1.7.0 as well. (#990).</li>
 </ul>
-<h3 id="fixed-2">Fixed</h3>
+<h3 id="fixed-3">Fixed</h3>
 <ul>
 <li><code>dunstctl action</code> is now working again.</li>
 <li>Segfault in experimental icon lookup when an inherited theme doesn&rsquo;t exist.</li>
 <li><code>icon_position = off</code> not being respected (#996).</li>
 </ul>
 <h2 id="172----2021-11-30">1.7.2 &ndash; 2021-11-30</h2>
-<h3 id="added-2">Added</h3>
+<h3 id="added-3">Added</h3>
 <ul>
 <li>Experimental recursive icon lookup. This is not enabled by default and can be
 enabled by setting <code>enable_recursive_icon_lookup=true</code>. Setting icon sizes
@@ -151,8 +187,8 @@ ID to <code>dunstctl history-pop</code>. (#970)</li>
 <li><code>default_icon</code> setting for setting the icon when no icons are given (#984)</li>
 <li>Implemented display size detection in Wayland. (#973)</li>
 </ul>
-<h3 id="changed-2">Changed</h3>
-<h3 id="fixed-3">Fixed</h3>
+<h3 id="changed-3">Changed</h3>
+<h3 id="fixed-4">Fixed</h3>
 <ul>
 <li>Text being cut off on X11 when using fractional scaling. (#975)</li>
 <li>Incorrect hitbox for notification on X11 with scaling. (#980)</li>
@@ -168,12 +204,12 @@ default behaviour. (#984)</li>
 notification&rsquo;s width is lowered when it would otherwise leave the display.</li>
 </ul>
 <h2 id="171----2021-11-01">1.7.1 &ndash; 2021-11-01</h2>
-<h3 id="added-3">Added</h3>
+<h3 id="added-4">Added</h3>
 <ul>
 <li>Script environment variable <code>DUNST_DESKTOP_ENTRY</code>. (#874)</li>
 <li>Rule <code>set_category</code> for change a notifications category with rules. (1b72b2a)</li>
 </ul>
-<h3 id="fixed-4">Fixed</h3>
+<h3 id="fixed-5">Fixed</h3>
 <ul>
 <li>Dunst not building with WAYLAND=0. (#938)</li>
 <li>Wrong icon being shown in chromium-based browsers. (#939)</li>
@@ -190,7 +226,7 @@ notification&rsquo;s width is lowered when it would otherwise leave the display.
 <li>Mouse action stopping the rest of the actions. (bf58928)</li>
 </ul>
 <h2 id="170----2021-10-19">1.7.0 &ndash; 2021-10-19:</h2>
-<h3 id="added-4">Added</h3>
+<h3 id="added-5">Added</h3>
 <ul>
 <li><code>context</code> and <code>context_all</code> mouse actions for opening the context menu (#848)</li>
 <li><code>open_url</code> mouse action for opening url&rsquo;s in a notification (#848)</li>
@@ -209,7 +245,7 @@ coming across an non-existing/invalid setting. (#803)</li>
 <li>Cursor is now being changed to <code>left_ptr</code> when hovering over dunst (Wayland)
 (#903)</li>
 </ul>
-<h3 id="changed-3">Changed</h3>
+<h3 id="changed-4">Changed</h3>
 <ul>
 <li><code>startup_notification</code> and <code>verbosity</code> are now only available as a command
 line arguments. (#803)</li>
@@ -226,7 +262,7 @@ geometry settings. (#855)</li>
 the release notes for more information.</li>
 <li>Upon seeing invalid markup, dunst is a bit smarter in stripping the markup.</li>
 </ul>
-<h3 id="fixed-5">Fixed</h3>
+<h3 id="fixed-6">Fixed</h3>
 <ul>
 <li>Lots of debug messages when <code>idle_timeout=0</code> (#814)</li>
 <li><code>follow=none</code> not working on Wayland (#814)</li>
@@ -246,12 +282,12 @@ manager and <code>dunstctl</code> to replace it. (#803)</li>
 <li>Setting settings via <code>config.h</code>. (#803)</li>
 </ul>
 <h2 id="161---2021-02-21">1.6.1 - 2021-02-21:</h2>
-<h3 id="fixed-6">Fixed</h3>
+<h3 id="fixed-7">Fixed</h3>
 <ul>
 <li>Incorrect version in Makefile</li>
 </ul>
 <h2 id="160---2021-02-21">1.6.0 - 2021-02-21:</h2>
-<h3 id="added-5">Added</h3>
+<h3 id="added-6">Added</h3>
 <ul>
 <li>Wayland support. Dunst now runs natively on wayland. This fixes several bugs
 with dunst on wayland and allows idle detection. (#781)</li>
@@ -262,12 +298,12 @@ with dunst on wayland and allows idle detection. (#781)</li>
 <li><code>text_icon_padding</code> for adding padding between the notification icon and text
 (#810)</li>
 </ul>
-<h3 id="changed-4">Changed</h3>
+<h3 id="changed-5">Changed</h3>
 <ul>
 <li>Dunst now installs a system-wide config in <code>/etc/dunst/dunstrc</code> (#798)</li>
 <li>Move part of the man page to dunst(5) (#799)</li>
 </ul>
-<h3 id="fixed-7">Fixed</h3>
+<h3 id="fixed-8">Fixed</h3>
 <ul>
 <li><code>history_ignore</code> flag broken when using multiple rules (#747)</li>
 <li>Divide by zero in radius calculation (#750)</li>
@@ -282,7 +318,7 @@ with dunst on wayland and allows idle detection. (#781)</li>
 <li><code>DUNST_COMMAND_{PAUSE,RESUME,TOGGLE}</code> (#830)</li>
 </ul>
 <h2 id="150---2020-07-23">1.5.0 - 2020-07-23</h2>
-<h3 id="added-6">Added</h3>
+<h3 id="added-7">Added</h3>
 <ul>
 <li><code>min_icon_size</code> option to automatically scale up icons to a desired value (#674)</li>
 <li><code>vertical_alignment</code> option to control the text/icon alignment within the notification (#684)</li>
@@ -292,12 +328,12 @@ with dunst on wayland and allows idle detection. (#781)</li>
 <li>Ability to run multiple scripts for each notification</li>
 <li><code>ignore_dbusclose</code> setting (#732)</li>
 </ul>
-<h3 id="changed-5">Changed</h3>
+<h3 id="changed-6">Changed</h3>
 <ul>
 <li><code>dunstify</code> notification client is now installed by default (#701)</li>
 <li>Keyboard follow mode falls back to the monitor with the mouse if no window has keyboard focus (#708)</li>
 </ul>
-<h3 id="fixed-8">Fixed</h3>
+<h3 id="fixed-9">Fixed</h3>
 <ul>
 <li>Overflow when setting a &gt;=40 minute timeout (#646)</li>
 <li>Unset configuration options not falling back to default values (#649)</li>
@@ -305,7 +341,7 @@ with dunst on wayland and allows idle detection. (#781)</li>
 <li>Lack of antialiasing with round corners enabled (#713)</li>
 </ul>
 <h2 id="141---2019-07-03">1.4.1 - 2019-07-03</h2>
-<h3 id="fixed-9">Fixed</h3>
+<h3 id="fixed-10">Fixed</h3>
 <ul>
 <li><code>max_icon_size</code> not working with dynamic width (#614)</li>
 <li>Failure to parse color strings with trailing comments in the config (#626)</li>
@@ -315,7 +351,7 @@ with dunst on wayland and allows idle detection. (#781)</li>
 <li>Fullscreen status change not being detected in some cases (#613)</li>
 </ul>
 <h2 id="140---2019-03-30">1.4.0 - 2019-03-30</h2>
-<h3 id="added-7">Added</h3>
+<h3 id="added-8">Added</h3>
 <ul>
 <li>Add support to override <code>frame_color</code> via rules (#498)</li>
 <li>Support for round corners (#420)</li>
@@ -330,7 +366,7 @@ via <code>stack_tag</code> (#552)</li>
 <li>Added <code>skip_display</code> rule option to skip initial notification display, and
 include the notification in the history. (#590)</li>
 </ul>
-<h3 id="fixed-10">Fixed</h3>
+<h3 id="fixed-11">Fixed</h3>
 <ul>
 <li>Notification age not counting the time while the computer was suspended (#492)</li>
 <li>Dunst losing always-on-top status on a window manager restart (#160)</li>
@@ -344,7 +380,7 @@ notification waiting to get displayed. The notification gets displayed directly 
 <li>Segfault when comparing icon name with a notification with a raw icon (#536)</li>
 <li>Icon size can no longer be larger than the notification when a fixed width is specified (#540)</li>
 </ul>
-<h3 id="changed-6">Changed</h3>
+<h3 id="changed-7">Changed</h3>
 <ul>
 <li>Transient notifications no longer skip history by default (#508)</li>
 <li>The notification summary no longer accepts markup (#497)</li>
@@ -354,17 +390,17 @@ notification waiting to get displayed. The notification gets displayed directly 
 <li>Dependency on libxdg-basedir (#550)</li>
 </ul>
 <h2 id="132---2018-05-06">1.3.2 - 2018-05-06</h2>
-<h3 id="fixed-11">Fixed</h3>
+<h3 id="fixed-12">Fixed</h3>
 <ul>
 <li>Crash when trying to load an invalid or corrupt icon (#512)</li>
 </ul>
 <h2 id="131---2018-01-30">1.3.1 - 2018-01-30</h2>
-<h3 id="fixed-12">Fixed</h3>
+<h3 id="fixed-13">Fixed</h3>
 <ul>
 <li>Race condition resulting in the service files being empty (#488)</li>
 </ul>
 <h2 id="130---2018-01-05">1.3.0 - 2018-01-05</h2>
-<h3 id="added-8">Added</h3>
+<h3 id="added-9">Added</h3>
 <ul>
 <li><code>ellipsize</code> option to control how long lines should be ellipsized when <code>word_wrap</code> is set to <code>false</code> (#374)</li>
 <li>A beginning tilde of a path is now expanded to the home of the current user (#351)</li>
@@ -375,7 +411,7 @@ notification waiting to get displayed. The notification gets displayed directly 
 <li>Support for specifying timeout values in milliseconds, minutes, hours, or days. (#379)</li>
 <li>Support for HTML img tags (via context menu) (#428)</li>
 </ul>
-<h3 id="fixed-13">Fixed</h3>
+<h3 id="fixed-14">Fixed</h3>
 <ul>
 <li><code>new_icon</code> rule being ignored on notifications that had a raw icon (#423)</li>
 <li>Format strings being replaced recursively in some cases (#322 #365)</li>
@@ -385,7 +421,7 @@ notification waiting to get displayed. The notification gets displayed directly 
 <li>Notification window flickering when a notification is replaced (#320 #415)</li>
 <li>Inaccurate timeout in some cases (#291 #379)</li>
 </ul>
-<h3 id="changed-7">Changed</h3>
+<h3 id="changed-8">Changed</h3>
 <ul>
 <li>Transient hints are now handled (#343 #310)
 An additional rule option (<code>match_transient</code> and <code>set_transient</code>) is added
@@ -402,7 +438,7 @@ requires gdk-pixbuf which had been a transient dependency before. (#334
 by pkg-config. Use <code>SERVICEDIR_(DBUS|SYSTEMD)</code> params to overwrite them. (#463)</li>
 </ul>
 <h2 id="120---2017-07-12">1.2.0 - 2017-07-12</h2>
-<h3 id="added-9">Added</h3>
+<h3 id="added-10">Added</h3>
 <ul>
 <li><code>always_run_script</code> option to run script even if a notification is suppressed</li>
 <li>Support for more icon file types</li>
@@ -418,7 +454,7 @@ by pkg-config. Use <code>SERVICEDIR_(DBUS|SYSTEMD)</code> params to overwrite th
 <li>Systemd service file, installed by default</li>
 <li><code>%n</code> format flag for getting progress value without any extra characters</li>
 </ul>
-<h3 id="changed-8">Changed</h3>
+<h3 id="changed-9">Changed</h3>
 <ul>
 <li>Text and icons are now centred vertically</li>
 <li>Notifications aren&rsquo;t considered duplicate if urgency or icons differ</li>
@@ -431,7 +467,7 @@ by pkg-config. Use <code>SERVICEDIR_(DBUS|SYSTEMD)</code> params to overwrite th
 <li><code>allow_markup</code> is deprecated with <code>markup</code> as its replacement</li>
 <li>The urgency specific command line flags have been deprecated with no replacement, respond to issue #328 on the bug tracker if you depend on them</li>
 </ul>
-<h3 id="fixed-14">Fixed</h3>
+<h3 id="fixed-15">Fixed</h3>
 <ul>
 <li>Infinite loop if there are 2 configuration file sections with the same name</li>
 <li>URLs with dashes and underscores in them are now parsed properly</li>

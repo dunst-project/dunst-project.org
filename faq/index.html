@@ -120,10 +120,10 @@ But if there are still issues with the dbus session then <code>dbus-update-activ
 <p>D-Bus does not know which notification daemon it should start. So it decides arbitrarily which one to use.</p>
 <p>You have to link the D-Bus service file of your preferred notification daemon into your home folder.</p>
 <p>To change the notification daemon back to the default, open up a shell and execute these two commands:</p>
-<pre tabindex="0"><code>mkdir -p &quot;${XDG_DATA_HOME:-$HOME/.local/share}/dbus-1/services&quot;
+<pre tabindex="0"><code>mkdir -p &#34;${XDG_DATA_HOME:-$HOME/.local/share}/dbus-1/services&#34;
 ln -sfT \
-    &quot;/usr/share/dbus-1/services/${SERVICE:-org.freedesktop.Notifications}.service&quot; \
-    &quot;${XDG_DATA_HOME:-$HOME/.local/share}/dbus-1/services/org.freedesktop.Notifications.service&quot;
+    &#34;/usr/share/dbus-1/services/${SERVICE:-org.freedesktop.Notifications}.service&#34; \
+    &#34;${XDG_DATA_HOME:-$HOME/.local/share}/dbus-1/services/org.freedesktop.Notifications.service&#34;
 </code></pre><p>If you want to switch back to dunst again, first define <code>SERVICE=org.knopwob.dunst</code> and re-execute the <code>ln</code> command.</p>
 <p>For more info, see the discussion in <a href="https://github.com/dunst-project/dunst/issues/363">#363</a>.</p>
 <h1 id="mouse-operations">Mouse operations</h1>
@@ -134,7 +134,7 @@ ln -sfT \
 <h2 id="sending-notifications-from-another-user-root">Sending notifications from another user (root)</h2>
 <p>Your new shell has to be able to execute commands as dunst&rsquo;s user and you have to export the <code>DBUS_SESSION_BUS_ADDRESS</code> environment variable with the same content it would have in your desktop session.</p>
 <p>Usually, the environment variable&rsquo;s content is <code>DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/&lt;UID&gt;/bus</code>. On older systems, this may not be the case and may change on a per-session basis.</p>
-<pre tabindex="0"><code>alias notify-send=&quot;sudo -u USERNAME DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/&lt;UID&gt;/bus notify-send&quot;
+<pre tabindex="0"><code>alias notify-send=&#34;sudo -u USERNAME DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/&lt;UID&gt;/bus notify-send&#34;
 </code></pre><p>Any other combination, executing <code>notify-send</code> with the valid <code>DBUS_SESSION_BUS_ADDRESS</code>-variable and user should work.</p>
 
             </div>
