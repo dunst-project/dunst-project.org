@@ -12,7 +12,7 @@ toc = "true"
 <head>
 <title>dunst - configuration file</title>
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-<link rev="made" href="mailto:" />
+<link rev="made" href="mailto:root@localhost" />
 </head>
 
 <body>
@@ -55,7 +55,7 @@ toc = "true"
 
 <h1 id="DESCRIPTION">DESCRIPTION</h1>
 
-<p>The configuration is divided into sections in an ini-like format. Every section start with the section&#39;s name in square brackets. After that is a list of key-value pairs that specify the settings. Whitespace is purely cosmetic and doesn&#39;t matter for the result.</p>
+<p>The configuration is divided into sections in an ini-like format. Every section starts with the section&#39;s name in square brackets. After that is a list of key-value pairs that specify the settings. Whitespace is purely cosmetic and doesn&#39;t change the result.</p>
 
 <p>The &#39;global&#39; section contains the general settings applying to all of dunst. The rest of the settings can be specified via rules and can be located in any section. These rules can change a notification based on it&#39;s properties. There are filtering rules and modifying rules. The filtering rules specify on what notifications the rule is applied and the modifying rules specify what is changed about the matching notifications. Some special sections have implied filters that cannot be changed. The &quot;global&quot; section, for example has no filters, thus applies to all notifications.</p>
 
@@ -197,6 +197,18 @@ toc = "true"
 <dd>
 
 <p>The frame width of the progress bar in pixels. This value should be smaller than half of the progress bar height.</p>
+
+</dd>
+<dt id="progress_bar_corner_radius-default:-0"><b>progress_bar_corner_radius</b> (default: 0)</dt>
+<dd>
+
+<p>The corner radius of the progress bar in pixels. Gives the progress bar rounded corners. Set to 0 to disable.</p>
+
+</dd>
+<dt id="icon_corner_radius-default:-0"><b>icon_corner_radius</b> (default: 0)</dt>
+<dd>
+
+<p>The corner radius of the icon image in pixels. Gives the icon rounded corners. Set to 0 to disable.</p>
 
 </dd>
 <dt id="indicate_hidden-values:-true-false-default:-true"><b>indicate_hidden</b> (values: [true/false], default: true)</dt>
