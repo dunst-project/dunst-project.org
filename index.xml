@@ -12,7 +12,8 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://dunst-project.org/screenshots/</guid>
-      <description>Updated config file here</description>
+      <description>.row img { max-width: 100%; height: auto; }  
+Updated config file here</description>
     </item>
     
     <item>
@@ -21,8 +22,8 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://dunst-project.org/download/</guid>
-      <description>The current stable version of Dunst is 1.9.0 released on June 27 2022.
-Downloads Source tarball Code repository (Github) Release Notes For v1.8.0 Lots of exciting and useful features are being added to dunst, all while making dunst even more configurable and reliable.
+      <description>The current stable version of Dunst is 1.9.1 released on March 8 2023.
+Downloads  Source tarball Code repository (Github)  Release Notes For v1.8.0 Lots of exciting and useful features are being added to dunst, all while making dunst even more configurable and reliable.
 For users:
 This release re-adds the keyboard shortcuts for those who have been missing them. Also, support for drop-in files has been implemented. Files placed in dunstrc.</description>
     </item>
@@ -33,8 +34,8 @@ This release re-adds the keyboard shortcuts for those who have been missing them
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://dunst-project.org/documentation/</guid>
-      <description>&lt;?xml version=&#34;1.0&#34; ?&gt; &lt;!DOCTYPE html PUBLIC &#34;-//W3C//DTD XHTML 1.0 Strict//EN&#34; &#34;http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd&#34;&gt; dunst - configuration file NAME DESCRIPTION Global section Keyboard shortcuts (X11 only) Urgency sections DUNSTCTL HISTORY WAYLAND RULES SCRIPTING COLORS NOTIFY-SEND ACTIONS TIME FORMAT AUTHORS REPORTING BUGS COPYRIGHT SEE ALSO NAME dunst - configuration file
-DESCRIPTION The configuration is divided into sections in an ini-like format. Every section start with the section&amp;#39;s name in square brackets. After that is a list of key-value pairs that specify the settings.</description>
+      <description>dunst - configuration file   NAME DESCRIPTION  Global section Keyboard shortcuts (X11 only) Urgency sections   DUNSTCTL HISTORY WAYLAND RULES  SCRIPTING   COLORS  NOTIFY-SEND   ACTIONS TIME FORMAT AUTHORS REPORTING BUGS COPYRIGHT SEE ALSO  NAME dunst - configuration file
+DESCRIPTION The configuration is divided into sections in an ini-like format. Every section starts with the section&amp;#39;s name in square brackets. After that is a list of key-value pairs that specify the settings.</description>
     </item>
     
     <item>
@@ -53,7 +54,7 @@ If dunst should be automatically started by dbus or via the systemd service, it 
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://dunst-project.org/changelog/</guid>
-      <description>Dunst changelog 1.9.0 &amp;ndash; 2022-06-27 Added override_dbus_timeout setting to override the notification timeout set via dbus. (#1035) Support notification gaps via the gap_size setting. Note that since the notifications are not separate windows, you cannot click in between the notifications. (#1053) Make min_icon_size and max_icon_size a rule for even more flexibility (#1069) Changed The window offset is now scaled according to scale as well. This way notification stay visually in the same place on higher DPI screens.</description>
+      <description>Dunst changelog 1.9.1 &amp;ndash; 2023-03-08 Added  zsh completion for dunst and dunstctl (#1107 and #1108) dunstctl history-clear command to delete all notifications from history (#1131) dunstctl history-rm command to remove a single notification from history (#1128) progress_bar_corner_radius option for adding rounded corners to the progress bar (off by default) (#1119) icon_corner_radius option for adding rounded corners to notification icons (#1139)  Changed  Make libnotify and dunstify optional in build (#1129)  Fixed  Man page typo&amp;rsquo;s and readability (#1088 and #1121) Length changes not being emitted over D-Bus (#1127) Crash when locking screen with swaylock on Sway (#1148) Dunst using 100% in some configurations with idle_threshold turned on (#1140)  1.</description>
     </item>
     
   </channel>
