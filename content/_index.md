@@ -116,6 +116,7 @@ the [#dunst](irc://irc.libera.chat/#dunst) IRC channel on Libera.
 
 - [Nikos Tsipinakis](https://github.com/tsipinakis) <nikos@tsipinakis.com>
 - [Benedikt Heine](https://github.com/bebehei) <bebe@bebehei.de>
+- [Friso Smit](https://github.com/fwsmit) <fw.smit01@gmail.com>
 
 ## **Author**
 ***
