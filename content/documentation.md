@@ -57,7 +57,7 @@ toc = "true"
 
 <p>The configuration is divided into sections in an ini-like format. Every section starts with the section&#39;s name in square brackets. After that is a list of key-value pairs that specify the settings. Whitespace is purely cosmetic and doesn&#39;t change the result.</p>
 
-<p>The &#39;global&#39; section contains the general settings applying to all of dunst. The rest of the settings can be specified via rules and can be located in any section. These rules can change a notification based on it&#39;s properties. There are filtering rules and modifying rules. The filtering rules specify on what notifications the rule is applied and the modifying rules specify what is changed about the matching notifications. Some special sections have implied filters that cannot be changed. The &quot;global&quot; section, for example has no filters, thus applies to all notifications.</p>
+<p>The &#39;global&#39; section contains the general settings applying to all of dunst. The rest of the settings can be specified via rules and can be located in any section. These rules can change a notification based on its properties. There are filtering rules and modifying rules. Filtering rules specify what notifications the rule applies to. Modifying rules specify changes to the matching notifications. Some special sections have implied filters that cannot be changed. For example, the &quot;global&quot; section has no filters: it applies to all notifications.</p>
 
 <p>See RULES for more details.</p>
 
@@ -70,7 +70,7 @@ toc = "true"
 <dt id="monitor-default:-0"><b>monitor</b> (default: 0)</dt>
 <dd>
 
-<p>Specifies on which monitor the notifications should be displayed in, count starts at 0. See the <b>follow</b> setting.</p>
+<p>Specifies on which monitor the notifications should be displayed in, either by name or by number, starting from 0. See the <b>follow</b> setting.</p>
 
 </dd>
 <dt id="follow-values:-none-mouse-keyboard-default:-none"><b>follow</b> (values: [none/mouse/keyboard] default: none)</dt>
@@ -78,7 +78,7 @@ toc = "true"
 
 <p>Defines where the notifications should be placed in a multi-monitor setup. All values except <i>none</i> override the <b>monitor</b> setting.</p>
 
-<p>On Wayland there is no difference between mouse and keyboard focus. When either of the is used, the compositor will choose an output. This will generally be the output last interacted with.</p>
+<p>On Wayland there is no difference between mouse and keyboard focus. When either of them is used, the compositor will choose an output. This will generally be the output last interacted with.</p>
 
 <dl>
 
@@ -137,7 +137,7 @@ toc = "true"
 <p>The maximum height of a single notification.</p>
 
 </dd>
-<dt id="notification_limit-default:-0"><b>notification_limit</b> (default: 0)</dt>
+<dt id="notification_limit-default:-20"><b>notification_limit</b> (default: 20)</dt>
 <dd>
 
 <p>The number of notifications that can appear at one time. When this limit is reached any additional notifications will be queued and displayed when the currently displayed ones either time out or are manually dismissed. The value 0 means no limit. If <b>indicate_hidden</b> is true, then the specified limit is reduced by 1 and the last notification is a message informing how many hidden notifications are waiting to be displayed. See the <b>indicate_hidden</b> entry for more information.</p>
@@ -315,14 +315,18 @@ horizontal_padding=10</code></pre>
 </dl>
 
 </dd>
-<dt id="sort-values:-true-false-default:-true"><b>sort</b> (values: [true/false], default: true)</dt>
+<dt id="sort-values:-true-false-id-urgency_ascending-urgency_descending-update-default:-true"><b>sort</b> (values: [true/false/id/urgency_ascending/urgency_descending/update], default: true)</dt>
 <dd>
 
-<p>If set to true, display notifications with higher urgency above the others.</p>
+<p>If set to true or urgency_descending, display notifications with higher urgency above the others. critical first, then normal, then low.</p>
 
-</dd>
-<dt id="idle_threshold-default:-0"><b>idle_threshold</b> (default: 0)</dt>
-<dd>
+<p>If set to false or id, sort notifications by id.</p>
+
+<p>If set to urgency_ascending, notifications are sorted by urgency, low first, then normal, then critical.</p>
+
+<p>If set to update, notifications are sorted by their update_time. So the most recent is always at the top. This means that if you set sort to update, and stack_duplicates to true, the duplicate will always be at the top.</p>
+
+<p>When the notification window is at the bottom of the screen, this order is automatically reversed. =item <b>idle_threshold</b> (default: 0)</p>
 
 <p>Don&#39;t timeout notifications if user is idle longer than this time. See TIME FORMAT for valid times.</p>
 
@@ -484,7 +488,7 @@ horizontal_padding=10</code></pre>
 
 <p>This setting enables the new icon lookup method. This new system will eventually be the old icon lookup.</p>
 
-<p>Currently icons are looked up in the <b>icon_path</b>. Since the <b>icon_path</b> wasn&#39;t recursive, one had to add a ton of paths to this list. This has been drastically simplified by the new lookup method. Now you only have to set <b>icon_theme</b> to the name of the theme you want. To enable this new behaviour, set <b>enable_recursive_icon_lookup</b> to true in the <i>[experimental]</i> section. See the respective settings for more details.</p>
+<p>Currently icons are looked up in the <b>icon_path</b>. Since the <b>icon_path</b> wasn&#39;t recursive, one had to add a ton of paths to this list. This has been drastically simplified by the new lookup method. Now you only have to set <b>icon_theme</b> to the name of the theme you want. To enable this new behaviour, set <b>enable_recursive_icon_lookup</b> to true in the <i>[global]</i> section. See the respective settings for more details.</p>
 
 </dd>
 <dt id="sticky_history-values:-true-false-default:-true"><b>sticky_history</b> (values: [true/false], default: true)</dt>
@@ -603,6 +607,12 @@ horizontal_padding=10</code></pre>
 <dd>
 
 <p>Ignore the dbus closeNotification message. This is useful to enforce the timeout set by dunst configuration. Without this parameter, an application may close the notification sent before the user defined timeout.</p>
+
+</dd>
+<dt id="override_pause_level-values:-0-100-default:-0"><b>override_pause_level</b> (values: [0-100], default: 0)</dt>
+<dd>
+
+<p>A Notification will appear whenever notification&#39;s override_pause_level &gt;= dunst&#39;s paused level. Setting this to values other than 0 allows you to create partial pause modes, where more urgent notifications get through, but less urgent stay paused. For example, when you can set a low battery noficiation&#39;s override_pause_level to 60 and then set dunst&#39;s pause level to 60. This will cause dunst to only show battery level notification (and other notifications with override_pause_level &gt;= 60), while suspending others.</p>
 
 </dd>
 </dl>
@@ -921,7 +931,7 @@ horizontal_padding=10</code></pre>
 <dt id="new_icon"><code>new_icon</code></dt>
 <dd>
 
-<p>Updates the icon of the notification, it should be a path or a name for a valid image. This overrides the icon that was sent with dunstify or another notification tool.</p>
+<p>Updates the icon of the notification, it should be a path or a name for a valid image. This overrides the icon that was sent with dunstify or another notification tool. Expansion of the argument is carried out using wordexp(3) with command substitution disabled.</p>
 
 </dd>
 <dt id="icon_position-values:-left-right-top-off-default:-left"><code>icon_position</code> (values: [left/right/top/off], default: left)</dt>
@@ -933,7 +943,7 @@ horizontal_padding=10</code></pre>
 <dt id="default_icon"><code>default_icon</code></dt>
 <dd>
 
-<p>Sets the default icon of the notification, it should be a path or a name for a valid image. This does <b>not</b> override the icon that was sent with dunstify or another notification tool.</p>
+<p>Sets the default icon of the notification, it should be a path or a name for a valid image. This does <b>not</b> override the icon that was sent with dunstify or another notification tool. Expansion of the argument is carried out using wordexp(3) with command substitution disabled.</p>
 
 </dd>
 <dt id="set_stack_tag"><code>set_stack_tag</code></dt>
@@ -1088,9 +1098,9 @@ horizontal_padding=10</code></pre>
 
 <p>Note that some variables may be empty.</p>
 
-<p>If the notification is suppressed, the script will not be run unless <b>always_run_scripts</b> is set to true.</p>
+<p>If the notification is suppressed, the script will not be run unless <b>always_run_script</b> is set to true.</p>
 
-<p>If &#39;~/&#39; occurs at the beginning of the script parameter, it will get replaced by the users&#39; home directory. If the value is not an absolute path, the directories in the PATH variable will be searched for an executable of the same name.</p>
+<p>The script parameter is expanded according to wordexp(3) with command substitution disabled. If the expanded value is not an absolute path, the directories in the PATH variable will be searched for an executable of the same name.</p>
 
 <h1 id="COLORS">COLORS</h1>
 
@@ -1110,19 +1120,19 @@ horizontal_padding=10</code></pre>
 
 <dl>
 
-<dt id="fgcolor:-Foreground-cololor"><b>fgcolor</b>: Foreground cololor</dt>
+<dt id="fgcolor:-Foreground-color"><b>fgcolor</b>: Foreground color.</dt>
 <dd>
 
 </dd>
-<dt id="bgcolor:-Background-color"><b>bgcolor</b>: Background color</dt>
+<dt id="bgcolor:-Background-color"><b>bgcolor</b>: Background color.</dt>
 <dd>
 
 </dd>
-<dt id="frcolor:-Frame-color"><b>frcolor</b>: Frame color</dt>
+<dt id="frcolor:-Frame-color"><b>frcolor</b>: Frame color.</dt>
 <dd>
 
 </dd>
-<dt id="hlcolor:-Highlight-color"><b>hlcolor</b>: Highlight color</dt>
+<dt id="hlcolor:-Highlight-color"><b>hlcolor</b>: Highlight color.</dt>
 <dd>
 
 </dd>

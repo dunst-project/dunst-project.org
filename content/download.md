@@ -6,28 +6,29 @@ type = "page"
 +++
 ***
 
-The current stable version of Dunst is **1.9.1** released on **March 8 2023**.
+The current stable version of Dunst is **1.10.0** released on **Februari 19 2024**.
 
 # Downloads
 
-* [Source tarball](https://github.com/dunst-project/dunst/archive/v1.9.1.tar.gz)
+* [Source tarball](https://github.com/dunst-project/dunst/archive/v1.10.0.tar.gz)
 * [Code repository (Github)](https://github.com/dunst-project/dunst)
 
-# Release Notes For v1.8.0
+===================================================================================
+Release Notes For v1.10.0
+===================================================================================
 
-Lots of exciting and useful features are being added to dunst, all while making
-dunst even more configurable and reliable.
+It's been a while since the last release. That does not mean that the
+development has been stagnent. There are some long requested features have been
+implemented, like a do not disturb mode in the form of multiple pause levels.
+You can specify the priority of notification and selectively pause them. The
+progress bar rendering for low progress values has been fixed, with preparation
+work being done for more progress bar customization.
 
-For users:
+Since dunst gained Wayland support, Wayland received a lot of development.
+Dunst needed to do some catchup for that. A new Wayland idle protocol is
+implemented and support for Wayland touch screens and multi-seat has been
+added. It's now also possible to specify displays by their port name, instead
+of number.
 
-This release re-adds the keyboard shortcuts for those who have been missing
-them. Also, support for drop-in files has been implemented. Files placed in
-dunstrc.d/\*.conf will be read after the main dunstrc. This may be useful for
-theming (with pywal or otherwise). In the future we will add example drop-in
-files for different default themes and special configuration.
+Take a look at the changelog for all the bug fixes and improvements.
 
-For maintainers:
-
-Not much has been changed for maintainers. Maybe you'll find the drop-in files
-useful for distro-specific fixes. Note that only the files in the directory of
-the used dunstrc will be read (see dunst(1) for documentation).
