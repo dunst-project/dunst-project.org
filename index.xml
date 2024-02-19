@@ -12,8 +12,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://dunst-project.org/screenshots/</guid>
-      <description>.row img { max-width: 100%; height: auto; }  
-Updated config file here</description>
+      <description>Updated config file here</description>
     </item>
     
     <item>
@@ -22,10 +21,8 @@ Updated config file here</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://dunst-project.org/download/</guid>
-      <description>The current stable version of Dunst is 1.9.1 released on March 8 2023.
-Downloads  Source tarball Code repository (Github)  Release Notes For v1.8.0 Lots of exciting and useful features are being added to dunst, all while making dunst even more configurable and reliable.
-For users:
-This release re-adds the keyboard shortcuts for those who have been missing them. Also, support for drop-in files has been implemented. Files placed in dunstrc.</description>
+      <description>The current stable version of Dunst is 1.10.0 released on Februari 19 2024.
+Downloads Source tarball Code repository (Github) =================================================================================== Release Notes For v1.10.0 It&amp;rsquo;s been a while since the last release. That does not mean that the development has been stagnent. There are some long requested features have been implemented, like a do not disturb mode in the form of multiple pause levels. You can specify the priority of notification and selectively pause them.</description>
     </item>
     
     <item>
@@ -34,7 +31,7 @@ This release re-adds the keyboard shortcuts for those who have been missing them
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://dunst-project.org/documentation/</guid>
-      <description>dunst - configuration file   NAME DESCRIPTION  Global section Keyboard shortcuts (X11 only) Urgency sections   DUNSTCTL HISTORY WAYLAND RULES  SCRIPTING   COLORS  NOTIFY-SEND   ACTIONS TIME FORMAT AUTHORS REPORTING BUGS COPYRIGHT SEE ALSO  NAME dunst - configuration file
+      <description>&lt;?xml version=&#34;1.0&#34; ?&gt; &lt;!DOCTYPE html PUBLIC &#34;-//W3C//DTD XHTML 1.0 Strict//EN&#34; &#34;http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd&#34;&gt; dunst - configuration file NAME DESCRIPTION Global section Keyboard shortcuts (X11 only) Urgency sections DUNSTCTL HISTORY WAYLAND RULES SCRIPTING COLORS NOTIFY-SEND ACTIONS TIME FORMAT AUTHORS REPORTING BUGS COPYRIGHT SEE ALSO NAME dunst - configuration file
 DESCRIPTION The configuration is divided into sections in an ini-like format. Every section starts with the section&amp;#39;s name in square brackets. After that is a list of key-value pairs that specify the settings.</description>
     </item>
     
@@ -54,7 +51,7 @@ If dunst should be automatically started by dbus or via the systemd service, it 
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://dunst-project.org/changelog/</guid>
-      <description>Dunst changelog 1.9.1 &amp;ndash; 2023-03-08 Added  zsh completion for dunst and dunstctl (#1107 and #1108) dunstctl history-clear command to delete all notifications from history (#1131) dunstctl history-rm command to remove a single notification from history (#1128) progress_bar_corner_radius option for adding rounded corners to the progress bar (off by default) (#1119) icon_corner_radius option for adding rounded corners to notification icons (#1139)  Changed  Make libnotify and dunstify optional in build (#1129)  Fixed  Man page typo&amp;rsquo;s and readability (#1088 and #1121) Length changes not being emitted over D-Bus (#1127) Crash when locking screen with swaylock on Sway (#1148) Dunst using 100% in some configurations with idle_threshold turned on (#1140)  1.</description>
+      <description>Dunst changelog 1.10.0 &amp;ndash; 2024-02-19 Added Unofficial fish and bash completions (#1205, 1209) Multiple pause levels to allow selective pausing of notifications (#1193) --startup_notification option as an alternative to -startup_notification (#1208) Expand variables, like $HOME in path in your dunstrc. See man 3 wordexp for the details (#1215) Support for stable output names for the monitor (eDP-1, HDMI-1, etc). This is more relyable than the order of monitors. (#1250) Wayland multiseat and touchscreen support (#1250) Changed The cursor is now being drawn by the compositor, making sure the right cursor theme and scaling is being used (#1250) Fixed Various documentation issues Icon path not being interpreted as a path (#1210) Handling of some commandline options (#1208) Improved handling of fallback fonts (#1222) Progress bar not rendering correctly for big corner radiusses compared to width (#1227) Whitespace and brackets in dunstctl usage output (#1230, #1233) Errors about Glib source ID spamming the log (#1257) Idle idle_threshold not working anymore in Wayland due to Wayland protocol changes (#1250) 1.</description>
     </item>
     
   </channel>
