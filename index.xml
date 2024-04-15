@@ -5,54 +5,42 @@
     <link>https://dunst-project.org/</link>
     <description>Recent content in Home on Dunst</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="https://dunst-project.org/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language>
+    <atom:link href="https://dunst-project.org/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Screenshots</title>
       <link>https://dunst-project.org/screenshots/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://dunst-project.org/screenshots/</guid>
       <description>Updated config file here</description>
     </item>
-    
     <item>
       <title>Download</title>
       <link>https://dunst-project.org/download/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://dunst-project.org/download/</guid>
-      <description>The current stable version of Dunst is 1.10.0 released on Februari 19 2024.
-Downloads Source tarball Code repository (Github) =================================================================================== Release Notes For v1.10.0 It&amp;rsquo;s been a while since the last release. That does not mean that the development has been stagnent. There are some long requested features have been implemented, like a do not disturb mode in the form of multiple pause levels. You can specify the priority of notification and selectively pause them.</description>
+      <description>The current stable version of Dunst is 1.11.0 released on April 15 2024.&#xA;Downloads Source tarball Code repository (Github) Release Notes For v1.11.0 This release hopefully marks the start of a new period of active development and contributions and a shift away from the previous lower maintenance mode.&#xA;For users:&#xA;This is the perfect time to engage with the project and other dunst users. Some of the features and changes to include in the v2 release are starting to be proposed or implemented.</description>
     </item>
-    
     <item>
       <title>Documentation</title>
       <link>https://dunst-project.org/documentation/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://dunst-project.org/documentation/</guid>
-      <description>&lt;?xml version=&#34;1.0&#34; ?&gt; &lt;!DOCTYPE html PUBLIC &#34;-//W3C//DTD XHTML 1.0 Strict//EN&#34; &#34;http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd&#34;&gt; dunst - configuration file NAME DESCRIPTION Global section Keyboard shortcuts (X11 only) Urgency sections DUNSTCTL HISTORY WAYLAND RULES SCRIPTING COLORS NOTIFY-SEND ACTIONS TIME FORMAT AUTHORS REPORTING BUGS COPYRIGHT SEE ALSO NAME dunst - configuration file
-DESCRIPTION The configuration is divided into sections in an ini-like format. Every section starts with the section&amp;#39;s name in square brackets. After that is a list of key-value pairs that specify the settings.</description>
+      <description>&lt;?xml version=&#34;1.0&#34; ?&gt; &lt;!DOCTYPE html PUBLIC &#34;-//W3C//DTD XHTML 1.0 Strict//EN&#34; &#34;http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd&#34;&gt; dunst - configuration file NAME DESCRIPTION Global section Keyboard shortcuts (X11 only) Urgency sections DUNSTCTL HISTORY WAYLAND RULES SCRIPTING COLORS NOTIFY-SEND ACTIONS TIME FORMAT AUTHORS REPORTING BUGS COPYRIGHT SEE ALSO NAME dunst - configuration file&#xA;DESCRIPTION The configuration is divided into sections in an ini-like format. Every section starts with the section&amp;#39;s name in square brackets. After that is a list of key-value pairs that specify the settings.</description>
     </item>
-    
     <item>
       <title>FAQ</title>
       <link>https://dunst-project.org/faq/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://dunst-project.org/faq/</guid>
-      <description>Common problems Errors about missing or failing to open a display Depending on the setup dunst was unable to connect to the X server or the wayland compositor in use. In case of X make sure that X is running and that the DISPLAY environment variable is correctly set. For a wayland based setup the WAYLAND_DISPLAY environment variable needs to be set to a valid value.
-If dunst should be automatically started by dbus or via the systemd service, it is important to know that both don&amp;rsquo;t inherit environment variables set by a shell.</description>
+      <description>Common problems Errors about missing or failing to open a display Depending on the setup dunst was unable to connect to the X server or the wayland compositor in use. In case of X make sure that X is running and that the DISPLAY environment variable is correctly set. For a wayland based setup the WAYLAND_DISPLAY environment variable needs to be set to a valid value.&#xA;If dunst should be automatically started by dbus or via the systemd service, it is important to know that both don&amp;rsquo;t inherit environment variables set by a shell.</description>
     </item>
-    
     <item>
       <title></title>
       <link>https://dunst-project.org/changelog/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://dunst-project.org/changelog/</guid>
-      <description>Dunst changelog 1.10.0 &amp;ndash; 2024-02-19 Added Unofficial fish and bash completions (#1205, 1209) Multiple pause levels to allow selective pausing of notifications (#1193) --startup_notification option as an alternative to -startup_notification (#1208) Expand variables, like $HOME in path in your dunstrc. See man 3 wordexp for the details (#1215) Support for stable output names for the monitor (eDP-1, HDMI-1, etc). This is more relyable than the order of monitors. (#1250) Wayland multiseat and touchscreen support (#1250) Changed The cursor is now being drawn by the compositor, making sure the right cursor theme and scaling is being used (#1250) Fixed Various documentation issues Icon path not being interpreted as a path (#1210) Handling of some commandline options (#1208) Improved handling of fallback fonts (#1222) Progress bar not rendering correctly for big corner radiusses compared to width (#1227) Whitespace and brackets in dunstctl usage output (#1230, #1233) Errors about Glib source ID spamming the log (#1257) Idle idle_threshold not working anymore in Wayland due to Wayland protocol changes (#1250) 1.</description>
+      <description>Dunst changelog 1.11.0 &amp;ndash; 2024-04-15 Added Add corners, progress_bar_corners and icon_corners options to control which corners to round (#1268) Support GTK/CSS cursor names on Wayland (#1276) Make dunst more portable (#1288) Print detected monitors names (X11) (#1332) Changed Make X11 optional in build (this allows wayland-only dunst) (#1290) Shell completions are now official and can be installed from the Makefile (#1262, #1263) Don&amp;rsquo;t search for icon path if icons are disabled (#1301) Eagerly parse and cache colors (#1306) Update dunstctl manpage (#1298) Update documentation (#1315, #1334) Fixed Fix settings initialization (this prevented &amp;ndash;print and &amp;ndash;startup_notification from working) (#1299) Rework timer logic and fix error about Glib source ID for good (#1308, #1196) Prevent memory corruption in XrmSetDatabase (#1256, #1291) Don&amp;rsquo;t try to print NULL strings (#1323) Do not resolve icon paths twice (#1307, #1314) Don&amp;rsquo;t crash the test suite if librsvg is not present (#1329) Fix memory leak in DBus RuleEnable (#1328) Fix dunstctl rule (#1281) Remove newlines from icon logging (#1296) Prevent make from failing if git tags are not found (#1287) Fix some typos (#1324, #1325, #1279) 1.</description>
     </item>
-    
   </channel>
 </rss>

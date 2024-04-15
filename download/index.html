@@ -71,26 +71,32 @@
             <h1><b>Download</b></h1>
                 
                 <hr>
-<p>The current stable version of Dunst is <strong>1.10.0</strong> released on <strong>Februari 19 2024</strong>.</p>
+<p>The current stable version of Dunst is <strong>1.11.0</strong> released on <strong>April 15 2024</strong>.</p>
 <h1 id="downloads">Downloads</h1>
 <ul>
-<li><a href="https://github.com/dunst-project/dunst/archive/v1.10.0.tar.gz">Source tarball</a></li>
+<li><a href="https://github.com/dunst-project/dunst/archive/v1.11.0.tar.gz">Source tarball</a></li>
 <li><a href="https://github.com/dunst-project/dunst">Code repository (Github)</a></li>
 </ul>
-<h1 id="release-notes-for-v1100">===================================================================================
-Release Notes For v1.10.0</h1>
-<p>It&rsquo;s been a while since the last release. That does not mean that the
-development has been stagnent. There are some long requested features have been
-implemented, like a do not disturb mode in the form of multiple pause levels.
-You can specify the priority of notification and selectively pause them. The
-progress bar rendering for low progress values has been fixed, with preparation
-work being done for more progress bar customization.</p>
-<p>Since dunst gained Wayland support, Wayland received a lot of development.
-Dunst needed to do some catchup for that. A new Wayland idle protocol is
-implemented and support for Wayland touch screens and multi-seat has been
-added. It&rsquo;s now also possible to specify displays by their port name, instead
-of number.</p>
-<p>Take a look at the changelog for all the bug fixes and improvements.</p>
+<h1 id="release-notes-for-v1110">Release Notes For v1.11.0</h1>
+<hr>
+<p>This release hopefully marks the start of a new period of active development and
+contributions and a shift away from the previous lower maintenance mode.</p>
+<p>For users:</p>
+<p>This is the perfect time to engage with the project and other dunst users.
+Some of the features and changes to include in the v2 release are starting to
+be proposed or implemented. Everyone&rsquo;s opinion is important, so feel free
+to participate in the issues proposing new features (or redesigns of the old ones).</p>
+<p>This version mainly contains bug fixes and QoL improvements, and can be considered
+a preparatory release for the various things that will come in the future
+(overhaul of the rule syntax, multiple windows support, aesthetic and customization
+options, refactor of the drawing system, etc).</p>
+<p>For maintainers:</p>
+<p>X11 support is now optional and can be disabled in build by setting the <code>X11</code> make
+flag to 0. This means that you can offer Wayland-only builds.</p>
+<p>Shell completions are now considered official and can be installed/uninstalled from
+the Makefile. By default they are installed and can be disabled by setting the
+<code>COMPLETIONS</code> flag to 0.</p>
+<p>Take a look at the <a href="https://dunst-project.org/changelog/" title="Changelog">changelog</a> for all the bug fixes and improvements.</p>
 
             </div>
         </div>
@@ -106,7 +112,7 @@ of number.</p>
 </footer>
 
     <script type="text/javascript">
-    <!--
+    
     function toggle(id) {
         var e = document.getElementById(id);
         e.style.display == 'block' ? e.style.display = 'none' : e.style.display = 'block';
