@@ -204,11 +204,31 @@ toc = "true"
 
 <p>The corner radius of the progress bar in pixels. Gives the progress bar rounded corners. Set to 0 to disable.</p>
 
+<p>This setting will be ignored if <b>progress_bar_corners</b> is set to none.</p>
+
+</dd>
+<dt id="progress_bar_corners-default:-all"><b>progress_bar_corners</b> (default: all)</dt>
+<dd>
+
+<p>Define which corners to round when drawing the progress bar. If progress_bar_corner_radius is set to 0 this option will be ignored.</p>
+
+<p>See the <b>corners</b> setting for the value format.</p>
+
 </dd>
 <dt id="icon_corner_radius-default:-0"><b>icon_corner_radius</b> (default: 0)</dt>
 <dd>
 
 <p>The corner radius of the icon image in pixels. Gives the icon rounded corners. Set to 0 to disable.</p>
+
+<p>This setting will be ignored if <b>icon_corners</b> is set to none.</p>
+
+</dd>
+<dt id="icon_corners-default:-all"><b>icon_corners</b> (default: all)</dt>
+<dd>
+
+<p>Define which corners to round when drawing the icon image. If icon_corner_radius is set to 0 this option will be ignored.</p>
+
+<p>See the <b>corners</b> setting for the value format.</p>
 
 </dd>
 <dt id="indicate_hidden-values:-true-false-default:-true"><b>indicate_hidden</b> (values: [true/false], default: true)</dt>
@@ -224,7 +244,9 @@ toc = "true"
 
 <p>A 0-100 range on how transparent the notification window should be, with 0 being fully opaque and 100 invisible.</p>
 
-<p>To make windows transparent on wayland, set the transparency part of a color, see COLORS.</p>
+<p>This will affect the whole window. To make only parts of a window transparent set the alpha channel in a color, see COLORS.</p>
+
+<p>To make windows transparent on wayland, set the transparent part of a color, see COLORS.</p>
 
 <p>This setting will only work if a compositor is running.</p>
 
@@ -326,7 +348,11 @@ horizontal_padding=10</code></pre>
 
 <p>If set to update, notifications are sorted by their update_time. So the most recent is always at the top. This means that if you set sort to update, and stack_duplicates to true, the duplicate will always be at the top.</p>
 
-<p>When the notification window is at the bottom of the screen, this order is automatically reversed. =item <b>idle_threshold</b> (default: 0)</p>
+<p>When the notification window is at the bottom of the screen, this order is automatically reversed.</p>
+
+</dd>
+<dt id="idle_threshold-default:-0"><b>idle_threshold</b> (default: 0)</dt>
+<dd>
 
 <p>Don&#39;t timeout notifications if user is idle longer than this time. See TIME FORMAT for valid times.</p>
 
@@ -353,6 +379,8 @@ horizontal_padding=10</code></pre>
 <dd>
 
 <p>Force the use of X11 output, even on a wayland compositor. This setting has no effect when not using a Wayland compositor.</p>
+
+<p>This setting will be ignored if dunst was compiled without X11 support.</p>
 
 </dd>
 <dt id="font-default:-Monospace-8"><b>font</b> (default: &quot;Monospace 8&quot;)</dt>
@@ -472,7 +500,7 @@ horizontal_padding=10</code></pre>
 <dt id="icon_theme-default:-Adwaita-example:-Adwaita-breeze"><b>icon_theme</b> (default: &quot;Adwaita&quot;, example: &quot;Adwaita, breeze&quot;)</dt>
 <dd>
 
-<p>Comma-separated of names of the the themes to use for looking up icons. This has to be the name of the directory in which the theme is located, not the human-friendly name of the theme. So for example, the theme <b>Breeze Dark</b> is located in <i>/usr/share/icons/breeze-dark</i>. In this case you have to set the theme to <b>breeze-dark</b>.</p>
+<p>Comma-separated list of names of the the themes to use for looking up icons. This as to be the name of the directory in which the theme is located, not the human-friendly name of the theme. So for example, the theme <b>Breeze Dark</b> is located in <i>/usr/share/icons/breeze-dark</i>. In this case you have to set the theme to <b>breeze-dark</b>.</p>
 
 <p>The first theme in the list is the most important. Only if the icon cannot be found in that theme, the next theme will be tried.</p>
 
@@ -521,13 +549,13 @@ horizontal_padding=10</code></pre>
 <p>Always run rule-defined scripts, even if the notification is suppressed with format = &quot;&quot;. See SCRIPTING.</p>
 
 </dd>
-<dt id="title-default:-Dunst"><b>title</b> (default: &quot;Dunst&quot;)</dt>
+<dt id="title-default:-Dunst-X11-only"><b>title</b> (default: &quot;Dunst&quot;) (X11 only)</dt>
 <dd>
 
 <p>Defines the title of notification windows spawned by dunst. (_NET_WM_NAME property). There should be no need to modify this setting for regular use.</p>
 
 </dd>
-<dt id="class-default:-Dunst"><b>class</b> (default: &quot;Dunst&quot;)</dt>
+<dt id="class-default:-Dunst-X11-only"><b>class</b> (default: &quot;Dunst&quot;) (X11 only)</dt>
 <dd>
 
 <p>Defines the class of notification windows spawned by dunst. (First part of WM_CLASS). There should be no need to modify this setting for regular use.</p>
@@ -546,15 +574,40 @@ horizontal_padding=10</code></pre>
 
 <p>Define the corner radius in pixels. A corner radius of 0 will result in rectangular shaped notifications.</p>
 
-<p>By enabling this setting the outer border and the frame will be shaped. If you have multiple notifications, the whole window is shaped, not every single notification.</p>
+<p>By enabling this setting the outer border and the frame will be shaped. If you have multiple notifications, the whole window is shaped, not every single notification, unless if gaps are enabled (see <b>gaps_size</b>).</p>
 
 <p>To avoid the corners clipping the icon or text the corner radius will be automatically lowered to half of the notification height if it exceeds it.</p>
 
+<p>This setting will be ignored if <b>corners</b> is set to none.</p>
+
 </dd>
-<dt id="mouse_left-middle-right_click-values:-none-do_action-close_current-close_all-context-context_all"><b>mouse_left/middle/right_click</b> (values: [none/do_action/close_current/close_all/context/context_all])</dt>
+<dt id="corners-default:-all"><b>corners</b> (default: all)</dt>
 <dd>
 
-<p>Defines action of mouse click. A touch input in Wayland acts as a mouse left click.</p>
+<p>Define which corners to round when drawing the window. If the corner radius is set to 0 this option will be ignored.</p>
+
+<p>Comma-separated list of the corners. The accepted corner values are bottom-right, bottom-left, top-right, top-left, top, bottom, left, right or all.</p>
+
+</dd>
+<dt id="mouse_-left-middle-right-_click-values:-none-do_action-close_current-close_all-context-context_all"><b>mouse_[left/middle/right]_click</b> (values: [none/do_action/close_current/close_all/context/context_all])</dt>
+<dd>
+
+<p>Defines action of mouse click. A touch input in Wayland acts as a mouse left click. A list of values, separated by commas, can be specified for multiple actions to be executed in sequence.</p>
+
+<p><b>Defaults:</b></p>
+
+<ul>
+
+<li><p><code>mouse_left_click=&quot;close_current&quot;</code></p>
+
+</li>
+<li><p><code>mouse_middle_click=&quot;do_action, close_current&quot;</code></p>
+
+</li>
+<li><p><code>mouse_right_click=&quot;close_all&quot;</code></p>
+
+</li>
+</ul>
 
 <dl>
 
@@ -564,7 +617,7 @@ horizontal_padding=10</code></pre>
 <p>Don&#39;t do anything.</p>
 
 </dd>
-<dt id="do_action-default-for-mouse_middle_click"><b>do_action</b> (default for mouse_middle_click)</dt>
+<dt id="do_action"><b>do_action</b></dt>
 <dd>
 
 <p>Invoke the action determined by the action_name rule. If there is no such action, open the context menu.</p>
@@ -576,13 +629,13 @@ horizontal_padding=10</code></pre>
 <p>If the notification has exactly one url, open it. If there are multiple ones, open the context menu.</p>
 
 </dd>
-<dt id="close_current-default-for-mouse_left_click"><b>close_current</b> (default for mouse_left_click)</dt>
+<dt id="close_current"><b>close_current</b></dt>
 <dd>
 
 <p>Close current notification.</p>
 
 </dd>
-<dt id="close_all-default-for-mouse_right_click"><b>close_all</b> (default for mouse_right_click)</dt>
+<dt id="close_all"><b>close_all</b></dt>
 <dd>
 
 <p>Close all notifications.</p>
@@ -633,7 +686,7 @@ horizontal_padding=10</code></pre>
 <p>Specifies the keyboard shortcut for closing a notification.</p>
 
 </dd>
-<dt id="close_all"><b>close_all</b></dt>
+<dt id="close_all1"><b>close_all</b></dt>
 <dd>
 
 <p>Specifies the keyboard shortcut for closing all currently displayed notifications.</p>
@@ -734,6 +787,8 @@ horizontal_padding=10</code></pre>
 <p>Note that the same limitations exist when using xwayland. If something doesn&#39;t quite work in Wayland, please file a bug report. In the mean time, you can try if the X11 output does work on wayland. Use <b>force_xwayland = true</b> for that.</p>
 
 <p>If you have your dunst notifications on the same side of your display as your status bar, you might notice that your notifications appear a bit higher or lower than on X11. This is because the notification cannot be placed on top of your status bar. The notifications are placed relative to your status bar, making them appear higher or lower by the height of your status bar. We cannot do anything about that behavior.</p>
+
+<p>Note that dunst creates a &quot;desktop layer&quot; using the layer shell protocol and not a regular Wayland window. This has some limitations like stated above. For example you can&#39;t set a window title/class.</p>
 
 <h1 id="RULES">RULES</h1>
 
@@ -850,7 +905,7 @@ horizontal_padding=10</code></pre>
 
 <p>Matches only messages that were send via notify-send. If multiple filter expressions are present, all of them have to match for the rule to be applied (logical AND).</p>
 
-<p>Shell-like globing is supported.</p>
+<p>Shell-like globbing is supported.</p>
 
 </dd>
 <dt id="modifying"><b>modifying</b></dt>
