@@ -22,3 +22,8 @@ pre, code {
     border-radius: 4px;
     padding: 0px;
 }
+
+.releaseref {
+  font-size: medium;
+  float: right;
+}

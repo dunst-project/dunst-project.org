@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html xmlns="//www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+    <head>
+
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+
+        <title>Release Notes &middot; Dunst</title>
+        <link rel='stylesheet' href='//fonts.googleapis.com/css?family=Open+Sans:400,300,600' type='text/css'>
+        <link rel="stylesheet" href="https://dunst-project.org//libraries/normalize.3.0.1.css" />
+        <link rel="stylesheet" href="https://dunst-project.org//css/liquorice.min.css" />
+        <link rel="stylesheet" href="https://dunst-project.org//font-awesome/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://dunst-project.org//css/global.css">
+        
+
+        <link rel="shortcut icon" href="/favicon.ico" />
+        <link rel="apple-touch-icon-precomposed" href="/apple-touch-icon-144-precomposed.png" sizes="144x144" />
+        <link rel="alternate" href="" type="application/rss+xml" title="Dunst" />
+
+    </head>
+    <body class="li-body">
+
+<header class="li-page-header">
+    <div class="container">
+        <div class="row">
+            <div class="sixteen columns">
+                <div class="li-brand li-left">
+                <a href="https://dunst-project.org/">Dunst</a></div>
+                <div class="li-menu li-right">
+                    <span class="li-menu-icon" onclick="javascript:toggle('menu');">&#9776;</span>
+                    <ul id="menu2" class="li-menu-items">
+                        
+                            <li><a href="/"> Home </a></li>
+                        
+                            <li><a href="/screenshots/"> Screenshots </a></li>
+                        
+                            <li><a href="/download/"> Download </a></li>
+                        
+                            <li><a href="/documentation/"> Documentation </a></li>
+                        
+                            <li><a href="/faq/"> FAQ </a></li>
+                        
+                            <li><a href="/changelog/"> Changelog </a></li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="sixteen columns">
+                <ul id="menu" class="li-menu-items li-menu-mobile">
+                    
+                        <li><a href="/"> Home </a></li>
+                    
+                        <li><a href="/screenshots/"> Screenshots </a></li>
+                    
+                        <li><a href="/download/"> Download </a></li>
+                    
+                        <li><a href="/documentation/"> Documentation </a></li>
+                    
+                        <li><a href="/faq/"> FAQ </a></li>
+                    
+                        <li><a href="/changelog/"> Changelog </a></li>
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+    <div class="container">
+        <div class="row">
+            <div class="sixteen columns">
+            <h1><b>Release Notes</b></h1>
+                
+                <h2 id="v1.12.0">Dunst v1.12.0 <div class="releaseref"><i class="fa fa-sticky-note"></i> <a href="https://dunst-project.org/changelog/#v1.12.0">Changelog</a></div></h2>
+<hr>
+<p>There have been many important contributions in the last few months.
+Some notable changes are: adding hot-reload for the configuration, exporting
+rules via dunstctl, adding color gradients, removing default hard-coded icons.
+For detailed information consult the changelog.</p>
+<p>Important notice for all users:</p>
+<p>The behaviour of the setting <code>height</code> has been changed in a breaking way.
+Before you could specify a single value that would be used as the max height
+of a notification. In this release the dynamic height was implemented to make
+this settings behave more similarly to <code>width</code>.
+Now the values accepted are either a single number (for a <em>fixed height</em>) or
+a tuple of numbers (for a min/max range).</p>
+<p>The way of specifying a maximum height before was:
+height = 300</p>
+<p>The equivalent way now is:
+height = (0, 300)</p>
+<p>Furthermore the preferred syntax for the <code>offset</code> settings has been changed
+from NxN to (N,N). The old syntax is supported nevertheless.</p>
+<p>If you are a maintainer it would be helpful to include the message above when
+an user updates from an older version of dunst.</p>
+<p>Take a look at the changelog for all the bug fixes and improvements.</p>
+<h2 id="v1.11.0">Dunst v1.11.0 <div class="releaseref"><i class="fa fa-sticky-note"></i> <a href="https://dunst-project.org/changelog/#v1.11.0">Changelog</a></div></h2>
+<hr>
+<p>This release hopefully marks the start of a new period of active development and
+contributions and a shift away from the previous lower maintenance mode.</p>
+<p>For users:</p>
+<p>This is the perfect time to engage with the project and other dunst users.
+Some of the features and changes to include in the v2 release are starting to
+be proposed or implemented. Everyone&rsquo;s opinion is important, so feel free
+to participate in the issues proposing new features (or redesigns of the old ones).</p>
+<p>This version mainly contains bug fixes and QoL improvements, and can be considered
+a preparatory release for the various things that will come in the future
+(overhaul of the rule syntax, multiple windows support, aesthetic and customization
+options, refactor of the drawing system, etc).</p>
+<p>For maintainers:</p>
+<p>X11 support is now optional and can be disabled in build by setting the <code>X11</code> make
+flag to 0. This means that you can offer Wayland-only builds.</p>
+<p>Shell completions are now considered official and can be installed/uninstalled from
+the Makefile. By default they are installed and can be disabled by setting the
+<code>COMPLETIONS</code> flag to 0.</p>
+<p>Take a look at the changelog for all the bug fixes and improvements.</p>
+<h2 id="v1.10.0">Dunst v1.10.0 <div class="releaseref"><i class="fa fa-sticky-note"></i> <a href="https://dunst-project.org/changelog/#v1.10.0">Changelog</a></div></h2>
+<hr>
+<p>It&rsquo;s been a while since the last release. That does not mean that the
+development has been stagnant. There are some long requested features have been
+implemented, like a do not disturb mode in the form of multiple pause levels.
+You can specify the priority of notification and selectively pause them. The
+progress bar rendering for low progress values has been fixed, with preparation
+work being done for more progress bar customization.</p>
+<p>Since dunst gained Wayland support, Wayland received a lot of development.
+Dunst needed to do some catchup for that. A new Wayland idle protocol is
+implemented and support for Wayland touch screens and multi-seat has been
+added. It&rsquo;s now also possible to specify displays by their port name, instead
+of number.</p>
+<p>Take a look at the changelog for all the bug fixes and improvements.</p>
+<h2 id="v1.9.2">Dunst v1.9.2 <div class="releaseref"><i class="fa fa-sticky-note"></i> <a href="https://dunst-project.org/changelog/#v1.9.2">Changelog</a></div></h2>
+<hr>
+<p>This release fixes two issues with high cpu usage one of which was introduced
+when trying to fix another cpu usage issue. So if you have experienced dunst
+making your fans spin harder than usual that should be fixed with this release.</p>
+<h2 id="v1.9.1">Dunst v1.9.1 <div class="releaseref"><i class="fa fa-sticky-note"></i> <a href="https://dunst-project.org/changelog/#v1.9.1">Changelog</a></div></h2>
+<hr>
+<p>For users:</p>
+<p>If you like rounded corners, this release is for you. You can now add rounded
+corners to your progress bar and notification icons. Dunstctl added more
+options for changing the notification history, so I&rsquo;m excited for what you can
+build with that. Dunst also is even more stable now with a crash being fixed
+and not using 100% of your cpu anymore in some situations.</p>
+<p>For maintainers:</p>
+<p>Libnotify and dunst are now optional to build by setting the <code>DUNSTIFY</code> make
+flag to 0. (enabled by default)</p>
+<p>Take a look at the changelog for a more detailed change description.</p>
+<h2 id="v1.9.0">Dunst v1.9.0 <div class="releaseref"><i class="fa fa-sticky-note"></i> <a href="https://dunst-project.org/changelog/#v1.9.0">Changelog</a></div></h2>
+<hr>
+<p>This release marks the point for a few big features to be useable. The
+recursive icon lookup is marked stable and is used by default for new users. It
+is now also possible to add gaps between notifications, although it is not done
+with separate windows, so clicks in between notification will not register to
+the below window. You&rsquo;ll also need a compositor for the transparancy to take
+effect.</p>
+<p>Take a look at the changelog for a more detailed change description.</p>
+<h2 id="v1.8.0">Dunst v1.8.0 <div class="releaseref"><i class="fa fa-sticky-note"></i> <a href="https://dunst-project.org/changelog/#v1.8.0">Changelog</a></div></h2>
+<hr>
+<p>Lots of exciting and useful features are being added to dunst, all while making
+dunst even more configurable and reliable.</p>
+<p>For users:</p>
+<p>This release re-adds the keyboard shortcuts for those who have been missing
+them. Also, support for drop-in files has been implemented. Files placed in
+dunstrc.d/*.conf will be read after the main dunstrc. This may be useful for
+theming (with pywal or otherwise). In the future we will add example drop-in
+files for different default themes and special configuration.</p>
+<p>For maintainers:</p>
+<p>Not much has been changed for maintainers. Maybe you&rsquo;ll find the drop-in files
+useful for distro-specific fixes. Note that only the files in the directory of
+the used dunstrc will be read (see dunst(1) for documentation).</p>
+<h2 id="v1.7.0">Dunst v1.7.0 <div class="releaseref"><i class="fa fa-sticky-note"></i> <a href="https://dunst-project.org/changelog/#v1.7.0">Changelog</a></div></h2>
+<hr>
+<p>This release was long overdue. There have been a lot of changes in the mean
+time. For a full list of changes, see the changelog.</p>
+<p>For users:</p>
+<p>The wayland support of v1.6.0 was already pretty good, but this release added
+fullscreen detection and improved the stability.</p>
+<p>This release added a few improvements to the wayland support. Dunst now
+automatically falls back to X11 when the wayland compositor doesn&rsquo;t support the
+neccesary protocols.</p>
+<p>For maintainers:</p>
+<p>Previously the readme said dunst depended on GTK3, which hasn&rsquo;t been the case
+for a while. Make sure that GTK3 is not included as a dependency.</p>
+<p>The default program for opening URL&rsquo;s in notifications has been changed from
+firefox to xdg-open.</p>
+<p>The Makefile and dunstrc searching has been significantly changed to be more
+compliant with the XDG spec. The default config directory, <code>SYSCONFDIR</code>, has
+been changed from &ldquo;/etc&rdquo; to &ldquo;${PREFIX}/etc/xdg/&rdquo;. To change back to the old
+behaviour, run make with: <code>make SYSCONFDIR=&quot;/etc&quot;</code> (make sure to pass the same
+variables to make in subsequent calls). Take a look at the &ldquo;Make parameters&rdquo;
+section of the readme and the FILES section of the man page for more details.</p>
+<h2 id="v1.6.0">Dunst v1.6.0 <div class="releaseref"><i class="fa fa-sticky-note"></i> <a href="https://dunst-project.org/changelog/#v1.6.0">Changelog</a></div></h2>
+<hr>
+<p>For users:</p>
+<p>At long last, dunst has native wayland support. On startup dunst will now
+autodetect the display environment it&rsquo;s run on and use the appropriate backend
+(X11 or wayland).
+Additionally, support for progress bars has been added when the &lsquo;value&rsquo; hint is
+used. Try it out with <code>notify-send -h int:value:70 'Progress bars!'</code></p>
+<p>Last but most importantly, support for the
+<code>DUNST_COMMAND_{PAUSE,RESUME,TOGGLE}</code> has been removed as they could
+potentially be used to DoS dunst. <code>dunstctl</code> has been available as a direct
+replacement for the use-case they served since last release. See
+<a href="https://github.com/dunst-project/dunst/pull/830">https://github.com/dunst-project/dunst/pull/830</a> for details</p>
+<p>For maintainers:</p>
+<p>Dunst now depends on the wayland libraries and (optionally) on the
+wayland-protocols package. A global configuration file is now installed by
+default in <code>/etc/dunst/dunstrc</code></p>
+<h2 id="v1.5.0">Dunst v1.5.0 <div class="releaseref"><i class="fa fa-sticky-note"></i> <a href="https://dunst-project.org/changelog/#v1.5.0">Changelog</a></div></h2>
+<hr>
+<p>For users:</p>
+<p>The most important update from the previous version is the addition of the
+dunstctl command and dunstify utility, a drop-in notify-send replacement (which
+existed for a while, but wasn&rsquo;t installed by default).
+The internal keyboard shortcut support in dunst is now considered deprecated
+and should be replaced by dunstctl calls. You can use the configuration of your
+WM or DE to bind these to shortcuts of your choice.</p>
+<p>Additionally, another long requested feature implemented is RGBA/transparency
+support. Given an active compositor you can now add an optional transparency
+component to all colors in #RRGGBBAA format.</p>
+<p>For maintainers:</p>
+<p>As mentioned above, two new binaries are now installed by default, dunstctl and dunstify.
+libnotify has been added as a dependency as it&rsquo;s used internally by dunstify.</p>
+<h2 id="v1.4.0">Dunst v1.4.0 <div class="releaseref"><i class="fa fa-sticky-note"></i> <a href="https://dunst-project.org/changelog/#v1.4.0">Changelog</a></div></h2>
+<hr>
+<p>There has been significant internal refactoring since the last release which
+might have introduced some new bugs. Be sure to report anything you find.
+However, as usual, there has been a lot of bug-fixing and a lot of new features
+have been added as well. Look at the full changelog for a breakdown.
+Some important points to note:</p>
+<p>For users:</p>
+<ul>
+<li>
+<p>Behavioural changes</p>
+<p>In the previous release we introduced support for clients to mark
+notifications as &rsquo;transient&rsquo;. Transient notifications used to 1) bypass
+idle_threshold and 2) not be saved in history.
+The latter behaviour has been disabled by default and can be re-created using
+rules if necessary. Transient notifications will now only bypass
+idle_threshold.</p>
+<p>Additionally, to be compliant with the notification spec, the notification
+summary no longer accepts markup.</p>
+</li>
+</ul>
+<p>For maintainers:</p>
+<ul>
+<li>Dependency on libxdg-basedir has been removed</li>
+</ul>
+<h2 id="v1.3.0">Dunst v1.3.0 <div class="releaseref"><i class="fa fa-sticky-note"></i> <a href="https://dunst-project.org/changelog/#v1.3.0">Changelog</a></div></h2>
+<hr>
+<p>Version 1.3 is supposed to be fully backwards compatible with 1.2.</p>
+<p>For users:</p>
+<ul>
+<li>
+<p>Behavioural changes</p>
+<p>Dunst respects the timeout with millisecond accuracy now. Notifications with
+a one second timeout are not shown up to three seconds.
+Additionally you can specify timeout values in milliseconds, seconds, minutes,
+hours or days using the ms, s, h, or d suffix in the config value
+respectively.</p>
+<p>Transient notifications time out ignoring the <code>idle_threshold</code> setting and are not
+saved in history. This can be overridden with a rule containing <code>set_transient = no</code>.
+In the same vein there is the <code>match_transient</code> condition to match transient
+notifications via rules.</p>
+<p>A prefixed tilde (<code>~/</code>) in path settings (browser, dmenu, script) is interpreted as the
+home folder of the user.</p>
+</li>
+<li>
+<p>Configuration Options</p>
+<p><code>icon_folders</code> got deprecated and renamed to <code>icon_path</code>. <code>icon_folders</code> is still
+supported, but will get removed in future.</p>
+<p>The option <code>ellipsize</code> got introduced. It controls where to ellipsize the text of
+an overlong notification if <code>word_wrap = no</code>.</p>
+</li>
+</ul>
+<p>For maintainers:</p>
+<ul>
+<li>
+<p>Dependencies</p>
+<p>The GTK3+ dependency got removed. Instead of this gdk-pixbuf is required
+explicitly. This had been a transient dependency before.</p>
+<p>In the Makefile, libxrandr is now specified to require version 1.5 or newer.
+The dependency on libxrandr &gt;= 1.5 is not new, Dunst 1.2.0 required it too
+but there was no active check for it.</p>
+</li>
+<li>
+<p>Installation process</p>
+<p>The internals of dunst&rsquo;s make installation process have slightly changed. The
+install routine won&rsquo;t install the service files for DBus and systemd in a hardcoded
+subdirectory of $PREFIX. It&rsquo;ll now query the <code>dbus-1</code> and <code>systemd</code> pkg-config
+packages for those paths and will put it there.</p>
+<p>To overwrite the pkg-config values, you can manually specify another path.
+Use <code>SERVICEDIR_(DBUS|SYSTEMD)</code> vars as parameters to your make calls.</p>
+<p>For all introduced variables, see [the README.md].</p>
+</li>
+<li>
+<p>Portability</p>
+<p>GNU-specific functions have been disabled to make dunst portable to nongnu libc&rsquo;s.</p>
+</li>
+</ul>
+<p>For a full list of changes see [CHANGELOG.md].</p>
+<h2 id="v1.2.0">Dunst v1.2.0 <div class="releaseref"><i class="fa fa-sticky-note"></i> <a href="https://dunst-project.org/changelog/#v1.2.0">Changelog</a></div></h2>
+<hr>
+<p>After about 3 years of inactivity, dunst is back under active development.</p>
+<p>Version 1.2 is supposed to be fully backwards compatible with 1.1 but due to
+the number of changes and the time since the last release there may be some
+overlooked breakages. If one is found it should be reported to the bug tracker.</p>
+<p>For users:</p>
+<ul>
+<li>
+<p>Markup
+The <code>allow_markup</code> setting has been deprecated in favour of <code>markup</code> which
+is a multi-value setting that can be used to control much more accurately
+how markup in notifications should be handled. Currently it only supports
+<code>no</code>, <code>strip</code> and <code>full</code> as values but it is planned to be expanded soon.</p>
+<p>To preserve backwards compatibility, <code>allow_markup</code> is still supported but
+users are encouraged to update their configuration files since it will be
+removed after a few major releases.</p>
+</li>
+<li>
+<p>DPI handling
+The DPI value used is now retrieved from the <code>Xft.dpi</code> X resource if
+available. If not, the default value 96 will be used.</p>
+<p>Additionally, as an experiment a per-monitor dpi setting, which tries to
+calculate an acceptable dpi values for each monitor, has been added to the
+experimental section of the configuration file.</p>
+</li>
+<li>
+<p>RandR and Xinerama
+Dunst switched from using the Xinerama extension to provide multi-monitor
+support to using the more modern RandR extension. While this change won&rsquo;t
+affect the majority of users, some legacy drivers do not support RandR. In
+that case, the <code>force_xinerama</code> option was added as a way to fall back to
+the old method.</p>
+<p>The downside of forcing Xinerama to be used is that dunst won&rsquo;t be able to
+detect when a monitor is added or removed meaning that follow mode might
+break if the screen layout changes.</p>
+</li>
+<li>
+<p>Frame settings
+All the settings in the frame section of the configuration file have been
+deprecated and have been moved into the global section. The <code>color</code> and <code>size</code>
+settings became <code>frame_color</code> and <code>frame_size</code> respectively. As with
+<code>allow_markup</code>, the old format still works but it&rsquo;ll be removed in one of the
+next major releases.</p>
+</li>
+<li>
+<p>Deprecation of urgency-specific command line flags
+The urgency specific command line flags (<code>-li, -ni, -ci, -lf, -nf, -cf, -lb, -nb, -cb, -lfr, -nfr, -cfr, -lto, -nto, -cto</code>) have been deprecated with no
+plan for a replacement. If you rely on them please respond to issue #328 on
+the bug tracker with your use case.</p>
+</li>
+</ul>
+<p>For maintainers:</p>
+<ul>
+<li>
+<p>The project homepage has been changed to <a href="https://dunst-project.org">https://dunst-project.org</a></p>
+</li>
+<li>
+<p>The main repository has been changed to <a href="https://github.com/dunst-project/dunst">https://github.com/dunst-project/dunst</a></p>
+</li>
+<li>
+<p>Dependency changes:</p>
+</li>
+</ul>
+<ul>
+<li>Dependency on libraries that were unused in the code but were mentioned as
+dependencies has been dropped. Dunst no longer depends on: libfreetype,
+libxft and libxext.</li>
+<li>Added dependency on libxradnr and libgtk2.0.</li>
+</ul>
+<p>For a full list of changes see CHANGELOG.md.</p>
+<h2 id="v1.0.0">Dunst v1.0.0 <div class="releaseref"><i class="fa fa-sticky-note"></i> <a href="https://dunst-project.org/changelog/#v1.0.0">Changelog</a></div></h2>
+<hr>
+<p>PACKAGE MAINTAINERS:
+There are new dependencies introduced with this version:
+*glib
+*pango/cairo</p>
+<ul>
+<li>
+<p>The drawing backend was moved from Xlib to Cairo/Pango.
+This change requires some user intervention since Pango
+uses different font strings. For example &ldquo;Monospace-12&rdquo;
+becomes &ldquo;Monospace 12&rdquo;. Font sizes might also get interpreted
+differently.</p>
+</li>
+<li>
+<p>Markup
+Markup within the notification can be interpreted by pango.
+Examples are <i>italic</i> and <b>bold</b>. If the Markup
+can&rsquo;t be parsed by pango, the tags are stripped from the
+notification and the text is displayed as plain text. An error
+message gets printed to stdout describing why the markup could
+not be parsed.</p>
+<p>To make use of markup the option allow_markup must be set in dunstrc.
+If this option is not set, dunst falls back to the old behaviour
+(stripping all tags from the text and display plain text).</p>
+</li>
+<li>
+<p>Actions are now supported.
+If a client adds an action to a notification this gets indicated
+by an (A) infront of the notification. In this case the
+context menu shortcut can be used to invoke this action.</p>
+</li>
+<li>
+<p>Indicator for URLs.
+If dunst detects an URL within the notification this gets indicated
+by an (U) infront of the notification. As with actions the URL can
+be opened with the context menu shortcut. (This requires the browser
+option to be set in the dunstrc).</p>
+</li>
+<li>
+<p>dunstify ( a drop-in replacement for notify-send)
+Since notify-send lacks some features I need to for testing, I&rsquo;ve
+written dunstify. It supports the same option as notify-send + The
+abillity to print the id of the notification to stdout and to replace
+or close existing notifications.</p>
+<p>example:
+id=$(dunstify -p &ldquo;Replace&rdquo; &ldquo;this should get replaced after the sleep&rdquo;)
+sleep 5
+dunstify -r $id &ldquo;replacement&rdquo;</p>
+<p>see dunstify &ndash;help for additional info.</p>
+<p>Since dunstify depends on non-public parts of libnotify it may break
+on every other libnotify version than that version that I use.
+Because of this it does not get build and installed by default.
+It can be build with &ldquo;make dunstify&rdquo;. An installation target does
+not exist.</p>
+<p>Please don&rsquo;t open bug reports when dunstify doesn&rsquo;t work with your
+version of libnotify</p>
+</li>
+</ul>
+<h2 id="v0.4.0">Dunst v0.4.0 <div class="releaseref"><i class="fa fa-sticky-note"></i> <a href="https://dunst-project.org/changelog/#v0.4.0">Changelog</a></div></h2>
+<hr>
+<p>Since dunst has lost its ability to show notifications independend of
+dbus/libnotify a long time ago I think it is time that the describtion reflects
+that. Even though this breaks the acronym. So if you&rsquo;re a packager please update
+the package description to read something like:</p>
+<p>short:
+&ldquo;Dunst - a dmenu-ish notification-daemon&rdquo;</p>
+<p>long:
+&ldquo;Dunst is a highly configurable and lightweight notification-daemon&rdquo;</p>
+<p>Release Tarballs are now available at:
+<a href="http://www.knopwob.org/public/dunst-release/">http://www.knopwob.org/public/dunst-release/</a></p>
+<p>For more information have a look at the CHANGELOG and the new options in dunstrc.</p>
+
+            </div>
+        </div>
+    </div>
+
+<footer class="li-page-footer">
+    <div class="container">
+        <div class="row">
+            <div class="sixteen columns">
+            </div>
+        </div>
+    </div>
+</footer>
+
+    <script type="text/javascript">
+    
+    function toggle(id) {
+        var e = document.getElementById(id);
+        e.style.display == 'block' ? e.style.display = 'none' : e.style.display = 'block';
+    }
+    
+    </script>
+    
+  
+
+
+    </body>
+</html>
+

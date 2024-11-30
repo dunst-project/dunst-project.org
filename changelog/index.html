@@ -5,7 +5,7 @@
         <meta http-equiv="content-type" content="text/html; charset=utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
 
-        <title> &middot; Dunst</title>
+        <title>Changelog &middot; Dunst</title>
         <link rel='stylesheet' href='//fonts.googleapis.com/css?family=Open+Sans:400,300,600' type='text/css'>
         <link rel="stylesheet" href="https://dunst-project.org//libraries/normalize.3.0.1.css" />
         <link rel="stylesheet" href="https://dunst-project.org//css/liquorice.min.css" />
@@ -40,6 +40,8 @@
                         
                             <li><a href="/faq/"> FAQ </a></li>
                         
+                            <li><a href="/changelog/"> Changelog </a></li>
+                        
                     </ul>
                 </div>
             </div>
@@ -58,6 +60,8 @@
                     
                         <li><a href="/faq/"> FAQ </a></li>
                     
+                        <li><a href="/changelog/"> Changelog </a></li>
+                    
                 </ul>
             </div>
         </div>
@@ -68,185 +72,184 @@
     <div class="container">
         <div class="row">
             <div class="sixteen columns">
-            <h1><b></b></h1>
+            <h1><b>Changelog</b></h1>
                 
-                <h1 id="dunst-changelog">Dunst changelog</h1>
-<h2 id="1120----2024-11-30">1.12.0 &ndash; 2024-11-30</h2>
+                <h2 id="v1.12.0">1.12.0 &ndash; 2024-11-30  <div class="releaseref"><i class="fa fa-sticky-note"></i> <a href="https://dunst-project.org/release/#v1.12.0">Release Notes</a></div></h2>
 <h3 id="added">Added</h3>
 <ul>
-<li>Export rules via dbus with <code>dunstctl rules [--json]</code> (#1212)</li>
-<li>Added checks and messages for missing DBUS_SESSION_BUS_ADDRESS (#1389)</li>
-<li>Add <code>-e/--exit</code> flag to <code>dunstctl is-paused</code> to exit with 1 when paused (#1378)</li>
-<li>Add color gradients for the progress bar (by providing a list of colors instead of one) (#1370)</li>
-<li>Use TESTDIR env var as the base for the test program (#1376)</li>
-<li>Add <code>dunstctl reload</code> to hot reload the configuration (#1350)</li>
-<li>Add an optional id to <code>dunstctl close</code> (#1351)</li>
-<li>Print compile-time options in <code>dunst --version</code> (#1336)</li>
+<li>Export rules via dbus with <code>dunstctl rules [--json]</code> (<a href="https://github.com/dunst-project/dunst/issues/1212">#1212</a>)</li>
+<li>Added checks and messages for missing DBUS_SESSION_BUS_ADDRESS (<a href="https://github.com/dunst-project/dunst/issues/1389">#1389</a>)</li>
+<li>Add <code>-e/--exit</code> flag to <code>dunstctl is-paused</code> to exit with 1 when paused (<a href="https://github.com/dunst-project/dunst/issues/1378">#1378</a>)</li>
+<li>Add color gradients for the progress bar (by providing a list of colors instead of one) (<a href="https://github.com/dunst-project/dunst/issues/1370">#1370</a>)</li>
+<li>Use TESTDIR env var as the base for the test program (<a href="https://github.com/dunst-project/dunst/issues/1376">#1376</a>)</li>
+<li>Add <code>dunstctl reload</code> to hot reload the configuration (<a href="https://github.com/dunst-project/dunst/issues/1350">#1350</a>)</li>
+<li>Add an optional id to <code>dunstctl close</code> (<a href="https://github.com/dunst-project/dunst/issues/1351">#1351</a>)</li>
+<li>Print compile-time options in <code>dunst --version</code> (<a href="https://github.com/dunst-project/dunst/issues/1336">#1336</a>)</li>
 </ul>
 <h3 id="changed">Changed</h3>
 <ul>
-<li>BREAKING: Implement dynamic height (changes the the <code>height</code> setting, see manual) (#1342)</li>
-<li>Change the preferred syntax of <code>offset</code> from <code>NxN</code> to <code>(N,N)</code> (#1330)</li>
-<li>Install the systemd service file in the session.slice (#1397)</li>
-<li>Open url with <code>dunstctl action</code> if no action is present (#1345,#1395)</li>
-<li>Remove default icons (now no icons are hard-coded) (#1365,#1358)</li>
+<li>BREAKING: Implement dynamic height (changes the the <code>height</code> setting, see manual) (<a href="https://github.com/dunst-project/dunst/issues/1342">#1342</a>)</li>
+<li>Change the preferred syntax of <code>offset</code> from <code>NxN</code> to <code>(N,N)</code> (<a href="https://github.com/dunst-project/dunst/issues/1330">#1330</a>)</li>
+<li>Install the systemd service file in the session.slice (<a href="https://github.com/dunst-project/dunst/issues/1397">#1397</a>)</li>
+<li>Open url with <code>dunstctl action</code> if no action is present (<a href="https://github.com/dunst-project/dunst/issues/1345">#1345</a>,<a href="https://github.com/dunst-project/dunst/issues/1395">#1395</a>)</li>
+<li>Remove default icons (now no icons are hard-coded) (<a href="https://github.com/dunst-project/dunst/issues/1365">#1365</a>,<a href="https://github.com/dunst-project/dunst/issues/1358">#1358</a>)</li>
 <li>Various updates to documentation and test suite</li>
 </ul>
 <h3 id="fixed">Fixed</h3>
 <ul>
-<li>Order of context menu was reversed (#1394,#1375)</li>
-<li>Resolve ~ and $HOME in <code>icon_path</code> (#1383,#1371)</li>
-<li>Fix broken link to freedesktop&rsquo;s notification specs in man page (#1381)</li>
-<li>Remove the message about shortcuts deprecation (#1353)</li>
-<li>Fix vertical padding behaviour (#1342)</li>
-<li>Fix bash completion (#1347)</li>
-<li>Fix file suffix for fish completions during installation (#1339)</li>
+<li>Order of context menu was reversed (<a href="https://github.com/dunst-project/dunst/issues/1394">#1394</a>,<a href="https://github.com/dunst-project/dunst/issues/1375">#1375</a>)</li>
+<li>Resolve ~ and $HOME in <code>icon_path</code> (<a href="https://github.com/dunst-project/dunst/issues/1383">#1383</a>,<a href="https://github.com/dunst-project/dunst/issues/1371">#1371</a>)</li>
+<li>Fix broken link to freedesktop&rsquo;s notification specs in man page (<a href="https://github.com/dunst-project/dunst/issues/1381">#1381</a>)</li>
+<li>Remove the message about shortcuts deprecation (<a href="https://github.com/dunst-project/dunst/issues/1353">#1353</a>)</li>
+<li>Fix vertical padding behaviour (<a href="https://github.com/dunst-project/dunst/issues/1342">#1342</a>)</li>
+<li>Fix bash completion (<a href="https://github.com/dunst-project/dunst/issues/1347">#1347</a>)</li>
+<li>Fix file suffix for fish completions during installation (<a href="https://github.com/dunst-project/dunst/issues/1339">#1339</a>)</li>
 </ul>
-<h2 id="1110----2024-04-15">1.11.0 &ndash; 2024-04-15</h2>
+<h2 id="v1.11.0">1.11.0 &ndash; 2024-04-15  <div class="releaseref"><i class="fa fa-sticky-note"></i> <a href="https://dunst-project.org/release/#v1.11.0">Release Notes</a></div></h2>
 <h3 id="added-1">Added</h3>
 <ul>
-<li>Add <code>corners</code>, <code>progress_bar_corners</code> and <code>icon_corners</code> options to control which corners to round (#1268)</li>
-<li>Support GTK/CSS cursor names on Wayland (#1276)</li>
-<li>Make dunst more portable (#1288)</li>
-<li>Print detected monitors names (X11) (#1332)</li>
+<li>Add <code>corners</code>, <code>progress_bar_corners</code> and <code>icon_corners</code> options to control which corners to round (<a href="https://github.com/dunst-project/dunst/issues/1268">#1268</a>)</li>
+<li>Support GTK/CSS cursor names on Wayland (<a href="https://github.com/dunst-project/dunst/issues/1276">#1276</a>)</li>
+<li>Make dunst more portable (<a href="https://github.com/dunst-project/dunst/issues/1288">#1288</a>)</li>
+<li>Print detected monitors names (X11) (<a href="https://github.com/dunst-project/dunst/issues/1332">#1332</a>)</li>
 </ul>
 <h3 id="changed-1">Changed</h3>
 <ul>
-<li>Make X11 optional in build (this allows wayland-only dunst) (#1290)</li>
-<li>Shell completions are now official and can be installed from the Makefile (#1262, #1263)</li>
-<li>Don&rsquo;t search for icon path if icons are disabled (#1301)</li>
-<li>Eagerly parse and cache colors (#1306)</li>
-<li>Update dunstctl manpage (#1298)</li>
-<li>Update documentation (#1315, #1334)</li>
+<li>Make X11 optional in build (this allows wayland-only dunst) (<a href="https://github.com/dunst-project/dunst/issues/1290">#1290</a>)</li>
+<li>Shell completions are now official and can be installed from the Makefile (<a href="https://github.com/dunst-project/dunst/issues/1262">#1262</a>, <a href="https://github.com/dunst-project/dunst/issues/1263">#1263</a>)</li>
+<li>Don&rsquo;t search for icon path if icons are disabled (<a href="https://github.com/dunst-project/dunst/issues/1301">#1301</a>)</li>
+<li>Eagerly parse and cache colors (<a href="https://github.com/dunst-project/dunst/issues/1306">#1306</a>)</li>
+<li>Update dunstctl manpage (<a href="https://github.com/dunst-project/dunst/issues/1298">#1298</a>)</li>
+<li>Update documentation (<a href="https://github.com/dunst-project/dunst/issues/1315">#1315</a>, <a href="https://github.com/dunst-project/dunst/issues/1334">#1334</a>)</li>
 </ul>
 <h3 id="fixed-1">Fixed</h3>
 <ul>
-<li>Fix settings initialization (this prevented &ndash;print and &ndash;startup_notification from working) (#1299)</li>
-<li>Rework timer logic and fix error about Glib source ID for good (#1308, #1196)</li>
-<li>Prevent memory corruption in XrmSetDatabase (#1256, #1291)</li>
-<li>Don&rsquo;t try to print NULL strings (#1323)</li>
-<li>Do not resolve icon paths twice (#1307, #1314)</li>
-<li>Don&rsquo;t crash the test suite if librsvg is not present (#1329)</li>
-<li>Fix memory leak in DBus RuleEnable (#1328)</li>
-<li>Fix dunstctl rule (#1281)</li>
-<li>Remove newlines from icon logging (#1296)</li>
-<li>Prevent make from failing if git tags are not found (#1287)</li>
-<li>Fix some typos (#1324, #1325, #1279)</li>
+<li>Fix settings initialization (this prevented &ndash;print and &ndash;startup_notification from working) (<a href="https://github.com/dunst-project/dunst/issues/1299">#1299</a>)</li>
+<li>Rework timer logic and fix error about Glib source ID for good (<a href="https://github.com/dunst-project/dunst/issues/1308">#1308</a>, <a href="https://github.com/dunst-project/dunst/issues/1196">#1196</a>)</li>
+<li>Prevent memory corruption in XrmSetDatabase (<a href="https://github.com/dunst-project/dunst/issues/1256">#1256</a>, <a href="https://github.com/dunst-project/dunst/issues/1291">#1291</a>)</li>
+<li>Don&rsquo;t try to print NULL strings (<a href="https://github.com/dunst-project/dunst/issues/1323">#1323</a>)</li>
+<li>Do not resolve icon paths twice (<a href="https://github.com/dunst-project/dunst/issues/1307">#1307</a>, <a href="https://github.com/dunst-project/dunst/issues/1314">#1314</a>)</li>
+<li>Don&rsquo;t crash the test suite if librsvg is not present (<a href="https://github.com/dunst-project/dunst/issues/1329">#1329</a>)</li>
+<li>Fix memory leak in DBus RuleEnable (<a href="https://github.com/dunst-project/dunst/issues/1328">#1328</a>)</li>
+<li>Fix dunstctl rule (<a href="https://github.com/dunst-project/dunst/issues/1281">#1281</a>)</li>
+<li>Remove newlines from icon logging (<a href="https://github.com/dunst-project/dunst/issues/1296">#1296</a>)</li>
+<li>Prevent make from failing if git tags are not found (<a href="https://github.com/dunst-project/dunst/issues/1287">#1287</a>)</li>
+<li>Fix some typos (<a href="https://github.com/dunst-project/dunst/issues/1324">#1324</a>, <a href="https://github.com/dunst-project/dunst/issues/1325">#1325</a>, <a href="https://github.com/dunst-project/dunst/issues/1279">#1279</a>)</li>
 </ul>
-<h2 id="1100----2024-02-19">1.10.0 &ndash; 2024-02-19</h2>
+<h2 id="v1.10.0">1.10.0 &ndash; 2024-02-19  <div class="releaseref"><i class="fa fa-sticky-note"></i> <a href="https://dunst-project.org/release/#v1.10.0">Release Notes</a></div></h2>
 <h3 id="added-2">Added</h3>
 <ul>
-<li>Unofficial fish and bash completions (#1205, 1209)</li>
-<li>Multiple pause levels to allow selective pausing of notifications (#1193)</li>
-<li><code>--startup_notification</code> option as an alternative to <code>-startup_notification</code> (#1208)</li>
-<li>Expand variables, like <code>$HOME</code> in path in your dunstrc. See <code>man 3 wordexp</code> for the details (#1215)</li>
-<li>Support for stable output names for the <code>monitor</code> (eDP-1, HDMI-1, etc). This is more relyable than the order of monitors. (#1250)</li>
-<li>Wayland multiseat and touchscreen support (#1250)</li>
+<li>Unofficial fish and bash completions (<a href="https://github.com/dunst-project/dunst/issues/1205">#1205</a>, 1209)</li>
+<li>Multiple pause levels to allow selective pausing of notifications (<a href="https://github.com/dunst-project/dunst/issues/1193">#1193</a>)</li>
+<li><code>--startup_notification</code> option as an alternative to <code>-startup_notification</code> (<a href="https://github.com/dunst-project/dunst/issues/1208">#1208</a>)</li>
+<li>Expand variables, like <code>$HOME</code> in path in your dunstrc. See <code>man 3 wordexp</code> for the details (<a href="https://github.com/dunst-project/dunst/issues/1215">#1215</a>)</li>
+<li>Support for stable output names for the <code>monitor</code> (eDP-1, HDMI-1, etc). This is more relyable than the order of monitors. (<a href="https://github.com/dunst-project/dunst/issues/1250">#1250</a>)</li>
+<li>Wayland multiseat and touchscreen support (<a href="https://github.com/dunst-project/dunst/issues/1250">#1250</a>)</li>
 </ul>
 <h3 id="changed-2">Changed</h3>
 <ul>
-<li>The cursor is now being drawn by the compositor, making sure the right cursor theme and scaling is being used (#1250)</li>
+<li>The cursor is now being drawn by the compositor, making sure the right cursor theme and scaling is being used (<a href="https://github.com/dunst-project/dunst/issues/1250">#1250</a>)</li>
 </ul>
 <h3 id="fixed-2">Fixed</h3>
 <ul>
 <li>Various documentation issues</li>
-<li>Icon path not being interpreted as a path (#1210)</li>
-<li>Handling of some commandline options (#1208)</li>
-<li>Improved handling of fallback fonts (#1222)</li>
-<li>Progress bar not rendering correctly for big corner radiusses compared to width (#1227)</li>
-<li>Whitespace and brackets in dunstctl usage output (#1230, #1233)</li>
-<li>Errors about Glib source ID spamming the log (#1257)</li>
-<li>Idle idle_threshold not working anymore in Wayland due to Wayland protocol changes (#1250)</li>
+<li>Icon path not being interpreted as a path (<a href="https://github.com/dunst-project/dunst/issues/1210">#1210</a>)</li>
+<li>Handling of some commandline options (<a href="https://github.com/dunst-project/dunst/issues/1208">#1208</a>)</li>
+<li>Improved handling of fallback fonts (<a href="https://github.com/dunst-project/dunst/issues/1222">#1222</a>)</li>
+<li>Progress bar not rendering correctly for big corner radiusses compared to width (<a href="https://github.com/dunst-project/dunst/issues/1227">#1227</a>)</li>
+<li>Whitespace and brackets in dunstctl usage output (<a href="https://github.com/dunst-project/dunst/issues/1230">#1230</a>, <a href="https://github.com/dunst-project/dunst/issues/1233">#1233</a>)</li>
+<li>Errors about Glib source ID spamming the log (<a href="https://github.com/dunst-project/dunst/issues/1257">#1257</a>)</li>
+<li>Idle idle_threshold not working anymore in Wayland due to Wayland protocol changes (<a href="https://github.com/dunst-project/dunst/issues/1250">#1250</a>)</li>
 </ul>
-<h2 id="192----2023-04-20">1.9.2 &ndash; 2023-04-20</h2>
+<h2 id="v1.9.2">1.9.2 &ndash; 2023-04-20  <div class="releaseref"><i class="fa fa-sticky-note"></i> <a href="https://dunst-project.org/release/#v1.9.2">Release Notes</a></div></h2>
 <h3 id="fixed-3">Fixed</h3>
 <ul>
-<li>Various documentation issues (#1151, #1154, #1162)</li>
-<li>High cpu usage when <code>show_age_treshold = -1</code> (#1164)</li>
-<li>High cpu usage in some situation. This is often correlated with being idle. (#1158)</li>
+<li>Various documentation issues (<a href="https://github.com/dunst-project/dunst/issues/1151">#1151</a>, <a href="https://github.com/dunst-project/dunst/issues/1154">#1154</a>, <a href="https://github.com/dunst-project/dunst/issues/1162">#1162</a>)</li>
+<li>High cpu usage when <code>show_age_treshold = -1</code> (<a href="https://github.com/dunst-project/dunst/issues/1164">#1164</a>)</li>
+<li>High cpu usage in some situation. This is often correlated with being idle. (<a href="https://github.com/dunst-project/dunst/issues/1158">#1158</a>)</li>
 </ul>
-<h2 id="191----2023-03-08">1.9.1 &ndash; 2023-03-08</h2>
+<h2 id="v1.9.1">1.9.1 &ndash; 2023-03-08  <div class="releaseref"><i class="fa fa-sticky-note"></i> <a href="https://dunst-project.org/release/#v1.9.1">Release Notes</a></div></h2>
 <h3 id="added-3">Added</h3>
 <ul>
-<li>zsh completion for dunst and dunstctl (#1107 and #1108)</li>
-<li>dunstctl <code>history-clear</code> command to delete all notifications from history (#1131)</li>
-<li>dunstctl <code>history-rm command</code> to remove a single notification from history (#1128)</li>
-<li><code>progress_bar_corner_radius</code> option for adding rounded corners to the progress bar (off by default) (#1119)</li>
-<li><code>icon_corner_radius</code> option for adding rounded corners to notification icons (#1139)</li>
+<li>zsh completion for dunst and dunstctl (<a href="https://github.com/dunst-project/dunst/issues/1107">#1107</a> and <a href="https://github.com/dunst-project/dunst/issues/1108">#1108</a>)</li>
+<li>dunstctl <code>history-clear</code> command to delete all notifications from history (<a href="https://github.com/dunst-project/dunst/issues/1131">#1131</a>)</li>
+<li>dunstctl <code>history-rm command</code> to remove a single notification from history (<a href="https://github.com/dunst-project/dunst/issues/1128">#1128</a>)</li>
+<li><code>progress_bar_corner_radius</code> option for adding rounded corners to the progress bar (off by default) (<a href="https://github.com/dunst-project/dunst/issues/1119">#1119</a>)</li>
+<li><code>icon_corner_radius</code> option for adding rounded corners to notification icons (<a href="https://github.com/dunst-project/dunst/issues/1139">#1139</a>)</li>
 </ul>
 <h3 id="changed-3">Changed</h3>
 <ul>
-<li>Make libnotify and dunstify optional in build (#1129)</li>
+<li>Make libnotify and dunstify optional in build (<a href="https://github.com/dunst-project/dunst/issues/1129">#1129</a>)</li>
 </ul>
 <h3 id="fixed-4">Fixed</h3>
 <ul>
-<li>Man page typo&rsquo;s and readability (#1088 and #1121)</li>
-<li>Length changes not being emitted over D-Bus (#1127)</li>
-<li>Crash when locking screen with swaylock on Sway (#1148)</li>
-<li>Dunst using 100% in some configurations with <code>idle_threshold</code> turned on (#1140)</li>
+<li>Man page typo&rsquo;s and readability (<a href="https://github.com/dunst-project/dunst/issues/1088">#1088</a> and <a href="https://github.com/dunst-project/dunst/issues/1121">#1121</a>)</li>
+<li>Length changes not being emitted over D-Bus (<a href="https://github.com/dunst-project/dunst/issues/1127">#1127</a>)</li>
+<li>Crash when locking screen with swaylock on Sway (<a href="https://github.com/dunst-project/dunst/issues/1148">#1148</a>)</li>
+<li>Dunst using 100% in some configurations with <code>idle_threshold</code> turned on (<a href="https://github.com/dunst-project/dunst/issues/1140">#1140</a>)</li>
 </ul>
-<h2 id="190----2022-06-27">1.9.0 &ndash; 2022-06-27</h2>
+<h2 id="v1.9.0">1.9.0 &ndash; 2022-06-27  <div class="releaseref"><i class="fa fa-sticky-note"></i> <a href="https://dunst-project.org/release/#v1.9.0">Release Notes</a></div></h2>
 <h3 id="added-4">Added</h3>
 <ul>
 <li><code>override_dbus_timeout</code> setting to override the notification timeout set via
-dbus. (#1035)</li>
+dbus. (<a href="https://github.com/dunst-project/dunst/issues/1035">#1035</a>)</li>
 <li>Support notification gaps via the <code>gap_size</code> setting. Note that since the
 notifications are not separate windows, you cannot click in between the
-notifications. (#1053)</li>
+notifications. (<a href="https://github.com/dunst-project/dunst/issues/1053">#1053</a>)</li>
 <li>Make <code>min_icon_size</code> and <code>max_icon_size</code> a rule for even more flexibility
-(#1069)</li>
+(<a href="https://github.com/dunst-project/dunst/issues/1069">#1069</a>)</li>
 </ul>
 <h3 id="changed-4">Changed</h3>
 <ul>
 <li>The window offset is now scaled according to <code>scale</code> as well. This way
-notification stay visually in the same place on higher DPI screens. (#1039)</li>
+notification stay visually in the same place on higher DPI screens. (<a href="https://github.com/dunst-project/dunst/issues/1039">#1039</a>)</li>
 <li>For the recursive icon lookup, revert to using <code>min_icon_size</code> and
 <code>max_icon_size</code> instead of <code>icon_size</code>. <code>min_icon_size</code> is used as the size to
 look for in icon themes. This way of defining icon size is more flexible and
 compatible with the old icon lookup. The new icon lookup should now be
-superior for all use cases. (#1069)</li>
+superior for all use cases. (<a href="https://github.com/dunst-project/dunst/issues/1069">#1069</a>)</li>
 <li>Recursive icon lookup is no longer experimental.</li>
 <li>Recursive icon lookup is enabled in the default dunstrc. This does not change
 your settings when you have a custom dunstrc.</li>
 </ul>
 <h3 id="fixed-5">Fixed</h3>
 <ul>
-<li>Added back the <code>action_name</code> setting that was accidentally dropped. (#1051)</li>
-<li>Broken <code>dunstctl history</code>. (#1060)</li>
+<li>Added back the <code>action_name</code> setting that was accidentally dropped. (<a href="https://github.com/dunst-project/dunst/issues/1051">#1051</a>)</li>
+<li>Broken <code>dunstctl history</code>. (<a href="https://github.com/dunst-project/dunst/issues/1060">#1060</a>)</li>
 <li>Merged a few wayland fixes from mako (<a href="https://github.com/emersion/mako">https://github.com/emersion/mako</a>)
-(#1067)</li>
-<li><code>follow=keyboard</code>: Fix regression where we don&rsquo;t fall back to mouse (#1062)</li>
-<li>Raw icons not being scaled according to icon size (#1043)</li>
+(<a href="https://github.com/dunst-project/dunst/issues/1067">#1067</a>)</li>
+<li><code>follow=keyboard</code>: Fix regression where we don&rsquo;t fall back to mouse (<a href="https://github.com/dunst-project/dunst/issues/1062">#1062</a>)</li>
+<li>Raw icons not being scaled according to icon size (<a href="https://github.com/dunst-project/dunst/issues/1043">#1043</a>)</li>
 <li>Notifications not disappearing. For some people notifications would sometimes
 stay on screen until a new notification appeared. This should not happen
-anymore (#1073).</li>
+anymore (<a href="https://github.com/dunst-project/dunst/issues/1073">#1073</a>).</li>
 </ul>
-<h2 id="181----2022-03-02">1.8.1 &ndash; 2022-03-02</h2>
+<h2 id="v1.8.1">1.8.1 &ndash; 2022-03-02  <div class="releaseref"><i class="fa fa-sticky-note"></i> <a href="https://dunst-project.org/release/#v1.8.1">Release Notes</a></div></h2>
 <h3 id="fixed-6">Fixed</h3>
 <ul>
 <li>Dunst sometimes not using the right config file, sometimes falling back to the
 internal defaults.</li>
 </ul>
-<h2 id="180----2022-02-24">1.8.0 &ndash; 2022-02-24</h2>
+<h2 id="v1.8.0">1.8.0 &ndash; 2022-02-24  <div class="releaseref"><i class="fa fa-sticky-note"></i> <a href="https://dunst-project.org/release/#v1.8.0">Release Notes</a></div></h2>
 <h3 id="added-5">Added</h3>
 <ul>
-<li>Implemented <code>progress_bar_min_width</code>. Before it was an unused setting. (#1006)</li>
+<li>Implemented <code>progress_bar_min_width</code>. Before it was an unused setting. (<a href="https://github.com/dunst-project/dunst/issues/1006">#1006</a>)</li>
 <li><code>progress_bar_horizontal_alignment</code> for changing the alignment of the progress
-bar. (#1021)</li>
+bar. (<a href="https://github.com/dunst-project/dunst/issues/1021">#1021</a>)</li>
 <li>Support for config drop-ins. You can add as many configuration files as you
 want in <code>dunstrc.d</code>. See the man page dunst(1) for more information. This was
-done with help from @WhitePeter. (#997)</li>
+done with help from @WhitePeter. (<a href="https://github.com/dunst-project/dunst/issues/997">#997</a>)</li>
 <li>Thanks to @m-barlett you can place your icons at the center of your
 notifications with <code>icon_position = top</code>.</li>
 <li><code>icon_position</code> is now a rule (also by @m-barlett).</li>
 <li><code>hide_text</code> for hiding all text of a notification. This also removes all
 padding that would be present for a notification without text. (also by
-@m-barlett) (#985)</li>
+@m-barlett) (<a href="https://github.com/dunst-project/dunst/issues/985">#985</a>)</li>
 <li>The previously removed keyboard shortcuts have been added again, but now they
 are in the <code>[global]</code> section of the config. Not everything that was possible
 with the keyboard shortcuts was possible with dunstctl on X11. Mainly
 activating a keyboard shortcut only when notifications are on screen. Thanks
-to @wgmayer0 for testing. (#1033).</li>
+to @wgmayer0 for testing. (<a href="https://github.com/dunst-project/dunst/issues/1033">#1033</a>).</li>
 </ul>
 <h3 id="changed-5">Changed</h3>
 <ul>
@@ -256,302 +259,302 @@ to @wgmayer0 for testing. (#1033).</li>
 look at
 <a href="https://en.m.wikibooks.org/wiki/Regular_Expressions/POSIX-Extended_Regular_Expressions">https://en.m.wikibooks.org/wiki/Regular_Expressions/POSIX-Extended_Regular_Expressions</a>
 for how the new regex syntax works. Note that you cannot do inverse matching
-yet, I&rsquo;m working on that in #1040. (#1017)</li>
+yet, I&rsquo;m working on that in <a href="https://github.com/dunst-project/dunst/issues/1040">#1040</a>. (<a href="https://github.com/dunst-project/dunst/issues/1017">#1017</a>)</li>
 <li>Thanks to @kurogetsusai you can once again use negative offsets to put a
-notification window slightly off-screen if you so like. (#1027)</li>
+notification window slightly off-screen if you so like. (<a href="https://github.com/dunst-project/dunst/issues/1027">#1027</a>)</li>
 <li>As mentioned above, the keyboard shortcuts have been moved to the <code>[global]</code>
 section. Please move your settings there.</li>
 </ul>
 <h3 id="fixed-7">Fixed</h3>
 <ul>
-<li>Crash when <code>open_url</code> was used without URL&rsquo;s. (#1000)</li>
-<li>Icons sometimes being incorrectly sized with the new icon lookup. (#1003)</li>
-<li>Incorrect defaults mentioned in the documentation. (#1004, #1029 and more)</li>
-<li>Crash when icon could not be read by glib. (#1023)</li>
-<li>Not being able to override anymore raw icons with <code>new_icon</code> (#1009)</li>
+<li>Crash when <code>open_url</code> was used without URL&rsquo;s. (<a href="https://github.com/dunst-project/dunst/issues/1000">#1000</a>)</li>
+<li>Icons sometimes being incorrectly sized with the new icon lookup. (<a href="https://github.com/dunst-project/dunst/issues/1003">#1003</a>)</li>
+<li>Incorrect defaults mentioned in the documentation. (<a href="https://github.com/dunst-project/dunst/issues/1004">#1004</a>, <a href="https://github.com/dunst-project/dunst/issues/1029">#1029</a> and more)</li>
+<li>Crash when icon could not be read by glib. (<a href="https://github.com/dunst-project/dunst/issues/1023">#1023</a>)</li>
+<li>Not being able to override anymore raw icons with <code>new_icon</code> (<a href="https://github.com/dunst-project/dunst/issues/1009">#1009</a>)</li>
 <li>High cpu usage when selecting an action in dmenu or similar. This was caused
-by dunst not going to sleep when waiting for a response. (#898)</li>
-<li>Updated default values documentation (with help from @profpatch) (#1004 and
+by dunst not going to sleep when waiting for a response. (<a href="https://github.com/dunst-project/dunst/issues/898">#898</a>)</li>
+<li>Updated default values documentation (with help from @profpatch) (<a href="https://github.com/dunst-project/dunst/issues/1004">#1004</a> and
 more)</li>
 </ul>
-<h2 id="173----2021-12-08">1.7.3 &ndash; 2021-12-08</h2>
+<h2 id="v1.7.3">1.7.3 &ndash; 2021-12-08  <div class="releaseref"><i class="fa fa-sticky-note"></i> <a href="https://dunst-project.org/release/#v1.7.3">Release Notes</a></div></h2>
 <h3 id="added-6">Added</h3>
 <h3 id="changed-6">Changed</h3>
 <ul>
-<li><code>follow</code> is now <code>none</code> again by default. This was the case before v1.7.0 as well. (#990).</li>
+<li><code>follow</code> is now <code>none</code> again by default. This was the case before v1.7.0 as well. (<a href="https://github.com/dunst-project/dunst/issues/990">#990</a>).</li>
 </ul>
 <h3 id="fixed-8">Fixed</h3>
 <ul>
 <li><code>dunstctl action</code> is now working again.</li>
 <li>Segfault in experimental icon lookup when an inherited theme doesn&rsquo;t exist.</li>
-<li><code>icon_position = off</code> not being respected (#996).</li>
+<li><code>icon_position = off</code> not being respected (<a href="https://github.com/dunst-project/dunst/issues/996">#996</a>).</li>
 </ul>
-<h2 id="172----2021-11-30">1.7.2 &ndash; 2021-11-30</h2>
+<h2 id="v1.7.2">1.7.2 &ndash; 2021-11-30  <div class="releaseref"><i class="fa fa-sticky-note"></i> <a href="https://dunst-project.org/release/#v1.7.2">Release Notes</a></div></h2>
 <h3 id="added-7">Added</h3>
 <ul>
 <li>Experimental recursive icon lookup. This is not enabled by default and can be
 enabled by setting <code>enable_recursive_icon_lookup=true</code>. Setting icon sizes
 still doesn&rsquo;t work entirely as it&rsquo;s supposed to and will be improved in future
-releases. (#965)</li>
-<li>You can now enable or disable rules on the fly with <code>dunstctl rule $name$ enable/disable</code>. (#981)</li>
+releases. (<a href="https://github.com/dunst-project/dunst/issues/965">#965</a>)</li>
+<li>You can now enable or disable rules on the fly with <code>dunstctl rule $name$ enable/disable</code>. (<a href="https://github.com/dunst-project/dunst/issues/981">#981</a>)</li>
 <li><code>dunstctl history</code> lists your notification history in JSON format for
-processing by scripts. (#970)</li>
+processing by scripts. (<a href="https://github.com/dunst-project/dunst/issues/970">#970</a>)</li>
 <li>You can now pop specific notifications from history by passing a notification
-ID to <code>dunstctl history-pop</code>. (#970)</li>
-<li><code>default_icon</code> setting for setting the icon when no icons are given (#984)</li>
-<li>Implemented display size detection in Wayland. (#973)</li>
+ID to <code>dunstctl history-pop</code>. (<a href="https://github.com/dunst-project/dunst/issues/970">#970</a>)</li>
+<li><code>default_icon</code> setting for setting the icon when no icons are given (<a href="https://github.com/dunst-project/dunst/issues/984">#984</a>)</li>
+<li>Implemented display size detection in Wayland. (<a href="https://github.com/dunst-project/dunst/issues/973">#973</a>)</li>
 </ul>
 <h3 id="changed-7">Changed</h3>
 <h3 id="fixed-9">Fixed</h3>
 <ul>
-<li>Text being cut off on X11 when using fractional scaling. (#975)</li>
-<li>Incorrect hitbox for notification on X11 with scaling. (#980)</li>
-<li>Improved warning messages for deprecated sections. (#974)</li>
+<li>Text being cut off on X11 when using fractional scaling. (<a href="https://github.com/dunst-project/dunst/issues/975">#975</a>)</li>
+<li>Incorrect hitbox for notification on X11 with scaling. (<a href="https://github.com/dunst-project/dunst/issues/980">#980</a>)</li>
+<li>Improved warning messages for deprecated sections. (<a href="https://github.com/dunst-project/dunst/issues/974">#974</a>)</li>
 <li><code>icon</code> being interpreted as a filter and not being allowed in the special
 urgency sections. This is a compatibility fix, but it&rsquo;s recommended to replace
 all usages of <code>icon</code> in these sections with <code>default_icon</code> to prevent
-confusion with the <code>icon</code> rule in other sections. (#984)</li>
+confusion with the <code>icon</code> rule in other sections. (<a href="https://github.com/dunst-project/dunst/issues/984">#984</a>)</li>
 <li><code>new_icon</code> being used in the default dunstrc where <code>default_icon</code> is the
 intended settings. This was commented by default, so it doesn&rsquo;t affect any
-default behaviour. (#984)</li>
+default behaviour. (<a href="https://github.com/dunst-project/dunst/issues/984">#984</a>)</li>
 <li>Notifications bleeding to other screens when the width was big enough. Now the
 notification&rsquo;s width is lowered when it would otherwise leave the display.</li>
 </ul>
-<h2 id="171----2021-11-01">1.7.1 &ndash; 2021-11-01</h2>
+<h2 id="v1.7.1">1.7.1 &ndash; 2021-11-01  <div class="releaseref"><i class="fa fa-sticky-note"></i> <a href="https://dunst-project.org/release/#v1.7.1">Release Notes</a></div></h2>
 <h3 id="added-8">Added</h3>
 <ul>
-<li>Script environment variable <code>DUNST_DESKTOP_ENTRY</code>. (#874)</li>
+<li>Script environment variable <code>DUNST_DESKTOP_ENTRY</code>. (<a href="https://github.com/dunst-project/dunst/issues/874">#874</a>)</li>
 <li>Rule <code>set_category</code> for change a notifications category with rules. (1b72b2a)</li>
 </ul>
 <h3 id="fixed-10">Fixed</h3>
 <ul>
-<li>Dunst not building with WAYLAND=0. (#938)</li>
-<li>Wrong icon being shown in chromium-based browsers. (#939)</li>
-<li><code>set_stack_tag</code> not working anymore. (#942)</li>
-<li>Outdated documentation. (#943, #944 and more)</li>
-<li>Empty strings not being allowed in settings. (#946)</li>
-<li>Dunst crashing when compositor doesn&rsquo;t support <code>zwlr_foreign_toplevel_v1</code>. (#948)</li>
-<li>Xmore notifications showing a progress bar and icon. (#915)</li>
-<li>Markup is now a rule again. Before this was undocumented behaviour. (#955)</li>
-<li>Double free when setting <code>XDG_CONFIG_DIR</code>. (#957)</li>
-<li>Dunst crashing on some compositors. (#948)</li>
-<li>Dunst not exiting when wayland compositor quits. (#961)</li>
-<li>Now the separators are not responsive to mouse clicks anymore. (#960)</li>
+<li>Dunst not building with WAYLAND=0. (<a href="https://github.com/dunst-project/dunst/issues/938">#938</a>)</li>
+<li>Wrong icon being shown in chromium-based browsers. (<a href="https://github.com/dunst-project/dunst/issues/939">#939</a>)</li>
+<li><code>set_stack_tag</code> not working anymore. (<a href="https://github.com/dunst-project/dunst/issues/942">#942</a>)</li>
+<li>Outdated documentation. (<a href="https://github.com/dunst-project/dunst/issues/943">#943</a>, <a href="https://github.com/dunst-project/dunst/issues/944">#944</a> and more)</li>
+<li>Empty strings not being allowed in settings. (<a href="https://github.com/dunst-project/dunst/issues/946">#946</a>)</li>
+<li>Dunst crashing when compositor doesn&rsquo;t support <code>zwlr_foreign_toplevel_v1</code>. (<a href="https://github.com/dunst-project/dunst/issues/948">#948</a>)</li>
+<li>Xmore notifications showing a progress bar and icon. (<a href="https://github.com/dunst-project/dunst/issues/915">#915</a>)</li>
+<li>Markup is now a rule again. Before this was undocumented behaviour. (<a href="https://github.com/dunst-project/dunst/issues/955">#955</a>)</li>
+<li>Double free when setting <code>XDG_CONFIG_DIR</code>. (<a href="https://github.com/dunst-project/dunst/issues/957">#957</a>)</li>
+<li>Dunst crashing on some compositors. (<a href="https://github.com/dunst-project/dunst/issues/948">#948</a>)</li>
+<li>Dunst not exiting when wayland compositor quits. (<a href="https://github.com/dunst-project/dunst/issues/961">#961</a>)</li>
+<li>Now the separators are not responsive to mouse clicks anymore. (<a href="https://github.com/dunst-project/dunst/issues/960">#960</a>)</li>
 <li>Mouse action stopping the rest of the actions. (bf58928)</li>
 </ul>
-<h2 id="170----2021-10-19">1.7.0 &ndash; 2021-10-19:</h2>
+<h2 id="v1.7.0">1.7.0 &ndash; 2021-10-19:  <div class="releaseref"><i class="fa fa-sticky-note"></i> <a href="https://dunst-project.org/release/#v1.7.0">Release Notes</a></div></h2>
 <h3 id="added-9">Added</h3>
 <ul>
-<li><code>context</code> and <code>context_all</code> mouse actions for opening the context menu (#848)</li>
-<li><code>open_url</code> mouse action for opening url&rsquo;s in a notification (#848)</li>
+<li><code>context</code> and <code>context_all</code> mouse actions for opening the context menu (<a href="https://github.com/dunst-project/dunst/issues/848">#848</a>)</li>
+<li><code>open_url</code> mouse action for opening url&rsquo;s in a notification (<a href="https://github.com/dunst-project/dunst/issues/848">#848</a>)</li>
 <li><code>action_name</code> rule for setting a default action to perform when using
-<code>do_action</code> (#848)</li>
+<code>do_action</code> (<a href="https://github.com/dunst-project/dunst/issues/848">#848</a>)</li>
 <li>HiDPI support for both Wayland and X11. On wayland the scale can be set from
 your compositor&rsquo;s settings and is automatically picked up by dunst. On X11
 dunst will guess the scale based on the DPI of the screen. If that isn&rsquo;t good,
-you can set the <code>scale</code> variable in the settings. (#854 and #890)</li>
+you can set the <code>scale</code> variable in the settings. (<a href="https://github.com/dunst-project/dunst/issues/854">#854</a> and <a href="https://github.com/dunst-project/dunst/issues/890">#890</a>)</li>
 <li><code>highlight</code> can now also be set through dbus hints with the key <code>hlcolor</code>
-(#862)</li>
+(<a href="https://github.com/dunst-project/dunst/issues/862">#862</a>)</li>
 <li>Your dunstrc is now being checked by dunst. Dunst will print a warning when
-coming across an non-existing/invalid setting. (#803)</li>
-<li>Wayland fullscreen detection (#814)</li>
-<li>Wayland touch support (#814)</li>
+coming across an non-existing/invalid setting. (<a href="https://github.com/dunst-project/dunst/issues/803">#803</a>)</li>
+<li>Wayland fullscreen detection (<a href="https://github.com/dunst-project/dunst/issues/814">#814</a>)</li>
+<li>Wayland touch support (<a href="https://github.com/dunst-project/dunst/issues/814">#814</a>)</li>
 <li>Cursor is now being changed to <code>left_ptr</code> when hovering over dunst (Wayland)
-(#903)</li>
+(<a href="https://github.com/dunst-project/dunst/issues/903">#903</a>)</li>
 </ul>
 <h3 id="changed-8">Changed</h3>
 <ul>
 <li><code>startup_notification</code> and <code>verbosity</code> are now only available as a command
-line arguments. (#803)</li>
+line arguments. (<a href="https://github.com/dunst-project/dunst/issues/803">#803</a>)</li>
 <li>Rule settings can now also be used in the <code>[global]</code> section. They will then
-apply to all the notifications. (#803)</li>
+apply to all the notifications. (<a href="https://github.com/dunst-project/dunst/issues/803">#803</a>)</li>
 <li><code>fullscreen</code>, <code>ellpsize</code> and <code>word_wrap</code> are now rules. They can still be used
-in the <code>[global]</code> section as well (see above). (#937 and #803)</li>
-<li>The appid&rsquo;s now also need to match when stacking notifications. (#886)</li>
-<li><code>xdg-open</code> is now being used by default for opening URL&rsquo;s. (#889)</li>
+in the <code>[global]</code> section as well (see above). (<a href="https://github.com/dunst-project/dunst/issues/937">#937</a> and <a href="https://github.com/dunst-project/dunst/issues/803">#803</a>)</li>
+<li>The appid&rsquo;s now also need to match when stacking notifications. (<a href="https://github.com/dunst-project/dunst/issues/886">#886</a>)</li>
+<li><code>xdg-open</code> is now being used by default for opening URL&rsquo;s. (<a href="https://github.com/dunst-project/dunst/issues/889">#889</a>)</li>
 <li><code>geometry</code> and <code>notification_height</code> have been replaced by <code>origin</code>, <code>width</code>,
 <code>height</code>, <code>offset</code> and <code>notification_limit</code>. This allows for more flexible
-geometry settings. (#855)</li>
+geometry settings. (<a href="https://github.com/dunst-project/dunst/issues/855">#855</a>)</li>
 <li>There were a bunch of changes in the installation and default locations. See
 the release notes for more information.</li>
 <li>Upon seeing invalid markup, dunst is a bit smarter in stripping the markup.</li>
 </ul>
 <h3 id="fixed-11">Fixed</h3>
 <ul>
-<li>Lots of debug messages when <code>idle_timeout=0</code> (#814)</li>
-<li><code>follow=none</code> not working on Wayland (#814)</li>
+<li>Lots of debug messages when <code>idle_timeout=0</code> (<a href="https://github.com/dunst-project/dunst/issues/814">#814</a>)</li>
+<li><code>follow=none</code> not working on Wayland (<a href="https://github.com/dunst-project/dunst/issues/814">#814</a>)</li>
 <li>Incorrect sorting when <code>sort</code> is false</li>
 <li>NULL pointer dereference on Wayland</li>
 <li>Dunst not redrawing after <code>close_all</code> action.</li>
-<li>Dunst not announcing icon-static capability over dbus (#867)</li>
+<li>Dunst not announcing icon-static capability over dbus (<a href="https://github.com/dunst-project/dunst/issues/867">#867</a>)</li>
 <li>Dunst not falling back to X11 output when it can&rsquo;t initialize the Wayland
-output. (#834)</li>
-<li>Improve stability on Wayland. (#930 and more)</li>
+output. (<a href="https://github.com/dunst-project/dunst/issues/834">#834</a>)</li>
+<li>Improve stability on Wayland. (<a href="https://github.com/dunst-project/dunst/issues/930">#930</a> and more)</li>
 </ul>
 <h3 id="removed">Removed</h3>
 <ul>
 <li>The <code>[shortcuts]</code> section with all it&rsquo;s settings. Use your WM/DE&rsquo;s shortcut
-manager and <code>dunstctl</code> to replace it. (#803)</li>
-<li>Setting settings via command line arguments. (#803)</li>
-<li>Setting settings via <code>config.h</code>. (#803)</li>
+manager and <code>dunstctl</code> to replace it. (<a href="https://github.com/dunst-project/dunst/issues/803">#803</a>)</li>
+<li>Setting settings via command line arguments. (<a href="https://github.com/dunst-project/dunst/issues/803">#803</a>)</li>
+<li>Setting settings via <code>config.h</code>. (<a href="https://github.com/dunst-project/dunst/issues/803">#803</a>)</li>
 </ul>
-<h2 id="161---2021-02-21">1.6.1 - 2021-02-21:</h2>
+<h2 id="v1.6.1">1.6.1 - 2021-02-21:  <div class="releaseref"><i class="fa fa-sticky-note"></i> <a href="https://dunst-project.org/release/#v1.6.1">Release Notes</a></div></h2>
 <h3 id="fixed-12">Fixed</h3>
 <ul>
 <li>Incorrect version in Makefile</li>
 </ul>
-<h2 id="160---2021-02-21">1.6.0 - 2021-02-21:</h2>
+<h2 id="v1.6.0">1.6.0 - 2021-02-21:  <div class="releaseref"><i class="fa fa-sticky-note"></i> <a href="https://dunst-project.org/release/#v1.6.0">Release Notes</a></div></h2>
 <h3 id="added-10">Added</h3>
 <ul>
 <li>Wayland support. Dunst now runs natively on wayland. This fixes several bugs
-with dunst on wayland and allows idle detection. (#781)</li>
-<li>A progress bar, useful for showing volume or brightness in notifications (#775)</li>
-<li>A script in contrib for using the progress bar (#791)</li>
-<li><code>dunstctl count</code> for showing the number of notifications (#793)</li>
-<li>Expose environment variables info about the notification to scripts (#802)</li>
+with dunst on wayland and allows idle detection. (<a href="https://github.com/dunst-project/dunst/issues/781">#781</a>)</li>
+<li>A progress bar, useful for showing volume or brightness in notifications (<a href="https://github.com/dunst-project/dunst/issues/775">#775</a>)</li>
+<li>A script in contrib for using the progress bar (<a href="https://github.com/dunst-project/dunst/issues/791">#791</a>)</li>
+<li><code>dunstctl count</code> for showing the number of notifications (<a href="https://github.com/dunst-project/dunst/issues/793">#793</a>)</li>
+<li>Expose environment variables info about the notification to scripts (<a href="https://github.com/dunst-project/dunst/issues/802">#802</a>)</li>
 <li><code>text_icon_padding</code> for adding padding between the notification icon and text
-(#810)</li>
+(<a href="https://github.com/dunst-project/dunst/issues/810">#810</a>)</li>
 </ul>
 <h3 id="changed-9">Changed</h3>
 <ul>
-<li>Dunst now installs a system-wide config in <code>/etc/dunst/dunstrc</code> (#798)</li>
-<li>Move part of the man page to dunst(5) (#799)</li>
+<li>Dunst now installs a system-wide config in <code>/etc/dunst/dunstrc</code> (<a href="https://github.com/dunst-project/dunst/issues/798">#798</a>)</li>
+<li>Move part of the man page to dunst(5) (<a href="https://github.com/dunst-project/dunst/issues/799">#799</a>)</li>
 </ul>
 <h3 id="fixed-13">Fixed</h3>
 <ul>
-<li><code>history_ignore</code> flag broken when using multiple rules (#747)</li>
-<li>Divide by zero in radius calculation (#750)</li>
-<li>Monitor setting overriding <code>follow_mode</code> (#755)</li>
-<li>Incorrect monitor usage when using multiple X11 screens (#762)</li>
-<li>Emit signal when <code>paused</code> property changes (#766)</li>
-<li><code>dunstify</code> can pass empty appname to libnotify (#768)</li>
-<li>Incorrect handling of &lsquo;do_action, close&rsquo; mouse action (#778)</li>
+<li><code>history_ignore</code> flag broken when using multiple rules (<a href="https://github.com/dunst-project/dunst/issues/747">#747</a>)</li>
+<li>Divide by zero in radius calculation (<a href="https://github.com/dunst-project/dunst/issues/750">#750</a>)</li>
+<li>Monitor setting overriding <code>follow_mode</code> (<a href="https://github.com/dunst-project/dunst/issues/755">#755</a>)</li>
+<li>Incorrect monitor usage when using multiple X11 screens (<a href="https://github.com/dunst-project/dunst/issues/762">#762</a>)</li>
+<li>Emit signal when <code>paused</code> property changes (<a href="https://github.com/dunst-project/dunst/issues/766">#766</a>)</li>
+<li><code>dunstify</code> can pass empty appname to libnotify (<a href="https://github.com/dunst-project/dunst/issues/768">#768</a>)</li>
+<li>Incorrect handling of &lsquo;do_action, close&rsquo; mouse action (<a href="https://github.com/dunst-project/dunst/issues/778">#778</a>)</li>
 </ul>
 <h1 id="removed-1">Removed</h1>
 <ul>
-<li><code>DUNST_COMMAND_{PAUSE,RESUME,TOGGLE}</code> (#830)</li>
+<li><code>DUNST_COMMAND_{PAUSE,RESUME,TOGGLE}</code> (<a href="https://github.com/dunst-project/dunst/issues/830">#830</a>)</li>
 </ul>
-<h2 id="150---2020-07-23">1.5.0 - 2020-07-23</h2>
+<h2 id="v1.5.0">1.5.0 - 2020-07-23  <div class="releaseref"><i class="fa fa-sticky-note"></i> <a href="https://dunst-project.org/release/#v1.5.0">Release Notes</a></div></h2>
 <h3 id="added-11">Added</h3>
 <ul>
-<li><code>min_icon_size</code> option to automatically scale up icons to a desired value (#674)</li>
-<li><code>vertical_alignment</code> option to control the text/icon alignment within the notification (#684)</li>
-<li>Ability to configure multiple actions for each mouse event (#705)</li>
-<li><code>dunstctl</code> command line control client (#651)</li>
-<li>RGBA support for all color strings (#717)</li>
+<li><code>min_icon_size</code> option to automatically scale up icons to a desired value (<a href="https://github.com/dunst-project/dunst/issues/674">#674</a>)</li>
+<li><code>vertical_alignment</code> option to control the text/icon alignment within the notification (<a href="https://github.com/dunst-project/dunst/issues/684">#684</a>)</li>
+<li>Ability to configure multiple actions for each mouse event (<a href="https://github.com/dunst-project/dunst/issues/705">#705</a>)</li>
+<li><code>dunstctl</code> command line control client (<a href="https://github.com/dunst-project/dunst/issues/651">#651</a>)</li>
+<li>RGBA support for all color strings (<a href="https://github.com/dunst-project/dunst/issues/717">#717</a>)</li>
 <li>Ability to run multiple scripts for each notification</li>
-<li><code>ignore_dbusclose</code> setting (#732)</li>
+<li><code>ignore_dbusclose</code> setting (<a href="https://github.com/dunst-project/dunst/issues/732">#732</a>)</li>
 </ul>
 <h3 id="changed-10">Changed</h3>
 <ul>
-<li><code>dunstify</code> notification client is now installed by default (#701)</li>
-<li>Keyboard follow mode falls back to the monitor with the mouse if no window has keyboard focus (#708)</li>
+<li><code>dunstify</code> notification client is now installed by default (<a href="https://github.com/dunst-project/dunst/issues/701">#701</a>)</li>
+<li>Keyboard follow mode falls back to the monitor with the mouse if no window has keyboard focus (<a href="https://github.com/dunst-project/dunst/issues/708">#708</a>)</li>
 </ul>
 <h3 id="fixed-14">Fixed</h3>
 <ul>
-<li>Overflow when setting a &gt;=40 minute timeout (#646)</li>
-<li>Unset configuration options not falling back to default values (#649)</li>
-<li>Crash when <code>$HOME</code> environment variable is unset (#693)</li>
-<li>Lack of antialiasing with round corners enabled (#713)</li>
+<li>Overflow when setting a &gt;=40 minute timeout (<a href="https://github.com/dunst-project/dunst/issues/646">#646</a>)</li>
+<li>Unset configuration options not falling back to default values (<a href="https://github.com/dunst-project/dunst/issues/649">#649</a>)</li>
+<li>Crash when <code>$HOME</code> environment variable is unset (<a href="https://github.com/dunst-project/dunst/issues/693">#693</a>)</li>
+<li>Lack of antialiasing with round corners enabled (<a href="https://github.com/dunst-project/dunst/issues/713">#713</a>)</li>
 </ul>
-<h2 id="141---2019-07-03">1.4.1 - 2019-07-03</h2>
+<h2 id="v1.4.1">1.4.1 - 2019-07-03  <div class="releaseref"><i class="fa fa-sticky-note"></i> <a href="https://dunst-project.org/release/#v1.4.1">Release Notes</a></div></h2>
 <h3 id="fixed-15">Fixed</h3>
 <ul>
-<li><code>max_icon_size</code> not working with dynamic width (#614)</li>
-<li>Failure to parse color strings with trailing comments in the config (#626)</li>
-<li>Negative width in geometry being ignored (#628)</li>
+<li><code>max_icon_size</code> not working with dynamic width (<a href="https://github.com/dunst-project/dunst/issues/614">#614</a>)</li>
+<li>Failure to parse color strings with trailing comments in the config (<a href="https://github.com/dunst-project/dunst/issues/626">#626</a>)</li>
+<li>Negative width in geometry being ignored (<a href="https://github.com/dunst-project/dunst/issues/628">#628</a>)</li>
 <li>Incorrect handling of the argument terminator <code>--</code> in dunstify</li>
-<li>Crash when changing DPI while no notifications are displayed (#630)</li>
-<li>Fullscreen status change not being detected in some cases (#613)</li>
+<li>Crash when changing DPI while no notifications are displayed (<a href="https://github.com/dunst-project/dunst/issues/630">#630</a>)</li>
+<li>Fullscreen status change not being detected in some cases (<a href="https://github.com/dunst-project/dunst/issues/613">#613</a>)</li>
 </ul>
-<h2 id="140---2019-03-30">1.4.0 - 2019-03-30</h2>
+<h2 id="v1.4.0">1.4.0 - 2019-03-30  <div class="releaseref"><i class="fa fa-sticky-note"></i> <a href="https://dunst-project.org/release/#v1.4.0">Release Notes</a></div></h2>
 <h3 id="added-12">Added</h3>
 <ul>
-<li>Add support to override <code>frame_color</code> via rules (#498)</li>
-<li>Support for round corners (#420)</li>
-<li>Ability to reference <code>$HOME</code> in icon paths with <code>~/</code> (#520)</li>
-<li>Support to customize the mouse bindings (#530)</li>
-<li>Command to toggle pause status (#535)</li>
+<li>Add support to override <code>frame_color</code> via rules (<a href="https://github.com/dunst-project/dunst/issues/498">#498</a>)</li>
+<li>Support for round corners (<a href="https://github.com/dunst-project/dunst/issues/420">#420</a>)</li>
+<li>Ability to reference <code>$HOME</code> in icon paths with <code>~/</code> (<a href="https://github.com/dunst-project/dunst/issues/520">#520</a>)</li>
+<li>Support to customize the mouse bindings (<a href="https://github.com/dunst-project/dunst/issues/530">#530</a>)</li>
+<li>Command to toggle pause status (<a href="https://github.com/dunst-project/dunst/issues/535">#535</a>)</li>
 <li>Ability to automatically replace similar notifications (like volume changes)
-via <code>stack_tag</code> (#552)</li>
-<li>Comparison of raw icons for duplicate notifications (#571)</li>
-<li>Introduce new desktop-entry filter (#470)</li>
-<li><code>fullscreen</code> rule to hide notifications when a fullscreen window is active (#472)</li>
+via <code>stack_tag</code> (<a href="https://github.com/dunst-project/dunst/issues/552">#552</a>)</li>
+<li>Comparison of raw icons for duplicate notifications (<a href="https://github.com/dunst-project/dunst/issues/571">#571</a>)</li>
+<li>Introduce new desktop-entry filter (<a href="https://github.com/dunst-project/dunst/issues/470">#470</a>)</li>
+<li><code>fullscreen</code> rule to hide notifications when a fullscreen window is active (<a href="https://github.com/dunst-project/dunst/issues/472">#472</a>)</li>
 <li>Added <code>skip_display</code> rule option to skip initial notification display, and
-include the notification in the history. (#590)</li>
+include the notification in the history. (<a href="https://github.com/dunst-project/dunst/issues/590">#590</a>)</li>
 </ul>
 <h3 id="fixed-16">Fixed</h3>
 <ul>
-<li>Notification age not counting the time while the computer was suspended (#492)</li>
-<li>Dunst losing always-on-top status on a window manager restart (#160)</li>
+<li>Notification age not counting the time while the computer was suspended (<a href="https://github.com/dunst-project/dunst/issues/492">#492</a>)</li>
+<li>Dunst losing always-on-top status on a window manager restart (<a href="https://github.com/dunst-project/dunst/issues/160">#160</a>)</li>
 <li>Xpm icons not being recognized</li>
 <li>When new notifications arrive, but display is full, important notifications don&rsquo;t
-have to wait for a timeout in a displayed notification (#541)</li>
-<li>Dunst hanging while the context menu is open (#456)</li>
-<li>Having &amp; inside a notification breaking markup (#546)</li>
+have to wait for a timeout in a displayed notification (<a href="https://github.com/dunst-project/dunst/issues/541">#541</a>)</li>
+<li>Dunst hanging while the context menu is open (<a href="https://github.com/dunst-project/dunst/issues/456">#456</a>)</li>
+<li>Having &amp; inside a notification breaking markup (<a href="https://github.com/dunst-project/dunst/issues/546">#546</a>)</li>
 <li><code>&lt;I&gt; more</code> notifications don&rsquo;t occupy space anymore, if there is only a single
-notification waiting to get displayed. The notification gets displayed directly (#467)</li>
-<li>Segfault when comparing icon name with a notification with a raw icon (#536)</li>
-<li>Icon size can no longer be larger than the notification when a fixed width is specified (#540)</li>
+notification waiting to get displayed. The notification gets displayed directly (<a href="https://github.com/dunst-project/dunst/issues/467">#467</a>)</li>
+<li>Segfault when comparing icon name with a notification with a raw icon (<a href="https://github.com/dunst-project/dunst/issues/536">#536</a>)</li>
+<li>Icon size can no longer be larger than the notification when a fixed width is specified (<a href="https://github.com/dunst-project/dunst/issues/540">#540</a>)</li>
 </ul>
 <h3 id="changed-11">Changed</h3>
 <ul>
-<li>Transient notifications no longer skip history by default (#508)</li>
-<li>The notification summary no longer accepts markup (#497)</li>
+<li>Transient notifications no longer skip history by default (<a href="https://github.com/dunst-project/dunst/issues/508">#508</a>)</li>
+<li>The notification summary no longer accepts markup (<a href="https://github.com/dunst-project/dunst/issues/497">#497</a>)</li>
 </ul>
 <h3 id="removed-2">Removed</h3>
 <ul>
-<li>Dependency on libxdg-basedir (#550)</li>
+<li>Dependency on libxdg-basedir (<a href="https://github.com/dunst-project/dunst/issues/550">#550</a>)</li>
 </ul>
-<h2 id="132---2018-05-06">1.3.2 - 2018-05-06</h2>
+<h2 id="v1.3.2">1.3.2 - 2018-05-06  <div class="releaseref"><i class="fa fa-sticky-note"></i> <a href="https://dunst-project.org/release/#v1.3.2">Release Notes</a></div></h2>
 <h3 id="fixed-17">Fixed</h3>
 <ul>
-<li>Crash when trying to load an invalid or corrupt icon (#512)</li>
+<li>Crash when trying to load an invalid or corrupt icon (<a href="https://github.com/dunst-project/dunst/issues/512">#512</a>)</li>
 </ul>
-<h2 id="131---2018-01-30">1.3.1 - 2018-01-30</h2>
+<h2 id="v1.3.1">1.3.1 - 2018-01-30  <div class="releaseref"><i class="fa fa-sticky-note"></i> <a href="https://dunst-project.org/release/#v1.3.1">Release Notes</a></div></h2>
 <h3 id="fixed-18">Fixed</h3>
 <ul>
-<li>Race condition resulting in the service files being empty (#488)</li>
+<li>Race condition resulting in the service files being empty (<a href="https://github.com/dunst-project/dunst/issues/488">#488</a>)</li>
 </ul>
-<h2 id="130---2018-01-05">1.3.0 - 2018-01-05</h2>
+<h2 id="v1.3.0">1.3.0 - 2018-01-05  <div class="releaseref"><i class="fa fa-sticky-note"></i> <a href="https://dunst-project.org/release/#v1.3.0">Release Notes</a></div></h2>
 <h3 id="added-13">Added</h3>
 <ul>
-<li><code>ellipsize</code> option to control how long lines should be ellipsized when <code>word_wrap</code> is set to <code>false</code> (#374)</li>
-<li>A beginning tilde of a path is now expanded to the home of the current user (#351)</li>
-<li>The image-path hint is now respected, as GApplications send their icon only via this link (#447)</li>
-<li>The (legacy) image_data hint is now respected (#353)</li>
-<li>If dunst can&rsquo;t acquire the DBus name, dunst prints the PID of the process holding the name (#458 #460)</li>
-<li>Increased accuracy of timeouts by using microseconds internally (#379 #291)</li>
-<li>Support for specifying timeout values in milliseconds, minutes, hours, or days. (#379)</li>
-<li>Support for HTML img tags (via context menu) (#428)</li>
+<li><code>ellipsize</code> option to control how long lines should be ellipsized when <code>word_wrap</code> is set to <code>false</code> (<a href="https://github.com/dunst-project/dunst/issues/374">#374</a>)</li>
+<li>A beginning tilde of a path is now expanded to the home of the current user (<a href="https://github.com/dunst-project/dunst/issues/351">#351</a>)</li>
+<li>The image-path hint is now respected, as GApplications send their icon only via this link (<a href="https://github.com/dunst-project/dunst/issues/447">#447</a>)</li>
+<li>The (legacy) image_data hint is now respected (<a href="https://github.com/dunst-project/dunst/issues/353">#353</a>)</li>
+<li>If dunst can&rsquo;t acquire the DBus name, dunst prints the PID of the process holding the name (<a href="https://github.com/dunst-project/dunst/issues/458">#458</a> <a href="https://github.com/dunst-project/dunst/issues/460">#460</a>)</li>
+<li>Increased accuracy of timeouts by using microseconds internally (<a href="https://github.com/dunst-project/dunst/issues/379">#379</a> <a href="https://github.com/dunst-project/dunst/issues/291">#291</a>)</li>
+<li>Support for specifying timeout values in milliseconds, minutes, hours, or days. (<a href="https://github.com/dunst-project/dunst/issues/379">#379</a>)</li>
+<li>Support for HTML img tags (via context menu) (<a href="https://github.com/dunst-project/dunst/issues/428">#428</a>)</li>
 </ul>
 <h3 id="fixed-19">Fixed</h3>
 <ul>
-<li><code>new_icon</code> rule being ignored on notifications that had a raw icon (#423)</li>
-<li>Format strings being replaced recursively in some cases (#322 #365)</li>
-<li>DBus related memory leaks (#397)</li>
-<li>Crash on X11 servers with RandR support less than 1.5. (#413 #364)</li>
-<li>Silently reading the default config file, if <code>-conf</code> did not specify a valid file (#452)</li>
-<li>Notification window flickering when a notification is replaced (#320 #415)</li>
-<li>Inaccurate timeout in some cases (#291 #379)</li>
+<li><code>new_icon</code> rule being ignored on notifications that had a raw icon (<a href="https://github.com/dunst-project/dunst/issues/423">#423</a>)</li>
+<li>Format strings being replaced recursively in some cases (<a href="https://github.com/dunst-project/dunst/issues/322">#322</a> <a href="https://github.com/dunst-project/dunst/issues/365">#365</a>)</li>
+<li>DBus related memory leaks (<a href="https://github.com/dunst-project/dunst/issues/397">#397</a>)</li>
+<li>Crash on X11 servers with RandR support less than 1.5. (<a href="https://github.com/dunst-project/dunst/issues/413">#413</a> <a href="https://github.com/dunst-project/dunst/issues/364">#364</a>)</li>
+<li>Silently reading the default config file, if <code>-conf</code> did not specify a valid file (<a href="https://github.com/dunst-project/dunst/issues/452">#452</a>)</li>
+<li>Notification window flickering when a notification is replaced (<a href="https://github.com/dunst-project/dunst/issues/320">#320</a> <a href="https://github.com/dunst-project/dunst/issues/415">#415</a>)</li>
+<li>Inaccurate timeout in some cases (<a href="https://github.com/dunst-project/dunst/issues/291">#291</a> <a href="https://github.com/dunst-project/dunst/issues/379">#379</a>)</li>
 </ul>
 <h3 id="changed-12">Changed</h3>
 <ul>
-<li>Transient hints are now handled (#343 #310)
+<li>Transient hints are now handled (<a href="https://github.com/dunst-project/dunst/issues/343">#343</a> <a href="https://github.com/dunst-project/dunst/issues/310">#310</a>)
 An additional rule option (<code>match_transient</code> and <code>set_transient</code>) is added
 to optionally reset the transient setting</li>
-<li>HTML links are now referred to by their text in the context menu rather than numbers (#428)</li>
-<li><code>icon_folders</code> setting renamed to <code>icon_path</code> (#170)</li>
-<li><code>config.def.h</code> and <code>config.h</code> got merged (#371)</li>
+<li>HTML links are now referred to by their text in the context menu rather than numbers (<a href="https://github.com/dunst-project/dunst/issues/428">#428</a>)</li>
+<li><code>icon_folders</code> setting renamed to <code>icon_path</code> (<a href="https://github.com/dunst-project/dunst/issues/170">#170</a>)</li>
+<li><code>config.def.h</code> and <code>config.h</code> got merged (<a href="https://github.com/dunst-project/dunst/issues/371">#371</a>)</li>
 <li>The dependency on GTK3+ has been removed. Instead of GTK3+, dunst now
-requires gdk-pixbuf which had been a transient dependency before. (#334
-#376)</li>
-<li>The <code>_GNU_SOURCE</code> macros had been removed to make dunst portable to nonGNU systems (#403)</li>
-<li>Internal refactorings of the notification queue handling. (#411)</li>
+requires gdk-pixbuf which had been a transient dependency before. (<a href="https://github.com/dunst-project/dunst/issues/334">#334</a>
+<a href="https://github.com/dunst-project/dunst/issues/376">#376</a>)</li>
+<li>The <code>_GNU_SOURCE</code> macros had been removed to make dunst portable to nonGNU systems (<a href="https://github.com/dunst-project/dunst/issues/403">#403</a>)</li>
+<li>Internal refactorings of the notification queue handling. (<a href="https://github.com/dunst-project/dunst/issues/411">#411</a>)</li>
 <li>Dunst does now install the systemd and dbus service files into their proper location given
-by pkg-config. Use <code>SERVICEDIR_(DBUS|SYSTEMD)</code> params to overwrite them. (#463)</li>
+by pkg-config. Use <code>SERVICEDIR_(DBUS|SYSTEMD)</code> params to overwrite them. (<a href="https://github.com/dunst-project/dunst/issues/463">#463</a>)</li>
 </ul>
-<h2 id="120---2017-07-12">1.2.0 - 2017-07-12</h2>
+<h2 id="v1.2.0">1.2.0 - 2017-07-12  <div class="releaseref"><i class="fa fa-sticky-note"></i> <a href="https://dunst-project.org/release/#v1.2.0">Release Notes</a></div></h2>
 <h3 id="added-14">Added</h3>
 <ul>
 <li><code>always_run_script</code> option to run script even if a notification is suppressed</li>
@@ -579,7 +582,7 @@ by pkg-config. Use <code>SERVICEDIR_(DBUS|SYSTEMD)</code> params to overwrite th
 <h3 id="deprecated">Deprecated</h3>
 <ul>
 <li><code>allow_markup</code> is deprecated with <code>markup</code> as its replacement</li>
-<li>The urgency specific command line flags have been deprecated with no replacement, respond to issue #328 on the bug tracker if you depend on them</li>
+<li>The urgency specific command line flags have been deprecated with no replacement, respond to issue <a href="https://github.com/dunst-project/dunst/issues/328">#328</a> on the bug tracker if you depend on them</li>
 </ul>
 <h3 id="fixed-20">Fixed</h3>
 <ul>
@@ -596,13 +599,13 @@ by pkg-config. Use <code>SERVICEDIR_(DBUS|SYSTEMD)</code> params to overwrite th
 <li>dmenu process being left as a zombie if no option was selected</li>
 <li>Crash when opening urls parsed from <code>&lt;a href=&quot;&quot;&gt;</code> tags</li>
 </ul>
-<h2 id="110---2014-07-29">1.1.0 - 2014-07-29</h2>
+<h2 id="v1.1.0">1.1.0 - 2014-07-29  <div class="releaseref"><i class="fa fa-sticky-note"></i> <a href="https://dunst-project.org/release/#v1.1.0">Release Notes</a></div></h2>
 <ul>
 <li>fix nasty memory leak</li>
 <li>icon support (still work in progress)</li>
 <li>fix issue where keybindings aren&rsquo;t working when numlock is activated</li>
 </ul>
-<h2 id="100---2013-04-15">1.0.0 - 2013-04-15</h2>
+<h2 id="v1.0.0">1.0.0 - 2013-04-15  <div class="releaseref"><i class="fa fa-sticky-note"></i> <a href="https://dunst-project.org/release/#v1.0.0">Release Notes</a></div></h2>
 <ul>
 <li>use pango/cairo as drawing backend</li>
 <li>make use of pangos ability to parse markup</li>
@@ -610,7 +613,7 @@ by pkg-config. Use <code>SERVICEDIR_(DBUS|SYSTEMD)</code> params to overwrite th
 <li>indicator for actions/urls found</li>
 <li>use blocking I/O. No more waking up the CPU multiple times per second to check for new dbus messages</li>
 </ul>
-<h2 id="050---2013-01-26">0.5.0 - 2013-01-26</h2>
+<h2 id="v0.5.0">0.5.0 - 2013-01-26  <div class="releaseref"><i class="fa fa-sticky-note"></i> <a href="https://dunst-project.org/release/#v0.5.0">Release Notes</a></div></h2>
 <ul>
 <li>new default dunstrc</li>
 <li>frames for window</li>
@@ -620,7 +623,7 @@ by pkg-config. Use <code>SERVICEDIR_(DBUS|SYSTEMD)</code> params to overwrite th
 <li>use own code for ini parsing (this removes inih)</li>
 <li>progress hints</li>
 </ul>
-<h2 id="040---2012-09-27">0.4.0 - 2012-09-27</h2>
+<h2 id="v0.4.0">0.4.0 - 2012-09-27  <div class="releaseref"><i class="fa fa-sticky-note"></i> <a href="https://dunst-project.org/release/#v0.4.0">Release Notes</a></div></h2>
 <ul>
 <li>separator between notifications</li>
 <li>word wrap long lines</li>
@@ -632,11 +635,11 @@ by pkg-config. Use <code>SERVICEDIR_(DBUS|SYSTEMD)</code> params to overwrite th
 <li>bugfix: forgetting geometry</li>
 <li>(optional) static configuration</li>
 </ul>
-<h2 id="031---2012-08-02">0.3.1 - 2012-08-02</h2>
+<h2 id="v0.3.1">0.3.1 - 2012-08-02  <div class="releaseref"><i class="fa fa-sticky-note"></i> <a href="https://dunst-project.org/release/#v0.3.1">Release Notes</a></div></h2>
 <ul>
 <li>fix -mon option</li>
 </ul>
-<h2 id="030---2012-07-30">0.3.0 - 2012-07-30</h2>
+<h2 id="v0.3.0">0.3.0 - 2012-07-30  <div class="releaseref"><i class="fa fa-sticky-note"></i> <a href="https://dunst-project.org/release/#v0.3.0">Release Notes</a></div></h2>
 <ul>
 <li>full support for Desktop Notification Specification (mandatory parts)</li>
 <li>option to select monitor on which notifications are shown</li>
@@ -651,7 +654,7 @@ by pkg-config. Use <code>SERVICEDIR_(DBUS|SYSTEMD)</code> params to overwrite th
 <li>cleanup / bugfixes etc.</li>
 <li>added dunst.service</li>
 </ul>
-<h2 id="020---2012-06-26">0.2.0 - 2012-06-26</h2>
+<h2 id="v0.2.0">0.2.0 - 2012-06-26  <div class="releaseref"><i class="fa fa-sticky-note"></i> <a href="https://dunst-project.org/release/#v0.2.0">Release Notes</a></div></h2>
 <ul>
 <li>introduction of dunstrc</li>
 <li>removed static configuration via config.h</li>

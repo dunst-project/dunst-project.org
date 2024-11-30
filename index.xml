@@ -19,7 +19,7 @@
       <link>https://dunst-project.org/download/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://dunst-project.org/download/</guid>
-      <description>The current stable version of Dunst is 1.12.0 released on November 30 2024.&#xA;Downloads Source tarball Code repository (Github) Release Notes For v1.12.0 There have been many important contributions in the last few months. Some notable changes are: adding hot-reload for the configuration, exporting rules via dunstctl, adding color gradients, removing default hard-coded icons. For detailed information consult the changelog.&#xA;Important notice for all users:&#xA;The behaviour of the setting height has been changed in a breaking way.</description>
+      <description>The current stable version of Dunst is 1.12.0 released on November 30 2024.&#xA;Source tarball Code repository (Github) Release Notes For v1.12.0 There have been many important contributions in the last few months. Some notable changes are: adding hot-reload for the configuration, exporting rules via dunstctl, adding color gradients, removing default hard-coded icons. For detailed information consult the changelog.&#xA;Important notice for all users:&#xA;The behaviour of the setting height has been changed in a breaking way.</description>
     </item>
     <item>
       <title>Documentation</title>
@@ -36,11 +36,18 @@
       <description>Common problems Errors about missing or failing to open a display Depending on the setup dunst was unable to connect to the X server or the wayland compositor in use. In case of X make sure that X is running and that the DISPLAY environment variable is correctly set. For a wayland based setup the WAYLAND_DISPLAY environment variable needs to be set to a valid value.&#xA;If dunst should be automatically started by dbus or via the systemd service, it is important to know that both don&amp;rsquo;t inherit environment variables set by a shell.</description>
     </item>
     <item>
-      <title></title>
+      <title>Changelog</title>
       <link>https://dunst-project.org/changelog/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://dunst-project.org/changelog/</guid>
-      <description>Dunst changelog 1.12.0 &amp;ndash; 2024-11-30 Added Export rules via dbus with dunstctl rules [--json] (#1212) Added checks and messages for missing DBUS_SESSION_BUS_ADDRESS (#1389) Add -e/--exit flag to dunstctl is-paused to exit with 1 when paused (#1378) Add color gradients for the progress bar (by providing a list of colors instead of one) (#1370) Use TESTDIR env var as the base for the test program (#1376) Add dunstctl reload to hot reload the configuration (#1350) Add an optional id to dunstctl close (#1351) Print compile-time options in dunst --version (#1336) Changed BREAKING: Implement dynamic height (changes the the height setting, see manual) (#1342) Change the preferred syntax of offset from NxN to (N,N) (#1330) Install the systemd service file in the session.</description>
+      <description>1.12.0 &amp;ndash; 2024-11-30 Release Notes Added Export rules via dbus with dunstctl rules [--json] (#1212) Added checks and messages for missing DBUS_SESSION_BUS_ADDRESS (#1389) Add -e/--exit flag to dunstctl is-paused to exit with 1 when paused (#1378) Add color gradients for the progress bar (by providing a list of colors instead of one) (#1370) Use TESTDIR env var as the base for the test program (#1376) Add dunstctl reload to hot reload the configuration (#1350) Add an optional id to dunstctl close (#1351) Print compile-time options in dunst --version (#1336) Changed BREAKING: Implement dynamic height (changes the the height setting, see manual) (#1342) Change the preferred syntax of offset from NxN to (N,N) (#1330) Install the systemd service file in the session.</description>
+    </item>
+    <item>
+      <title>Release Notes</title>
+      <link>https://dunst-project.org/release/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://dunst-project.org/release/</guid>
+      <description>Dunst v1.12.0 Changelog There have been many important contributions in the last few months. Some notable changes are: adding hot-reload for the configuration, exporting rules via dunstctl, adding color gradients, removing default hard-coded icons. For detailed information consult the changelog.&#xA;Important notice for all users:&#xA;The behaviour of the setting height has been changed in a breaking way. Before you could specify a single value that would be used as the max height of a notification.</description>
     </item>
   </channel>
 </rss>
