@@ -4,7 +4,6 @@ title = "Screenshots"
 menu = "main"
 type = "page"
 +++
-***
 
 <style>
 .row img {

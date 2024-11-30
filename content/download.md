@@ -4,11 +4,8 @@ title = "Download"
 menu = "main"
 type = "page"
 +++
-***
 
 The current stable version of Dunst is **1.12.0** released on **November 30 2024**.
-
-# Downloads
 
 * [Source tarball](https://github.com/dunst-project/dunst/archive/v1.12.0.tar.gz)
 * [Code repository (Github)](https://github.com/dunst-project/dunst)

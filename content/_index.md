@@ -108,8 +108,8 @@ customize to perfection.
 ***
 
 Please use the [issue tracker](https://github.com/dunst-project/dunst/issues)
-on GitHub to send us bug reports or feature requests. You can also join us at
-the [#dunst](irc://irc.libera.chat/#dunst) IRC channel on Libera.
+on GitHub to send us bug reports or feature requests.
+There is also the [#dunst](irc://irc.libera.chat/#dunst) IRC channel on Libera.
 
 ## **Maintainers**
 ***
@@ -118,15 +118,15 @@ the [#dunst](irc://irc.libera.chat/#dunst) IRC channel on Libera.
 - [Bjoern Hiller](https://github.com/zappolowski) <bjoern.hiller@gmail.com>
 - [Federico Angelilli](https://github.com/bynect) <fedeangemail@gmail.com>
 
-Please only refer to active maintainers for issues and bugs
+Please **only refer to active maintainers** for issues and bugs
 
-## **Ex-Maintainers**
+## **Previous Maintainers**
 ***
 
 - [Nikos Tsipinakis](https://github.com/tsipinakis) <nikos@tsipinakis.com>
 - [Benedikt Heine](https://github.com/bebehei) <bebe@bebehei.de>
 
-## **Author**
+## **Original Author**
 ***
 
 Sascha Kruse <dunst@knopwob.de>
