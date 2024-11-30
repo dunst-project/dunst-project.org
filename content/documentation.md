@@ -118,7 +118,12 @@ toc = "true"
 
 <p>This setting is deprecated and removed. It&#39;s split up into <b>width</b>, <b>height</b>, <b>origin</b>, <b>notification_limit</b> and <b>offset</b>. For quickly transitioning to the new syntax, you can take the numbers from your old geometry config as follows: geometry = &lt;width&gt;x&lt;height&gt;+&lt;offset&gt;</p>
 
-<p>In the new config you can then set the following variables (make sure to remove any negative signs) width = &lt;width&gt; height = &lt;height&gt; offset = &lt;offset&gt; origin = top-right # or top-left, or any other direction you prefer</p>
+<p>In the new config you can then set the following variables (make sure to remove any negative signs)</p>
+
+<pre><code>width = &lt;width&gt;
+height = &lt;height&gt;
+offset = &lt;offset&gt;
+origin = top-right # or top-left, or any other direction you prefer</code></pre>
 
 </dd>
 <dt id="width"><b>width</b></dt>
@@ -126,7 +131,10 @@ toc = "true"
 
 <p>The width of the notification window in pixels. This can be a single number to specify a constant width or two numbers for the minimum and maximum width. The notification will expand from the minimum width as neccesary.</p>
 
-<p>Examples: width = 300 # constant width of 300 width = (0, 300) # width between 0 and 300</p>
+<p>Examples:</p>
+
+<pre><code>width = 300      # constant width of 300
+width = (0, 300) # width between 0 and 300</code></pre>
 
 <p>When setting a width bigger than the screen, dunst will clamp the width to the screen width. So if you want the notifcation to stretch the entire screen dynamically, you may set the width to a high enough number, which none of your screens exceed (e.g. 10000).</p>
 
@@ -134,7 +142,16 @@ toc = "true"
 <dt id="height"><b>height</b></dt>
 <dd>
 
-<p>The maximum height of a single notification.</p>
+<p>The height of each notification in pixels. This can be a single number to specify a constant height or two numbers for the minimum and maximum width. The notification will expand from the minimum height as neccesary.</p>
+
+<p>Examples:</p>
+
+<pre><code>height = 300      # constant height of 300
+height = (0, 300) # height between 0 and 300</code></pre>
+
+<p>Note that unlike width, different notifications can have diffrent height values.</p>
+
+<p>Dunst v1.11 and older do not support a dynamic height and setting the <b>height</b> value is equivalent to doing (0, value).</p>
 
 </dd>
 <dt id="notification_limit-default:-20"><b>notification_limit</b> (default: 20)</dt>
@@ -146,7 +163,17 @@ toc = "true"
 <dt id="origin-default:-top-right"><b>origin</b> (default: top-right)</dt>
 <dd>
 
-<p>The origin of the notification window on the screen. It can then be moved with offset. Origin can be one of: top-left top-center top-right bottom-left bottom-center bottom-right left-center center right-center</p>
+<p>The origin of the notification window on the screen. It can then be moved with offset. Origin can be one of:</p>
+
+<pre><code>top-left
+top-center
+top-right
+bottom-left
+bottom-center
+bottom-right
+left-center
+center
+right-center</code></pre>
 
 </dd>
 <dt id="offset-format:-horizontal-vertical"><b>offset</b> format: (horizontal, vertical)</dt>
@@ -154,7 +181,14 @@ toc = "true"
 
 <p>Respectively the horizontal and vertical offset in pixels from the corner of the screen specified by <b>origin</b>. A negative offset will lead to the notification being off screen.</p>
 
-<p>Examples: origin = top-right offset = 10x300 # a margin of 10 pixels from the right and 300 pixels from the top</p>
+<p>Examples:</p>
+
+<pre><code>origin = top-right
+offset = (10, 300) # a margin of 10 pixels from the right and 300 pixels from the top</code></pre>
+
+<p>Dunst v1.11 and older use the syntax NxN instead (X offset x Y offset). For backwards compatibility this syntax is also accepted.</p>
+
+<pre><code>offset = 10x300</code></pre>
 
 </dd>
 <dt id="scale-default:-0-X11-only"><b>scale</b> (default: 0, X11 only)</dt>
@@ -452,7 +486,7 @@ horizontal_padding=10</code></pre>
 <dt id="vertical_alignment-values:-top-center-bottom-default:-center"><b>vertical_alignment</b> (values: [top/center/bottom], default: center)</dt>
 <dd>
 
-<p>Defines how the text and icon should be aligned vertically within the notification. If icons are disabled, this option has no effect.</p>
+<p>Defines how the text and icon should be aligned vertically within the notification.</p>
 
 </dd>
 <dt id="show_age_threshold-default:-60"><b>show_age_threshold</b> (default: 60)</dt>
@@ -598,13 +632,13 @@ horizontal_padding=10</code></pre>
 
 <ul>
 
-<li><p><code>mouse_left_click=&quot;close_current&quot;</code></p>
+<li><p><code>mouse_left_click=close_current</code></p>
 
 </li>
-<li><p><code>mouse_middle_click=&quot;do_action, close_current&quot;</code></p>
+<li><p><code>mouse_middle_click=do_action, close_current</code></p>
 
 </li>
-<li><p><code>mouse_right_click=&quot;close_all&quot;</code></p>
+<li><p><code>mouse_right_click=close_all</code></p>
 
 </li>
 </ul>
@@ -778,7 +812,7 @@ horizontal_padding=10</code></pre>
 
 <h1 id="WAYLAND">WAYLAND</h1>
 
-<p>Dunst has Wayland support since version 1.6.0. Because the Wayland protocol is more focused on security, some things that are possible in X11 are not possible in Wayland. Those differences are reflected in the configuration. The main things that change are that dunst on Wayland cannot use global hotkeys (they are deprecated anyways, use dunstctl).</p>
+<p>Dunst has Wayland support since version 1.6.0. Because the Wayland protocol is more focused on security, some things that are possible in X11 are not possible in Wayland. Those differences are reflected in the configuration. The main things that change are that dunst on Wayland cannot use global hotkeys, use dunstctl instead.</p>
 
 <p>Some dunst features on wayland might need your compositor to support a certain protocol. Dunst will warn you if an optional feature isn&#39;t supported and will disable the corresponding functionality.</p>
 
@@ -842,7 +876,7 @@ horizontal_padding=10</code></pre>
 <dt id="category"><code>category</code></dt>
 <dd>
 
-<p>The category of the notification as defined by the notification spec. See https://specifications.freedesktop.org/notification-spec/latest/ar01s06.html.</p>
+<p>The category of the notification as defined by the notification spec. See https://specifications.freedesktop.org/notification-spec/latest/categories.html.</p>
 
 </dd>
 <dt id="desktop_entry"><code>desktop_entry</code></dt>
@@ -931,6 +965,8 @@ horizontal_padding=10</code></pre>
 <dd>
 
 <p>The highlight color of the notification. This color is used for coloring the progress bar. See COLORS for possible values.</p>
+
+<p>You can also set additional color values (as a comma-separated list) to define a linear gradient spanning all the length of the progress bar.</p>
 
 </dd>
 <dt id="format"><code>format</code></dt>

@@ -6,39 +6,45 @@ type = "page"
 +++
 ***
 
-The current stable version of Dunst is **1.11.0** released on **April 15 2024**.
+The current stable version of Dunst is **1.12.0** released on **November 30 2024**.
 
 # Downloads
 
-* [Source tarball](https://github.com/dunst-project/dunst/archive/v1.11.0.tar.gz)
+* [Source tarball](https://github.com/dunst-project/dunst/archive/v1.12.0.tar.gz)
 * [Code repository (Github)](https://github.com/dunst-project/dunst)
 
-# Release Notes For v1.11.0
+# Release Notes For v1.12.0
 ***
 
-This release hopefully marks the start of a new period of active development and
-contributions and a shift away from the previous lower maintenance mode.
+There have been many important contributions in the last few months.
+Some notable changes are: adding hot-reload for the configuration, exporting
+rules via dunstctl, adding color gradients, removing default hard-coded icons.
+For detailed information consult the changelog.
 
-For users:
+Important notice for all users:
 
-This is the perfect time to engage with the project and other dunst users.
-Some of the features and changes to include in the v2 release are starting to
-be proposed or implemented. Everyone's opinion is important, so feel free
-to participate in the issues proposing new features (or redesigns of the old ones).
+The behaviour of the setting `height` has been changed in a breaking way.
+Before you could specify a single value that would be used as the max height
+of a notification. In this release the dynamic height was implemented to make
+this settings behave more similarly to `width`.
+Now the values accepted are either a single number (for a *fixed height*) or
+a tuple of numbers (for a min/max range).
 
-This version mainly contains bug fixes and QoL improvements, and can be considered
-a preparatory release for the various things that will come in the future
-(overhaul of the rule syntax, multiple windows support, aesthetic and customization
-options, refactor of the drawing system, etc).
+The way of specifying a maximum height before was:
+```
+    height = 300
+```
 
-For maintainers:
+The equivalent way now is:
+```
+    height = (0, 300)
+```
 
-X11 support is now optional and can be disabled in build by setting the `X11` make
-flag to 0. This means that you can offer Wayland-only builds.
+Furthermore the preferred syntax for the `offset` settings has been changed
+from NxN to (N,N). The old syntax is supported nevertheless.
 
-Shell completions are now considered official and can be installed/uninstalled from
-the Makefile. By default they are installed and can be disabled by setting the
-`COMPLETIONS` flag to 0.
+If you are a maintainer it would be helpful to include the message above when
+an user updates from an older version of dunst.
 
 Take a look at the [changelog]({{< ref "/changelog" >}} "Changelog") for all the bug fixes and improvements.
 
