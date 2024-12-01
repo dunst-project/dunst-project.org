@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html xmlns="//www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+    <head>
+
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+
+        <title>Documentation &middot; Dunst</title>
+        <link rel='stylesheet' href='//fonts.googleapis.com/css?family=Open+Sans:400,300,600' type='text/css'>
+        <link rel="stylesheet" href="https://dunst-project.org//libraries/normalize.3.0.1.css" />
+        <link rel="stylesheet" href="https://dunst-project.org//css/liquorice.min.css" />
+        <link rel="stylesheet" href="https://dunst-project.org//font-awesome/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://dunst-project.org//css/global.css">
+        
+
+        <link rel="shortcut icon" href="/favicon.ico" />
+        <link rel="apple-touch-icon-precomposed" href="/apple-touch-icon-144-precomposed.png" sizes="144x144" />
+        <link rel="alternate" href="" type="application/rss+xml" title="Dunst" />
+
+    </head>
+    <body class="li-body">
+
+<header class="li-page-header">
+    <div class="container">
+        <div class="row">
+            <div class="sixteen columns">
+                <div class="li-brand li-left">
+                <a href="https://dunst-project.org/">Dunst</a></div>
+                <div class="li-menu li-right">
+                    <span class="li-menu-icon" onclick="javascript:toggle('menu');">&#9776;</span>
+                    <ul id="menu2" class="li-menu-items">
+                        
+                            <li><a href="/"> Home </a></li>
+                        
+                            <li><a href="/showcase/"> Showcase </a></li>
+                        
+                            <li><a href="/download/"> Download </a></li>
+                        
+                            <li><a href="/documentation/"> Documentation </a></li>
+                        
+                            <li><a href="/faq/"> FAQ </a></li>
+                        
+                            <li><a href="/changelog/"> Changelog </a></li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="sixteen columns">
+                <ul id="menu" class="li-menu-items li-menu-mobile">
+                    
+                        <li><a href="/"> Home </a></li>
+                    
+                        <li><a href="/showcase/"> Showcase </a></li>
+                    
+                        <li><a href="/download/"> Download </a></li>
+                    
+                        <li><a href="/documentation/"> Documentation </a></li>
+                    
+                        <li><a href="/faq/"> FAQ </a></li>
+                    
+                        <li><a href="/changelog/"> Changelog </a></li>
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+    <div class="container">
+        <div class="row">
+            <div class="sixteen columns">
+            <h1><b>Documentation</b></h1>
+                
+                    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#understanding-rules">Understanding rules</a>
+      <ul>
+        <li><a href="#example-1-basic-rule">Example 1: basic rule</a></li>
+        <li><a href="#example-2-rule-without-filters">Example 2: rule without filters</a></li>
+        <li><a href="#example-3-rule-order-matters">Example 3: rule order matters</a></li>
+        <li><a href="#special-sections">Special sections</a></li>
+      </ul>
+    </li>
+    <li><a href="#debugging-d-bus">Debugging D-bus</a></li>
+    <li><a href="#using-the-progress-bar-for-volume-notifications">Using the progress bar for volume notifications</a>
+      <ul>
+        <li><a href="#using-the-volume-as-progress-value">Using the volume as progress value</a></li>
+        <li><a href="#replacing-notifications">Replacing notifications</a></li>
+        <li><a href="#configuring-the-progress-bar">Configuring the progress bar</a></li>
+        <li><a href="#conclusion">Conclusion</a></li>
+      </ul>
+    </li>
+    <li><a href="#using-notification-actions">Using notification actions</a>
+      <ul>
+        <li><a href="#sending-notifications-with-an-action">Sending notifications with an action</a></li>
+        <li><a href="#activating-an-action">Activating an action</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                
+                <h1 id="guides">Guides</h1>
+<h2 id="understanding-rules">Understanding rules</h2>
+<p>Dunst offers some very powerful configuration options in the form of rules. With
+rules you can change the appearance of notifications, hide some notifications
+that you don&rsquo;t find useful, change their timeout and much more.</p>
+<h3 id="example-1-basic-rule">Example 1: basic rule</h3>
+<p>There are two kinds of
+rules: filtering rules and modifying rules. These are used for matching a
+notification and subsequently changing some of it&rsquo;s properties. When no
+filtering rules are used, all notifications are matched. So let&rsquo;s look at an
+example.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ini" data-lang="ini"><span style="display:flex;"><span><span style="color:#66d9ef">[change-format]</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">appname</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">dunstify
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        format = &#34;&lt;b&gt;%s&lt;/b&gt;\n&lt;i&gt;%b&lt;/i&gt;&#34;</span>
+</span></span></code></pre></div><p>The rules are place in a section with a custom name. This can be any name, but
+it should be descriptive of what you want to do. The <code>appname</code> is a filtering
+rule to match only notifications sent by <code>dunstify</code>. <code>format</code> is a modifying
+rule to change the format of the matched notification. Once you restart dunst,
+you should see that all notification sent by <code>dunstify</code> will have a different
+format. You can test it out by sending a notification: <code>dunstify &quot;Summary in bold&quot; &quot;Body in italics&quot;</code>.</p>
+<h3 id="example-2-rule-without-filters">Example 2: rule without filters</h3>
+<p>You don&rsquo;t have to add filters to your rules. If you don&rsquo;t add any filters, all
+notifications will be matched. This is useful if you want to apply a setting to
+all notifications. Below is an example.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ini" data-lang="ini"><span style="display:flex;"><span><span style="color:#66d9ef">[fullscreen]</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">fullscreen</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">show</span>
+</span></span></code></pre></div><p>Now notifications will be shown over fullscreen applications. (Note that on
+Wayland the notification layer has to be overlay for this to work. This is set
+by default).</p>
+<h3 id="example-3-rule-order-matters">Example 3: rule order matters</h3>
+<p>Rules are evaluated in order from top to bottom. Any time a notification is
+changed, it may affect if it&rsquo;s being matched by a later rule. Let&rsquo;s look at
+another example. This time we&rsquo;ll try to change a notification&rsquo;s urgency and make
+sure it gets a different appearance based on that.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ini" data-lang="ini"><span style="display:flex;"><span><span style="color:#75715e"># Bad example</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">[change-appearance]</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">match_urgency</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">critical
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        background = &#34;#D62929&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        foreground = &#34;#F9FAF9&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">[change-urgency]</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">appname</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">dunstify
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        urgency = critical</span>
+</span></span></code></pre></div><p>In the above example, all critical notification will get a different appearance
+based on their urgency. You might think that the rule that changes the urgency
+will make sure the notification&rsquo;s appearance changes as well. But rule order
+matter. First the notification&rsquo;s appearance is changed based on it&rsquo;s urgency and
+only after that the urgency is changed. Thus the notification&rsquo;s appearance is
+unchanged.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ini" data-lang="ini"><span style="display:flex;"><span><span style="color:#75715e"># Good example</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">[change-urgency]</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">appname</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">dunstify
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        urgency = critical</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">[change-appearance]</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">match_urgency</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">critical
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        background = &#34;#D62929&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        foreground = &#34;#F9FAF9&#34;</span>
+</span></span></code></pre></div><p>The above example is the right way to do this. First change the urgency and then
+change the appearance based on the urgency. Again, you can try this out by
+placing it in you dunstrc.</p>
+<h3 id="special-sections">Special sections</h3>
+<p>Since dunst v1.7.0, every section will behave like a rule. Still, there are a
+few special sections that will limit the kinds of rules you can place there.
+This is mostly for backward compatibility. The special sections are <code>[global]</code>,
+<code>[urgency_low]</code>, <code>[urgency_medium]</code> and <code>[urgency_critical]</code>. Dunst will not
+allow you to place filtering rules in these sections, as they are meant to have
+specific filters. The <code>[global]</code> section will match all notifications, where as
+the <code>[urgency_*]</code> sections will match their respective urgencies.</p>
+<p>There is not much special about these sections, though, as you can do most of
+the configuration with normal rules. Only the <code>[global]</code> section is truly
+special, since all the global configurations options can only be used in this
+section.</p>
+<h2 id="debugging-d-bus">Debugging D-bus</h2>
+<p>When you send a notification using <code>notify-send</code> or <code>dunstify</code> this information
+is sent to dunst over D-Bus. This information can be really useful in debugging
+dunst.
+To have a look at what is send to dunst over D-Bus, take a look at the output of
+the command</p>
+<p><code>dbus-monitor path=/org/freedesktop/Notifications</code></p>
+<p>This will tell you every time a notification is sent what the contents are of
+that notification and when it is closed again. The D-Bus is really easy to
+integrate with your program, so you could create an application that does
+something every time a dunst notification is closed.</p>
+<h2 id="using-the-progress-bar-for-volume-notifications">Using the progress bar for volume notifications</h2>
+<p>With <a href="https://github.com/dunst-project/dunst/pull/775">PR 775</a> merged, dunst has the ability to draw a progress bar under the notification.
+This is very useful for brightness or volume notifications. This guide will explain how
+to use and customize that progress bar.</p>
+<p>First check if your dunst version is recent enough. The current git master or everything
+after 1.6.0 should be good.</p>
+<p>To test if you can see a progress bar, use this command:</p>
+<p><code>dunstify &quot;Progress: &quot; -h int:value:60</code></p>
+<p>This should look something like this</p>
+<p><img src="https://user-images.githubusercontent.com/23078054/102403602-cd0ad800-3fe6-11eb-8800-6ed2adf653a5.png" alt="progress bar"></p>
+<p>You can change the 60 for any value you like. To make useful volume notifications you
+need a bit more, though. Firstly , the value should be changing with the volume.
+Secondly, if you change your volume a few times in a row, you don&rsquo;t want to have multiple
+notifications. They should replace each other.</p>
+<h3 id="using-the-volume-as-progress-value">Using the volume as progress value</h3>
+<p>To address the first thing, you can simply replace the progress value with a command.</p>
+<p><code>dunstify &quot;Progress: &quot; -h int:value:&quot;`ponymix get-volume`&quot;</code></p>
+<p>You can replace ponymix with any volume command that outputs a single value.</p>
+<h3 id="replacing-notifications">Replacing notifications</h3>
+<p>Replacing notifications is also very easy. Think of a name for you group of notifications,
+like &ldquo;audio&rdquo;, and use the following command</p>
+<p><code>dunstify -h string:x-canonical-private-synchronous:audio &quot;Volume: &quot; -h int:value:&quot;`ponymix get-volume`&quot;</code></p>
+<p>This passes a string named <code>x-canonical-private-synchronous</code> with the value <code>audio</code>
+to dunst. You can name the string <code>x-dunst-stack-tag</code> as well if you find it easier.</p>
+<h3 id="configuring-the-progress-bar">Configuring the progress bar</h3>
+<p>After making such nice use of the progress bar, you might want to change how it looks.
+The settings you want to look at are <code>highlight</code>, <code>progress_bar</code>, <code>progress_bar_height</code>
+, <code>progress_bar_min_width</code>, <code>progress_bar_max_width</code> and <code>progress_bar_frame_width</code>.
+Most of these settings are self-explanatory, but I&rsquo;ll explain a few of them.</p>
+<p>The <code>highlight</code> setting changes the colour of the progress bar (and in the future maybe
+other similar things). It can be specified per urgency or per notification, not in the
+[global] section.</p>
+<p>The <code>progress_bar</code> setting determines if a progress bar is drawn. Make sure it&rsquo;s set to
+true if you want to use it (this is the default).</p>
+<p>If you&rsquo;ve configured it, it might look something like this</p>
+<p><img src="https://user-images.githubusercontent.com/23078054/102542111-98b01e00-40b1-11eb-967e-bc952430bd06.png" alt="notification with progress bars"></p>
+<p><em>A progress bar is drawn for every urgency</em></p>
+<p>If you like it, the config for this can be found <a href="https://gitlab.manjaro.org/profiles-and-settings/manjaro-theme-settings/-/blob/master/skel/.config/dunst/dunstrc">here</a>.</p>
+<h3 id="conclusion">Conclusion</h3>
+<p>The above command is very useful, and you could change your window manager config to run
+this command every time you hit a hotkey to change your volume. A similar thing could be
+done for brightness changes.</p>
+<p>You might run into some trouble, however when the change in
+volume or brightness is not yet available to the brightness command. To look at a completely
+working example you could use, look at the <a href="https://github.com/dunst-project/dunst/blob/master/contrib/progress-notify.sh">progress-notify.sh</a> script from the contrib directory.</p>
+<h2 id="using-notification-actions">Using notification actions</h2>
+<p>Dunst has support for notification actions, which allow you to immediately react upon receiving a notification without first opening the app. You can for example mark a message as read, or click to view the rest of the email. After a notification is closed, however, the action is also invalidated. In other words, you can&rsquo;t activate the action of a notifications that is pulled from your history.</p>
+<h3 id="sending-notifications-with-an-action">Sending notifications with an action</h3>
+<p>You can send a notification with an action using dunstify:
+<code>dunstify -A yes,ACCEPT -A no,DECLINE &quot;Call waiting&quot;</code></p>
+<p>The first word after <code>-A</code> is the name of the action and the string after the comma is the description.</p>
+<h3 id="activating-an-action">Activating an action</h3>
+<p>There are a two ways you can activate an action:</p>
+<h4 id="open-the-context-menu-and-choose-the-action">Open the context menu and choose the action</h4>
+<p>To open the context menu, first add the following to your dunstrc:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ini" data-lang="ini"><span style="display:flex;"><span><span style="color:#66d9ef">[global]</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">mouse_middle_click</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">context,close_current #close_current is optional</span>
+</span></span></code></pre></div><p>After saving that and restarting dunst you can activate the action by middle clicking on it. This will open dmenu (or the dmenu alternative you&rsquo;ve configured in your dunstrc) with the different actions you can activate. If you&rsquo;ve used the dunstify command from above, you&rsquo;ll see the action you&rsquo;ve chosen printed in stdout.</p>
+<h4 id="activate-it-directly">Activate it directly</h4>
+<p>Add the following to your dunstrc:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ini" data-lang="ini"><span style="display:flex;"><span><span style="color:#66d9ef">[global]</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">mouse_middle_click</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">do_action,close_current #close_current is optional</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">[all_notifications] # A rule that matches all notifications</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">action_name</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;no&#34; # Optional, to activate the action &#34;no&#34; automatically</span>
+</span></span></code></pre></div><p>If you now middle click on a notification the action is activated directly, if available. Otherwise a context menu is opened as well.</p>
+
+            </div>
+        </div>
+    </div>
+
+<footer class="li-page-footer">
+    <div class="container">
+        <div class="row">
+            <div class="sixteen columns">
+            </div>
+        </div>
+    </div>
+</footer>
+
+    <script type="text/javascript">
+    
+    function toggle(id) {
+        var e = document.getElementById(id);
+        e.style.display == 'block' ? e.style.display = 'none' : e.style.display = 'block';
+    }
+    
+    </script>
+    
+  
+
+
+    </body>
+</html>
+

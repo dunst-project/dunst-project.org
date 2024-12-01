@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html xmlns="//www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+    <head>
+
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+
+        <title>Documentation &middot; Dunst</title>
+        <link rel='stylesheet' href='//fonts.googleapis.com/css?family=Open+Sans:400,300,600' type='text/css'>
+        <link rel="stylesheet" href="https://dunst-project.org//libraries/normalize.3.0.1.css" />
+        <link rel="stylesheet" href="https://dunst-project.org//css/liquorice.min.css" />
+        <link rel="stylesheet" href="https://dunst-project.org//font-awesome/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://dunst-project.org//css/global.css">
+        
+
+        <link rel="shortcut icon" href="/favicon.ico" />
+        <link rel="apple-touch-icon-precomposed" href="/apple-touch-icon-144-precomposed.png" sizes="144x144" />
+        <link rel="alternate" href="" type="application/rss+xml" title="Dunst" />
+
+    </head>
+    <body class="li-body">
+
+<header class="li-page-header">
+    <div class="container">
+        <div class="row">
+            <div class="sixteen columns">
+                <div class="li-brand li-left">
+                <a href="https://dunst-project.org/">Dunst</a></div>
+                <div class="li-menu li-right">
+                    <span class="li-menu-icon" onclick="javascript:toggle('menu');">&#9776;</span>
+                    <ul id="menu2" class="li-menu-items">
+                        
+                            <li><a href="/"> Home </a></li>
+                        
+                            <li><a href="/showcase/"> Showcase </a></li>
+                        
+                            <li><a href="/download/"> Download </a></li>
+                        
+                            <li><a href="/documentation/"> Documentation </a></li>
+                        
+                            <li><a href="/faq/"> FAQ </a></li>
+                        
+                            <li><a href="/changelog/"> Changelog </a></li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="sixteen columns">
+                <ul id="menu" class="li-menu-items li-menu-mobile">
+                    
+                        <li><a href="/"> Home </a></li>
+                    
+                        <li><a href="/showcase/"> Showcase </a></li>
+                    
+                        <li><a href="/download/"> Download </a></li>
+                    
+                        <li><a href="/documentation/"> Documentation </a></li>
+                    
+                        <li><a href="/faq/"> FAQ </a></li>
+                    
+                        <li><a href="/changelog/"> Changelog </a></li>
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+    <div class="container">
+        <div class="row">
+            <div class="sixteen columns">
+            <h1><b>Documentation</b></h1>
+                
+                    <nav id="TableOfContents"></nav>
+                
+                <?xml version="1.0" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>dunstctl - Command line control utility for dunst, a customizable and lightweight notification-daemon</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link rev="made" href="mailto:root@localhost" />
+</head>
+<body>
+<ul id="index">
+  <li><a href="#NAME">NAME</a></li>
+  <li><a href="#SYNOPSIS">SYNOPSIS</a></li>
+  <li><a href="#COMMANDS">COMMANDS</a></li>
+</ul>
+<h1 id="NAME">NAME</h1>
+<p>dunstctl - Command line control utility for dunst, a customizable and lightweight notification-daemon</p>
+<h1 id="SYNOPSIS">SYNOPSIS</h1>
+<p>dunstctl COMMAND [PARAMETER]</p>
+<h1 id="COMMANDS">COMMANDS</h1>
+<dl>
+<dt id="action-notification_position"><b>action</b> notification_position</dt>
+<dd>
+<p>Performs the default action or, if not available, opens the context menu of the notification at the given position (starting count at the top, first notification being 0).</p>
+</dd>
+<dt id="close-ID"><b>close</b> [ID]</dt>
+<dd>
+<p>Close the topmost notification currently being displayed. You can optionally pass an ID to close the matching notification (if present).</p>
+</dd>
+<dt id="close-all"><b>close-all</b></dt>
+<dd>
+<p>Close all notifications currently being displayed.</p>
+</dd>
+<dt id="context"><b>context</b></dt>
+<dd>
+<p>Open the context menu, presenting all available actions and urls for the currently open notifications.</p>
+</dd>
+<dt id="count-displayed-history-waiting"><b>count</b> [displayed/history/waiting]</dt>
+<dd>
+<p>Returns the number of displayed, shown and waiting notifications. If no argument is provided, everything will be printed.</p>
+</dd>
+<dt id="history"><b>history</b></dt>
+<dd>
+<p>Exports the history as JSON.</p>
+</dd>
+<dt id="history-clear"><b>history-clear</b></dt>
+<dd>
+<p>Deletes all notifications from the history.</p>
+</dd>
+<dt id="history-pop-ID"><b>history-pop</b> [ID]</dt>
+<dd>
+<p>Redisplay the notification that was most recently closed. This can be called multiple times to show older notifications, up to the history limit configured in dunst. You can optionally pass an ID to history-pop, in which case the notification with the given ID will be shown.</p>
+</dd>
+<dt id="history-rm-ID"><b>history-rm</b> ID</dt>
+<dd>
+<p>Removes the notification with the given ID from the history.</p>
+</dd>
+<dt id="is-paused"><b>is-paused</b></dt>
+<dd>
+<p>Check if dunst is currently running or paused. If dunst is paused notifications will be kept but not shown until it is unpaused.</p>
+</dd>
+<dt id="set-paused-true-false-toggle"><b>set-paused</b> true/false/toggle</dt>
+<dd>
+<p>Set the paused status of dunst. If false, dunst is running normally, if true, dunst is paused (with maximum pause level of 100). See the is-paused command and the dunst man page for more information.</p>
+</dd>
+<dt id="get-pause-level"><b>get-pause-level</b></dt>
+<dd>
+<p>Get current dunst&#39;s pause level, where 0 is not paused and 100 is maximally paused.</p>
+<p>This can be combined with notification&#39;s override_pause_level to selectively display specific notifications while paused.</p>
+</dd>
+<dt id="set-pause-level-level"><b>set-pause-level</b> [level]</dt>
+<dd>
+<p>Set the pause level, where 0 is not paused and 100 is maximally paused.</p>
+<p>This can be combined with notification&#39;s override_pause_level to selectively display specific notifications while paused.</p>
+</dd>
+<dt id="rule-rule_name-enable-disable-toggle"><b>rule</b> rule_name enable/disable/toggle</dt>
+<dd>
+<p>Enables, disables or toggles the rule identified by its name. This can be used to temporarily activate or deactivate specific rules.</p>
+</dd>
+<dt id="rules---json"><b>rules</b> [--json]</dt>
+<dd>
+<p>Exports all currently configured rules (optionally JSON formatted).</p>
+</dd>
+<dt id="reload-dunstrc"><b>reload</b> [dunstrc ...]</dt>
+<dd>
+<p>Reload the settings of the running dunst instance. You can optionally specify which configuration files to use. Otherwise, the config specified by the first invocation of dunst will be reloaded. When dunst is reloaded all the rules are reapplied to the original notification, so modifications made by previous rules are not taken into account.</p>
+</dd>
+<dt id="debug"><b>debug</b></dt>
+<dd>
+<p>Tries to contact dunst and checks for common faults between dunstctl and dunst. Useful if something isn&#39;t working.</p>
+</dd>
+<dt id="help"><b>help</b></dt>
+<dd>
+<p>Show all available commands with a brief description.</p>
+</dd>
+</dl>
+</body>
+</html>
+
+            </div>
+        </div>
+    </div>
+
+<footer class="li-page-footer">
+    <div class="container">
+        <div class="row">
+            <div class="sixteen columns">
+            </div>
+        </div>
+    </div>
+</footer>
+
+    <script type="text/javascript">
+    
+    function toggle(id) {
+        var e = document.getElementById(id);
+        e.style.display == 'block' ? e.style.display = 'none' : e.style.display = 'block';
+    }
+    
+    </script>
+    
+  
+
+
+    </body>
+</html>
+
