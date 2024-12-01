@@ -6,7 +6,6 @@
     <description>Recent content in Home on Dunst</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 31 Oct 2024 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://dunst-project.org/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Showcase</title>
@@ -21,20 +20,6 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://dunst-project.org/download/</guid>
       <description>The current stable version of Dunst is 1.12.0 released on November 30 2024.&#xA;Source tarball Code repository (Github) Release Notes For v1.12.0 There have been many important contributions in the last few months. Some notable changes are: adding hot-reload for the configuration, exporting rules via dunstctl, adding color gradients, removing default hard-coded icons. For detailed information consult the changelog.&#xA;Important notice for all users:&#xA;The behaviour of the setting height has been changed in a breaking way.</description>
-    </item>
-    <item>
-      <title>Documentation</title>
-      <link>https://dunst-project.org/documentation/dependencies/</link>
-      <pubDate>Thu, 31 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>https://dunst-project.org/documentation/dependencies/</guid>
-      <description>Dunst requires these libraries to compile.&#xA;gio-2.0 gdk-pixbuf-2.0 glib-2.0 pangocairo libnotify (optional, for dunstify) wayland-client (optional, for wayland) wayland-cursor (optional, for wayland) x11 (optional, for xorg) xinerama (optional, for xorg) xext (optional, for xorg) xrandr (optional, for xorg) xscrnsaver (optional, for xorg) Additionally, gdk-pixbuf has librsvg as an optional runtime dependency (for loading svg files).&#xA;NOTE: dunstctl uses the busctl for displaying rules and history. This command is usually provided by systemd.</description>
-    </item>
-    <item>
-      <title>Documentation</title>
-      <link>https://dunst-project.org/documentation/guides/</link>
-      <pubDate>Mon, 29 May 2023 00:00:00 +0000</pubDate>
-      <guid>https://dunst-project.org/documentation/guides/</guid>
-      <description>Guides Understanding rules Dunst offers some very powerful configuration options in the form of rules. With rules you can change the appearance of notifications, hide some notifications that you don&amp;rsquo;t find useful, change their timeout and much more.&#xA;Example 1: basic rule There are two kinds of rules: filtering rules and modifying rules. These are used for matching a notification and subsequently changing some of it&amp;rsquo;s properties. When no filtering rules are used, all notifications are matched.</description>
     </item>
     <item>
       <title>Documentation</title>
