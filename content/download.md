@@ -43,5 +43,5 @@ from NxN to (N,N). The old syntax is supported nevertheless.
 If you are a maintainer it would be helpful to include the message above when
 an user updates from an older version of dunst.
 
-Take a look at the [changelog]({{< ref "/changelog" >}} "Changelog") for all the bug fixes and improvements.
+Take a look at the [changelog]({{< ref "/changelog#v1.12.0" >}} "Changelog") for all the bug fixes and improvements.
 
