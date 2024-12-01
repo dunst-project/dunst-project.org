@@ -41,32 +41,41 @@ sleep 1
 $EDITOR content/download.md
 
 # CHANGELOG
-cat << EOF > content/changelog.md
-+++
-weight = 5
-title = "Changelog"
-menu = "main"
-type = "page"
-+++
-
-EOF
+cp "helper_files/changelog_header.md" "content/changelog.md"
 tail -n +2 "$REPO/CHANGELOG.md" >> "content/changelog.md"
-sed -i 's/## \([0-9]\+\.[0-9]\+\.[0-9]\+\).*/\0  <div class="releaseref"><i class="fa fa-sticky-note"><\/i> [Release Notes]({{< ref "\/release#v\1" >}})<\/div> {#v\1}/' "content/changelog.md"
+sed -i 's/## \([0-9]\+\.[0-9]\+\.[0-9]\+\).*/\0  <div class="flabel"><i class="fa fa-sticky-note"><\/i> [Release Notes]({{< ref "\/release#v\1" >}})<\/div> {#v\1}/' "content/changelog.md"
 sed -i 's/#\([0-9]\+\)/[#\1](https:\/\/github.com\/dunst-project\/dunst\/issues\/\1)/g' "content/changelog.md"
 
 # RELEASE
-cat << EOF > content/release.md
-+++
-weight = 5
-title = "Release Notes"
-type = "page"
-+++
-
-EOF
+cp "helper_files/release_header.md" "content/release.md"
 cat "$REPO/RELEASE_NOTES" >> "content/release.md"
-sed -i ':a;N;$!ba;s/====*\nRelease Notes For \(v[0-9]\+\.[0-9]\+\.[0-9]\+\)\n====*/## Dunst \1 <div class="releaseref"><i class="fa fa-sticky-note"><\/i> [Changelog]({{< ref "\/changelog#\1" >}})<\/div> {#\1}\n***\n/g' "content/release.md"
-
-#sed -i ':a;N;$!ba;s/====*\nRelease Notes For \(v[0-9]\+\.[0-9]\+\.[0-9]\+\)\n====*/# Dunst \1 <i class="fa fa-sticky-note"><\/i>{#\1}/g' "content/release.md"
+sed -i ':a;N;$!ba;s/====*\nRelease Notes For \(v[0-9]\+\.[0-9]\+\.[0-9]\+\)\n====*/## Dunst \1 <div class="flabel"><i class="fa fa-list-ul"><\/i> [Changelog]({{< ref "\/changelog#\1" >}})<\/div> {#\1}\n***\n/g' "content/release.md"
 
 # DOCUMENTATION
-pod2html < "$REPO/docs/dunst.5.pod" | cat  "helper_files/documentation_header.md" - > "content/documentation.md"
+from="docs/dunst.5.pod"
+dest="content/documentation/_index.md"
+cp "helper_files/documentation_header.md" "$dest"
+sed -i 's/TITLE/dunst(5)/' "$dest"
+date="$(git -C "$REPO" log -1 --pretty='format:%as' "$from")"
+sed -i "s/DATE/$date/" "$dest"
+pod2html < "$REPO/$from" >> "$dest"
+
+
+from="docs/dunst.1.pod"
+dest="content/documentation/dunst.md"
+cp "helper_files/documentation_header.md" "$dest"
+sed -i 's/menu = "main"//' "$dest"
+sed -i 's/TITLE/dunst(1)/' "$dest"
+date="$(git -C "$REPO" log -1 --pretty='format:%as' "$from")"
+sed -i "s/DATE/$date/" "$dest"
+pod2html < "$REPO/$from" >> "$dest"
+
+
+from="docs/dunstctl.pod"
+dest="content/documentation/dunstctl.md"
+cp "helper_files/documentation_header.md" "$dest"
+sed -i 's/menu = "main"//' "$dest"
+sed -i 's/TITLE/dunst(1)/' "$dest"
+date="$(git -C "$REPO" log -1 --pretty='format:%as' "$from")"
+sed -i "s/DATE/$date/" "$dest"
+pod2html < "$REPO/$from" >> "$dest"

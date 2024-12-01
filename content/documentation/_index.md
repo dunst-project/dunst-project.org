@@ -1,10 +1,18 @@
 +++
 weight = 3
 title = "Documentation"
-menu = "main"
 type = "page"
 toc = "true"
+menu = "main"
 +++
+
+[`dunst(5)`]({{< ref "/documentation" >}} "Dunstrc documentation")
+[`dunst(1)`]({{< ref "/documentation/dunst" >}} "Dunst documentation")
+[`dunstctl(1)`]({{< ref "/documentation/dunstctl" >}} "Dunstctl documentation")
+
+***
+
+# **dunst(5)** <div class="flabel">**2024-11-30**</div>
 
 <?xml version="1.0" ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
