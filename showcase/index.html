@@ -5,7 +5,7 @@
         <meta http-equiv="content-type" content="text/html; charset=utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
 
-        <title>Download &middot; Dunst</title>
+        <title>Showcase &middot; Dunst</title>
         <link rel='stylesheet' href='//fonts.googleapis.com/css?family=Open+Sans:400,300,600' type='text/css'>
         <link rel="stylesheet" href="https://dunst-project.org//libraries/normalize.3.0.1.css" />
         <link rel="stylesheet" href="https://dunst-project.org//css/liquorice.min.css" />
@@ -72,35 +72,21 @@
     <div class="container">
         <div class="row">
             <div class="sixteen columns">
-            <h1><b>Download</b></h1>
+            <h1><b>Showcase</b></h1>
                 
-                <p>The current stable version of Dunst is <strong>1.12.0</strong> released on <strong>November 30 2024</strong>.</p>
-<ul>
-<li><a href="https://github.com/dunst-project/dunst/archive/v1.12.0.tar.gz">Source tarball</a></li>
-<li><a href="https://github.com/dunst-project/dunst">Code repository (Github)</a></li>
-</ul>
-<h1 id="release-notes-for-v1120">Release Notes For v1.12.0</h1>
+                <p>We are searching for new screenshots to showcase Dunst&rsquo;s features.
+It would be great if they used new features, such as color gradients
+(<code>highlight</code> can receive a list of colors) or custom rounded corners (<code>corners</code>, <code>progress_bar_corners</code> and <code>icon_corners</code>).</p>
+<p>To learn more and share your riced configuration see <a href="https://github.com/dunst-project/dunst/issues/826">#826</a>.</p>
 <hr>
-<p>There have been many important contributions in the last few months.
-Some notable changes are: adding hot-reload for the configuration, exporting
-rules via dunstctl, adding color gradients, removing default hard-coded icons.
-For detailed information consult the changelog.</p>
-<p>Important notice for all users:</p>
-<p>The behaviour of the setting <code>height</code> has been changed in a breaking way.
-Before you could specify a single value that would be used as the max height
-of a notification. In this release the dynamic height was implemented to make
-this settings behave more similarly to <code>width</code>.
-Now the values accepted are either a single number (for a <em>fixed height</em>) or
-a tuple of numbers (for a min/max range).</p>
-<p>The way of specifying a maximum height before was:</p>
-<pre tabindex="0"><code>    height = 300
-</code></pre><p>The equivalent way now is:</p>
-<pre tabindex="0"><code>    height = (0, 300)
-</code></pre><p>Furthermore the preferred syntax for the <code>offset</code> settings has been changed
-from NxN to (N,N). The old syntax is supported nevertheless.</p>
-<p>If you are a maintainer it would be helpful to include the message above when
-an user updates from an older version of dunst.</p>
-<p>Take a look at the <a href="https://dunst-project.org/changelog/#v1.12.0" title="Changelog">changelog</a> for all the bug fixes and improvements.</p>
+<style>
+.row img {
+    max-width: 100%;
+    height: auto;
+}
+</style>
+<p><a href="/static/image.png"><img src="/static/image.png" alt="alt text"></a></p>
+<p>Updated config file <a href="/static/dunstrc1">here</a></p>
 
             </div>
         </div>
