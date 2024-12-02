@@ -8,13 +8,14 @@ strong.fmiddle {
 
 span.fa-icons {
     float:left;
-    font-size:50px;
+    font-size: 3em;
     text-align: center;
     margin: 10px;
 }
 
 div.fcontainer {
     display: inline-block;
+    width: 100%;
 }
 
 hr.features {
@@ -23,4 +24,8 @@ hr.features {
     /* Set the hr color */
     color: #333; /* old IE */
     background-color: #333; /* Modern browsers */
+}
+
+.fcontainer > p {
+  margin-bottom: 0;
 }

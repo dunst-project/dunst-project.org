@@ -2,6 +2,7 @@
   display: flex;
   justify-content: space-between;
   width: 100%;
+  margin-bottom: 10px;
 }
 
 .fparent > * {
@@ -43,6 +44,7 @@ span.fchild {
   }
   .fparent {
     flex-direction: column;
+    margin-bottom: 0;
   }
 }
 

@@ -181,9 +181,9 @@ rules: filtering rules and modifying rules. These are used for matching a
 notification and subsequently changing some of it&rsquo;s properties. When no
 filtering rules are used, all notifications are matched. So let&rsquo;s look at an
 example.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ini" data-lang="ini"><span style="display:flex;"><span><span style="font-weight:bold">[change-format]</span>
-</span></span><span style="display:flex;"><span>        appname = <span style="font-style:italic">dunstify
-</span></span></span><span style="display:flex;"><span><span style="font-style:italic">        format = &#34;&lt;b&gt;%s&lt;/b&gt;\n&lt;i&gt;%b&lt;/i&gt;&#34;</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ini" data-lang="ini"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">[change-format]</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#008080">appname</span> <span style="color:#000;font-weight:bold">=</span> <span style="color:#d14">dunstify
+</span></span></span><span style="display:flex;"><span><span style="color:#d14">        format = &#34;&lt;b&gt;%s&lt;/b&gt;\n&lt;i&gt;%b&lt;/i&gt;&#34;</span>
 </span></span></code></pre></div><p>The rules are place in a section with a custom name. This can be any name, but
 it should be descriptive of what you want to do. The <code>appname</code> is a filtering
 rule to match only notifications sent by <code>dunstify</code>. <code>format</code> is a modifying
@@ -194,8 +194,8 @@ format. You can test it out by sending a notification: <code>dunstify &quot;Summ
 <p>You don&rsquo;t have to add filters to your rules. If you don&rsquo;t add any filters, all
 notifications will be matched. This is useful if you want to apply a setting to
 all notifications. Below is an example.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ini" data-lang="ini"><span style="display:flex;"><span><span style="font-weight:bold">[fullscreen]</span>
-</span></span><span style="display:flex;"><span>        fullscreen = <span style="font-style:italic">show</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ini" data-lang="ini"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">[fullscreen]</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#008080">fullscreen</span> <span style="color:#000;font-weight:bold">=</span> <span style="color:#d14">show</span>
 </span></span></code></pre></div><p>Now notifications will be shown over fullscreen applications. (Note that on
 Wayland the notification layer has to be overlay for this to work. This is set
 by default).</p>
@@ -204,30 +204,30 @@ by default).</p>
 changed, it may affect if it&rsquo;s being matched by a later rule. Let&rsquo;s look at
 another example. This time we&rsquo;ll try to change a notification&rsquo;s urgency and make
 sure it gets a different appearance based on that.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ini" data-lang="ini"><span style="display:flex;"><span><span style="font-style:italic"># Bad example</span>
-</span></span><span style="display:flex;"><span><span style="font-weight:bold">[change-appearance]</span>
-</span></span><span style="display:flex;"><span>        match_urgency = <span style="font-style:italic">critical
-</span></span></span><span style="display:flex;"><span><span style="font-style:italic">        background = &#34;#D62929&#34;
-</span></span></span><span style="display:flex;"><span><span style="font-style:italic">        foreground = &#34;#F9FAF9&#34;</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ini" data-lang="ini"><span style="display:flex;"><span><span style="color:#998;font-style:italic"># Bad example</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">[change-appearance]</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#008080">match_urgency</span> <span style="color:#000;font-weight:bold">=</span> <span style="color:#d14">critical
+</span></span></span><span style="display:flex;"><span><span style="color:#d14">        background = &#34;#D62929&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#d14">        foreground = &#34;#F9FAF9&#34;</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="font-weight:bold">[change-urgency]</span>
-</span></span><span style="display:flex;"><span>        appname = <span style="font-style:italic">dunstify
-</span></span></span><span style="display:flex;"><span><span style="font-style:italic">        urgency = critical</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">[change-urgency]</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#008080">appname</span> <span style="color:#000;font-weight:bold">=</span> <span style="color:#d14">dunstify
+</span></span></span><span style="display:flex;"><span><span style="color:#d14">        urgency = critical</span>
 </span></span></code></pre></div><p>In the above example, all critical notification will get a different appearance
 based on their urgency. You might think that the rule that changes the urgency
 will make sure the notification&rsquo;s appearance changes as well. But rule order
 matter. First the notification&rsquo;s appearance is changed based on it&rsquo;s urgency and
 only after that the urgency is changed. Thus the notification&rsquo;s appearance is
 unchanged.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ini" data-lang="ini"><span style="display:flex;"><span><span style="font-style:italic"># Good example</span>
-</span></span><span style="display:flex;"><span><span style="font-weight:bold">[change-urgency]</span>
-</span></span><span style="display:flex;"><span>        appname = <span style="font-style:italic">dunstify
-</span></span></span><span style="display:flex;"><span><span style="font-style:italic">        urgency = critical</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ini" data-lang="ini"><span style="display:flex;"><span><span style="color:#998;font-style:italic"># Good example</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">[change-urgency]</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#008080">appname</span> <span style="color:#000;font-weight:bold">=</span> <span style="color:#d14">dunstify
+</span></span></span><span style="display:flex;"><span><span style="color:#d14">        urgency = critical</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="font-weight:bold">[change-appearance]</span>
-</span></span><span style="display:flex;"><span>        match_urgency = <span style="font-style:italic">critical
-</span></span></span><span style="display:flex;"><span><span style="font-style:italic">        background = &#34;#D62929&#34;
-</span></span></span><span style="display:flex;"><span><span style="font-style:italic">        foreground = &#34;#F9FAF9&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">[change-appearance]</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#008080">match_urgency</span> <span style="color:#000;font-weight:bold">=</span> <span style="color:#d14">critical
+</span></span></span><span style="display:flex;"><span><span style="color:#d14">        background = &#34;#D62929&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#d14">        foreground = &#34;#F9FAF9&#34;</span>
 </span></span></code></pre></div><p>The above example is the right way to do this. First change the urgency and then
 change the appearance based on the urgency. Again, you can try this out by
 placing it in you dunstrc.</p>
@@ -309,16 +309,17 @@ working example you could use, look at the <a href="https://github.com/dunst-pro
 <p>There are a two ways you can activate an action:</p>
 <h4 id="open-the-context-menu-and-choose-the-action">Open the context menu and choose the action</h4>
 <p>To open the context menu, first add the following to your dunstrc:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ini" data-lang="ini"><span style="display:flex;"><span><span style="font-weight:bold">[global]</span>
-</span></span><span style="display:flex;"><span>    mouse_middle_click = <span style="font-style:italic">context,close_current #close_current is optional</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ini" data-lang="ini"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">[global]</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#008080">mouse_middle_click</span> <span style="color:#000;font-weight:bold">=</span> <span style="color:#d14">context,close_current #close_current is optional</span>
 </span></span></code></pre></div><p>After saving that and restarting dunst you can activate the action by middle clicking on it. This will open dmenu (or the dmenu alternative you&rsquo;ve configured in your dunstrc) with the different actions you can activate. If you&rsquo;ve used the dunstify command from above, you&rsquo;ll see the action you&rsquo;ve chosen printed in stdout.</p>
 <h4 id="activate-it-directly">Activate it directly</h4>
 <p>Add the following to your dunstrc:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ini" data-lang="ini"><span style="display:flex;"><span><span style="font-weight:bold">[global]</span>
-</span></span><span style="display:flex;"><span>    mouse_middle_click = <span style="font-style:italic">do_action,close_current #close_current is optional</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ini" data-lang="ini"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">[global]</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#008080">mouse_middle_click</span> <span style="color:#000;font-weight:bold">=</span> <span style="color:#d14">do_action,close_current #close_current is optional</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>[all_notifications] # A rule that matches all notifications
-</span></span><span style="display:flex;"><span>    action_name = <span style="font-style:italic">&#34;no&#34; # Optional, to activate the action &#34;no&#34; automatically</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">[all_notifications]</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#998;font-style:italic"># This rule that matches all notifications</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#008080">action_name</span> <span style="color:#000;font-weight:bold">=</span> <span style="color:#d14">&#34;no&#34; # Optional, to activate the action &#34;no&#34; automatically</span>
 </span></span></code></pre></div><p>If you now middle click on a notification the action is activated directly, if available. Otherwise a context menu is opened as well.</p>
 
             </div>
