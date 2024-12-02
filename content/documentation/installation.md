@@ -41,7 +41,7 @@ PREFIX=/usr checkinstall # Prefix is necessary to systemctl service installation
 sudo dpkg -i dunst_*_amd64.deb # Install generated .deb
 ```
 
-### Optional `dunstify` binary
+### Optional dunstify binary
 
 Dunstify is enabled by default. To build without dunstify set `DUNSTIFY` to `0`.
 
