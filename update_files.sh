@@ -32,7 +32,7 @@ sed -i 's/TITLE/"dunst(5)"/' "$dest"
 date="$(git -C "$REPO" log -1 --pretty='format:%as' "$from")"
 sed -i "s/DATE/\\\"$date\\\"/" "$dest"
 sed -i "s/DESC/\\\"$title manual page\\\"/" "$dest"
-sed -i 's/WIKI/false\nmenu = "main"/' "$dest"
+sed -i 's/WIKI/false\nmenu = "main"\nweight = 3/' "$dest"
 pod2html < "$REPO/$from" >> "$dest"
 
 
@@ -61,9 +61,7 @@ pod2html < "$REPO/$from" >> "$dest"
 
 
 # WIKI
-
-git submodule init
-git submodule update
+git submodule update --init --remote dunst.wiki
 echo "You should check if the wiki pages have not been tampered with before deploying!"
 
 from="Dependencies.md"
@@ -74,7 +72,19 @@ sed -i 's/TITLE/"Dependencies"/' "$dest"
 date="$(git -C "$WIKIREPO" log -1 --pretty='format:%as' "$from")"
 sed -i "s/DATE/\\\"$date\\\"/" "$dest"
 sed -i "s/DESC/\\\"$title wiki page\\\"/" "$dest"
-sed -i 's/WIKI/true/' "$dest"
+sed -i 's/WIKI/true\nweight = 1/' "$dest"
+cat "$WIKIREPO/$from" >> "$dest"
+
+
+from="Installation.md"
+dest="content/documentation/installation.md"
+title="Installation"
+cp "helper_files/documentation_header.md" "$dest"
+sed -i 's/TITLE/"Installation"/' "$dest"
+date="$(git -C "$WIKIREPO" log -1 --pretty='format:%as' "$from")"
+sed -i "s/DATE/\\\"$date\\\"/" "$dest"
+sed -i "s/DESC/\\\"$title wiki page\\\"/" "$dest"
+sed -i 's/WIKI/true\nweight = 2/' "$dest"
 cat "$WIKIREPO/$from" >> "$dest"
 
 
@@ -86,5 +96,5 @@ sed -i "s/TITLE/\\\"$title\\\"/" "$dest"
 date="$(git -C "$WIKIREPO" log -1 --pretty='format:%as' "$from")"
 sed -i "s/DATE/\\\"$date\\\"/" "$dest"
 sed -i "s/DESC/\\\"$title wiki page\\\"/" "$dest"
-sed -i 's/WIKI/true/' "$dest"
+sed -i 's/WIKI/true\nweight = 3/' "$dest"
 cat "$WIKIREPO/$from" >> "$dest"

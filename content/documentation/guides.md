@@ -1,15 +1,13 @@
 +++
-weight = 3
 title = "Documentation"
 type = "documentation"
 toc = "true"
 subtitle = "Guides"
-lastdate = "2023-05-29"
+lastdate = "2024-12-02"
 descript = "Guides wiki page"
 wiki = true
+weight = 3
 +++
-# Guides
-
 ## Understanding rules
 
 Dunst offers some very powerful configuration options in the form of rules. With

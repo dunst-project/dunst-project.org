@@ -6,30 +6,39 @@
             <div class="sixteen columns">
             <h1><b>{{ .Title }}</b></h1>
 
-            <div class="container">
-              <div class="row">
-                <div class="column">
+            {{ $pages := where .Site.Pages.ByWeight "Section" "documentation" }}
+
+            <div class="fparent">
+              <div class="fbox1">
+                <span class="fchild">
+                  <i class="fa fa-file-text" aria-hidden="true"></i>
                   Manual
+                </span>
 
-                  {{ $pages := where .Site.Pages "Section" "documentation" }}
-                    {{ range $pages }}
-                    {{ if eq .Params.wiki false }}
-                      <a href="{{ .RelPermalink }}" title="{{ .Params.descript }}"><code>{{ .Params.subtitle }}</code></a>
-                    {{ end }}
+                {{ range $pages }}
+                  {{ if eq .Params.wiki false }}
+                    <a class="fchild" href="{{ .RelPermalink }}" title="{{ .Params.descript }}"><code>{{ .Params.subtitle }}</code></a>
                   {{ end }}
-                </div>
+                {{ end }}
+              </div>
 
-                <div class="column">
+              <div class="fbox2">
+                <span class="fchild">
+                  <i class="fa fa-github" aria-hidden="true"></i>
                   Wiki
-                  {{ $pages := where .Site.Pages "Section" "documentation" }}
-                    {{ range $pages }}
-                    {{ if eq .Params.wiki true }}
-                      <a href="{{ .RelPermalink }}" title="{{ .Params.desc }}"><code>{{ .Params.subtitle }}</code></a>
-                    {{ end }}
+                </span>
+
+                {{ range $pages }}
+                  {{ if eq .Params.wiki true }}
+                    <a class="fchild" href="{{ .RelPermalink }}" title="{{ .Params.desc }}"><code>{{ .Params.subtitle }}</code></a>
                   {{ end }}
-                </div>
+                {{ end }}
+
+                <a href="https://github.com/dunst-project/dunst/wiki" title="Visit Dunst's wiki on Github"><code><i class="fa fa-external-link-square" aria-hidden="true"></i>
+Visit Github wiki</code></a>
 
               </div>
+
             </div>
 
             <hr>

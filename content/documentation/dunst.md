@@ -1,5 +1,4 @@
 +++
-weight = 3
 title = "Documentation"
 type = "documentation"
 toc = "true"

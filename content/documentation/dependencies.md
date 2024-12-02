@@ -1,31 +1,31 @@
 +++
-weight = 3
 title = "Documentation"
 type = "documentation"
 toc = "true"
 subtitle = "Dependencies"
-lastdate = "2024-10-31"
+lastdate = "2024-12-02"
 descript = "Dependencies wiki page"
 wiki = true
+weight = 1
 +++
 Dunst requires these libraries to compile.
 
-* gio-2.0
-* gdk-pixbuf-2.0
-* glib-2.0
-* pangocairo
-* libnotify (optional, for dunstify)
-* wayland-client (optional, for wayland)
-* wayland-cursor (optional, for wayland)
-* x11 (optional, for xorg)
-* xinerama (optional, for xorg)
-* xext (optional, for xorg)
-* xrandr (optional, for xorg)
-* xscrnsaver (optional, for xorg)
+* [`gdk-pixbuf-2.0`](https://repology.org/project/gdk-pixbuf/versions)
+* [`glib-2.0`](https://repology.org/project/glib/versions)
+* `gio-2.0`
+* `pangocairo` (provided by [pango](https://repology.org/project/pango/versions) + [cairo](https://repology.org/project/cairo-graphics-library/versions))
+* [`libnotify`](https://repology.org/project/libnotify/versions) (optional, for *dunstify*)
+* [`wayland-client`](https://repology.org/project/wayland/versions) (optional, for *wayland*)
+* `wayland-cursor` (optional, for *wayland*)
+* [`x11`](https://repology.org/project/xorg-server/versions) (optional, for *xorg*)
+* [`xinerama`](https://repology.org/project/libxinerama/versions) (optional, for *xorg*)
+* [`xext`](https://repology.org/project/libxext/versions) (optional, for *xorg*)
+* [`xrandr`](https://repology.org/project/libxrandr/versions) (optional, for *xorg*)
+* [`xscrnsaver`](https://repology.org/project/libxscrnsaver/versions) (optional, for *xorg*)
 
-Additionally, gdk-pixbuf has *librsvg* as an *optional runtime dependency* (for loading svg files).
+Additionally, `gdk-pixbuf` has `librsvg` as an **optional runtime dependency** (for loading svg files).
 
-NOTE: dunstctl uses the *busctl* for displaying rules and history. This command is usually provided by systemd.
+NOTE: dunstctl uses `busctl` for displaying rules and history. This command is *usually* provided by systemd.
 In systems without systemd this can be installed with [elogind](https://github.com/elogind/elogind) or [basu](https://sr.ht/~emersion/basu/).
 
 ## Arch
@@ -34,33 +34,15 @@ Available from the AUR as [dunst-git](https://aur.archlinux.org/packages/dunst-g
 
 ## Debian and Ubuntu
 
-in general, on Debian and Debian-based distros you'll need also the *-dev packages.
+In general, on Debian and Debian-based distros (and many other binary based distros) you'll need also the `*-dev` packages.
 
-```
-libdbus-1-dev libx11-dev libxinerama-dev libxrandr-dev libxss-dev libglib2.0-dev libpango1.0-dev libgtk-3-dev libxdg-basedir-dev libgdk-pixbuf-2.0-dev librsvg-2.0
+```sh
+apt install libdbus-1-dev libx11-dev libxinerama-dev libxrandr-dev libxss-dev libglib2.0-dev \
+    libpango1.0-dev libgtk-3-dev libxdg-basedir-dev libgdk-pixbuf-2.0-dev librsvg-2.0
 ```
 
-#### Optional dunstify dependency
-```
+### Optional dunstify dependency
+
+```sh
 apt install libnotify-dev
-```
-
-
-## Outdated sections
-
-**May be no longer relevant!**
-
-### Fedora
-
-```
-dbus-devel libX11-devel libXrandr-devel glib2-devel pango-devel gtk3-devel libxdg-basedir-devel libXScrnSaver-devel libnotify-devel
-```
-
-### Solus
-
-**Out of date, updates needed:**
-Gtk2 was dropped in favour of gtk3
-
-```
-libcairo glibc libx11 libxinerama libxdg-basedir pango glib2 libxscrnsaver libxrandr-devel
 ```

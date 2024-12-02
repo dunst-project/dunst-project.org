@@ -1,5 +1,4 @@
 +++
-weight = 3
 title = "Documentation"
 type = "documentation"
 toc = "true"
@@ -8,6 +7,7 @@ lastdate = "2024-11-30"
 descript = "Dustrc manual page"
 wiki = false
 menu = "main"
+weight = 3
 +++
 <?xml version="1.0" ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
