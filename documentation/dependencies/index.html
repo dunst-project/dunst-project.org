@@ -74,56 +74,71 @@
             <div class="sixteen columns">
             <h1><b>Documentation</b></h1>
 
-            <div class="container">
-              <div class="row">
-                <div class="column">
+            
+
+            <div class="fparent">
+              <div class="fbox1">
+                <span class="fchild">
+                  <i class="fa fa-file-text" aria-hidden="true"></i>
                   Manual
+                </span>
 
+                
                   
-                    
-                    
-                      <a href="/documentation/" title="Dustrc manual page"><code>dunst(5)</code></a>
-                    
+                
                   
-                    
+                
                   
-                    
-                      <a href="/documentation/dunst/" title="Dunst manual page"><code>dunst(1)</code></a>
-                    
+                    <a class="fchild" href="/documentation/" title="Dustrc manual page"><code>dunst(5)</code></a>
                   
-                    
-                      <a href="/documentation/dunstctl/" title="Dunstctl manual page"><code>dunstctl(1)</code></a>
-                    
+                
                   
-                    
+                
                   
-                </div>
+                    <a class="fchild" href="/documentation/dunst/" title="Dunst manual page"><code>dunst(1)</code></a>
+                  
+                
+                  
+                    <a class="fchild" href="/documentation/dunstctl/" title="Dunstctl manual page"><code>dunstctl(1)</code></a>
+                  
+                
+              </div>
 
-                <div class="column">
+              <div class="fbox2">
+                <span class="fchild">
+                  <i class="fa fa-github" aria-hidden="true"></i>
                   Wiki
+                </span>
+
+                
                   
-                    
-                    
+                    <a class="fchild" href="/documentation/dependencies/" title=""><code>Dependencies</code></a>
                   
-                    
-                      <a href="/documentation/dependencies/" title=""><code>Dependencies</code></a>
-                    
+                
                   
-                    
+                    <a class="fchild" href="/documentation/installation/" title=""><code>Installation</code></a>
                   
-                    
+                
                   
-                    
-                      <a href="/documentation/guides/" title=""><code>Guides</code></a>
-                    
+                
                   
-                </div>
+                    <a class="fchild" href="/documentation/guides/" title=""><code>Guides</code></a>
+                  
+                
+                  
+                
+                  
+                
+
+                <a href="https://github.com/dunst-project/dunst/wiki" title="Visit Dunst's wiki on Github"><code><i class="fa fa-external-link-square" aria-hidden="true"></i>
+Visit Github wiki</code></a>
 
               </div>
+
             </div>
 
             <hr>
-            <h1><b>Dependencies</b> <div class="flabel">2024-10-31</div></h1>
+            <h1><b>Dependencies</b> <div class="flabel">2024-12-02</div></h1>
 
                 
                     <nav id="TableOfContents">
@@ -131,13 +146,7 @@
     <li><a href="#arch">Arch</a></li>
     <li><a href="#debian-and-ubuntu">Debian and Ubuntu</a>
       <ul>
-        <li></li>
-      </ul>
-    </li>
-    <li><a href="#outdated-sections">Outdated sections</a>
-      <ul>
-        <li><a href="#fedora">Fedora</a></li>
-        <li><a href="#solus">Solus</a></li>
+        <li><a href="#optional-dunstify-dependency">Optional dunstify dependency</a></li>
       </ul>
     </li>
   </ul>
@@ -145,38 +154,31 @@
                 
                 <p>Dunst requires these libraries to compile.</p>
 <ul>
-<li>gio-2.0</li>
-<li>gdk-pixbuf-2.0</li>
-<li>glib-2.0</li>
-<li>pangocairo</li>
-<li>libnotify (optional, for dunstify)</li>
-<li>wayland-client (optional, for wayland)</li>
-<li>wayland-cursor (optional, for wayland)</li>
-<li>x11 (optional, for xorg)</li>
-<li>xinerama (optional, for xorg)</li>
-<li>xext (optional, for xorg)</li>
-<li>xrandr (optional, for xorg)</li>
-<li>xscrnsaver (optional, for xorg)</li>
+<li><a href="https://repology.org/project/gdk-pixbuf/versions"><code>gdk-pixbuf-2.0</code></a></li>
+<li><a href="https://repology.org/project/glib/versions"><code>glib-2.0</code></a></li>
+<li><code>gio-2.0</code></li>
+<li><code>pangocairo</code> (provided by <a href="https://repology.org/project/pango/versions">pango</a> + <a href="https://repology.org/project/cairo-graphics-library/versions">cairo</a>)</li>
+<li><a href="https://repology.org/project/libnotify/versions"><code>libnotify</code></a> (optional, for <em>dunstify</em>)</li>
+<li><a href="https://repology.org/project/wayland/versions"><code>wayland-client</code></a> (optional, for <em>wayland</em>)</li>
+<li><code>wayland-cursor</code> (optional, for <em>wayland</em>)</li>
+<li><a href="https://repology.org/project/xorg-server/versions"><code>x11</code></a> (optional, for <em>xorg</em>)</li>
+<li><a href="https://repology.org/project/libxinerama/versions"><code>xinerama</code></a> (optional, for <em>xorg</em>)</li>
+<li><a href="https://repology.org/project/libxext/versions"><code>xext</code></a> (optional, for <em>xorg</em>)</li>
+<li><a href="https://repology.org/project/libxrandr/versions"><code>xrandr</code></a> (optional, for <em>xorg</em>)</li>
+<li><a href="https://repology.org/project/libxscrnsaver/versions"><code>xscrnsaver</code></a> (optional, for <em>xorg</em>)</li>
 </ul>
-<p>Additionally, gdk-pixbuf has <em>librsvg</em> as an <em>optional runtime dependency</em> (for loading svg files).</p>
-<p>NOTE: dunstctl uses the <em>busctl</em> for displaying rules and history. This command is usually provided by systemd.
+<p>Additionally, <code>gdk-pixbuf</code> has <code>librsvg</code> as an <strong>optional runtime dependency</strong> (for loading svg files).</p>
+<p>NOTE: dunstctl uses <code>busctl</code> for displaying rules and history. This command is <em>usually</em> provided by systemd.
 In systems without systemd this can be installed with <a href="https://github.com/elogind/elogind">elogind</a> or <a href="https://sr.ht/~emersion/basu/">basu</a>.</p>
 <h2 id="arch">Arch</h2>
 <p>Available from the AUR as <a href="https://aur.archlinux.org/packages/dunst-git/">dunst-git</a></p>
 <h2 id="debian-and-ubuntu">Debian and Ubuntu</h2>
-<p>in general, on Debian and Debian-based distros you&rsquo;ll need also the *-dev packages.</p>
-<pre tabindex="0"><code>libdbus-1-dev libx11-dev libxinerama-dev libxrandr-dev libxss-dev libglib2.0-dev libpango1.0-dev libgtk-3-dev libxdg-basedir-dev libgdk-pixbuf-2.0-dev librsvg-2.0
-</code></pre><h4 id="optional-dunstify-dependency">Optional dunstify dependency</h4>
-<pre tabindex="0"><code>apt install libnotify-dev
-</code></pre><h2 id="outdated-sections">Outdated sections</h2>
-<p><strong>May be no longer relevant!</strong></p>
-<h3 id="fedora">Fedora</h3>
-<pre tabindex="0"><code>dbus-devel libX11-devel libXrandr-devel glib2-devel pango-devel gtk3-devel libxdg-basedir-devel libXScrnSaver-devel libnotify-devel
-</code></pre><h3 id="solus">Solus</h3>
-<p><strong>Out of date, updates needed:</strong>
-Gtk2 was dropped in favour of gtk3</p>
-<pre tabindex="0"><code>libcairo glibc libx11 libxinerama libxdg-basedir pango glib2 libxscrnsaver libxrandr-devel
-</code></pre>
+<p>In general, on Debian and Debian-based distros (and many other binary based distros) you&rsquo;ll need also the <code>*-dev</code> packages.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>apt install libdbus-1-dev libx11-dev libxinerama-dev libxrandr-dev libxss-dev libglib2.0-dev <span style="font-weight:bold;font-style:italic">\
+</span></span></span><span style="display:flex;"><span><span style="font-weight:bold;font-style:italic"></span>    libpango1.0-dev libgtk-3-dev libxdg-basedir-dev libgdk-pixbuf-2.0-dev librsvg-2.0
+</span></span></code></pre></div><h3 id="optional-dunstify-dependency">Optional dunstify dependency</h3>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>apt install libnotify-dev
+</span></span></code></pre></div>
             </div>
         </div>
     </div>

@@ -12,7 +12,21 @@
       <link>https://dunst-project.org/documentation/dependencies/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://dunst-project.org/documentation/dependencies/</guid>
-      <description>Dunst requires these libraries to compile.&#xA;gio-2.0 gdk-pixbuf-2.0 glib-2.0 pangocairo libnotify (optional, for dunstify) wayland-client (optional, for wayland) wayland-cursor (optional, for wayland) x11 (optional, for xorg) xinerama (optional, for xorg) xext (optional, for xorg) xrandr (optional, for xorg) xscrnsaver (optional, for xorg) Additionally, gdk-pixbuf has librsvg as an optional runtime dependency (for loading svg files).&#xA;NOTE: dunstctl uses the busctl for displaying rules and history. This command is usually provided by systemd.</description>
+      <description>Dunst requires these libraries to compile.&#xA;gdk-pixbuf-2.0 glib-2.0 gio-2.0 pangocairo (provided by pango + cairo) libnotify (optional, for dunstify) wayland-client (optional, for wayland) wayland-cursor (optional, for wayland) x11 (optional, for xorg) xinerama (optional, for xorg) xext (optional, for xorg) xrandr (optional, for xorg) xscrnsaver (optional, for xorg) Additionally, gdk-pixbuf has librsvg as an optional runtime dependency (for loading svg files).&#xA;NOTE: dunstctl uses busctl for displaying rules and history. This command is usually provided by systemd.</description>
+    </item>
+    <item>
+      <title>Documentation</title>
+      <link>https://dunst-project.org/documentation/installation/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://dunst-project.org/documentation/installation/</guid>
+      <description>Install with package manager Dunst is available in many package repositories. Chances are you can simply install it with your package manager. If not, don&amp;rsquo;t worry, it&amp;rsquo;s not hard to build it yourself.&#xA;You can check the version of Dunst available with your package manager on Repology.&#xA;Optional tools Dunst comes with it&amp;rsquo;s own script for sending notifications, dunstify. This will probably be installed together with dunst. You might find it useful, however, to use a standard tool for that job.</description>
+    </item>
+    <item>
+      <title>Documentation</title>
+      <link>https://dunst-project.org/documentation/guides/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://dunst-project.org/documentation/guides/</guid>
+      <description>Understanding rules Dunst offers some very powerful configuration options in the form of rules. With rules you can change the appearance of notifications, hide some notifications that you don&amp;rsquo;t find useful, change their timeout and much more.&#xA;Example 1: basic rule There are two kinds of rules: filtering rules and modifying rules. These are used for matching a notification and subsequently changing some of it&amp;rsquo;s properties. When no filtering rules are used, all notifications are matched.</description>
     </item>
     <item>
       <title>Documentation</title>
@@ -27,13 +41,6 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://dunst-project.org/documentation/dunstctl/</guid>
       <description>&lt;?xml version=&#34;1.0&#34; ?&gt; &lt;!DOCTYPE html PUBLIC &#34;-//W3C//DTD XHTML 1.0 Strict//EN&#34; &#34;http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd&#34;&gt; dunstctl - Command line control utility for dunst, a customizable and lightweight notification-daemon NAME SYNOPSIS COMMANDS NAME dunstctl - Command line control utility for dunst, a customizable and lightweight notification-daemon&#xA;SYNOPSIS dunstctl COMMAND [PARAMETER]&#xA;COMMANDS action notification_position Performs the default action or, if not available, opens the context menu of the notification at the given position (starting count at the top, first notification being 0).</description>
-    </item>
-    <item>
-      <title>Documentation</title>
-      <link>https://dunst-project.org/documentation/guides/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://dunst-project.org/documentation/guides/</guid>
-      <description>Guides Understanding rules Dunst offers some very powerful configuration options in the form of rules. With rules you can change the appearance of notifications, hide some notifications that you don&amp;rsquo;t find useful, change their timeout and much more.&#xA;Example 1: basic rule There are two kinds of rules: filtering rules and modifying rules. These are used for matching a notification and subsequently changing some of it&amp;rsquo;s properties. When no filtering rules are used, all notifications are matched.</description>
     </item>
   </channel>
 </rss>

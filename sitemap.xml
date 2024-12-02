@@ -4,17 +4,15 @@
   <url>
     <loc>https://dunst-project.org/</loc>
   </url><url>
+    <loc>https://dunst-project.org/documentation/dependencies/</loc>
+  </url><url>
     <loc>https://dunst-project.org/showcase/</loc>
+  </url><url>
+    <loc>https://dunst-project.org/documentation/installation/</loc>
   </url><url>
     <loc>https://dunst-project.org/download/</loc>
   </url><url>
     <loc>https://dunst-project.org/documentation/</loc>
-  </url><url>
-    <loc>https://dunst-project.org/documentation/dependencies/</loc>
-  </url><url>
-    <loc>https://dunst-project.org/documentation/dunst/</loc>
-  </url><url>
-    <loc>https://dunst-project.org/documentation/dunstctl/</loc>
   </url><url>
     <loc>https://dunst-project.org/documentation/guides/</loc>
   </url><url>
@@ -25,6 +23,10 @@
     <loc>https://dunst-project.org/release/</loc>
   </url><url>
     <loc>https://dunst-project.org/categories/</loc>
+  </url><url>
+    <loc>https://dunst-project.org/documentation/dunst/</loc>
+  </url><url>
+    <loc>https://dunst-project.org/documentation/dunstctl/</loc>
   </url><url>
     <loc>https://dunst-project.org/tags/</loc>
   </url>
