@@ -37,38 +37,3 @@ pre, code {
 h1, h2, h3, h4, h5, h6 {
   font-weight: 500;
 }
-
-.fparent {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  flex-direction: row;
-}
-
-.fparent > * {
-  border-radius: 4px;
-  padding: 10px;
-  border: 1px solid #333;
-  display: flex;
-  justify-content: space-between;
-  flex-direction: row;
-}
-
-.fbox1 {
-  flex-basis: 0;
-  flex-shrink: 1;
-  margin-right: 2em;
-}
-
-.fbox2 {
-  flex-basis: 0;
-  flex-grow: 1;
-}
-
-.fchild {
-  margin-right: 1em;
-}
-
-span.fchild {
-    white-space: nowrap;
-}

@@ -7,6 +7,7 @@ lastdate = "2024-12-02"
 descript = "Installation wiki page"
 wiki = true
 weight = 2
+css = [ "documentation.css" ]
 +++
 ## Install with package manager
 

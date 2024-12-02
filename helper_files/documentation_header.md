@@ -6,4 +6,5 @@ subtitle = TITLE
 lastdate = DATE
 descript = DESC
 wiki = WIKI
+css = [ "documentation.css" ]
 +++

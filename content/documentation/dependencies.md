@@ -7,6 +7,7 @@ lastdate = "2024-12-02"
 descript = "Dependencies wiki page"
 wiki = true
 weight = 1
+css = [ "documentation.css" ]
 +++
 Dunst requires these libraries to compile.
 
