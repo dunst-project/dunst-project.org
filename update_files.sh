@@ -21,7 +21,7 @@ sed -i 's/#\([0-9]\+\)/[#\1](https:\/\/github.com\/dunst-project\/dunst\/issues\
 # RELEASE
 cp "helper_files/release_header.md" "content/release.md"
 cat "$REPO/RELEASE_NOTES" >> "content/release.md"
-sed -i ':a;N;$!ba;s/====*\nRelease Notes For \(v[0-9]\+\.[0-9]\+\.[0-9]\+\)\n====*/## Dunst \1 <div class="flabel"><i class="fa fa-list-ul"><\/i> [Changelog]({{< ref "\/changelog#\1" >}})<\/div> {#\1}\n***\n/g' "content/release.md"
+sed -i ':a;N;$!ba;s/====*\nRelease Notes For \(v[0-9]\+\.[0-9]\+\.[0-9]\+\)\n====*/## Dunst \1 <div class="flabel"><i class="fa fa-refresh"><\/i> [Changelog]({{< ref "\/changelog#\1" >}})<\/div> {#\1}\n***\n/g' "content/release.md"
 
 # DOCUMENTATION
 from="docs/dunst.5.pod"

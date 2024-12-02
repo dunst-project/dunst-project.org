@@ -22,7 +22,8 @@ customize to perfection.
     <strong class="fmiddle">Customizability</strong>
    <p><i>Customize fonts, icons, timeouts, and more. Are you unhappy with the
    default shortcuts and colors? No worries, you can change these all with a
-   simple configuration file tweak.</i></p>
+   simple configuration file tweak.
+   Hot reloading is supported if you want to change configuration on the fly.</i></p>
 </div>
 
 <hr class="features">
@@ -33,10 +34,9 @@ customize to perfection.
         <i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
     </span>
     <strong class="fmiddle">Rules</strong>
-    <p><i>Change the look or behavior of notifications matching a specified
-    pattern. You could use this to change the color of message notifications
-    from your favorite jabber buddies, or to prevent important work email
-    notifications from disappearing until you manually dismiss them.</i></p>
+    <p><i>Change the look or behavior of notifications matching specific patterns.
+    You could use this to change the color of notifications from your favorite buddies,
+    or to prevent important work notifications from disappearing until you manually dismiss them.</i></p>
 </div>
 
 <hr class="features">
@@ -44,11 +44,12 @@ customize to perfection.
 <div class="fcontainer">
     <span class="fa-icons fa-stack fa-3x">
         <i class="fa fa-circle fa-stack-2x"></i>
-        <i class="fa fa-desktop fa-stack-1x fa-inverse"></i>
+        <i class="fa fa-clone fa-stack-1x fa-inverse"></i>
     </span>
-    <strong class="fmiddle">Multi-monitor Support</strong>
-    <p><i>Specify the monitor that notifications should display on, or have them
-    appear on the monitor with keyboard or mouse focus.</i></p>
+    <strong class="fmiddle">Environment agnostic</strong>
+    <p><i>Both the X11 and Wayland window systems are natively supported.
+    Dunst can be used in a wide variety of Unix-like environments (Linux distros, BSDs, etc.)
+    thanks to its lightweight nature and minimal dependencies.</i></p>
 </div>
 
 <hr class="features">
@@ -62,6 +63,18 @@ customize to perfection.
     <p><i>Catch an unread notification disappearing from the corner of your eye?
     Just tap a keyboard shortcut to replay the last notification, or continue
     tapping to see your notification history.</i></p>
+</div>
+
+<hr class="features">
+
+<div class="fcontainer">
+    <span class="fa-icons fa-stack fa-3x">
+        <i class="fa fa-circle fa-stack-2x"></i>
+        <i class="fa fa-pause-circle fa-stack-1x fa-inverse"></i>
+    </span>
+    <strong class="fmiddle">Pause levels</strong>
+    <p><i>Multiple pause levels are supported, so you can specify the priority of notification and selectively pause them.
+    You could use this fine-grained approach to make a Do Not Disturb mode tailored to your needs.</i></p>
 </div>
 
 <hr class="features">
@@ -83,7 +96,19 @@ customize to perfection.
 <div class="fcontainer">
     <span class="fa-icons fa-stack fa-3x">
         <i class="fa fa-circle fa-stack-2x"></i>
-        <i class="fa fa-envelope-open fa-stack-1x fa-inverse"></i>
+        <i class="fa fa-desktop fa-stack-1x fa-inverse"></i>
+    </span>
+    <strong class="fmiddle">Multi-monitor Support</strong>
+    <p><i>Specify the monitor that notifications should display on, or have them
+    appear on the monitor with keyboard or mouse focus.</i></p>
+</div>
+
+<hr class="features">
+
+<div class="fcontainer">
+    <span class="fa-icons fa-stack fa-3x">
+        <i class="fa fa-circle fa-stack-2x"></i>
+        <i class="fa fa-list-ul fa-stack-1x fa-inverse"></i>
     </span>
     <strong class="fmiddle">Context Menu</strong>
     <p><i>Use a keyboard shortcut to open a context menu (via dmenu) for the
