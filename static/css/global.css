@@ -23,7 +23,7 @@ pre code {
 }
 
 pre, code {
-    background-color: #d4d6db;
+    background-color: #e6e9ed;
     border-radius: 4px;
     padding: 0px;
     overflow: hidden;
@@ -36,4 +36,8 @@ pre, code {
 
 h1, h2, h3, h4, h5, h6 {
   font-weight: 500;
+}
+
+h1.spaced, h2.spaced, h3.spaced {
+  margin-top: 2em;
 }

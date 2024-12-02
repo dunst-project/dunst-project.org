@@ -15,13 +15,13 @@ WIKIREPO="dunst.wiki"
 # CHANGELOG
 cp "helper_files/changelog_header.md" "content/changelog.md"
 tail -n +2 "$REPO/CHANGELOG.md" >> "content/changelog.md"
-sed -i 's/## \([0-9]\+\.[0-9]\+\.[0-9]\+\).*/\0  <div class="flabel"><i class="fa fa-sticky-note"><\/i> [Release Notes]({{< ref "\/release#v\1" >}})<\/div> {#v\1}/' "content/changelog.md"
+sed -i 's/## \([0-9]\+\.[0-9]\+\.[0-9]\+\).*/\0  <div class="flabel"><i class="fa fa-sticky-note"><\/i> [Release Notes]({{< ref "\/release#v\1" >}})<\/div> {#v\1 .spaced}\n****/' "content/changelog.md"
 sed -i 's/#\([0-9]\+\)/[#\1](https:\/\/github.com\/dunst-project\/dunst\/issues\/\1)/g' "content/changelog.md"
 
 # RELEASE
 cp "helper_files/release_header.md" "content/release.md"
 cat "$REPO/RELEASE_NOTES" >> "content/release.md"
-sed -i ':a;N;$!ba;s/====*\nRelease Notes For \(v[0-9]\+\.[0-9]\+\.[0-9]\+\)\n====*/## Dunst \1 <div class="flabel"><i class="fa fa-refresh"><\/i> [Changelog]({{< ref "\/changelog#\1" >}})<\/div> {#\1}\n***\n/g' "content/release.md"
+sed -i ':a;N;$!ba;s/====*\nRelease Notes For \(v[0-9]\+\.[0-9]\+\.[0-9]\+\)\n====*/## Dunst \1 <div class="flabel"><i class="fa fa-refresh"><\/i> [Changelog]({{< ref "\/changelog#\1" >}})<\/div> {#\1 .spaced}\n***\n/g' "content/release.md"
 
 # DOCUMENTATION
 from="docs/dunst.5.pod"

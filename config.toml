@@ -9,4 +9,4 @@ theme = "liquorice"
       unsafe = true
 
   [markup.highlight]
-	style = 'bw'
+	style = 'github'

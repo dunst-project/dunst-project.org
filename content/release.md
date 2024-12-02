@@ -4,7 +4,7 @@ title = "Release Notes"
 type = "page"
 +++
 
-## Dunst v1.12.0 <div class="flabel"><i class="fa fa-refresh"></i> [Changelog]({{< ref "/changelog#v1.12.0" >}})</div> {#v1.12.0}
+## Dunst v1.12.0 <div class="flabel"><i class="fa fa-refresh"></i> [Changelog]({{< ref "/changelog#v1.12.0" >}})</div> {#v1.12.0 .spaced}
 ***
 
 
@@ -36,7 +36,7 @@ an user updates from an older version of dunst.
 
 Take a look at the changelog for all the bug fixes and improvements.
 
-## Dunst v1.11.0 <div class="flabel"><i class="fa fa-refresh"></i> [Changelog]({{< ref "/changelog#v1.11.0" >}})</div> {#v1.11.0}
+## Dunst v1.11.0 <div class="flabel"><i class="fa fa-refresh"></i> [Changelog]({{< ref "/changelog#v1.11.0" >}})</div> {#v1.11.0 .spaced}
 ***
 
 
@@ -66,7 +66,7 @@ the Makefile. By default they are installed and can be disabled by setting the
 
 Take a look at the changelog for all the bug fixes and improvements.
 
-## Dunst v1.10.0 <div class="flabel"><i class="fa fa-refresh"></i> [Changelog]({{< ref "/changelog#v1.10.0" >}})</div> {#v1.10.0}
+## Dunst v1.10.0 <div class="flabel"><i class="fa fa-refresh"></i> [Changelog]({{< ref "/changelog#v1.10.0" >}})</div> {#v1.10.0 .spaced}
 ***
 
 
@@ -85,7 +85,7 @@ of number.
 
 Take a look at the changelog for all the bug fixes and improvements.
 
-## Dunst v1.9.2 <div class="flabel"><i class="fa fa-refresh"></i> [Changelog]({{< ref "/changelog#v1.9.2" >}})</div> {#v1.9.2}
+## Dunst v1.9.2 <div class="flabel"><i class="fa fa-refresh"></i> [Changelog]({{< ref "/changelog#v1.9.2" >}})</div> {#v1.9.2 .spaced}
 ***
 
 
@@ -93,7 +93,7 @@ This release fixes two issues with high cpu usage one of which was introduced
 when trying to fix another cpu usage issue. So if you have experienced dunst
 making your fans spin harder than usual that should be fixed with this release.
 
-## Dunst v1.9.1 <div class="flabel"><i class="fa fa-refresh"></i> [Changelog]({{< ref "/changelog#v1.9.1" >}})</div> {#v1.9.1}
+## Dunst v1.9.1 <div class="flabel"><i class="fa fa-refresh"></i> [Changelog]({{< ref "/changelog#v1.9.1" >}})</div> {#v1.9.1 .spaced}
 ***
 
 
@@ -112,7 +112,7 @@ flag to 0. (enabled by default)
 
 Take a look at the changelog for a more detailed change description.
 
-## Dunst v1.9.0 <div class="flabel"><i class="fa fa-refresh"></i> [Changelog]({{< ref "/changelog#v1.9.0" >}})</div> {#v1.9.0}
+## Dunst v1.9.0 <div class="flabel"><i class="fa fa-refresh"></i> [Changelog]({{< ref "/changelog#v1.9.0" >}})</div> {#v1.9.0 .spaced}
 ***
 
 
@@ -125,7 +125,7 @@ effect.
 
 Take a look at the changelog for a more detailed change description.
 
-## Dunst v1.8.0 <div class="flabel"><i class="fa fa-refresh"></i> [Changelog]({{< ref "/changelog#v1.8.0" >}})</div> {#v1.8.0}
+## Dunst v1.8.0 <div class="flabel"><i class="fa fa-refresh"></i> [Changelog]({{< ref "/changelog#v1.8.0" >}})</div> {#v1.8.0 .spaced}
 ***
 
 
@@ -147,7 +147,7 @@ useful for distro-specific fixes. Note that only the files in the directory of
 the used dunstrc will be read (see dunst(1) for documentation).
 
 
-## Dunst v1.7.0 <div class="flabel"><i class="fa fa-refresh"></i> [Changelog]({{< ref "/changelog#v1.7.0" >}})</div> {#v1.7.0}
+## Dunst v1.7.0 <div class="flabel"><i class="fa fa-refresh"></i> [Changelog]({{< ref "/changelog#v1.7.0" >}})</div> {#v1.7.0 .spaced}
 ***
 
 
@@ -178,7 +178,7 @@ behaviour, run make with: `make SYSCONFDIR="/etc"` (make sure to pass the same
 variables to make in subsequent calls). Take a look at the "Make parameters"
 section of the readme and the FILES section of the man page for more details.
 
-## Dunst v1.6.0 <div class="flabel"><i class="fa fa-refresh"></i> [Changelog]({{< ref "/changelog#v1.6.0" >}})</div> {#v1.6.0}
+## Dunst v1.6.0 <div class="flabel"><i class="fa fa-refresh"></i> [Changelog]({{< ref "/changelog#v1.6.0" >}})</div> {#v1.6.0 .spaced}
 ***
 
 
@@ -203,7 +203,7 @@ wayland-protocols package. A global configuration file is now installed by
 default in `/etc/dunst/dunstrc`
 
 
-## Dunst v1.5.0 <div class="flabel"><i class="fa fa-refresh"></i> [Changelog]({{< ref "/changelog#v1.5.0" >}})</div> {#v1.5.0}
+## Dunst v1.5.0 <div class="flabel"><i class="fa fa-refresh"></i> [Changelog]({{< ref "/changelog#v1.5.0" >}})</div> {#v1.5.0 .spaced}
 ***
 
 
@@ -225,7 +225,7 @@ For maintainers:
 As mentioned above, two new binaries are now installed by default, dunstctl and dunstify.
 libnotify has been added as a dependency as it's used internally by dunstify.
 
-## Dunst v1.4.0 <div class="flabel"><i class="fa fa-refresh"></i> [Changelog]({{< ref "/changelog#v1.4.0" >}})</div> {#v1.4.0}
+## Dunst v1.4.0 <div class="flabel"><i class="fa fa-refresh"></i> [Changelog]({{< ref "/changelog#v1.4.0" >}})</div> {#v1.4.0 .spaced}
 ***
 
 
@@ -253,7 +253,7 @@ For maintainers:
 
 * Dependency on libxdg-basedir has been removed
 
-## Dunst v1.3.0 <div class="flabel"><i class="fa fa-refresh"></i> [Changelog]({{< ref "/changelog#v1.3.0" >}})</div> {#v1.3.0}
+## Dunst v1.3.0 <div class="flabel"><i class="fa fa-refresh"></i> [Changelog]({{< ref "/changelog#v1.3.0" >}})</div> {#v1.3.0 .spaced}
 ***
 
 
@@ -314,7 +314,7 @@ For maintainers:
 
 For a full list of changes see [CHANGELOG.md].
 
-## Dunst v1.2.0 <div class="flabel"><i class="fa fa-refresh"></i> [Changelog]({{< ref "/changelog#v1.2.0" >}})</div> {#v1.2.0}
+## Dunst v1.2.0 <div class="flabel"><i class="fa fa-refresh"></i> [Changelog]({{< ref "/changelog#v1.2.0" >}})</div> {#v1.2.0 .spaced}
 ***
 
 
@@ -381,7 +381,7 @@ For maintainers:
 
 For a full list of changes see CHANGELOG.md.
 
-## Dunst v1.0.0 <div class="flabel"><i class="fa fa-refresh"></i> [Changelog]({{< ref "/changelog#v1.0.0" >}})</div> {#v1.0.0}
+## Dunst v1.0.0 <div class="flabel"><i class="fa fa-refresh"></i> [Changelog]({{< ref "/changelog#v1.0.0" >}})</div> {#v1.0.0 .spaced}
 ***
 
 
@@ -441,7 +441,7 @@ PACKAGE MAINTAINERS:
     Please don't open bug reports when dunstify doesn't work with your
     version of libnotify
 
-## Dunst v0.4.0 <div class="flabel"><i class="fa fa-refresh"></i> [Changelog]({{< ref "/changelog#v0.4.0" >}})</div> {#v0.4.0}
+## Dunst v0.4.0 <div class="flabel"><i class="fa fa-refresh"></i> [Changelog]({{< ref "/changelog#v0.4.0" >}})</div> {#v0.4.0 .spaced}
 ***
 
 

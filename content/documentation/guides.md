@@ -232,7 +232,8 @@ Add the following to your dunstrc:
 [global]
     mouse_middle_click = do_action,close_current #close_current is optional
 
-[all_notifications] # A rule that matches all notifications
+[all_notifications]
+    # This rule that matches all notifications
     action_name = "no" # Optional, to activate the action "no" automatically
 ```
 
