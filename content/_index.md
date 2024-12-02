@@ -6,10 +6,12 @@ type = "page"
 css = [ "home.css" ]
 +++
 
+<p class="front">
 Dunst is a lightweight replacement for the notification daemons provided by most
 desktop environments. It's very customizable, isn't dependent on any toolkits,
 and therefore fits into those window manager centric setups we all love to
 customize to perfection.
+</p>
 
 ## **Features**
 ***
@@ -112,8 +114,9 @@ customize to perfection.
     </span>
     <strong class="fmiddle">Context Menu</strong>
     <p><i>Use a keyboard shortcut to open a context menu (via dmenu) for the
-    currently displayed notifications. Right now, it allows you to open
-    notifications' URLs in the browser.</i></p>
+    currently displayed notifications.
+    It allows you to open the notifications' URLs in the browser or
+    to perform the associated actions.</i></p>
 </div>
 
 <hr class="features">

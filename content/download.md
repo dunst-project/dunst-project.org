@@ -7,8 +7,9 @@ type = "page"
 
 The current stable version of Dunst is **1.12.0** released on **November 30 2024**.
 
-* [Source tarball](https://github.com/dunst-project/dunst/archive/v1.12.0.tar.gz)
-* [Code repository (Github)](https://github.com/dunst-project/dunst)
+* <i class="fa fa-github" aria-hidden="true"></i> [Github repository](https://github.com/dunst-project/dunst)
+
+* <i class="fa fa-archive" aria-hidden="true"></i> [Source tarball](https://github.com/dunst-project/dunst/archive/v1.12.0.tar.gz)
 
 # Release Notes For v1.12.0
 ***

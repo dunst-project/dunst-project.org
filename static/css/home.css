@@ -29,3 +29,10 @@ hr.features {
 .fcontainer > p {
   margin-bottom: 0;
 }
+
+.front {
+  margin-top: 1.5em;
+  margin-bottom: 1em;
+  font-size: 105%;
+  font-weight: 500;
+}
