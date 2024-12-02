@@ -61,6 +61,11 @@ pod2html < "$REPO/$from" >> "$dest"
 
 
 # WIKI
+
+git submodule init
+git submodule update
+echo "You should check if the wiki pages have not been tampered with before deploying!"
+
 from="Dependencies.md"
 dest="content/documentation/dependencies.md"
 title="Dependencies"
