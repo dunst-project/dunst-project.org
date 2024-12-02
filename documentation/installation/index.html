@@ -12,6 +12,8 @@
         <link rel="stylesheet" href="https://dunst-project.org//font-awesome/css/font-awesome.min.css">
         <link rel="stylesheet" href="https://dunst-project.org//css/global.css">
         
+            <link rel="stylesheet" href="https://dunst-project.org//css/documentation.css">
+        
 
         <link rel="shortcut icon" href="/favicon.ico" />
         <link rel="apple-touch-icon-precomposed" href="/apple-touch-icon-144-precomposed.png" sizes="144x144" />
@@ -150,7 +152,7 @@ Visit Github wiki</code></a>
     </li>
     <li><a href="#building-it-yourself">Building it yourself</a>
       <ul>
-        <li><a href="#optional-dunstify-binary">Optional <code>dunstify</code> binary</a></li>
+        <li><a href="#optional-dunstify-binary">Optional dunstify binary</a></li>
       </ul>
     </li>
   </ul>
@@ -174,7 +176,7 @@ If not, don&rsquo;t worry, it&rsquo;s not hard to build it yourself.</p>
 </span></span></code></pre></div><p>On Debian (and derivatives) systems the preferred method to install is to use <a href="https://wiki.debian.org/CheckInstall">checkinstall</a> instead of <code>sudo make install</code></p>
 <div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>PREFIX=/usr checkinstall <span style="font-style:italic"># Prefix is necessary to systemctl service installation</span>
 </span></span><span style="display:flex;"><span>sudo dpkg -i dunst_*_amd64.deb <span style="font-style:italic"># Install generated .deb</span>
-</span></span></code></pre></div><h3 id="optional-dunstify-binary">Optional <code>dunstify</code> binary</h3>
+</span></span></code></pre></div><h3 id="optional-dunstify-binary">Optional dunstify binary</h3>
 <p>Dunstify is enabled by default. To build without dunstify set <code>DUNSTIFY</code> to <code>0</code>.</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="font-style:italic"># This builds without dunstify</span>
 </span></span><span style="display:flex;"><span>DUNSTIFY=0 make all
