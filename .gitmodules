@@ -4,3 +4,6 @@
 [submodule "static/font-awesome"]
 	path = modules/font-awesome
 	url = https://github.com/FortAwesome/Font-Awesome
+[submodule "dunst.wiki"]
+	path = dunst.wiki
+	url = https://github.com/dunst-project/dunst.wiki.git

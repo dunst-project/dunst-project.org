@@ -1,0 +1,48 @@
+{{ partial "head.html" . }}
+{{ partial "header.html" . }}
+
+    <div class="container">
+        <div class="row">
+            <div class="sixteen columns">
+            <h1><b>{{ .Title }}</b></h1>
+
+            <div class="container">
+              <div class="row">
+                <div class="column">
+                  Manual
+
+                  {{ $pages := where .Site.Pages "Section" "documentation" }}
+                    {{ range $pages }}
+                    {{ if eq .Params.wiki false }}
+                      <a href="{{ .RelPermalink }}" title="{{ .Params.descript }}"><code>{{ .Params.subtitle }}</code></a>
+                    {{ end }}
+                  {{ end }}
+                </div>
+
+                <div class="column">
+                  Wiki
+                  {{ $pages := where .Site.Pages "Section" "documentation" }}
+                    {{ range $pages }}
+                    {{ if eq .Params.wiki true }}
+                      <a href="{{ .RelPermalink }}" title="{{ .Params.desc }}"><code>{{ .Params.subtitle }}</code></a>
+                    {{ end }}
+                  {{ end }}
+                </div>
+
+              </div>
+            </div>
+
+            <hr>
+            <h1><b>{{ .Params.subtitle }}</b> <div class="flabel">{{ .Params.lastdate }}</div></h1>
+
+                {{ if eq .Params.toc "true" }}
+                    {{.TableOfContents}}
+                {{ end }}
+                {{ .Content }}
+            </div>
+        </div>
+    </div>
+
+{{ partial "footer.html" . }}
+{{ partial "tail.html" . }}
+

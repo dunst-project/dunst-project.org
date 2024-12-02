@@ -40,42 +40,4 @@ echo "Manually change the release date in the download file please. Opening in $
 sleep 1
 $EDITOR content/download.md
 
-# CHANGELOG
-cp "helper_files/changelog_header.md" "content/changelog.md"
-tail -n +2 "$REPO/CHANGELOG.md" >> "content/changelog.md"
-sed -i 's/## \([0-9]\+\.[0-9]\+\.[0-9]\+\).*/\0  <div class="flabel"><i class="fa fa-sticky-note"><\/i> [Release Notes]({{< ref "\/release#v\1" >}})<\/div> {#v\1}/' "content/changelog.md"
-sed -i 's/#\([0-9]\+\)/[#\1](https:\/\/github.com\/dunst-project\/dunst\/issues\/\1)/g' "content/changelog.md"
-
-# RELEASE
-cp "helper_files/release_header.md" "content/release.md"
-cat "$REPO/RELEASE_NOTES" >> "content/release.md"
-sed -i ':a;N;$!ba;s/====*\nRelease Notes For \(v[0-9]\+\.[0-9]\+\.[0-9]\+\)\n====*/## Dunst \1 <div class="flabel"><i class="fa fa-list-ul"><\/i> [Changelog]({{< ref "\/changelog#\1" >}})<\/div> {#\1}\n***\n/g' "content/release.md"
-
-# DOCUMENTATION
-from="docs/dunst.5.pod"
-dest="content/documentation/_index.md"
-cp "helper_files/documentation_header.md" "$dest"
-sed -i 's/TITLE/dunst(5)/' "$dest"
-date="$(git -C "$REPO" log -1 --pretty='format:%as' "$from")"
-sed -i "s/DATE/$date/" "$dest"
-pod2html < "$REPO/$from" >> "$dest"
-
-
-from="docs/dunst.1.pod"
-dest="content/documentation/dunst.md"
-cp "helper_files/documentation_header.md" "$dest"
-sed -i 's/menu = "main"//' "$dest"
-sed -i 's/TITLE/dunst(1)/' "$dest"
-date="$(git -C "$REPO" log -1 --pretty='format:%as' "$from")"
-sed -i "s/DATE/$date/" "$dest"
-pod2html < "$REPO/$from" >> "$dest"
-
-
-from="docs/dunstctl.pod"
-dest="content/documentation/dunstctl.md"
-cp "helper_files/documentation_header.md" "$dest"
-sed -i 's/menu = "main"//' "$dest"
-sed -i 's/TITLE/dunst(1)/' "$dest"
-date="$(git -C "$REPO" log -1 --pretty='format:%as' "$from")"
-sed -i "s/DATE/$date/" "$dest"
-pod2html < "$REPO/$from" >> "$dest"
+./update_files.sh

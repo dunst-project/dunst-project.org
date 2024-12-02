@@ -1,19 +1,13 @@
 +++
 weight = 3
 title = "Documentation"
-type = "page"
+type = "documentation"
 toc = "true"
-
+subtitle = "dunstctl(1)"
+lastdate = "2024-07-15"
+descript = "Dunstctl manual page"
+wiki = false
 +++
-
-[`dunst(5)`]({{< ref "/documentation" >}} "Dunstrc documentation")
-[`dunst(1)`]({{< ref "/documentation/dunst" >}} "Dunst documentation")
-[`dunstctl(1)`]({{< ref "/documentation/dunstctl" >}} "Dunstctl documentation")
-
-***
-
-# **dunst(1)** <div class="flabel">**2024-07-15**</div>
-
 <?xml version="1.0" ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">

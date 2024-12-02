@@ -1,16 +1,10 @@
 +++
 weight = 3
 title = "Documentation"
-type = "page"
+type = "documentation"
 toc = "true"
-menu = "main"
+subtitle = TITLE
+lastdate = DATE
+descript = DESC
+wiki = WIKI
 +++
-
-[`dunst(5)`]({{< ref "/documentation" >}} "Dunstrc documentation")
-[`dunst(1)`]({{< ref "/documentation/dunst" >}} "Dunst documentation")
-[`dunstctl(1)`]({{< ref "/documentation/dunstctl" >}} "Dunstctl documentation")
-
-***
-
-# **TITLE** <div class="flabel">**DATE**</div>
-
