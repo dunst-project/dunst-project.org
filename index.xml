@@ -23,17 +23,31 @@
     </item>
     <item>
       <title>Documentation</title>
+      <link>https://dunst-project.org/documentation/dependencies/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://dunst-project.org/documentation/dependencies/</guid>
+      <description>Dunst requires these libraries to compile.&#xA;gio-2.0 gdk-pixbuf-2.0 glib-2.0 pangocairo libnotify (optional, for dunstify) wayland-client (optional, for wayland) wayland-cursor (optional, for wayland) x11 (optional, for xorg) xinerama (optional, for xorg) xext (optional, for xorg) xrandr (optional, for xorg) xscrnsaver (optional, for xorg) Additionally, gdk-pixbuf has librsvg as an optional runtime dependency (for loading svg files).&#xA;NOTE: dunstctl uses the busctl for displaying rules and history. This command is usually provided by systemd.</description>
+    </item>
+    <item>
+      <title>Documentation</title>
       <link>https://dunst-project.org/documentation/dunst/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://dunst-project.org/documentation/dunst/</guid>
-      <description>dunst(5) dunst(1) dunstctl(1)&#xA;dunst(1) 2023-10-17 &lt;?xml version=&#34;1.0&#34; ?&gt; &lt;!DOCTYPE html PUBLIC &#34;-//W3C//DTD XHTML 1.0 Strict//EN&#34; &#34;http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd&#34;&gt; dunst - A customizable and lightweight notification-daemon NAME SYNOPSIS DESCRIPTION Autostarting dunst COMMAND LINE OPTIONS CONFIGURATION NOTIFY-SEND MISCELLANEOUS FILES AUTHORS REPORTING BUGS COPYRIGHT SEE ALSO NAME dunst - A customizable and lightweight notification-daemon&#xA;SYNOPSIS dunst [-conf file] [-verbosity v] [-print] [--startup_notification]&#xA;DESCRIPTION Dunst is a highly configurable and lightweight notification daemon.&#xA;Autostarting dunst On most installations, dunst should be able to automatically be started by D-Bus when a notification is sent.</description>
+      <description>&lt;?xml version=&#34;1.0&#34; ?&gt; &lt;!DOCTYPE html PUBLIC &#34;-//W3C//DTD XHTML 1.0 Strict//EN&#34; &#34;http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd&#34;&gt; dunst - A customizable and lightweight notification-daemon NAME SYNOPSIS DESCRIPTION Autostarting dunst COMMAND LINE OPTIONS CONFIGURATION NOTIFY-SEND MISCELLANEOUS FILES AUTHORS REPORTING BUGS COPYRIGHT SEE ALSO NAME dunst - A customizable and lightweight notification-daemon&#xA;SYNOPSIS dunst [-conf file] [-verbosity v] [-print] [--startup_notification]&#xA;DESCRIPTION Dunst is a highly configurable and lightweight notification daemon.&#xA;Autostarting dunst On most installations, dunst should be able to automatically be started by D-Bus when a notification is sent.</description>
     </item>
     <item>
       <title>Documentation</title>
       <link>https://dunst-project.org/documentation/dunstctl/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://dunst-project.org/documentation/dunstctl/</guid>
-      <description>dunst(5) dunst(1) dunstctl(1)&#xA;dunst(1) 2024-07-15 &lt;?xml version=&#34;1.0&#34; ?&gt; &lt;!DOCTYPE html PUBLIC &#34;-//W3C//DTD XHTML 1.0 Strict//EN&#34; &#34;http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd&#34;&gt; dunstctl - Command line control utility for dunst, a customizable and lightweight notification-daemon NAME SYNOPSIS COMMANDS NAME dunstctl - Command line control utility for dunst, a customizable and lightweight notification-daemon&#xA;SYNOPSIS dunstctl COMMAND [PARAMETER]&#xA;COMMANDS action notification_position Performs the default action or, if not available, opens the context menu of the notification at the given position (starting count at the top, first notification being 0).</description>
+      <description>&lt;?xml version=&#34;1.0&#34; ?&gt; &lt;!DOCTYPE html PUBLIC &#34;-//W3C//DTD XHTML 1.0 Strict//EN&#34; &#34;http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd&#34;&gt; dunstctl - Command line control utility for dunst, a customizable and lightweight notification-daemon NAME SYNOPSIS COMMANDS NAME dunstctl - Command line control utility for dunst, a customizable and lightweight notification-daemon&#xA;SYNOPSIS dunstctl COMMAND [PARAMETER]&#xA;COMMANDS action notification_position Performs the default action or, if not available, opens the context menu of the notification at the given position (starting count at the top, first notification being 0).</description>
+    </item>
+    <item>
+      <title>Documentation</title>
+      <link>https://dunst-project.org/documentation/guides/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://dunst-project.org/documentation/guides/</guid>
+      <description>Guides Understanding rules Dunst offers some very powerful configuration options in the form of rules. With rules you can change the appearance of notifications, hide some notifications that you don&amp;rsquo;t find useful, change their timeout and much more.&#xA;Example 1: basic rule There are two kinds of rules: filtering rules and modifying rules. These are used for matching a notification and subsequently changing some of it&amp;rsquo;s properties. When no filtering rules are used, all notifications are matched.</description>
     </item>
     <item>
       <title>FAQ</title>

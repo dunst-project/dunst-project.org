@@ -15,12 +15,18 @@ a:visited {
 
 pre code {
     padding: 15px;
+    width: 100%;
+    height: auto;
+    overflow: auto;
+    box-sizing: border-box;
+    display: block;
 }
 
 pre, code {
     background-color: #d4d6db;
     border-radius: 4px;
     padding: 0px;
+    overflow: hidden;
 }
 
 .flabel {
