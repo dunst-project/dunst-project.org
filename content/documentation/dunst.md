@@ -3,7 +3,7 @@ title = "Documentation"
 type = "documentation"
 toc = "true"
 subtitle = "dunst(1)"
-lastdate = "2023-10-17"
+lastdate = "2024-12-03"
 descript = "Dunst manual page"
 wiki = false
 css = [ "documentation.css" ]
@@ -29,10 +29,14 @@ css = [ "documentation.css" ]
       <li><a href="#Autostarting-dunst">Autostarting dunst</a></li>
     </ul>
   </li>
-  <li><a href="#COMMAND-LINE-OPTIONS">COMMAND LINE OPTIONS</a></li>
+  <li><a href="#COMMAND-LINE-OPTIONS">COMMAND LINE OPTIONS</a>
+    <ul>
+      <li><a href="#DEPRECATED-OPTIONS">DEPRECATED OPTIONS</a></li>
+    </ul>
+  </li>
   <li><a href="#CONFIGURATION">CONFIGURATION</a>
     <ul>
-      <li><a href="#NOTIFY-SEND">NOTIFY-SEND</a></li>
+      <li><a href="#NOTIFY-SEND-HINTS">NOTIFY-SEND HINTS</a></li>
     </ul>
   </li>
   <li><a href="#MISCELLANEOUS">MISCELLANEOUS</a></li>
@@ -101,31 +105,69 @@ css = [ "documentation.css" ]
 </dd>
 </dl>
 
+<h2 id="DEPRECATED-OPTIONS">DEPRECATED OPTIONS</h2>
+
+<p>Old version of dunst allowed changing the colors of different urgencies through command line options. This has been long removed in favour of RULES, see issue #328.</p>
+
+<dl>
+
+<dt id="li-ni-ci-icon"><b>-li/ni/ci icon</b></dt>
+<dd>
+
+<p>Set notification icon.</p>
+
+</dd>
+<dt id="lf-nf-cf-color"><b>-lf/nf/cf color</b></dt>
+<dd>
+
+<p>Set notification foreground color.</p>
+
+</dd>
+<dt id="lb-nb-cb-color"><b>-lb/nb/cb color</b></dt>
+<dd>
+
+<p>Set notification background color.</p>
+
+</dd>
+<dt id="lh-nh-ch-color"><b>-lh/nh/ch color</b></dt>
+<dd>
+
+<p>Set notification highlight color.</p>
+
+</dd>
+<dt id="lfr-nfr-cfr-color"><b>-lfr/nfr/cfr color</b></dt>
+<dd>
+
+<p>Set notification frame color.</p>
+
+</dd>
+<dt id="lto-nto-cto-secs"><b>-lto/nto/cto secs</b></dt>
+<dd>
+
+<p>Set notification timeout time.</p>
+
+</dd>
+</dl>
+
 <h1 id="CONFIGURATION">CONFIGURATION</h1>
 
 <p>A default configuration file is included (usually ##SYSCONFDIR##/dunst/dunstrc) and serves as the least important configuration file. Note: this was previously /usr/share/dunst/dunstrc. You can edit this file to change the system-wide defaults or copy it to a more important location to override its settings. See the FILES section for more details on where dunst searches for its configuration files and how settings get applied.</p>
 
 <p>See dunst(5) for all possible settings.</p>
 
-<h2 id="NOTIFY-SEND">NOTIFY-SEND</h2>
+<h2 id="NOTIFY-SEND-HINTS">NOTIFY-SEND HINTS</h2>
 
-<p>dunst is able to get different colors for a message via notify-send. In order to do that you have to add a hint via the -h option. The progress value can be set with a hint, too.</p>
+<p>Dunst is able to get different colors for a message via notify-send. In order to do that you have to add a hint via the -h option. The progress value can be set with a hint, too.</p>
 
-<dl>
+<p>See dunst(5) for the list of accepted hints.</p>
 
-<dt id="notify-send--h-string:fgcolor:-ff4444">notify-send -h string:fgcolor:#ff4444</dt>
-<dd>
+<p>Some examples:</p>
 
-</dd>
-<dt id="notify-send--h-string:bgcolor:-4444ff--h-string:fgcolor:-ff4444--h-string:frcolor:-44ff44">notify-send -h string:bgcolor:#4444ff -h string:fgcolor:#ff4444 -h string:frcolor:#44ff44</dt>
-<dd>
+<pre><code>notify-send -h string:fgcolor:#ff4444
 
-</dd>
-<dt id="notify-send--h-int:value:42-Working">notify-send -h int:value:42 &quot;Working ...&quot;</dt>
-<dd>
+notify-send -h string:bgcolor:#4444ff -h string:fgcolor:#ff4444 -h string:frcolor:#44ff44
 
-</dd>
-</dl>
+notify-send -h int:value:42 &quot;Working ...&quot;</code></pre>
 
 <h1 id="MISCELLANEOUS">MISCELLANEOUS</h1>
 
