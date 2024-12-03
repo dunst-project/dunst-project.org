@@ -60,6 +60,18 @@ sed -i 's/WIKI/false/' "$dest"
 pod2html < "$REPO/$from" >> "$dest"
 
 
+from="docs/dunstify.pod"
+dest="content/documentation/dunstify.md"
+title="Dunstify"
+cp "helper_files/documentation_header.md" "$dest"
+sed -i 's/TITLE/"dunstify(1)"/' "$dest"
+date="$(git -C "$REPO" log -1 --pretty='format:%as' "$from")"
+sed -i "s/DATE/\\\"$date\\\"/" "$dest"
+sed -i "s/DESC/\\\"$title manual page\\\"/" "$dest"
+sed -i 's/WIKI/false/' "$dest"
+pod2html < "$REPO/$from" >> "$dest"
+
+
 # WIKI
 git submodule update --init --remote dunst.wiki
 echo "You should check if the wiki pages have not been tampered with before deploying!"

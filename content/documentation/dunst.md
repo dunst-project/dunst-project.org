@@ -12,7 +12,7 @@ css = [ "documentation.css" ]
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<title>dunst - A customizable and lightweight notification-daemon</title>
+<title>dunst - a customizable and lightweight notification-daemon</title>
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 <link rev="made" href="mailto:root@localhost" />
 </head>
@@ -49,7 +49,7 @@ css = [ "documentation.css" ]
 
 <h1 id="NAME">NAME</h1>
 
-<p>dunst - A customizable and lightweight notification-daemon</p>
+<p>dunst - a customizable and lightweight notification-daemon</p>
 
 <h1 id="SYNOPSIS">SYNOPSIS</h1>
 
@@ -238,7 +238,7 @@ notify-send -h int:value:42 &quot;Working ...&quot;</code></pre>
 
 <h1 id="SEE-ALSO">SEE ALSO</h1>
 
-<p>dunst(5), dunstctl(1), dmenu(1), notify-send(1)</p>
+<p>dunst(5), dunstctl(1), dmenu(1), notify-send(1), dunstify(1)</p>
 
 
 </body>

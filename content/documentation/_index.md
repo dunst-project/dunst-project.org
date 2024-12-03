@@ -1266,7 +1266,7 @@ notify-send -h int:value:42 &quot;Working ...&quot;</code></pre>
 
 <h1 id="SEE-ALSO">SEE ALSO</h1>
 
-<p>dunst(1), dunstctl(1), dmenu(1), notify-send(1)</p>
+<p>dunst(1), dunstctl(1), dmenu(1), notify-send(1), dunstify(1)</p>
 
 
 </body>

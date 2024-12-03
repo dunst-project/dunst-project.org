@@ -3,7 +3,7 @@ title = "Documentation"
 type = "documentation"
 toc = "true"
 subtitle = "dunstctl(1)"
-lastdate = "2024-07-15"
+lastdate = "2024-12-03"
 descript = "Dunstctl manual page"
 wiki = false
 css = [ "documentation.css" ]
@@ -12,7 +12,7 @@ css = [ "documentation.css" ]
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<title>dunstctl - Command line control utility for dunst, a customizable and lightweight notification-daemon</title>
+<title>dunstctl - command line control utility for dunst</title>
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 <link rev="made" href="mailto:root@localhost" />
 </head>
@@ -29,7 +29,7 @@ css = [ "documentation.css" ]
 
 <h1 id="NAME">NAME</h1>
 
-<p>dunstctl - Command line control utility for dunst, a customizable and lightweight notification-daemon</p>
+<p>dunstctl - command line control utility for dunst</p>
 
 <h1 id="SYNOPSIS">SYNOPSIS</h1>
 
