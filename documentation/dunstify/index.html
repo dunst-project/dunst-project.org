@@ -145,47 +145,97 @@
             </div>
 
             <hr>
-            <h1><b>Dependencies</b> <div class="flabel">2024-12-02</div></h1>
+            <h1><b>dunstify(1)</b> <div class="flabel">2024-12-03</div></h1>
 
                 
-                    <nav id="TableOfContents">
-  <ul>
-    <li><a href="#arch">Arch</a></li>
-    <li><a href="#debian-and-ubuntu">Debian and Ubuntu</a>
-      <ul>
-        <li><a href="#optional-dunstify-dependency">Optional dunstify dependency</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav>
+                    <nav id="TableOfContents"></nav>
                 
-                <p>Dunst requires these libraries to compile.</p>
-<ul>
-<li><a href="https://repology.org/project/gdk-pixbuf/versions"><code>gdk-pixbuf-2.0</code></a></li>
-<li><a href="https://repology.org/project/glib/versions"><code>glib-2.0</code></a></li>
-<li><code>gio-2.0</code></li>
-<li><code>pangocairo</code> (provided by <a href="https://repology.org/project/pango/versions">pango</a> + <a href="https://repology.org/project/cairo-graphics-library/versions">cairo</a>)</li>
-<li><a href="https://repology.org/project/libnotify/versions"><code>libnotify</code></a> (optional, for <em>dunstify</em>)</li>
-<li><a href="https://repology.org/project/wayland/versions"><code>wayland-client</code></a> (optional, for <em>wayland</em>)</li>
-<li><code>wayland-cursor</code> (optional, for <em>wayland</em>)</li>
-<li><a href="https://repology.org/project/xorg-server/versions"><code>x11</code></a> (optional, for <em>xorg</em>)</li>
-<li><a href="https://repology.org/project/libxinerama/versions"><code>xinerama</code></a> (optional, for <em>xorg</em>)</li>
-<li><a href="https://repology.org/project/libxext/versions"><code>xext</code></a> (optional, for <em>xorg</em>)</li>
-<li><a href="https://repology.org/project/libxrandr/versions"><code>xrandr</code></a> (optional, for <em>xorg</em>)</li>
-<li><a href="https://repology.org/project/libxscrnsaver/versions"><code>xscrnsaver</code></a> (optional, for <em>xorg</em>)</li>
+                <?xml version="1.0" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>dunstify - a program to send desktop notifications</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link rev="made" href="mailto:root@localhost" />
+</head>
+<body>
+<ul id="index">
+  <li><a href="#NAME">NAME</a></li>
+  <li><a href="#SYNOPSIS">SYNOPSIS</a></li>
+  <li><a href="#DESCRIPTION">DESCRIPTION</a></li>
+  <li><a href="#OPTIONS">OPTIONS</a></li>
+  <li><a href="#SEE-ALSO">SEE ALSO</a></li>
 </ul>
-<p>Additionally, <code>gdk-pixbuf</code> has <code>librsvg</code> as an <strong>optional runtime dependency</strong> (for loading svg files).</p>
-<p>NOTE: dunstctl uses <code>busctl</code> for displaying rules and history. This command is <em>usually</em> provided by systemd.
-In systems without systemd this can be installed with <a href="https://github.com/elogind/elogind">elogind</a> or <a href="https://sr.ht/~emersion/basu/">basu</a>.</p>
-<h2 id="arch">Arch</h2>
-<p>Available from the AUR as <a href="https://aur.archlinux.org/packages/dunst-git/">dunst-git</a></p>
-<h2 id="debian-and-ubuntu">Debian and Ubuntu</h2>
-<p>In general, on Debian and Debian-based distros (and many other binary based distros) you&rsquo;ll need also the <code>*-dev</code> packages.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>apt install libdbus-1-dev libx11-dev libxinerama-dev libxrandr-dev libxss-dev libglib2.0-dev <span style="color:#d14">\
-</span></span></span><span style="display:flex;"><span><span style="color:#d14"></span>    libpango1.0-dev libgtk-3-dev libxdg-basedir-dev libgdk-pixbuf-2.0-dev librsvg-2.0
-</span></span></code></pre></div><h3 id="optional-dunstify-dependency">Optional dunstify dependency</h3>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>apt install libnotify-dev
-</span></span></code></pre></div>
+<h1 id="NAME">NAME</h1>
+<p>dunstify - a program to send desktop notifications</p>
+<h1 id="SYNOPSIS">SYNOPSIS</h1>
+<p>dunstify [OPTION...] SUMMARY [BODY]</p>
+<h1 id="DESCRIPTION">DESCRIPTION</h1>
+<p>Dunstify is a notify-send alternative that can be used to send desktop notifications from the command line.</p>
+<h1 id="OPTIONS">OPTIONS</h1>
+<dl>
+<dt id="help"><b>-?, --help</b></dt>
+<dd>
+<p>Show help options.</p>
+</dd>
+<dt id="a---appname-NAME"><b>-a, --appname=NAME</b></dt>
+<dd>
+<p>Set the app name of the notification.</p>
+</dd>
+<dt id="u---urgency-URG"><b>-u, --urgency=URG</b></dt>
+<dd>
+<p>Set the urgency level (low, normal, critical) of the notification.</p>
+</dd>
+<dt id="h---hints-HINT"><b>-h, --hints=HINT</b></dt>
+<dd>
+<p>Specifies hints to pass. Valid types are BOOLEAN, INT, DOUBLE, STRING, BYTE and VARIANT.</p>
+</dd>
+<dt id="A---action-ACTION"><b>-A, --action=ACTION</b></dt>
+<dd>
+<p>Specifies the actions to display to the user.</p>
+</dd>
+<dt id="t---timeout-TIMEOUT"><b>-t, --timeout=TIMEOUT</b></dt>
+<dd>
+<p>The time in milliseconds until the notification expires.</p>
+</dd>
+<dt id="i---icon-ICON"><b>-i, --icon=ICON</b></dt>
+<dd>
+<p>Specifies an icon to display with the notification.</p>
+</dd>
+<dt id="I---raw_icon-PATH"><b>-I, --raw_icon=PATH</b></dt>
+<dd>
+<p>Path to the icon to be sent as raw image data.</p>
+</dd>
+<dt id="c---capabilities"><b>-c, --capabilities</b></dt>
+<dd>
+<p>Print the server capabilities and exit.</p>
+</dd>
+<dt id="s---serverinfo"><b>-s, --serverinfo</b></dt>
+<dd>
+<p>Print server information and exit.</p>
+</dd>
+<dt id="p---printid"><b>-p, --printid</b></dt>
+<dd>
+<p>Print id, which can be used to update/replace this notification.</p>
+</dd>
+<dt id="r---replace-ID"><b>-r, --replace=ID</b></dt>
+<dd>
+<p>Set the id of this notification to The ID of the notification to replace.</p>
+</dd>
+<dt id="C---close-ID"><b>-C, --close=ID</b></dt>
+<dd>
+<p>Close the notification with the specified ID.</p>
+</dd>
+<dt id="b---block"><b>-b, --block</b></dt>
+<dd>
+<p>Block until notification is closed and print close reason.</p>
+</dd>
+</dl>
+<h1 id="SEE-ALSO">SEE ALSO</h1>
+<p>notify-send(1), dunst(5), dunstctl(1), dunst(1)</p>
+</body>
+</html>
+
             </div>
         </div>
     </div>

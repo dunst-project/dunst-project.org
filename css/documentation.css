@@ -26,11 +26,12 @@
 }
 
 .fchild {
-  margin-right: 1em;
+  margin-left: 0.6em;
 }
 
 span.fchild {
     white-space: nowrap;
+    margin-left: 0;
 }
 
 @media only screen and (max-width: 960px) {
