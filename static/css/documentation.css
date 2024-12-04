@@ -62,3 +62,31 @@ span.fchild {
   }
 }
 
+thead {
+  border-bottom: 2px solid #484644;
+  border-top: 2px solid #484644;
+}
+
+th {
+  text-align: center;
+  padding: 0.5em 0;
+}
+
+td {
+  padding: 0.5em 1.2em;
+  border-bottom: 1px solid #333;
+}
+
+td:first-child {
+  padding-left: 0.5em;
+  border-left: 0;
+}
+
+td:last-child {
+  padding-right: 0.5em;
+}
+
+table {
+  border-spacing: 1em 0;
+  margin: 2em 0;
+}
