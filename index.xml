@@ -26,7 +26,7 @@
       <link>https://dunst-project.org/documentation/installation/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://dunst-project.org/documentation/installation/</guid>
-      <description>Install with package manager Dunst is available in many package repositories. Chances are you can simply install it with your package manager. If not, don&amp;rsquo;t worry, it&amp;rsquo;s not hard to build it yourself.&#xA;You can check the version of Dunst available with your package manager on Repology.&#xA;Optional tools Dunst comes with it&amp;rsquo;s own script for sending notifications, dunstify. This will probably be installed together with dunst. You might find it useful, however, to use a standard tool for that job.</description>
+      <description>Install with package manager Dunst is available in many package repositories. Chances are you can simply install it with your package manager. If not, don&amp;rsquo;t worry, it&amp;rsquo;s not hard to build it yourself.&#xA;You can check the version of Dunst available with your package manager on Repology.&#xA;Arch On Arch linux you can get dunst from the Extra repository as dunst or from the AUR as dunst-git.&#xA;pacman -S dunst Debian and Ubuntu On Debian and derivatives (Ubuntu, Kali, Cinnamon, etc.</description>
     </item>
     <item>
       <title>Download</title>

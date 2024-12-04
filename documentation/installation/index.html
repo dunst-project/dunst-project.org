@@ -145,21 +145,28 @@
             </div>
 
             <hr>
-            <h1><b>Installation</b> <div class="flabel">2024-12-02</div></h1>
+            <h1><b>Installation</b> <div class="flabel">2024-12-05</div></h1>
 
                 
                     <nav id="TableOfContents">
   <ul>
     <li><a href="#install-with-package-manager">Install with package manager</a>
       <ul>
-        <li><a href="#optional-tools">Optional tools</a></li>
+        <li><a href="#arch">Arch</a></li>
+        <li><a href="#debian-and-ubuntu">Debian and Ubuntu</a></li>
+        <li><a href="#gentoo">Gentoo</a></li>
+        <li><a href="#void">Void</a></li>
+        <li><a href="#fedora">Fedora</a></li>
+        <li><a href="#freebsd">FreeBSD</a></li>
+        <li><a href="#nixos">NixOS</a></li>
       </ul>
     </li>
     <li><a href="#building-it-yourself">Building it yourself</a>
       <ul>
-        <li><a href="#optional-dunstify-binary">Optional dunstify binary</a></li>
+        <li><a href="#make-parameters">Make parameters</a></li>
       </ul>
     </li>
+    <li><a href="#optional-tools-dunstify">Optional tools (dunstify)</a></li>
   </ul>
 </nav>
                 
@@ -167,10 +174,31 @@
 <p>Dunst is available in many package repositories. Chances are you can simply install it with your package manager.
 If not, don&rsquo;t worry, it&rsquo;s not hard to build it yourself.</p>
 <p>You can check the version of Dunst available with your package manager on <a href="https://repology.org/project/dunst/versions">Repology</a>.</p>
-<h3 id="optional-tools">Optional tools</h3>
-<p>Dunst comes with it&rsquo;s own script for sending notifications, <code>dunstify</code>. This will probably be installed together with dunst. You might find it useful, however, to use a standard tool for that job. If so, install <code>notify-send</code>. It can&rsquo;t do everything that dunstify can, but it will work for most things.</p>
+<h3 id="arch">Arch</h3>
+<p>On Arch linux you can get dunst from the <em>Extra</em> repository as <a href="https://archlinux.org/packages/extra/x86_64/dunst/">dunst</a>
+or from the <em>AUR</em> as <a href="https://aur.archlinux.org/packages/dunst-git/">dunst-git</a>.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>pacman -S dunst
+</span></span></code></pre></div><h3 id="debian-and-ubuntu">Debian and Ubuntu</h3>
+<p>On Debian and derivatives (Ubuntu, Kali, Cinnamon, etc.) you can install Dunst with</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>apt install dunst
+</span></span></code></pre></div><h3 id="gentoo">Gentoo</h3>
+<p>See the Gentoo <a href="https://wiki.gentoo.org/wiki/Dunst">wiki page</a>.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>emerge --ask --verbose x11-misc/dunst
+</span></span></code></pre></div><h3 id="void">Void</h3>
+<p>Dunst is available in the <code>current</code> repository.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>xbps-install dunst
+</span></span></code></pre></div><h3 id="fedora">Fedora</h3>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>dnf install dunst
+</span></span></code></pre></div><h3 id="freebsd">FreeBSD</h3>
+<p>You can install directly from the repository with</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>pkg install sysutils/dunst
+</span></span></code></pre></div><p>Alternatively a <a href="https://cgit.freebsd.org/ports/tree/sysutils/dunst">dunst port</a> is available in the ports tree.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#0086b3">cd</span> /usr/ports/sysutils/dunst/
+</span></span><span style="display:flex;"><span>make install clean
+</span></span></code></pre></div><h3 id="nixos">NixOS</h3>
+<p>There is a Nix package available <a href="https://mynixos.com/nixpkgs/package/dunst">here</a>.</p>
 <h2 id="building-it-yourself">Building it yourself</h2>
-<p>After you have installed all the <a href="Dependencies">dependencies</a> needed, you can build dunst:</p>
+<p>After you have installed all the <a href="./Dependencies">dependencies</a> needed, you can build dunst:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#998;font-style:italic"># clone the repository</span>
 </span></span><span style="display:flex;"><span>git clone https://github.com/dunst-project/dunst.git
 </span></span><span style="display:flex;"><span><span style="color:#0086b3">cd</span> dunst
@@ -180,13 +208,149 @@ If not, don&rsquo;t worry, it&rsquo;s not hard to build it yourself.</p>
 </span></span><span style="display:flex;"><span>sudo make install
 </span></span></code></pre></div><p>On Debian (and derivatives) systems the preferred method to install is to use <a href="https://wiki.debian.org/CheckInstall">checkinstall</a> instead of <code>sudo make install</code></p>
 <div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#008080">PREFIX</span><span style="color:#000;font-weight:bold">=</span>/usr checkinstall <span style="color:#998;font-style:italic"># Prefix is necessary to systemctl service installation</span>
-</span></span><span style="display:flex;"><span>sudo dpkg -i dunst_*_amd64.deb <span style="color:#998;font-style:italic"># Install generated .deb</span>
-</span></span></code></pre></div><h3 id="optional-dunstify-binary">Optional dunstify binary</h3>
-<p>Dunstify is enabled by default. To build without dunstify set <code>DUNSTIFY</code> to <code>0</code>.</p>
+</span></span><span style="display:flex;"><span>sudo dpkg -i dunst_*.deb <span style="color:#998;font-style:italic"># Install generated .deb</span>
+</span></span></code></pre></div><h3 id="make-parameters">Make parameters</h3>
+<p>Dunst can be customized by defining environmental variables when invoking make.
+The accepted parameters are listed below.</p>
+<p>Make sure to run all make calls with the same parameter set.
+So when building with <code>make PREFIX=/usr</code>, you have to install it with <code>make PREFIX=/usr install</code>, too.</p>
+<table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>Values</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>DESTDIR</strong></td>
+<td><code>&lt;PATH&gt;</code></td>
+<td><code>/</code></td>
+<td>Set the destination directory of the installation.</td>
+</tr>
+<tr>
+<td><strong>PREFIX</strong></td>
+<td><code>&lt;PATH&gt;</code></td>
+<td><code>/usr/local</code></td>
+<td>Set the prefix of the installation.</td>
+</tr>
+<tr>
+<td><strong>BINDIR</strong></td>
+<td><code>&lt;PATH&gt;</code></td>
+<td><code>${PREFIX}/bin</code></td>
+<td>Set the dunst executable&rsquo;s path.</td>
+</tr>
+<tr>
+<td><strong>DATADIR</strong></td>
+<td><code>&lt;PATH&gt;</code></td>
+<td><code>${PREFIX}/share</code></td>
+<td>Set the path for shared files.</td>
+</tr>
+<tr>
+<td><strong>BASHCOMPLETIONDIR</strong></td>
+<td><code>&lt;PATH&gt;</code></td>
+<td><code>${DATADIR}/bash-completion/completions</code></td>
+<td>Set the path for installation of bash completion files.</td>
+</tr>
+<tr>
+<td><strong>FISHCOMPLETIONDIR</strong></td>
+<td><code>&lt;PATH&gt;</code></td>
+<td><code>${DATADIR}/fish/vendor_completions.d</code></td>
+<td>Set the path for installation of fish completion files.</td>
+</tr>
+<tr>
+<td><strong>ZSHCOMPLETIONDIR</strong></td>
+<td><code>&lt;PATH&gt;</code></td>
+<td><code>${DATADIR}/zsh/site-functions</code></td>
+<td>Set the path for installation of zsh completion files.</td>
+</tr>
+<tr>
+<td><strong>SYSCONFDIR</strong></td>
+<td><code>&lt;PATH&gt;</code></td>
+<td><code>${PREFIX}/etc/xdg</code></td>
+<td>Set the base directory for system config files.</td>
+</tr>
+<tr>
+<td><strong>SYSCONFFILE</strong></td>
+<td><code>&lt;PATH&gt;</code></td>
+<td><code>${SYSCONFDIR}/dunst/dunstrc</code></td>
+<td>Set the absolute path to which the default dunstrc shall be installed.</td>
+</tr>
+<tr>
+<td><strong>SYSCONF_FORCE_NEW</strong></td>
+<td><code>[0/1]</code></td>
+<td><code>0</code> (don&rsquo;t overwrite)</td>
+<td>Overwrite existing <code>${SYSCONFFILE}</code>.</td>
+</tr>
+<tr>
+<td><strong>MANDIR</strong></td>
+<td><code>&lt;PATH&gt;</code></td>
+<td><code>${DATADIR}/man</code></td>
+<td>Set the prefix of the manpage.</td>
+</tr>
+<tr>
+<td><strong>SYSTEMD</strong></td>
+<td><code>[0/1]</code></td>
+<td><em>unset</em> (autodetect systemd)</td>
+<td>Disable/Enable the systemd unit.</td>
+</tr>
+<tr>
+<td><strong>WAYLAND</strong></td>
+<td><code>[0/1]</code></td>
+<td><code>1</code> (enabled)</td>
+<td>Disable/Enable wayland support.</td>
+</tr>
+<tr>
+<td><strong>X11</strong></td>
+<td><code>[0/1]</code></td>
+<td><code>1</code> (enabled)</td>
+<td>Disable/Enable X11 support.</td>
+</tr>
+<tr>
+<td><strong>DUNSTIFY</strong></td>
+<td><code>[0/1]</code></td>
+<td><code>1</code> (enabled)</td>
+<td>Disable/Enable the libnotify <em>dunstify</em> utility.</td>
+</tr>
+<tr>
+<td><strong>COMPLETIONS</strong></td>
+<td><code>[0/1]</code></td>
+<td><code>1</code> (enabled)</td>
+<td>Disable/Enable installation of shell completions.</td>
+</tr>
+<tr>
+<td><strong>SERVICEDIR_SYSTEMD</strong></td>
+<td><code>&lt;PATH&gt;</code></td>
+<td><code>${PREFIX}/lib/systemd/user</code></td>
+<td>The path to put the systemd user service file. Unused, if <code>SYSTEMD=0</code>.</td>
+</tr>
+<tr>
+<td><strong>SERVICEDIR_DBUS</strong></td>
+<td><code>&lt;PATH&gt;</code></td>
+<td><code>${DATADIR}/dbus-1/services</code></td>
+<td>The path to put the dbus service file.</td>
+</tr>
+<tr>
+<td><strong>EXTRA_CFLAGS</strong></td>
+<td><code>&lt;FLAGS&gt;</code></td>
+<td><em>unset</em></td>
+<td>Additional flags for the compiler.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="optional-tools-dunstify">Optional tools (dunstify)</h2>
+<p>Dunst comes with it&rsquo;s own program for sending notifications, <code>dunstify</code>.
+If you installed dunst with a package manager this will probably be installed as well.</p>
+<p>You might find it useful, however, to use a standard tool for that job.
+If so, install <code>notify-send</code>. It can&rsquo;t do everything that dunstify can, but it will work for most things.</p>
+<p>If you are building from source dunstify is <em>enabled by default</em>.
+To build without dunstify set <code>DUNSTIFY</code> to <code>0</code>.</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#998;font-style:italic"># This builds without dunstify</span>
 </span></span><span style="display:flex;"><span><span style="color:#008080">DUNSTIFY</span><span style="color:#000;font-weight:bold">=</span><span style="color:#099">0</span> make all
-</span></span></code></pre></div><p>Dunstify is then install by <code>make install</code> (given that it was not disabled).</p>
-
+</span></span><span style="display:flex;"><span><span style="color:#008080">DUNSTIFY</span><span style="color:#000;font-weight:bold">=</span><span style="color:#099">0</span> make install
+</span></span></code></pre></div>
             </div>
         </div>
     </div>
