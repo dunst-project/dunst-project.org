@@ -20,6 +20,7 @@ To learn more and share your riced configuration see [#826](https://github.com/d
 }
 </style>
 
-<a href="/static/image.png">![alt text](/static/image.png)</a>
+<a href="/static/image1.png">![alt text](/static/image1.png)</a>
 
-Updated config file <a href="/static/dunstrc1">here</a>
+Updated config file [here](/static/dunstrc1-new "Updated dunstrc").
+The old config file for older versions of dunst is [here](/static/dunstrc1 "Old dunstrc").
