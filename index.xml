@@ -19,7 +19,7 @@
       <link>https://dunst-project.org/showcase/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://dunst-project.org/showcase/</guid>
-      <description>We are searching for new screenshots to showcase Dunst&amp;rsquo;s features. It would be great if they used new features, such as color gradients (highlight can receive a list of colors) or custom rounded corners (corners, progress_bar_corners and icon_corners).&#xA;To learn more and share your riced configuration see #826.&#xA;Updated config file here</description>
+      <description>We are searching for new screenshots to showcase Dunst&amp;rsquo;s features. It would be great if they used new features, such as color gradients (highlight can receive a list of colors) or custom rounded corners (corners, progress_bar_corners and icon_corners).&#xA;To learn more and share your riced configuration see #826.&#xA;Updated config file here. The old config file for older versions of dunst is here.</description>
     </item>
     <item>
       <title>Documentation</title>
