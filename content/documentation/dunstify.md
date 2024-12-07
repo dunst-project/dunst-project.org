@@ -2,7 +2,7 @@
 title = "Documentation"
 type = "documentation"
 toc = "true"
-subtitle = "dunstify(1)"
+subtitle = "dunstify"
 lastdate = "2024-12-03"
 descript = "Dunstify manual page"
 wiki = false

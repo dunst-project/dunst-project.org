@@ -62,6 +62,11 @@ span.fchild {
   }
 }
 
+table {
+  overflow-x: auto;
+  display: block;
+}
+
 thead {
   border-bottom: 2px solid #484644;
   border-top: 2px solid #484644;

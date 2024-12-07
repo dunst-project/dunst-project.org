@@ -2,7 +2,7 @@
 title = "Documentation"
 type = "documentation"
 toc = "true"
-subtitle = "dunstctl(1)"
+subtitle = "dunstctl"
 lastdate = "2024-12-03"
 descript = "Dunstctl manual page"
 wiki = false
