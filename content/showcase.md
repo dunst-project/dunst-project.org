@@ -11,14 +11,20 @@ It would be great if they used new features, such as color gradients
 
 To learn more and share your riced configuration see [#826](https://github.com/dunst-project/dunst/issues/826).
 
-***
-
 <style>
 .row img {
     max-width: 100%;
     height: auto;
 }
 </style>
+
+***
+
+<a href="/static/image2.png">![alt text](/static/image2.png)</a>
+
+Config file [here](/static/dunstrc2 "Dunstrc").
+
+***
 
 <a href="/static/image1.png">![alt text](/static/image1.png)</a>
 
