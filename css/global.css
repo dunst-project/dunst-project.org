@@ -41,3 +41,9 @@ h1, h2, h3, h4, h5, h6 {
 h1.spaced, h2.spaced, h3.spaced {
   margin-top: 2em;
 }
+
+@media only screen and (max-width: 480px) {
+  .flabel {
+    float: none !important;
+  }
+}
