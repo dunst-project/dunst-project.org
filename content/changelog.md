@@ -6,7 +6,7 @@ type = "page"
 +++
 
 
-## 1.12.0 -- 2024-11-30  <div class="flabel"><i class="fa fa-sticky-note"></i> [Release Notes]({{< ref "/release#v1.12.0" >}})</div> {#v1.12.0 .spaced}
+## 1.12.0 -- 2024-11-30 <div class="flabel"><i class="fa fa-sticky-note"></i> [Release Notes]({{< ref "/release#v1.12.0" >}})</div> {#v1.12.0 .spaced}
 ****
 
 ### Added
@@ -36,7 +36,7 @@ type = "page"
 - Fix bash completion ([#1347](https://github.com/dunst-project/dunst/issues/1347))
 - Fix file suffix for fish completions during installation ([#1339](https://github.com/dunst-project/dunst/issues/1339))
 
-## 1.11.0 -- 2024-04-15  <div class="flabel"><i class="fa fa-sticky-note"></i> [Release Notes]({{< ref "/release#v1.11.0" >}})</div> {#v1.11.0 .spaced}
+## 1.11.0 -- 2024-04-15 <div class="flabel"><i class="fa fa-sticky-note"></i> [Release Notes]({{< ref "/release#v1.11.0" >}})</div> {#v1.11.0 .spaced}
 ****
 
 ### Added
@@ -66,7 +66,7 @@ type = "page"
 - Prevent make from failing if git tags are not found ([#1287](https://github.com/dunst-project/dunst/issues/1287))
 - Fix some typos ([#1324](https://github.com/dunst-project/dunst/issues/1324), [#1325](https://github.com/dunst-project/dunst/issues/1325), [#1279](https://github.com/dunst-project/dunst/issues/1279))
 
-## 1.10.0 -- 2024-02-19  <div class="flabel"><i class="fa fa-sticky-note"></i> [Release Notes]({{< ref "/release#v1.10.0" >}})</div> {#v1.10.0 .spaced}
+## 1.10.0 -- 2024-02-19 <div class="flabel"><i class="fa fa-sticky-note"></i> [Release Notes]({{< ref "/release#v1.10.0" >}})</div> {#v1.10.0 .spaced}
 ****
 
 ### Added
@@ -90,7 +90,7 @@ type = "page"
 - Errors about Glib source ID spamming the log ([#1257](https://github.com/dunst-project/dunst/issues/1257))
 - Idle idle_threshold not working anymore in Wayland due to Wayland protocol changes ([#1250](https://github.com/dunst-project/dunst/issues/1250))
 
-## 1.9.2 -- 2023-04-20  <div class="flabel"><i class="fa fa-sticky-note"></i> [Release Notes]({{< ref "/release#v1.9.2" >}})</div> {#v1.9.2 .spaced}
+## 1.9.2 -- 2023-04-20 <div class="flabel"><i class="fa fa-sticky-note"></i> [Release Notes]({{< ref "/release#v1.9.2" >}})</div> {#v1.9.2 .spaced}
 ****
 
 ### Fixed
@@ -98,7 +98,7 @@ type = "page"
 - High cpu usage when `show_age_treshold = -1` ([#1164](https://github.com/dunst-project/dunst/issues/1164))
 - High cpu usage in some situation. This is often correlated with being idle. ([#1158](https://github.com/dunst-project/dunst/issues/1158))
 
-## 1.9.1 -- 2023-03-08  <div class="flabel"><i class="fa fa-sticky-note"></i> [Release Notes]({{< ref "/release#v1.9.1" >}})</div> {#v1.9.1 .spaced}
+## 1.9.1 -- 2023-03-08 <div class="flabel"><i class="fa fa-sticky-note"></i> [Release Notes]({{< ref "/release#v1.9.1" >}})</div> {#v1.9.1 .spaced}
 ****
 
 ### Added
@@ -117,7 +117,7 @@ type = "page"
 - Crash when locking screen with swaylock on Sway ([#1148](https://github.com/dunst-project/dunst/issues/1148))
 - Dunst using 100% in some configurations with `idle_threshold` turned on ([#1140](https://github.com/dunst-project/dunst/issues/1140))
 
-## 1.9.0 -- 2022-06-27  <div class="flabel"><i class="fa fa-sticky-note"></i> [Release Notes]({{< ref "/release#v1.9.0" >}})</div> {#v1.9.0 .spaced}
+## 1.9.0 -- 2022-06-27 <div class="flabel"><i class="fa fa-sticky-note"></i> [Release Notes]({{< ref "/release#v1.9.0" >}})</div> {#v1.9.0 .spaced}
 ****
 
 ### Added
@@ -152,14 +152,14 @@ type = "page"
   stay on screen until a new notification appeared. This should not happen
   anymore ([#1073](https://github.com/dunst-project/dunst/issues/1073)).
 
-## 1.8.1 -- 2022-03-02  <div class="flabel"><i class="fa fa-sticky-note"></i> [Release Notes]({{< ref "/release#v1.8.1" >}})</div> {#v1.8.1 .spaced}
+## 1.8.1 -- 2022-03-02 <div class="flabel"><i class="fa fa-sticky-note"></i> [Release Notes]({{< ref "/release#v1.8.1" >}})</div> {#v1.8.1 .spaced}
 ****
 
 ### Fixed
 - Dunst sometimes not using the right config file, sometimes falling back to the
   internal defaults.
 
-## 1.8.0 -- 2022-02-24  <div class="flabel"><i class="fa fa-sticky-note"></i> [Release Notes]({{< ref "/release#v1.8.0" >}})</div> {#v1.8.0 .spaced}
+## 1.8.0 -- 2022-02-24 <div class="flabel"><i class="fa fa-sticky-note"></i> [Release Notes]({{< ref "/release#v1.8.0" >}})</div> {#v1.8.0 .spaced}
 ****
 
 ### Added
@@ -203,14 +203,11 @@ type = "page"
 - Not being able to override anymore raw icons with `new_icon` ([#1009](https://github.com/dunst-project/dunst/issues/1009))
 - High cpu usage when selecting an action in dmenu or similar. This was caused
   by dunst not going to sleep when waiting for a response. ([#898](https://github.com/dunst-project/dunst/issues/898))
-- Updated default values documentation (with help from @profpatch) ([#1004](https://github.com/dunst-project/dunst/issues/1004) and
-  more)
+- Updated default values documentation (with help from @profpatch) ([#1004](https://github.com/dunst-project/dunst/issues/1004) and more)
 
-
-## 1.7.3 -- 2021-12-08  <div class="flabel"><i class="fa fa-sticky-note"></i> [Release Notes]({{< ref "/release#v1.7.3" >}})</div> {#v1.7.3 .spaced}
+## 1.7.3 -- 2021-12-08 <div class="flabel"><i class="fa fa-sticky-note"></i> [Release Notes]({{< ref "/release#v1.7.3" >}})</div> {#v1.7.3 .spaced}
 ****
 
-### Added
 ### Changed
 - `follow` is now `none` again by default. This was the case before v1.7.0 as well. ([#990](https://github.com/dunst-project/dunst/issues/990)).
 
@@ -219,7 +216,7 @@ type = "page"
 - Segfault in experimental icon lookup when an inherited theme doesn't exist.
 - `icon_position = off` not being respected ([#996](https://github.com/dunst-project/dunst/issues/996)).
 
-## 1.7.2 -- 2021-11-30  <div class="flabel"><i class="fa fa-sticky-note"></i> [Release Notes]({{< ref "/release#v1.7.2" >}})</div> {#v1.7.2 .spaced}
+## 1.7.2 -- 2021-11-30 <div class="flabel"><i class="fa fa-sticky-note"></i> [Release Notes]({{< ref "/release#v1.7.2" >}})</div> {#v1.7.2 .spaced}
 ****
 
 ### Added
@@ -235,7 +232,7 @@ type = "page"
   ID to `dunstctl history-pop`. ([#970](https://github.com/dunst-project/dunst/issues/970))
 - `default_icon` setting for setting the icon when no icons are given ([#984](https://github.com/dunst-project/dunst/issues/984))
 - Implemented display size detection in Wayland. ([#973](https://github.com/dunst-project/dunst/issues/973))
-### Changed
+
 ### Fixed
 - Text being cut off on X11 when using fractional scaling. ([#975](https://github.com/dunst-project/dunst/issues/975))
 - Incorrect hitbox for notification on X11 with scaling. ([#980](https://github.com/dunst-project/dunst/issues/980))
@@ -251,7 +248,7 @@ type = "page"
   notification's width is lowered when it would otherwise leave the display.
 
 
-## 1.7.1 -- 2021-11-01  <div class="flabel"><i class="fa fa-sticky-note"></i> [Release Notes]({{< ref "/release#v1.7.1" >}})</div> {#v1.7.1 .spaced}
+## 1.7.1 -- 2021-11-01 <div class="flabel"><i class="fa fa-sticky-note"></i> [Release Notes]({{< ref "/release#v1.7.1" >}})</div> {#v1.7.1 .spaced}
 ****
 
 ### Added
@@ -273,7 +270,7 @@ type = "page"
 - Now the separators are not responsive to mouse clicks anymore. ([#960](https://github.com/dunst-project/dunst/issues/960))
 - Mouse action stopping the rest of the actions. (bf58928)
 
-## 1.7.0 -- 2021-10-19:  <div class="flabel"><i class="fa fa-sticky-note"></i> [Release Notes]({{< ref "/release#v1.7.0" >}})</div> {#v1.7.0 .spaced}
+## 1.7.0 -- 2021-10-19: <div class="flabel"><i class="fa fa-sticky-note"></i> [Release Notes]({{< ref "/release#v1.7.0" >}})</div> {#v1.7.0 .spaced}
 ****
 
 ### Added
@@ -327,13 +324,13 @@ type = "page"
 - Setting settings via command line arguments. ([#803](https://github.com/dunst-project/dunst/issues/803))
 - Setting settings via `config.h`. ([#803](https://github.com/dunst-project/dunst/issues/803))
 
-## 1.6.1 - 2021-02-21:  <div class="flabel"><i class="fa fa-sticky-note"></i> [Release Notes]({{< ref "/release#v1.6.1" >}})</div> {#v1.6.1 .spaced}
+## 1.6.1 -- 2021-02-21: <div class="flabel"><i class="fa fa-sticky-note"></i> [Release Notes]({{< ref "/release#v1.6.1" >}})</div> {#v1.6.1 .spaced}
 ****
 
 ### Fixed
 - Incorrect version in Makefile
 
-## 1.6.0 - 2021-02-21:  <div class="flabel"><i class="fa fa-sticky-note"></i> [Release Notes]({{< ref "/release#v1.6.0" >}})</div> {#v1.6.0 .spaced}
+## 1.6.0 -- 2021-02-21: <div class="flabel"><i class="fa fa-sticky-note"></i> [Release Notes]({{< ref "/release#v1.6.0" >}})</div> {#v1.6.0 .spaced}
 ****
 
 ### Added
@@ -359,11 +356,11 @@ type = "page"
 - `dunstify` can pass empty appname to libnotify ([#768](https://github.com/dunst-project/dunst/issues/768))
 - Incorrect handling of 'do_action, close' mouse action ([#778](https://github.com/dunst-project/dunst/issues/778))
 
-# Removed
+### Removed
 
 - `DUNST_COMMAND_{PAUSE,RESUME,TOGGLE}` ([#830](https://github.com/dunst-project/dunst/issues/830))
 
-## 1.5.0 - 2020-07-23  <div class="flabel"><i class="fa fa-sticky-note"></i> [Release Notes]({{< ref "/release#v1.5.0" >}})</div> {#v1.5.0 .spaced}
+## 1.5.0 -- 2020-07-23 <div class="flabel"><i class="fa fa-sticky-note"></i> [Release Notes]({{< ref "/release#v1.5.0" >}})</div> {#v1.5.0 .spaced}
 ****
 
 ### Added
@@ -385,7 +382,7 @@ type = "page"
 - Crash when `$HOME` environment variable is unset ([#693](https://github.com/dunst-project/dunst/issues/693))
 - Lack of antialiasing with round corners enabled ([#713](https://github.com/dunst-project/dunst/issues/713))
 
-## 1.4.1 - 2019-07-03  <div class="flabel"><i class="fa fa-sticky-note"></i> [Release Notes]({{< ref "/release#v1.4.1" >}})</div> {#v1.4.1 .spaced}
+## 1.4.1 -- 2019-07-03 <div class="flabel"><i class="fa fa-sticky-note"></i> [Release Notes]({{< ref "/release#v1.4.1" >}})</div> {#v1.4.1 .spaced}
 ****
 
 ### Fixed
@@ -397,7 +394,7 @@ type = "page"
 - Crash when changing DPI while no notifications are displayed ([#630](https://github.com/dunst-project/dunst/issues/630))
 - Fullscreen status change not being detected in some cases ([#613](https://github.com/dunst-project/dunst/issues/613))
 
-## 1.4.0 - 2019-03-30  <div class="flabel"><i class="fa fa-sticky-note"></i> [Release Notes]({{< ref "/release#v1.4.0" >}})</div> {#v1.4.0 .spaced}
+## 1.4.0 -- 2019-03-30 <div class="flabel"><i class="fa fa-sticky-note"></i> [Release Notes]({{< ref "/release#v1.4.0" >}})</div> {#v1.4.0 .spaced}
 ****
 
 ### Added
@@ -438,21 +435,21 @@ type = "page"
 
 - Dependency on libxdg-basedir ([#550](https://github.com/dunst-project/dunst/issues/550))
 
-## 1.3.2 - 2018-05-06  <div class="flabel"><i class="fa fa-sticky-note"></i> [Release Notes]({{< ref "/release#v1.3.2" >}})</div> {#v1.3.2 .spaced}
+## 1.3.2 -- 2018-05-06 <div class="flabel"><i class="fa fa-sticky-note"></i> [Release Notes]({{< ref "/release#v1.3.2" >}})</div> {#v1.3.2 .spaced}
 ****
 
 ### Fixed
 
 - Crash when trying to load an invalid or corrupt icon ([#512](https://github.com/dunst-project/dunst/issues/512))
 
-## 1.3.1 - 2018-01-30  <div class="flabel"><i class="fa fa-sticky-note"></i> [Release Notes]({{< ref "/release#v1.3.1" >}})</div> {#v1.3.1 .spaced}
+## 1.3.1 -- 2018-01-30 <div class="flabel"><i class="fa fa-sticky-note"></i> [Release Notes]({{< ref "/release#v1.3.1" >}})</div> {#v1.3.1 .spaced}
 ****
 
 ### Fixed
 
 - Race condition resulting in the service files being empty ([#488](https://github.com/dunst-project/dunst/issues/488))
 
-## 1.3.0 - 2018-01-05  <div class="flabel"><i class="fa fa-sticky-note"></i> [Release Notes]({{< ref "/release#v1.3.0" >}})</div> {#v1.3.0 .spaced}
+## 1.3.0 -- 2018-01-05 <div class="flabel"><i class="fa fa-sticky-note"></i> [Release Notes]({{< ref "/release#v1.3.0" >}})</div> {#v1.3.0 .spaced}
 ****
 
 ### Added
@@ -489,7 +486,7 @@ type = "page"
 - Dunst does now install the systemd and dbus service files into their proper location given
   by pkg-config. Use `SERVICEDIR_(DBUS|SYSTEMD)` params to overwrite them. ([#463](https://github.com/dunst-project/dunst/issues/463))
 
-## 1.2.0 - 2017-07-12  <div class="flabel"><i class="fa fa-sticky-note"></i> [Release Notes]({{< ref "/release#v1.2.0" >}})</div> {#v1.2.0 .spaced}
+## 1.2.0 -- 2017-07-12 <div class="flabel"><i class="fa fa-sticky-note"></i> [Release Notes]({{< ref "/release#v1.2.0" >}})</div> {#v1.2.0 .spaced}
 ****
 
 ### Added
@@ -532,13 +529,13 @@ type = "page"
 - dmenu process being left as a zombie if no option was selected
 - Crash when opening urls parsed from `<a href="">` tags
 
-## 1.1.0 - 2014-07-29  <div class="flabel"><i class="fa fa-sticky-note"></i> [Release Notes]({{< ref "/release#v1.1.0" >}})</div> {#v1.1.0 .spaced}
+## 1.1.0 -- 2014-07-29 <div class="flabel"><i class="fa fa-sticky-note"></i> [Release Notes]({{< ref "/release#v1.1.0" >}})</div> {#v1.1.0 .spaced}
 ****
 - fix nasty memory leak
 - icon support (still work in progress)
 - fix issue where keybindings aren't working when numlock is activated
 
-## 1.0.0 - 2013-04-15  <div class="flabel"><i class="fa fa-sticky-note"></i> [Release Notes]({{< ref "/release#v1.0.0" >}})</div> {#v1.0.0 .spaced}
+## 1.0.0 -- 2013-04-15 <div class="flabel"><i class="fa fa-sticky-note"></i> [Release Notes]({{< ref "/release#v1.0.0" >}})</div> {#v1.0.0 .spaced}
 ****
 - use pango/cairo as drawing backend
 - make use of pangos ability to parse markup
@@ -546,7 +543,7 @@ type = "page"
 - indicator for actions/urls found
 - use blocking I/O. No more waking up the CPU multiple times per second to check for new dbus messages
 
-## 0.5.0 - 2013-01-26  <div class="flabel"><i class="fa fa-sticky-note"></i> [Release Notes]({{< ref "/release#v0.5.0" >}})</div> {#v0.5.0 .spaced}
+## 0.5.0 -- 2013-01-26 <div class="flabel"><i class="fa fa-sticky-note"></i> [Release Notes]({{< ref "/release#v0.5.0" >}})</div> {#v0.5.0 .spaced}
 ****
 - new default dunstrc
 - frames for window
@@ -556,7 +553,7 @@ type = "page"
 - use own code for ini parsing (this removes inih)
 - progress hints
 
-## 0.4.0 - 2012-09-27  <div class="flabel"><i class="fa fa-sticky-note"></i> [Release Notes]({{< ref "/release#v0.4.0" >}})</div> {#v0.4.0 .spaced}
+## 0.4.0 -- 2012-09-27 <div class="flabel"><i class="fa fa-sticky-note"></i> [Release Notes]({{< ref "/release#v0.4.0" >}})</div> {#v0.4.0 .spaced}
 ****
 - separator between notifications
 - word wrap long lines
@@ -568,11 +565,11 @@ type = "page"
 - bugfix: forgetting geometry
 - (optional) static configuration
 
-## 0.3.1 - 2012-08-02  <div class="flabel"><i class="fa fa-sticky-note"></i> [Release Notes]({{< ref "/release#v0.3.1" >}})</div> {#v0.3.1 .spaced}
+## 0.3.1 -- 2012-08-02 <div class="flabel"><i class="fa fa-sticky-note"></i> [Release Notes]({{< ref "/release#v0.3.1" >}})</div> {#v0.3.1 .spaced}
 ****
 - fix -mon option
 
-## 0.3.0 - 2012-07-30  <div class="flabel"><i class="fa fa-sticky-note"></i> [Release Notes]({{< ref "/release#v0.3.0" >}})</div> {#v0.3.0 .spaced}
+## 0.3.0 -- 2012-07-30 <div class="flabel"><i class="fa fa-sticky-note"></i> [Release Notes]({{< ref "/release#v0.3.0" >}})</div> {#v0.3.0 .spaced}
 ****
 - full support for Desktop Notification Specification (mandatory parts)
 - option to select monitor on which notifications are shown
@@ -587,7 +584,7 @@ type = "page"
 - cleanup / bugfixes etc.
 - added dunst.service
 
-## 0.2.0 - 2012-06-26  <div class="flabel"><i class="fa fa-sticky-note"></i> [Release Notes]({{< ref "/release#v0.2.0" >}})</div> {#v0.2.0 .spaced}
+## 0.2.0 -- 2012-06-26 <div class="flabel"><i class="fa fa-sticky-note"></i> [Release Notes]({{< ref "/release#v0.2.0" >}})</div> {#v0.2.0 .spaced}
 ****
 - introduction of dunstrc
 - removed static configuration via config.h

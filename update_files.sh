@@ -14,8 +14,9 @@ WIKIREPO="dunst.wiki"
 
 # CHANGELOG
 cp "helper_files/changelog_header.md" "content/changelog.md"
+# Skip first line
 tail -n +2 "$REPO/CHANGELOG.md" >> "content/changelog.md"
-sed -i 's/## \([0-9]\+\.[0-9]\+\.[0-9]\+\).*/\0  <div class="flabel"><i class="fa fa-sticky-note"><\/i> [Release Notes]({{< ref "\/release#v\1" >}})<\/div> {#v\1 .spaced}\n****/' "content/changelog.md"
+sed -i 's/## \([0-9]\+\.[0-9]\+\.[0-9]\+\).*/\0 <div class="flabel"><i class="fa fa-sticky-note"><\/i> [Release Notes]({{< ref "\/release#v\1" >}})<\/div> {#v\1 .spaced}\n****/' "content/changelog.md"
 sed -i 's/#\([0-9]\+\)/[#\1](https:\/\/github.com\/dunst-project\/dunst\/issues\/\1)/g' "content/changelog.md"
 
 # RELEASE
