@@ -3,7 +3,7 @@ title = "Documentation"
 type = "documentation"
 toc = "true"
 subtitle = "dunst(5)"
-lastdate = "2024-12-03"
+lastdate = "2024-12-12"
 descript = "Dustrc manual page"
 wiki = false
 menu = "main"
@@ -531,7 +531,7 @@ horizontal_padding=10</code></pre>
 <dt id="icon_theme-default:-Adwaita-example:-Adwaita-breeze"><b>icon_theme</b> (default: &quot;Adwaita&quot;, example: &quot;Adwaita, breeze&quot;)</dt>
 <dd>
 
-<p>Comma-separated list of names of the the themes to use for looking up icons. This as to be the name of the directory in which the theme is located, not the human-friendly name of the theme. So for example, the theme <b>Breeze Dark</b> is located in <i>/usr/share/icons/breeze-dark</i>. In this case you have to set the theme to <b>breeze-dark</b>.</p>
+<p>Comma-separated list of names of the themes to use for looking up icons. This has to be the name of the directory in which the theme is located, not the human-friendly name of the theme. So for example, the theme <b>Breeze Dark</b> is located in <i>/usr/share/icons/breeze-dark</i>. In this case you have to set the theme to <b>breeze-dark</b>.</p>
 
 <p>The first theme in the list is the most important. Only if the icon cannot be found in that theme, the next theme will be tried.</p>
 
