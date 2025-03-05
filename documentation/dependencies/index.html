@@ -145,7 +145,7 @@
             </div>
 
             <hr>
-            <h1><b>Dependencies</b> <div class="flabel">2024-12-04</div></h1>
+            <h1><b>Dependencies</b> <div class="flabel">2025-01-13</div></h1>
 
                 
                     <nav id="TableOfContents">
@@ -176,6 +176,8 @@
 <p>Additionally, <code>gdk-pixbuf</code> has <code>librsvg</code> as an <strong>optional runtime dependency</strong> (for loading svg files).</p>
 <p>NOTE: dunstctl uses <code>busctl</code> for displaying rules and history. This command is <em>usually</em> provided by systemd.
 In systems without systemd this can be installed with <a href="https://github.com/elogind/elogind">elogind</a> or <a href="https://sr.ht/~emersion/basu/">basu</a>.</p>
+<p>IMPORTANT: To work correctly dunst needs a font. Also, without a font the test suite will fail in strange ways (see #1404).
+For maintainers, it is recommended to add a test/soft dependency on a virtual font package.</p>
 <h2 id="debian-and-ubuntu">Debian and Ubuntu</h2>
 <p>In general, on Debian and Debian-based distros (and many other binary based distros) you&rsquo;ll need also the <code>*-dev</code> packages.</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>apt install libdbus-1-dev libx11-dev libxinerama-dev libxrandr-dev libxss-dev libglib2.0-dev <span style="color:#d14">\
