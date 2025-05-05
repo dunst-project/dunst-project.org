@@ -33,7 +33,14 @@
       <link>https://dunst-project.org/download/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://dunst-project.org/download/</guid>
-      <description>The current stable version of Dunst is 1.12.1 released on December 17 2024.&#xA;Github repository&#xA;Source tarball&#xA;Release Notes For v1.12.2 This is the first release of 2025 and comes with an important fix to dunstify. With the roll out of libnotify v0.8.4, older version of dunstify started to not compile or crash when using the -r flag.&#xA;If your distribution has updated libnotify, you should update dunstify as soon as possible to resolve these issues.</description>
+      <description>The current stable version of Dunst is 1.12.2 released on March 5 2025.&#xA;Github repository&#xA;Source tarball&#xA;Release Notes For v1.12.2 This is the first release of 2025 and comes with an important fix to dunstify. With the roll out of libnotify v0.8.4, older version of dunstify started to not compile or crash when using the -r flag.&#xA;If your distribution has updated libnotify, you should update dunstify as soon as possible to resolve these issues.</description>
+    </item>
+    <item>
+      <title>Documentation</title>
+      <link>https://dunst-project.org/documentation/faq/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://dunst-project.org/documentation/faq/</guid>
+      <description>Troubleshooting Errors about missing or failing to open a display Depending on the setup dunst was unable to connect to the X server or the wayland compositor in use. In case of X make sure that X is running and that the DISPLAY environment variable is correctly set. For a wayland based setup the WAYLAND_DISPLAY environment variable needs to be set to a valid value.&#xA;If dunst should be automatically started by dbus or via the systemd service, it is important to know that both don&amp;rsquo;t inherit environment variables set by a shell.</description>
     </item>
     <item>
       <title>Documentation</title>
@@ -41,13 +48,6 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://dunst-project.org/documentation/guides/</guid>
       <description>Understanding rules Dunst offers some very powerful configuration options in the form of rules. With rules you can change the appearance of notifications, hide some notifications that you don&amp;rsquo;t find useful, change their timeout and much more.&#xA;Example 1: basic rule There are two kinds of rules: filtering rules and modifying rules. These are used for matching a notification and subsequently changing some of it&amp;rsquo;s properties. When no filtering rules are used, all notifications are matched.</description>
-    </item>
-    <item>
-      <title>FAQ</title>
-      <link>https://dunst-project.org/faq/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://dunst-project.org/faq/</guid>
-      <description>Common problems Errors about missing or failing to open a display Depending on the setup dunst was unable to connect to the X server or the wayland compositor in use. In case of X make sure that X is running and that the DISPLAY environment variable is correctly set. For a wayland based setup the WAYLAND_DISPLAY environment variable needs to be set to a valid value.&#xA;If dunst should be automatically started by dbus or via the systemd service, it is important to know that both don&amp;rsquo;t inherit environment variables set by a shell.</description>
     </item>
     <item>
       <title>Changelog</title>

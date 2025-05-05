@@ -2,7 +2,7 @@
   display: flex;
   justify-content: space-between;
   width: 100%;
-  margin-bottom: 10px;
+  flex-direction: column;
 }
 
 .fparent > * {
@@ -12,16 +12,8 @@
   display: flex;
   justify-content: space-between;
   flex-direction: row;
-}
-
-.fbox1 {
-  flex-basis: 0;
+  margin-bottom: 0.5em;
   flex-shrink: 1;
-  margin-right: 0.5em;
-}
-
-.fbox2 {
-  flex-basis: 0;
   flex-grow: 1;
 }
 
@@ -34,30 +26,8 @@ span.fchild {
     margin-left: 0;
 }
 
-@media only screen and (max-width: 960px) {
-  .fbox1 {
-    flex-grow: 1;
-    margin-right: 0;
-    margin-bottom: 0.5em;
-  }
-  .fbox2 {
-    flex-shrink: 1;
-  }
-  .fparent {
-    flex-direction: column;
-    margin-bottom: 0;
-  }
-}
-
-@media only screen and (max-width: 480px) {
-  .fbox1 {
-    flex-grow: 1;
-    margin-right: 0;
-    margin-bottom: 0.5em;
-    flex-direction: column;
-  }
-  .fbox2 {
-    flex-shrink: 1;
+@media only screen and (max-width: 768px) {
+  .fparent > * {
     flex-direction: column;
   }
 }
