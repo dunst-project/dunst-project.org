@@ -147,7 +147,7 @@
             </div>
 
             <hr>
-            <h1><b>dunst(1)</b> <div class="flabel">2024-12-03</div></h1>
+            <h1><b>dunst(1)</b> <div class="flabel">2023-11-13</div></h1>
 
                 
                     <nav id="TableOfContents"></nav>
@@ -250,7 +250,7 @@
 </dd>
 </dl>
 <h1 id="CONFIGURATION">CONFIGURATION</h1>
-<p>A default configuration file is included (usually ##SYSCONFDIR##/dunst/dunstrc) and serves as the least important configuration file. Note: this was previously /usr/share/dunst/dunstrc. You can edit this file to change the system-wide defaults or copy it to a more important location to override its settings. See the FILES section for more details on where dunst searches for its configuration files and how settings get applied.</p>
+<p>A default configuration file is included (usually /usr/local/etc/xdg/dunst/dunstrc) and serves as the least important configuration file. Note: this was previously /usr/share/dunst/dunstrc. You can edit this file to change the system-wide defaults or copy it to a more important location to override its settings. See the FILES section for more details on where dunst searches for its configuration files and how settings get applied.</p>
 <p>See dunst(5) for all possible settings.</p>
 <h2 id="NOTIFY-SEND-HINTS">NOTIFY-SEND HINTS</h2>
 <p>Dunst is able to get different colors for a message via notify-send. In order to do that you have to add a hint via the -h option. The progress value can be set with a hint, too.</p>
@@ -273,7 +273,7 @@ notify-send -h int:value:42 &quot;Working ...&quot;</code></pre>
 </dd>
 <dt id="XDG_CONFIG_DIRS"><code>$XDG_CONFIG_DIRS</code></dt>
 <dd>
-<p>This, like <code>$PATH</code> for instance, is a :-separated list of base directories in <i>descending order of importance</i>. (<i>##SYSCONFDIR##</i> if unset or empty)</p>
+<p>This, like <code>$PATH</code> for instance, is a :-separated list of base directories in <i>descending order of importance</i>. (<i>/usr/local/etc/xdg</i> if unset or empty)</p>
 </dd>
 </dl>
 <p>Dunst will search these directories for the following relative file paths:</p>
@@ -327,9 +327,6 @@ notify-send -h int:value:42 &quot;Working ...&quot;</code></pre>
     
     </script>
     
-  
-
-
     </body>
 </html>
 
