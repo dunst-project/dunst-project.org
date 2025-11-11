@@ -3,7 +3,7 @@ title = "Documentation"
 type = "documentation"
 toc = "true"
 subtitle = "dunst(5)"
-lastdate = "2025-06-27"
+lastdate = "2025-11-03"
 descript = "Dustrc manual page"
 wiki = false
 menu = "main"
@@ -1061,6 +1061,12 @@ horizontal_padding=10</code></pre>
 <p><b>IMPORTANT NOTE</b>: This currently DOES NOT re-apply the attributes from the urgency_* sections. The changed urgency will only be visible in rules defined later. Use <code>msg_urgency</code> to match it.</p>
 
 </dd>
+<dt id="override_pause_level"><code>override_pause_level</code></dt>
+<dd>
+
+<p>See <b>override_pause_level</b>.</p>
+
+</dd>
 <dt id="skip_display"><code>skip_display</code></dt>
 <dd>
 
@@ -1155,7 +1161,7 @@ horizontal_padding=10</code></pre>
 
 <p>Within rules you can specify a script to be run every time the rule is matched by assigning the &#39;script&#39; option to the name of the script to be run.</p>
 
-<p>When the script is called details of the notification that triggered it will be passed via environment variables. The following variables are available: <b>DUNST_APP_NAME</b>, <b>DUNST_SUMMARY</b>, <b>DUNST_BODY</b>, <b>DUNST_ICON_PATH</b>, <b>DUNST_URGENCY</b>, <b>DUNST_ID</b>, <b>DUNST_PROGRESS</b>, <b>DUNST_CATEGORY</b>, <b>DUNST_STACK_TAG</b>, <b>DUNST_URLS</b>, <b>DUNST_TIMEOUT</b>, <b>DUNST_TIMESTAMP</b>, <b>DUNST_DESKTOP_ENTRY</b>, and <b>DUNST_STACK_TAG</b>.</p>
+<p>When the script is called details of the notification that triggered it will be passed via environment variables. The following variables are available: <b>DUNST_APP_NAME</b>, <b>DUNST_SUMMARY</b>, <b>DUNST_BODY</b>, <b>DUNST_ICON_PATH</b>, <b>DUNST_URGENCY</b>, <b>DUNST_ID</b>, <b>DUNST_PROGRESS</b>, <b>DUNST_CATEGORY</b>, <b>DUNST_STACK_TAG</b>, <b>DUNST_URLS</b>, <b>DUNST_TIMEOUT</b>, <b>DUNST_TIMESTAMP</b>, and <b>DUNST_DESKTOP_ENTRY</b>.</p>
 
 <p>Another, less recommended way to get notifcations details from a script is via command line parameters. These are passed to the script in the following order: <b>appname</b>, <b>summary</b>, <b>body</b>, <b>icon_path</b>, <b>urgency</b>.</p>
 

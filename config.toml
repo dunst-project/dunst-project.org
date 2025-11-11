@@ -10,3 +10,8 @@ theme = "liquorice"
 
   [markup.highlight]
 	style = 'github'
+
+[outputs]
+home = ["HTML", "RSS"]
+section = ["HTML", "RSS"]
+taxonomy = ["HTML", "RSS"]

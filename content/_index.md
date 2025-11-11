@@ -144,9 +144,9 @@ Before reporting please refer to the [FAQ]({{< ref "/documentation/faq" >}} "Fre
 ## **Maintainers**
 ***
 
+- [Federico Angelilli](https://github.com/fedang) <code@fedang.net>
 - [Friso Smit](https://github.com/fwsmit) <fw.smit01@gmail.com>
 - [Bjoern Hiller](https://github.com/zappolowski) <bjoern.hiller@gmail.com>
-- [Federico Angelilli](https://github.com/bynect) <fedeangemail@gmail.com>
 
 Please **only refer to active maintainers** for issues and bugs!
 
