@@ -6,6 +6,24 @@ type = "page"
 +++
 
 
+## 1.13.1 -- 2026-01-23 <div class="flabel"><i class="fa fa-sticky-note"></i> [Release Notes]({{< ref "/release#v1.13.1" >}})</div> {#v1.13.1 .spaced}
+****
+
+### Added
+- Added basic zsh and bash completions for notify-send ([#1510](https://github.com/dunst-project/dunst/issues/1510))
+- Install shell completions in the meson build ([#1511](https://github.com/dunst-project/dunst/issues/1511))
+- Connect `dunstctl reload` to systemctl service reloading ([#1515](https://github.com/dunst-project/dunst/issues/1515))
+- Add an option to pause timeout while the notification is being hovered ([#1534](https://github.com/dunst-project/dunst/issues/1534))
+
+### Changed
+- Rename dunstify options similarly to notify-send (old names are now aliases) ([#1510](https://github.com/dunst-project/dunst/issues/1510))
+- Improve warning for invalid numbers in dunstctl ([#1524](https://github.com/dunst-project/dunst/issues/1524))
+- Add systemd ordering after graphical-session.target ([#1527](https://github.com/dunst-project/dunst/issues/1527) )
+
+### Fixed
+- Ensure PropertiesChanged signal is sent when handling SIGUSR ([#1505](https://github.com/dunst-project/dunst/issues/1505), [#832](https://github.com/dunst-project/dunst/issues/832))
+- Fix the icon transfer logic (regression from 1.13.0) ([#1521](https://github.com/dunst-project/dunst/issues/1521), [#1532](https://github.com/dunst-project/dunst/issues/1532), [#1471](https://github.com/dunst-project/dunst/issues/1471))
+
 ## 1.13.0 -- 2025-08-04 <div class="flabel"><i class="fa fa-sticky-note"></i> [Release Notes]({{< ref "/release#v1.13.0" >}})</div> {#v1.13.0 .spaced}
 ****
 

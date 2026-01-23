@@ -3,7 +3,7 @@ title = "Documentation"
 type = "documentation"
 toc = "true"
 subtitle = "dunst(5)"
-lastdate = "2025-11-03"
+lastdate = "2026-01-23"
 descript = "Dustrc manual page"
 wiki = false
 menu = "main"
@@ -778,6 +778,12 @@ horizontal_padding=10</code></pre>
 <dd>
 
 <p>Use different DPI for each monitor. This setting is currently implemented only for X11.</p>
+
+</dd>
+<dt id="pause_on_mouse_over-default:-false"><b>pause_on_mouse_over</b> (default: false)</dt>
+<dd>
+
+<p>Pause notification timeout when hovering with the mouse pointer. This setting is currently implemented only for Wayland.</p>
 
 </dd>
 </dl>
