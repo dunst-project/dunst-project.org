@@ -123,3 +123,7 @@ sed -i "s/DATE/\\\"$date\\\"/" "$dest"
 sed -i "s/DESC/\\\"$title wiki page\\\"/" "$dest"
 sed -i 's/WIKI/true\nweight = 3/' "$dest"
 cat "$WIKIREPO/$from" >> "$dest"
+
+# DOXYGEN
+make -C "$REPO" doc-doxygen
+cp -r "$REPO/docs/internal/html" "static/doxygen"
