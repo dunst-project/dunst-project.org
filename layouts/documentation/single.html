@@ -6,39 +6,7 @@
             <div class="sixteen columns">
             <h1><b>{{ .Title }}</b></h1>
 
-            {{ $pages := where .Site.Pages.ByWeight "Section" "documentation" }}
-
-            <div class="fparent">
-              <div class="fbox1">
-                <span class="fchild">
-                  <i class="fa fa-file-text" aria-hidden="true"></i>
-                  Manual
-                </span>
-
-                {{ range $pages }}
-                  {{ if eq .Params.wiki false }}
-                    <a class="fchild" href="{{ .RelPermalink }}" title="{{ .Params.descript }}"><code>{{ .Params.subtitle }}</code></a>
-                  {{ end }}
-                {{ end }}
-              </div>
-
-              <div class="fbox2">
-                <span class="fchild">
-                  <i class="fa fa-github" aria-hidden="true"></i>
-                  Wiki
-                </span>
-
-                {{ range $pages }}
-                  {{ if eq .Params.wiki true }}
-                    <a class="fchild" href="{{ .RelPermalink }}" title="{{ .Params.desc }}"><code>{{ .Params.subtitle }}</code></a>
-                  {{ end }}
-                {{ end }}
-
-                <a class="fchild" href="https://github.com/dunst-project/dunst/wiki" title="Visit Dunst's wiki on Github"><code><i class="fa fa-external-link-square" aria-hidden="true"></i> See on Github</code></a>
-
-              </div>
-
-            </div>
+            {{ partial "doc-toc.html" . }}
 
             <hr>
             <h1><b>{{ .Params.subtitle }}</b> <div class="flabel">{{ .Params.lastdate }}</div></h1>

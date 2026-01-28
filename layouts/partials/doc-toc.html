@@ -1,0 +1,42 @@
+{{ $pages := where .Site.Pages.ByWeight "Section" "documentation" }}
+
+<div class="fparent">
+  <div class="fbox1">
+    <span class="fchild">
+      <i class="fa fa-file-text" aria-hidden="true"></i>
+      Manual
+    </span>
+
+    {{ range $pages }}
+      {{ if eq .Params.wiki false }}
+        <a class="fchild" href="{{ .RelPermalink }}" title="{{ .Params.descript }}"><code>{{ .Params.subtitle }}</code></a>
+      {{ end }}
+    {{ end }}
+  </div>
+
+  <div class="fbox2">
+    <span class="fchild">
+      <i class="fa fa-github" aria-hidden="true"></i>
+      Wiki
+    </span>
+
+    {{ range $pages }}
+      {{ if eq .Params.wiki true }}
+        <a class="fchild" href="{{ .RelPermalink }}" title="{{ .Params.desc }}"><code>{{ .Params.subtitle }}</code></a>
+      {{ end }}
+    {{ end }}
+
+    <a class="fchild" href="https://github.com/dunst-project/dunst/wiki" title="Visit Dunst's wiki on Github"><code><i class="fa fa-external-link-square" aria-hidden="true"></i> See on Github</code></a>
+
+  </div>
+
+  <div class="fbox3">
+    <span class="fchild">
+      <i class="fa fa-code" aria-hidden="true"></i>
+      Developer docs
+    </span>
+
+    <a class="fchild" href="/doxygen/index.html" title="Visit Dunst's Doxygen Docs"><code><i class="fa fa-external-link-square" aria-hidden="true"></i> See Doxygen documentation</code></a>
+  </div>
+
+</div>
