@@ -1,0 +1,26 @@
+<map id="src/ini.h" name="src/ini.h">
+<area shape="rect" id="Node000001" title="Parser for INI config files." alt="" coords="149,5,216,31"/>
+<area shape="rect" id="Node000002" href="$icon-lookup_8c.html" title=" " alt="" coords="5,79,126,105"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="152,42,87,81,84,76,149,37"/>
+<area shape="rect" id="Node000003" href="$ini_8c.html" title=" " alt="" coords="149,79,216,105"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="186,46,186,79,180,79,180,46"/>
+<area shape="rect" id="Node000004" href="$option__parser_8h.html" title="Parser for settings and cmdline arguments." alt="" coords="241,79,373,105"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="218,37,287,76,284,81,215,41"/>
+<area shape="rect" id="Node000005" href="$dunst_8c.html" title=" " alt="" coords="140,153,226,178"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="274,115,205,154,203,150,272,110"/>
+<area shape="rect" id="Node000006" href="$option__parser_8c.html" title=" " alt="" coords="189,226,321,252"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="300,120,262,227,257,225,295,119"/>
+<area shape="rect" id="Node000007" href="$settings_8c.html" title=" " alt="" coords="301,153,401,178"/>
+<area shape="poly" id="edge6_Node000004_Node000007" title=" " alt="" coords="324,116,346,151,341,154,320,119"/>
+<area shape="rect" id="Node000008" href="$settings__data_8h.html" title="List of all the valid settings and values." alt="" coords="438,153,570,178"/>
+<area shape="poly" id="edge7_Node000004_Node000008" title=" " alt="" coords="355,108,471,150,470,155,353,113"/>
+<area shape="poly" id="edge10_Node000008_Node000006" title=" " alt="" coords="448,186,298,228,297,223,446,181"/>
+<area shape="rect" id="Node000009" href="$dbus_8c.html" title=" " alt="" coords="346,226,428,252"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="473,189,408,228,405,223,470,184"/>
+<area shape="rect" id="Node000010" href="$notification_8c.html" title=" " alt="" coords="452,226,570,252"/>
+<area shape="poly" id="edge9_Node000008_Node000010" title=" " alt="" coords="509,194,512,226,507,226,504,194"/>
+<area shape="rect" id="Node000011" href="$rules_8c.html" title=" " alt="" coords="594,226,676,252"/>
+<area shape="poly" id="edge11_Node000008_Node000011" title=" " alt="" coords="540,184,614,223,611,228,538,188"/>
+<area shape="rect" id="Node000012" href="$utils_8c.html" title=" " alt="" coords="700,226,778,252"/>
+<area shape="poly" id="edge12_Node000008_Node000012" title=" " alt="" coords="559,181,700,223,698,228,558,186"/>
+</map>

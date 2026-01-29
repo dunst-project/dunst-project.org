@@ -1,0 +1,16 @@
+<map id="colored_layout" name="colored_layout">
+<area shape="rect" id="Node000001" title=" " alt="" coords="27,379,132,405"/>
+<area shape="rect" id="Node000002" href="$structnotification.html" title=" " alt="" coords="38,291,122,316"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="82,332,82,379,77,379,77,332"/>
+<area shape="rect" id="Node000003" href="$structrule.html" title=" " alt="" coords="5,202,48,228"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="41,240,54,265,72,289,67,292,50,268,36,243"/>
+<area shape="rect" id="Node000004" href="$structcolor.html" title=" " alt="" coords="67,5,116,31"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="68,43,47,67,31,95,24,124,22,153,27,201,21,202,17,153,19,123,26,93,43,64,64,40"/>
+<area shape="rect" id="Node000005" href="$structgradient.html" title=" " alt="" coords="58,104,126,129"/>
+<area shape="poly" id="edge5_Node000005_Node000004" title=" " alt="" coords="94,47,94,103,89,103,89,47"/>
+<area shape="rect" id="Node000006" href="$structnotification__colors.html" title=" " alt="" coords="71,202,198,228"/>
+<area shape="poly" id="edge7_Node000006_Node000004" title=" " alt="" coords="125,39,138,53,156,81,166,105,178,162,180,171,178,179,169,193,157,204,153,200,165,189,173,177,175,171,173,164,161,107,151,84,134,57,121,43"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="74,143,58,164,35,203,30,200,54,162,70,140"/>
+<area shape="poly" id="edge8_Node000006_Node000005" title=" " alt="" coords="106,142,132,201,127,203,101,145"/>
+<area shape="poly" id="edge6_Node000002_Node000006" title=" " alt="" coords="121,242,90,292,85,289,116,240"/>
+</map>

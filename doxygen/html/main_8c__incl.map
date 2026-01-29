@@ -1,0 +1,32 @@
+<map id="src/main.c" name="src/main.c">
+<area shape="rect" id="Node000001" title="Glue that starts dunst_main." alt="" coords="306,5,388,31"/>
+<area shape="rect" id="Node000002" href="$dunst_8h.html" title="Main event loop logic." alt="" coords="315,79,379,105"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="350,31,350,63,344,63,344,31"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="434,374,487,399"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="380,95,407,101,435,112,462,128,484,151,497,177,503,205,505,234,503,263,490,318,475,360,470,358,485,316,497,263,500,234,498,206,492,179,479,154,459,132,433,117,405,106,379,100"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="23,374,98,399"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="315,97,248,106,164,126,122,143,81,165,45,193,16,228,11,240,8,262,10,290,19,325,28,344,40,360,36,364,24,346,14,327,5,291,3,261,6,239,11,225,41,189,78,161,119,138,163,121,247,100,314,92"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="317,153,377,178"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="350,105,350,137,344,137,344,105"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="401,153,469,178"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="364,103,410,141,407,145,360,107"/>
+<area shape="rect" id="Node000007" href="$notification_8h.html" title="Notification type definitions." alt="" coords="198,153,293,178"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="331,107,277,145,274,141,328,103"/>
+<area shape="poly" id="edge7_Node000007_Node000003" title=" " alt="" coords="293,176,360,198,389,211,409,224,432,256,447,292,456,327,461,358,456,359,451,329,442,294,427,259,405,228,387,216,358,203,291,182"/>
+<area shape="poly" id="edge8_Node000007_Node000004" title=" " alt="" coords="198,176,101,196,59,211,33,228,25,243,21,259,22,295,33,330,47,359,43,361,28,332,17,296,15,259,20,241,29,225,56,206,100,191,197,171"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="44,226,189,252"/>
+<area shape="poly" id="edge9_Node000007_Node000008" title=" " alt="" coords="225,181,153,221,150,216,222,177"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="285,374,345,399"/>
+<area shape="poly" id="edge10_Node000007_Node000009" title=" " alt="" coords="288,176,346,198,371,211,386,225,395,243,397,262,393,281,386,300,365,336,341,364,336,361,360,332,381,298,388,280,391,262,390,244,382,228,368,216,344,203,286,181"/>
+<area shape="rect" id="Node000010" href="$markup_8h.html" title="Markup handling for notifications body." alt="" coords="297,226,373,252"/>
+<area shape="poly" id="edge11_Node000007_Node000010" title=" " alt="" coords="262,177,310,214,306,219,259,181"/>
+<area shape="rect" id="Node000011" href="$draw_8h.html" title="Layout and render notifications." alt="" coords="213,226,273,252"/>
+<area shape="poly" id="edge12_Node000007_Node000011" title=" " alt="" coords="248,179,247,211,241,211,243,178"/>
+<area shape="poly" id="edge13_Node000011_Node000004" title=" " alt="" coords="230,254,89,366,86,362,226,250"/>
+<area shape="poly" id="edge14_Node000011_Node000009" title=" " alt="" coords="257,251,275,272,292,299,304,329,312,358,307,359,299,331,287,301,270,275,252,254"/>
+<area shape="rect" id="Node000012" href="$output_8h.html" title="Generic graphics backend wrapper." alt="" coords="209,300,277,326"/>
+<area shape="poly" id="edge15_Node000011_Node000012" title=" " alt="" coords="246,252,246,284,240,284,240,252"/>
+<area shape="poly" id="edge17_Node000012_Node000003" title=" " alt="" coords="278,323,420,369,418,374,277,328"/>
+<area shape="poly" id="edge16_Node000012_Node000004" title=" " alt="" coords="213,329,106,370,104,365,211,324"/>
+<area shape="poly" id="edge18_Node000012_Node000009" title=" " alt="" coords="257,324,294,361,290,364,253,328"/>
+</map>

@@ -1,0 +1,9 @@
+<map id="src/input.h" name="src/input.h">
+<area shape="rect" id="Node000001" title="Input handling for mouse events." alt="" coords="147,5,229,31"/>
+<area shape="rect" id="Node000002" href="$input_8c.html" title=" " alt="" coords="5,79,88,105"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="152,41,72,81,69,76,149,36"/>
+<area shape="rect" id="Node000003" href="$wl__seat_8c.html" title=" " alt="" coords="112,79,264,105"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="190,46,190,79,185,79,185,46"/>
+<area shape="rect" id="Node000004" href="$x_8c.html" title=" " alt="" coords="288,79,373,105"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="227,36,307,76,305,81,225,41"/>
+</map>

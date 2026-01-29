@@ -1,0 +1,8 @@
+<map id="notification_colors" name="notification_colors">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,202,132,228"/>
+<area shape="rect" id="Node000002" href="$structcolor.html" title=" " alt="" coords="44,5,93,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="67,47,62,94,62,139,69,201,64,202,57,139,57,94,62,46"/>
+<area shape="rect" id="Node000003" href="$structgradient.html" title=" " alt="" coords="104,104,172,129"/>
+<area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="88,42,131,102,127,105,84,45"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="123,143,79,203,75,200,118,140"/>
+</map>

@@ -1,0 +1,33 @@
+<map id="src/dbus.h" name="src/dbus.h">
+<area shape="rect" id="Node000001" title="DBus support and implementation of the Desktop Notifications Specification." alt="" coords="206,5,289,31"/>
+<area shape="rect" id="Node000002" href="$dunst_8h.html" title="Main event loop logic." alt="" coords="181,79,245,105"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="244,32,228,66,223,64,239,30"/>
+<area shape="rect" id="Node000007" href="$notification_8h.html" title="Notification type definitions." alt="" coords="362,153,458,178"/>
+<area shape="poly" id="edge19_Node000001_Node000007" title=" " alt="" coords="263,29,387,140,384,144,259,33"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="272,374,324,399"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="189,108,161,127,139,154,136,165,139,178,156,223,174,256,231,324,271,362,268,366,227,327,170,259,151,226,134,179,131,165,134,151,157,123,186,103"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="444,374,518,399"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="222,104,263,169,292,210,325,250,392,314,454,362,450,367,389,318,322,254,288,213,258,172,217,107"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="149,153,210,178"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="210,106,194,140,189,137,205,104"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="5,153,74,178"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="184,108,84,149,82,144,182,103"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="246,102,364,145,362,150,245,107"/>
+<area shape="poly" id="edge7_Node000007_Node000003" title=" " alt="" coords="383,181,352,200,326,228,311,260,303,295,299,358,294,358,297,295,306,258,321,225,349,196,380,177"/>
+<area shape="poly" id="edge8_Node000007_Node000004" title=" " alt="" coords="417,178,475,358,470,360,411,179"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="568,226,714,252"/>
+<area shape="poly" id="edge9_Node000007_Node000008" title=" " alt="" coords="450,176,588,219,587,224,449,181"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="609,374,670,399"/>
+<area shape="poly" id="edge10_Node000007_Node000009" title=" " alt="" coords="458,166,529,171,610,181,682,198,710,210,728,225,738,243,740,262,736,281,726,301,699,336,669,365,665,361,695,333,722,298,731,279,735,261,733,244,724,228,707,215,681,203,609,187,529,176,458,171"/>
+<area shape="rect" id="Node000010" href="$markup_8h.html" title="Markup handling for notifications body." alt="" coords="335,226,410,252"/>
+<area shape="poly" id="edge11_Node000007_Node000010" title=" " alt="" coords="406,180,389,214,384,211,402,177"/>
+<area shape="rect" id="Node000011" href="$draw_8h.html" title="Layout and render notifications." alt="" coords="484,226,544,252"/>
+<area shape="poly" id="edge12_Node000007_Node000011" title=" " alt="" coords="429,177,486,215,483,220,426,181"/>
+<area shape="poly" id="edge13_Node000011_Node000004" title=" " alt="" coords="531,250,547,265,561,284,569,305,566,327,547,351,524,368,521,364,544,347,561,325,564,306,557,286,543,269,528,254"/>
+<area shape="poly" id="edge14_Node000011_Node000009" title=" " alt="" coords="532,251,558,272,585,298,609,329,628,359,623,362,605,332,582,302,555,276,529,255"/>
+<area shape="rect" id="Node000012" href="$output_8h.html" title="Generic graphics backend wrapper." alt="" coords="483,300,551,326"/>
+<area shape="poly" id="edge15_Node000011_Node000012" title=" " alt="" coords="517,252,518,284,513,285,512,252"/>
+<area shape="poly" id="edge17_Node000012_Node000003" title=" " alt="" coords="483,328,339,375,338,370,481,323"/>
+<area shape="poly" id="edge16_Node000012_Node000004" title=" " alt="" coords="513,327,496,361,491,359,509,325"/>
+<area shape="poly" id="edge18_Node000012_Node000009" title=" " alt="" coords="539,324,607,363,605,368,536,329"/>
+</map>

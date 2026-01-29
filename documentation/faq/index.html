@@ -74,80 +74,90 @@
 
             
 
-            <div class="fparent">
-              <div class="fbox1">
-                <span class="fchild">
-                  <i class="fa fa-file-text" aria-hidden="true"></i>
-                  Manual
-                </span>
+<div class="fparent">
+  <div class="fbox1">
+    <span class="fchild">
+      <i class="fa fa-file-text" aria-hidden="true"></i>
+      Manual
+    </span>
 
-                
-                  
-                
-                  
-                
-                  
-                    <a class="fchild" href="/documentation/" title="Dustrc manual page"><code>dunst(5)</code></a>
-                  
-                
-                  
-                
-                  
-                
-                  
-                    <a class="fchild" href="/documentation/dunst/" title="Dunst manual page"><code>dunst(1)</code></a>
-                  
-                
-                  
-                    <a class="fchild" href="/documentation/dunstctl/" title="Dunstctl manual page"><code>dunstctl</code></a>
-                  
-                
-                  
-                    <a class="fchild" href="/documentation/dunstify/" title="Dunstify manual page"><code>dunstify</code></a>
-                  
-                
-              </div>
+    
+      
+    
+      
+    
+      
+        <a class="fchild" href="/documentation/" title="Dustrc manual page"><code>dunst(5)</code></a>
+      
+    
+      
+    
+      
+    
+      
+        <a class="fchild" href="/documentation/dunst/" title="Dunst manual page"><code>dunst(1)</code></a>
+      
+    
+      
+        <a class="fchild" href="/documentation/dunstctl/" title="Dunstctl manual page"><code>dunstctl</code></a>
+      
+    
+      
+        <a class="fchild" href="/documentation/dunstify/" title="Dunstify manual page"><code>dunstify</code></a>
+      
+    
+  </div>
 
-              <div class="fbox2">
-                <span class="fchild">
-                  <i class="fa fa-github" aria-hidden="true"></i>
-                  Wiki
-                </span>
+  <div class="fbox2">
+    <span class="fchild">
+      <i class="fa fa-github" aria-hidden="true"></i>
+      Wiki
+    </span>
 
-                
-                  
-                    <a class="fchild" href="/documentation/dependencies/" title=""><code>Dependencies</code></a>
-                  
-                
-                  
-                    <a class="fchild" href="/documentation/installation/" title=""><code>Installation</code></a>
-                  
-                
-                  
-                
-                  
-                    <a class="fchild" href="/documentation/faq/" title=""><code>FAQ</code></a>
-                  
-                
-                  
-                    <a class="fchild" href="/documentation/guides/" title=""><code>Guides</code></a>
-                  
-                
-                  
-                
-                  
-                
-                  
-                
+    
+      
+        <a class="fchild" href="/documentation/dependencies/" title=""><code>Dependencies</code></a>
+      
+    
+      
+        <a class="fchild" href="/documentation/installation/" title=""><code>Installation</code></a>
+      
+    
+      
+    
+      
+        <a class="fchild" href="/documentation/faq/" title=""><code>FAQ</code></a>
+      
+    
+      
+        <a class="fchild" href="/documentation/guides/" title=""><code>Guides</code></a>
+      
+    
+      
+    
+      
+    
+      
+    
 
-                <a class="fchild" href="https://github.com/dunst-project/dunst/wiki" title="Visit Dunst's wiki on Github"><code><i class="fa fa-external-link-square" aria-hidden="true"></i> See on Github</code></a>
+    <a class="fchild" href="https://github.com/dunst-project/dunst/wiki" title="Visit Dunst's wiki on Github"><code><i class="fa fa-external-link-square" aria-hidden="true"></i> See on Github</code></a>
 
-              </div>
+  </div>
 
-            </div>
+  <div class="fbox3">
+    <span class="fchild">
+      <i class="fa fa-code" aria-hidden="true"></i>
+      Developer docs
+    </span>
+
+    <a class="fchild" href="/doxygen/index.html" title="Visit Dunst's Doxygen Docs"><code><i class="fa fa-external-link-square" aria-hidden="true"></i> See Doxygen documentation</code></a>
+  </div>
+
+</div>
+
 
             <hr>
-            <h1><b>FAQ</b> <div class="flabel">2025-05-05</div></h1>
+            <h1><b>FAQ</b> <div class="flabel">2026-01-23</div></h1>
 
                 
                     <nav id="TableOfContents">
@@ -164,6 +174,7 @@
   <ul>
     <li><a href="#replacing-the-same-notification-or-dedicating-an-id">Replacing the same notification (or dedicating an id)</a></li>
     <li><a href="#sending-notifications-from-another-user-root">Sending notifications from another user (root)</a></li>
+    <li><a href="#customizing-notification-bodytext-colors">Customizing notification body/text colors</a></li>
   </ul>
 </nav>
                 
@@ -226,7 +237,12 @@ dunstify -h string:x-canonical-private-synchronous:whatever hello2
 <pre tabindex="0"><code>alias notify-send=&#34;sudo -u USERNAME DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/&lt;UID&gt;/bus notify-send&#34;
 </code></pre><p>Any other combination, executing <code>notify-send</code> with the valid <code>DBUS_SESSION_BUS_ADDRESS</code>-variable and user should work.</p>
 <p>On the <a href="https://wiki.archlinux.org/title/Desktop_notifications#Send_notifications_to_another_user">arch wiki</a> you can find alternative approaches using <code>systemd-run</code> and <a href="https://github.com/rfjakob/systembus-notify"><code>systembus-notify</code></a>.</p>
-
+<h2 id="customizing-notification-bodytext-colors">Customizing notification body/text colors</h2>
+<p>You can provide a custom formatting for your notification with the <code>format</code> variable.
+You can further customize this with Pango markup, see <a href="https://docs.gtk.org/Pango/pango_markup.html#pango-markup">text</a>.</p>
+<p>For example, the title can be made bigger and orange with the following:</p>
+<pre tabindex="0"><code>format = &#34;&lt;b&gt;&lt;span foreground=&#39;orange&#39; size=&#39;x-large&#39;&gt;%s&lt;/span&gt;&lt;/b&gt;\n%b&#34;
+</code></pre>
             </div>
         </div>
     </div>

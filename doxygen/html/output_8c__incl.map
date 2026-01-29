@@ -1,0 +1,21 @@
+<map id="src/output.c" name="src/output.c">
+<area shape="rect" id="Node000001" title=" " alt="" coords="166,5,257,31"/>
+<area shape="rect" id="Node000002" href="$output_8h.html" title="Generic graphics backend wrapper." alt="" coords="136,79,204,105"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="207,33,187,67,182,64,202,30"/>
+<area shape="rect" id="Node000006" href="$log_8h.html" title="Logging subsystem and helpers." alt="" coords="231,79,280,105"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="221,30,242,64,238,67,216,33"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="90,153,165,178"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="165,106,145,141,140,138,161,104"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="189,153,242,178"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="180,103,202,138,198,141,175,106"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="5,153,66,178"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="149,108,73,147,70,143,146,103"/>
+<area shape="poly" id="edge8_Node000006_Node000003" title=" " alt="" coords="235,108,164,147,161,142,232,103"/>
+<area shape="poly" id="edge7_Node000006_Node000004" title=" " alt="" coords="251,106,232,140,227,138,247,104"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="266,153,328,178"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="265,104,285,138,280,141,260,106"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="352,153,412,178"/>
+<area shape="poly" id="edge9_Node000006_Node000008" title=" " alt="" coords="278,103,349,142,346,147,276,108"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="436,153,499,178"/>
+<area shape="poly" id="edge10_Node000006_Node000009" title=" " alt="" coords="281,99,422,146,420,151,280,104"/>
+</map>

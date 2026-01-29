@@ -1,0 +1,15 @@
+<map id="src/menu.h" name="src/menu.h">
+<area shape="rect" id="Node000001" title="Context menu for actions and helpers." alt="" coords="273,5,359,31"/>
+<area shape="rect" id="Node000002" href="$dbus_8c.html" title=" " alt="" coords="5,79,88,105"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="259,37,89,82,87,77,257,32"/>
+<area shape="rect" id="Node000003" href="$dunst_8c.html" title=" " alt="" coords="111,79,198,105"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="276,40,183,81,181,76,274,35"/>
+<area shape="rect" id="Node000004" href="$input_8c.html" title=" " alt="" coords="221,79,304,105"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="300,45,274,80,269,77,296,42"/>
+<area shape="rect" id="Node000005" href="$menu_8c.html" title=" " alt="" coords="327,79,414,105"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="336,41,363,77,359,80,332,45"/>
+<area shape="rect" id="Node000006" href="$notification_8c.html" title=" " alt="" coords="437,79,554,105"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="361,35,466,76,464,81,360,40"/>
+<area shape="rect" id="Node000007" href="$x_8c.html" title=" " alt="" coords="578,79,664,105"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="375,31,579,78,577,83,374,36"/>
+</map>

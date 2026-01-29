@@ -1,0 +1,24 @@
+<map id="src/x11/x.h" name="src/x11/x.h">
+<area shape="rect" id="Node000001" title="Xorg output wrapper." alt="" coords="225,5,310,31"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,153,66,178"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="225,21,183,25,137,34,92,52,71,65,54,81,45,93,40,108,36,138,31,137,35,106,40,91,49,77,68,61,89,47,135,29,183,19,224,16"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="108,153,160,178"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="259,33,157,143,153,139,255,30"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="194,153,269,178"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="267,32,241,138,236,137,262,31"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="415,79,597,105"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="309,29,452,71,450,77,307,34"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="622,79,689,105"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="311,23,440,44,607,76,606,81,439,50,310,29"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="315,153,396,178"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="299,29,329,49,344,62,355,78,364,108,363,137,358,137,358,109,350,80,340,65,326,53,296,34"/>
+<area shape="rect" id="Node000008" href="$output_8h.html" title="Generic graphics backend wrapper." alt="" coords="63,79,144,105"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="241,34,146,75,144,70,239,29"/>
+<area shape="rect" id="Node000009" href="$screen_8h.html" title="Xorg screen managment." alt="" coords="269,79,340,105"/>
+<area shape="poly" id="edge11_Node000001_Node000009" title=" " alt="" coords="276,30,294,64,289,66,271,32"/>
+<area shape="poly" id="edge10_Node000008_Node000002" title=" " alt="" coords="94,107,59,143,55,140,90,103"/>
+<area shape="poly" id="edge9_Node000008_Node000003" title=" " alt="" coords="111,104,125,137,121,139,106,106"/>
+<area shape="poly" id="edge8_Node000008_Node000004" title=" " alt="" coords="127,103,198,142,195,147,124,108"/>
+<area shape="poly" id="edge12_Node000009_Node000004" title=" " alt="" coords="295,107,256,144,253,140,291,103"/>
+<area shape="poly" id="edge13_Node000009_Node000007" title=" " alt="" coords="315,103,340,138,336,141,311,106"/>
+</map>

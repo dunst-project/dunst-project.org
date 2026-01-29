@@ -1,0 +1,27 @@
+<map id="src/icon.h" name="src/icon.h">
+<area shape="rect" id="Node000001" title="Notification images loading." alt="" coords="165,5,244,31"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="6,300,67,326"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="175,34,138,52,95,78,54,112,22,154,11,179,8,200,17,251,27,285,22,287,11,253,3,201,6,178,17,151,50,108,92,74,135,47,173,29"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="276,79,432,105"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="231,29,316,70,314,74,229,34"/>
+<area shape="rect" id="Node000004" href="$notification_8h.html" title="Notification type definitions." alt="" coords="157,79,252,105"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="207,31,207,63,202,63,202,31"/>
+<area shape="poly" id="edge7_Node000004_Node000002" title=" " alt="" coords="157,98,126,104,93,114,63,131,39,154,25,186,21,221,24,255,31,284,25,285,19,256,16,221,20,184,34,151,60,126,91,109,124,99,156,93"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="353,300,405,326"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="254,101,352,126,393,139,414,151,424,168,428,185,425,222,413,258,398,288,393,285,408,256,420,221,423,186,419,169,411,155,391,144,350,131,252,106"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="169,300,243,326"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="252,103,337,127,372,140,391,151,401,175,399,198,386,219,366,239,313,272,257,297,255,292,311,267,363,234,382,216,394,196,396,176,387,154,370,145,335,132,251,108"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="132,153,277,178"/>
+<area shape="poly" id="edge6_Node000004_Node000007" title=" " alt="" coords="207,105,207,137,202,137,202,105"/>
+<area shape="rect" id="Node000008" href="$markup_8h.html" title="Markup handling for notifications body." alt="" coords="302,153,377,178"/>
+<area shape="poly" id="edge8_Node000004_Node000008" title=" " alt="" coords="229,103,304,143,302,147,226,108"/>
+<area shape="rect" id="Node000009" href="$draw_8h.html" title="Layout and render notifications." alt="" coords="48,153,108,178"/>
+<area shape="poly" id="edge9_Node000004_Node000009" title=" " alt="" coords="184,108,114,147,111,142,182,103"/>
+<area shape="poly" id="edge11_Node000009_Node000002" title=" " alt="" coords="77,179,47,286,42,284,72,178"/>
+<area shape="poly" id="edge10_Node000009_Node000006" title=" " alt="" coords="109,175,147,194,166,208,183,225,198,254,206,284,201,286,193,256,178,228,163,212,145,199,107,180"/>
+<area shape="rect" id="Node000010" href="$output_8h.html" title="Generic graphics backend wrapper." alt="" coords="100,226,168,252"/>
+<area shape="poly" id="edge12_Node000009_Node000010" title=" " alt="" coords="89,177,117,212,113,216,85,180"/>
+<area shape="poly" id="edge15_Node000010_Node000002" title=" " alt="" coords="119,255,67,293,63,289,116,250"/>
+<area shape="poly" id="edge14_Node000010_Node000005" title=" " alt="" coords="169,248,339,297,338,302,168,253"/>
+<area shape="poly" id="edge13_Node000010_Node000006" title=" " alt="" coords="148,250,185,287,181,291,144,254"/>
+</map>

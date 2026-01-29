@@ -1,0 +1,13 @@
+<map id="src/wayland/pool&#45;buffer.h" name="src/wayland/pool&#45;buffer.h">
+<area shape="rect" id="Node000001" title="Wayland rendering buffer pool." alt="" coords="234,5,400,31"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,79,98,105"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="273,34,112,77,110,72,271,29"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="122,79,256,105"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="296,34,225,73,223,69,294,29"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="280,79,354,105"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="320,31,320,63,314,63,314,31"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="378,79,442,105"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="334,29,384,67,381,72,331,34"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="466,79,581,105"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="353,29,475,71,473,76,351,34"/>
+</map>

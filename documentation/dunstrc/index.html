@@ -12,6 +12,8 @@
         <link rel="stylesheet" href="http://localhost:1313//font-awesome/css/font-awesome.min.css">
         <link rel="stylesheet" href="http://localhost:1313//css/global.css">
         
+            <link rel="stylesheet" href="http://localhost:1313//css/documentation.css">
+        
 
         <link rel="shortcut icon" href="/favicon.ico" />
         <link rel="apple-touch-icon-precomposed" href="/apple-touch-icon-144-precomposed.png" sizes="144x144" />
@@ -38,8 +40,6 @@
                         
                             <li><a href="/documentation/"> Documentation </a></li>
                         
-                            <li><a href="/faq/"> FAQ </a></li>
-                        
                             <li><a href="/changelog/"> Changelog </a></li>
                         
                     </ul>
@@ -58,8 +58,6 @@
                     
                         <li><a href="/documentation/"> Documentation </a></li>
                     
-                        <li><a href="/faq/"> FAQ </a></li>
-                    
                         <li><a href="/changelog/"> Changelog </a></li>
                     
                 </ul>
@@ -73,19 +71,108 @@
         <div class="row">
             <div class="sixteen columns">
             <h1><b>Documentation</b></h1>
+
+            
+
+<div class="fparent">
+  <div class="fbox1">
+    <span class="fchild">
+      <i class="fa fa-file-text" aria-hidden="true"></i>
+      Manual
+    </span>
+
+    
+      
+    
+      
+    
+      
+        <a class="fchild" href="/documentation/" title="Dustrc manual page"><code>dunst(5)</code></a>
+      
+    
+      
+        <a class="fchild" href="/documentation/dunstrc/" title="Dustrc manual page"><code>dunst(5)</code></a>
+      
+    
+      
+    
+      
+    
+      
+        <a class="fchild" href="/documentation/dunst/" title="Dunst manual page"><code>dunst(1)</code></a>
+      
+    
+      
+        <a class="fchild" href="/documentation/dunstctl/" title="Dunstctl manual page"><code>dunstctl</code></a>
+      
+    
+      
+        <a class="fchild" href="/documentation/dunstify/" title="Dunstify manual page"><code>dunstify</code></a>
+      
+    
+  </div>
+
+  <div class="fbox2">
+    <span class="fchild">
+      <i class="fa fa-github" aria-hidden="true"></i>
+      Wiki
+    </span>
+
+    
+      
+        <a class="fchild" href="/documentation/dependencies/" title=""><code>Dependencies</code></a>
+      
+    
+      
+        <a class="fchild" href="/documentation/installation/" title=""><code>Installation</code></a>
+      
+    
+      
+    
+      
+    
+      
+        <a class="fchild" href="/documentation/faq/" title=""><code>FAQ</code></a>
+      
+    
+      
+        <a class="fchild" href="/documentation/guides/" title=""><code>Guides</code></a>
+      
+    
+      
+    
+      
+    
+      
+    
+
+    <a class="fchild" href="https://github.com/dunst-project/dunst/wiki" title="Visit Dunst's wiki on Github"><code><i class="fa fa-external-link-square" aria-hidden="true"></i> See on Github</code></a>
+
+  </div>
+
+  <div class="fbox3">
+    <span class="fchild">
+      <i class="fa fa-file-text" aria-hidden="true"></i>
+      Development
+    </span>
+
+    <a class="fchild" href="/doxygen/index.html" title="Doxygen documentation"><code>Doxygen documentation</code></a>
+  </div>
+
+</div>
+
+
+            <hr>
+            <h1><b>dunst(5)</b> <div class="flabel">2026-01-23</div></h1>
+
                 
                     <nav id="TableOfContents"></nav>
                 
-                <p><a href="http://localhost:1313/documentation/" title="Dunstrc documentation"><code>dunst(5)</code></a>
-<a href="http://localhost:1313/documentation/dunst/" title="Dunst documentation"><code>dunst(1)</code></a>
-<a href="http://localhost:1313/documentation/dunstctl/" title="Dunstctl documentation"><code>dunstctl(1)</code></a></p>
-<hr>
-<h1 id="dunst5-div-classflabel2024-11-30div"><strong>dunst(5)</strong> <div class="flabel"><strong>2024-11-30</strong></div></h1>
-<?xml version="1.0" ?>
+                <?xml version="1.0" ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<title>dunst - configuration file</title>
+<title>dunstrc - dunst configuration file</title>
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 <link rev="made" href="mailto:root@localhost" />
 </head>
@@ -97,6 +184,7 @@
       <li><a href="#Global-section">Global section</a></li>
       <li><a href="#Keyboard-shortcuts-X11-only">Keyboard shortcuts (X11 only)</a></li>
       <li><a href="#Urgency-sections">Urgency sections</a></li>
+      <li><a href="#Experimental-section">Experimental section</a></li>
     </ul>
   </li>
   <li><a href="#DUNSTCTL">DUNSTCTL</a></li>
@@ -107,11 +195,8 @@
       <li><a href="#SCRIPTING">SCRIPTING</a></li>
     </ul>
   </li>
-  <li><a href="#COLORS">COLORS</a>
-    <ul>
-      <li><a href="#NOTIFY-SEND">NOTIFY-SEND</a></li>
-    </ul>
-  </li>
+  <li><a href="#COLORS">COLORS</a></li>
+  <li><a href="#NOTIFY-SEND-HINTS">NOTIFY-SEND HINTS</a></li>
   <li><a href="#ACTIONS">ACTIONS</a></li>
   <li><a href="#TIME-FORMAT">TIME FORMAT</a></li>
   <li><a href="#AUTHORS">AUTHORS</a></li>
@@ -120,19 +205,23 @@
   <li><a href="#SEE-ALSO">SEE ALSO</a></li>
 </ul>
 <h1 id="NAME">NAME</h1>
-<p>dunst - configuration file</p>
+<p>dunstrc - dunst configuration file</p>
 <h1 id="DESCRIPTION">DESCRIPTION</h1>
 <p>The configuration is divided into sections in an ini-like format. Every section starts with the section&#39;s name in square brackets. After that is a list of key-value pairs that specify the settings. Whitespace is purely cosmetic and doesn&#39;t change the result.</p>
-<p>The &#39;global&#39; section contains the general settings applying to all of dunst. The rest of the settings can be specified via rules and can be located in any section. These rules can change a notification based on its properties. There are filtering rules and modifying rules. Filtering rules specify what notifications the rule applies to. Modifying rules specify changes to the matching notifications. Some special sections have implied filters that cannot be changed. For example, the &quot;global&quot; section has no filters: it applies to all notifications.</p>
+<p>The &quot;global&quot; section contains the general settings applying to all of dunst. The rest of the settings can be specified via rules and can be located in any section. These rules can change a notification based on its properties. There are filtering rules and modifying rules. Filtering rules specify what notifications the rule applies to. Modifying rules specify changes to the matching notifications. Some special sections have implied filters that cannot be changed. For example, the &quot;global&quot; section has no filters: it applies to all notifications.</p>
 <p>See RULES for more details.</p>
-<p>All experimental settings are marked with <i>Experimental</i></p>
+<p>The &quot;experimental&quot; section contains experimental and unstable settings. These options can change in breaking ways between releases. If you find a problem with these new features, make sure to report it.</p>
 <h2 id="Global-section">Global section</h2>
 <dl>
+<dt id="default_pause_level-values:-0-100-default:-0"><b>default_pause_level</b> (values: [0-100], default: 0)</dt>
+<dd>
+<p>Specify a pause level to be set on dunst startup. Notifications are only shown if their urgency level is higher than the pause level. See <b>override_pause_level</b> for more information.</p>
+</dd>
 <dt id="monitor-default:-0"><b>monitor</b> (default: 0)</dt>
 <dd>
 <p>Specifies on which monitor the notifications should be displayed in, either by name or by number, starting from 0. See the <b>follow</b> setting.</p>
 </dd>
-<dt id="follow-values:-none-mouse-keyboard-default:-none"><b>follow</b> (values: [none/mouse/keyboard] default: none)</dt>
+<dt id="follow-values:-none-mouse-keyboard-default:-none"><b>follow</b> (values: [none/mouse/keyboard], default: none)</dt>
 <dd>
 <p>Defines where the notifications should be placed in a multi-monitor setup. All values except <i>none</i> override the <b>monitor</b> setting.</p>
 <p>On Wayland there is no difference between mouse and keyboard focus. When either of them is used, the compositor will choose an output. This will generally be the output last interacted with.</p>
@@ -154,7 +243,7 @@
 <dt id="enable_posix_regex-default:-false"><b>enable_posix_regex</b> (default: false)</dt>
 <dd>
 <p>When set to true (recommended), you can use POSIX regular expressions for filtering rules. It uses the POSIX Extended Regular Expression syntax: https://en.m.wikibooks.org/wiki/Regular_Expressions/POSIX-Extended_Regular_Expressions.</p>
-<p>If this is set to false (not recommended), dunst will us fnmatch(3) for matching strings. Dunst doesn&#39;t pass any flags to fnmatch, so you cannot make use of extended patterns.</p>
+<p>If this is set to false (not recommended), dunst will use fnmatch(3) for matching strings. Dunst doesn&#39;t pass any flags to fnmatch, so you cannot make use of extended patterns.</p>
 <p>The POSIX syntax is more powerful and will eventually become the default. The main differences between POSIX and fnmatch(3) is that POSIX uses &quot;.*&quot; for wildcards instead of &quot;*&quot; and POSIX allows for partial matches without needing wildcards. This means that the pattern &quot;abc&quot; will match all strings that contain &quot;abc&quot;, like &quot;abcdef&quot;.</p>
 </dd>
 <dt id="geometry-DEPRECATED"><b>geometry</b> DEPRECATED</dt>
@@ -181,7 +270,7 @@ width = (0, 300) # width between 0 and 300</code></pre>
 <pre><code>height = 300      # constant height of 300
 height = (0, 300) # height between 0 and 300</code></pre>
 <p>Note that unlike width, different notifications can have diffrent height values.</p>
-<p>Dunst v1.11 and older do not support a dynamic height and setting the <b>height</b> value is equivalent to doing (0, value).</p>
+<p>Dunst v1.11 and older do not support a dynamic height and <b>height</b> accepts a single value whose behaviour is equivalent to (0, value).</p>
 </dd>
 <dt id="notification_limit-default:-20"><b>notification_limit</b> (default: 20)</dt>
 <dd>
@@ -200,7 +289,7 @@ left-center
 center
 right-center</code></pre>
 </dd>
-<dt id="offset-format:-horizontal-vertical"><b>offset</b> format: (horizontal, vertical)</dt>
+<dt id="offset-format:-horizontal-vertical-default:-10-50"><b>offset</b> (format: (horizontal, vertical), default: (10, 50))</dt>
 <dd>
 <p>Respectively the horizontal and vertical offset in pixels from the corner of the screen specified by <b>origin</b>. A negative offset will lead to the notification being off screen.</p>
 <p>Examples:</p>
@@ -209,13 +298,13 @@ offset = (10, 300) # a margin of 10 pixels from the right and 300 pixels from th
 <p>Dunst v1.11 and older use the syntax NxN instead (X offset x Y offset). For backwards compatibility this syntax is also accepted.</p>
 <pre><code>offset = 10x300</code></pre>
 </dd>
-<dt id="scale-default:-0-X11-only"><b>scale</b> (default: 0, X11 only)</dt>
+<dt id="scale-default:-0-X11-only"><b>scale</b> (default: 0) (X11 only)</dt>
 <dd>
 <p>Specifies a scale factor for dimensions to adapt notifications to HiDPI screens. This scales the notification geometry and it&#39;s contents. It is not recommended to use a fractional scaling factor, as this may result in things being one pixel off. Try to use a whole number scaling factor and adjust the font size and other sizes as needed. If 0 is specified, the scale factor is auto-detected.</p>
 </dd>
 <dt id="progress_bar-values:-true-false-default:-true"><b>progress_bar</b> (values: [true/false], default: true)</dt>
 <dd>
-<p>When an integer value is passed to dunst as a hint (see <b>NOTIFY-SEND</b>), a progress bar will be drawn at the bottom of the notification. This behavior can be turned off by setting this setting to false.</p>
+<p>When an integer value is passed to dunst as a hint (see NOTIFY-SEND), a progress bar will be drawn at the bottom of the notification. This behavior can be turned off by setting this setting to false.</p>
 </dd>
 <dt id="progress_bar_horizontal_alignment-values:-left-center-right-default:-center"><b>progress_bar_horizontal_alignment</b> (values: [left/center/right], default: center)</dt>
 <dd>
@@ -275,11 +364,11 @@ offset = (10, 300) # a margin of 10 pixels from the right and 300 pixels from th
 </dd>
 <dt id="padding-default:-8"><b>padding</b> (default: 8)</dt>
 <dd>
-<p>The distance in pixels from the content to the separator/border of the window in the vertical axis</p>
+<p>The distance in pixels from the content to the separator/border of the window in the vertical axis.</p>
 </dd>
 <dt id="horizontal_padding-default:-8"><b>horizontal_padding</b> (default: 8)</dt>
 <dd>
-<p>The distance in pixels from the content to the border of the window in the horizontal axis</p>
+<p>The distance in pixels from the content to the border of the window in the horizontal axis.</p>
 </dd>
 <dt id="text_icon_padding-default:-0"><b>text_icon_padding</b> (default: 0)</dt>
 <dd>
@@ -302,7 +391,7 @@ horizontal_padding=10</code></pre>
 <p>If value is greater than 0, <b>separator_height</b> will be ignored and a border of size <b>frame_width</b> will be drawn around each notification instead.</p>
 <p>This setting requires a compositor and any applications displayed between the gaps are not currently clickable.</p>
 </dd>
-<dt id="separator_color-values:-auto-foreground-frame-RRGGBB-default:-frame"><b>separator_color</b> (values: [auto/foreground/frame/#RRGGBB] default: frame)</dt>
+<dt id="separator_color-values:-auto-foreground-frame-RRGGBB-default:-frame"><b>separator_color</b> (values: [auto/foreground/frame/#RRGGBB], default: frame)</dt>
 <dd>
 <p>Sets the color of the separator line between two notifications.</p>
 <dl>
@@ -320,7 +409,7 @@ horizontal_padding=10</code></pre>
 </dd>
 <dt id="anything-else"><b>anything else</b></dt>
 <dd>
-<p>Any other value is interpreted as a color, see COLORS</p>
+<p>Any other value is interpreted as a color, see COLORS.</p>
 </dd>
 </dl>
 </dd>
@@ -339,12 +428,10 @@ horizontal_padding=10</code></pre>
 <p>A client can mark a notification as transient to bypass this setting and timeout anyway. Use a rule with &#39;set_transient = no&#39; to disable this behavior.</p>
 <p>Note: this doesn&#39;t work on xwayland.</p>
 </dd>
-<dt id="layer-Wayland-only"><b>layer</b> (Wayland only)</dt>
+<dt id="layer-values:-bottom-top-overlay-default:-overlay-Wayland-only"><b>layer</b> (values: [bottom/top/overlay], default: overlay) (Wayland only)</dt>
 <dd>
-<p>One of bottom, top or overlay.</p>
 <p>Place dunst notifications on the selected layer. Using overlay will cause notifications to be displayed above fullscreen windows, though this may also occur at top depending on your compositor.</p>
 <p>The bottom layer is below all windows and above the background.</p>
-<p>Default: overlay</p>
 </dd>
 <dt id="force_xwayland-values:-true-false-default:-false-Wayland-only"><b>force_xwayland</b> (values: [true/false], default: false) (Wayland only)</dt>
 <dd>
@@ -354,7 +441,7 @@ horizontal_padding=10</code></pre>
 <dt id="font-default:-Monospace-8"><b>font</b> (default: &quot;Monospace 8&quot;)</dt>
 <dd>
 <p>Defines the font or font set used. Optionally set the size as a decimal number after the font name and space. Multiple font options can be separated with commas.</p>
-<p>This options is parsed as a Pango font description.</p>
+<p>This options is parsed as a Pango font description. More information on the string format can be found here https://docs.gtk.org/Pango/type_func.FontDescription.from_string.html.</p>
 </dd>
 <dt id="line_height-default:-0"><b>line_height</b> (default: 0)</dt>
 <dd>
@@ -363,8 +450,8 @@ horizontal_padding=10</code></pre>
 <dt id="format-default:-b-s-b-n-b"><b>format</b> (default: &quot;&lt;b&gt;%s&lt;/b&gt;\n%b&quot;)</dt>
 <dd>
 <p>Specifies how the various attributes of the notification should be formatted on the notification window.</p>
-<p>Regardless of the status of the <b>markup</b> setting, any markup tags that are present in the format will be parsed. Note that because of that, if a literal ampersand (&amp;) is needed it needs to be escaped as &#39;&amp;amp;&#39;</p>
-<p>If &#39;\n&#39; is present anywhere in the format, it will be replaced with a literal newline.</p>
+<p>Regardless of the status of the <b>markup</b> setting, any markup tags that are present in the format will be parsed. Note that because of that, if a literal ampersand (&amp;) is needed it needs to be escaped as &#39;&amp;amp;&#39;.</p>
+<p>If &#39;\n&#39; or &#39;\t&#39; is present anywhere in the format, it will be replaced with a literal newline or tab respectively.</p>
 <p>If any of the following strings are present, they will be replaced with the equivalent notification attribute.</p>
 <p>For a complete markup reference, see &lt;https://docs.gtk.org/Pango/pango_markup.html&gt;.</p>
 <dl>
@@ -375,6 +462,12 @@ horizontal_padding=10</code></pre>
 <dd>
 </dd>
 <dt id="b-body"><b>%b</b> body</dt>
+<dd>
+</dd>
+<dt id="c-category"><b>%c</b> category</dt>
+<dd>
+</dd>
+<dt id="S-stack_tag"><b>%S</b> stack_tag</dt>
 <dd>
 </dd>
 <dt id="i-iconname-including-its-path"><b>%i</b> iconname (including its path)</dt>
@@ -389,7 +482,7 @@ horizontal_padding=10</code></pre>
 <dt id="n-progress-value-without-any-extra-characters"><b>%n</b> progress value without any extra characters</dt>
 <dd>
 </dd>
-<dt id="Literal"><b>%%</b> Literal %</dt>
+<dt id="literal"><b>%%</b> literal %</dt>
 <dd>
 </dd>
 </dl>
@@ -424,15 +517,15 @@ horizontal_padding=10</code></pre>
 <dt id="icon_path-default:-usr-share-icons-gnome-16x16-status-:-usr-share-icons-gnome-16x16-devices"><b>icon_path</b> (default: &quot;/usr/share/icons/gnome/16x16/status/:/usr/share/icons/gnome/16x16/devices/&quot;)</dt>
 <dd>
 <p>Can be set to a colon-separated list of paths to search for icons to use with notifications.</p>
-<p>Dunst doens&#39;t search outside of these direcories. For a recursive icon lookup system, see <b>enable_recursive_icon_lookup</b>. This new system will eventually replace this and will need new settings.</p>
+<p>Dunst doens&#39;t search outside of these direcories. For a recursive icon lookup system, see <b>enable_recursive_icon_lookup</b>. This new system will eventually replace icon_path search.</p>
 </dd>
 <dt id="icon_theme-default:-Adwaita-example:-Adwaita-breeze"><b>icon_theme</b> (default: &quot;Adwaita&quot;, example: &quot;Adwaita, breeze&quot;)</dt>
 <dd>
-<p>Comma-separated list of names of the the themes to use for looking up icons. This as to be the name of the directory in which the theme is located, not the human-friendly name of the theme. So for example, the theme <b>Breeze Dark</b> is located in <i>/usr/share/icons/breeze-dark</i>. In this case you have to set the theme to <b>breeze-dark</b>.</p>
+<p>Comma-separated list of names of the themes to use for looking up icons. This has to be the name of the directory in which the theme is located, not the human-friendly name of the theme. So for example, the theme <b>Breeze Dark</b> is located in <i>/usr/share/icons/breeze-dark</i>. In this case you have to set the theme to <b>breeze-dark</b>.</p>
 <p>The first theme in the list is the most important. Only if the icon cannot be found in that theme, the next theme will be tried.</p>
 <p>Dunst will look for the themes in <b>XDG_DATA_HOME/icons</b> and <b>$XDG_DATA_DIRS/icons</b> as specified in the icon theme specification: https://specifications.freedesktop.org/icon-theme-spec/icon-theme-spec-latest.html.</p>
 <p>If the theme inherits from other themes, they will be used as a backup.</p>
-<p>This setting is experimental and not enabled by default. See <b>enable_recursive_icon_lookup</b> for how to enable it.</p>
+<p>This setting is not enabled by default. See <b>enable_recursive_icon_lookup</b> for how to enable it.</p>
 </dd>
 <dt id="enable_recursive_icon_lookup-default:-false"><b>enable_recursive_icon_lookup</b> (default: false)</dt>
 <dd>
@@ -457,19 +550,21 @@ horizontal_padding=10</code></pre>
 </dd>
 <dt id="always_run_script-values:-true-false-default:-true"><b>always_run_script</b> (values: [true/false] default: true]</dt>
 <dd>
-<p>Always run rule-defined scripts, even if the notification is suppressed with format = &quot;&quot;. See SCRIPTING.</p>
+<p>Always run rule-defined scripts, even if the notification is suppressed with <code>format = &quot;&quot;</code>. See SCRIPTING.</p>
 </dd>
 <dt id="title-default:-Dunst-X11-only"><b>title</b> (default: &quot;Dunst&quot;) (X11 only)</dt>
 <dd>
-<p>Defines the title of notification windows spawned by dunst. (_NET_WM_NAME property). There should be no need to modify this setting for regular use.</p>
+<p>Defines the title (<i>_NET_WM_NAME</i> property) of notification windows spawned by dunst.</p>
+<p>There should be no need to modify this setting for regular use.</p>
 </dd>
 <dt id="class-default:-Dunst-X11-only"><b>class</b> (default: &quot;Dunst&quot;) (X11 only)</dt>
 <dd>
-<p>Defines the class of notification windows spawned by dunst. (First part of WM_CLASS). There should be no need to modify this setting for regular use.</p>
+<p>Defines the class (<i>WM_CLASS</i> first part) of notification windows spawned by dunst.</p>
+<p>There should be no need to modify this setting for regular use.</p>
 </dd>
 <dt id="force_xinerama-values:-true-false-default:-false-X11-only"><b>force_xinerama</b> (values: [true/false], default: false) (X11 only)</dt>
 <dd>
-<p>Use the Xinerama extension instead of RandR for multi-monitor support. This setting is provided for compatibility with older nVidia drivers that do not support RandR and using it on systems that support RandR is highly discouraged.</p>
+<p>Use the Xinerama extension instead of RandR for multi-monitor support. This setting is <i>provided for compatibility</i> with older nVidia drivers that do not support RandR and using it on systems that support RandR is <i>highly discouraged</i>.</p>
 <p>By enabling this setting dunst will not be able to detect when a monitor is connected or disconnected which might break follow mode if the screen layout changes.</p>
 </dd>
 <dt id="corner_radius-default:-0"><b>corner_radius</b> (default: 0)</dt>
@@ -479,10 +574,10 @@ horizontal_padding=10</code></pre>
 <p>To avoid the corners clipping the icon or text the corner radius will be automatically lowered to half of the notification height if it exceeds it.</p>
 <p>This setting will be ignored if <b>corners</b> is set to none.</p>
 </dd>
-<dt id="corners-default:-all"><b>corners</b> (default: all)</dt>
+<dt id="corners-values:-none-all-bottom-right-bottom-left-top-right-top-left-top-bottom-left-right-default:-all"><b>corners</b> (values: [none/all/bottom-right/bottom-left/top-right/top-left/top/bottom/left/right], default: all)</dt>
 <dd>
-<p>Define which corners to round when drawing the window. If the corner radius is set to 0 this option will be ignored.</p>
-<p>Comma-separated list of the corners. The accepted corner values are bottom-right, bottom-left, top-right, top-left, top, bottom, left, right or all.</p>
+<p>Comma-separated list of the corners to round when drawing the window.</p>
+<p>If the corner radius is set to 0 this option will be ignored.</p>
 </dd>
 <dt id="mouse_-left-middle-right-_click-values:-none-do_action-close_current-close_all-context-context_all"><b>mouse_[left/middle/right]_click</b> (values: [none/do_action/close_current/close_all/context/context_all])</dt>
 <dd>
@@ -491,7 +586,7 @@ horizontal_padding=10</code></pre>
 <ul>
 <li><p><code>mouse_left_click=close_current</code></p>
 </li>
-<li><p><code>mouse_middle_click=do_action, close_current</code></p>
+<li><p><code>mouse_middle_click=do_action, remove_current</code></p>
 </li>
 <li><p><code>mouse_right_click=close_all</code></p>
 </li>
@@ -529,17 +624,19 @@ horizontal_padding=10</code></pre>
 </dd>
 <dt id="ignore_dbusclose-default:-false"><b>ignore_dbusclose</b> (default: false)</dt>
 <dd>
-<p>Ignore the dbus closeNotification message. This is useful to enforce the timeout set by dunst configuration. Without this parameter, an application may close the notification sent before the user defined timeout.</p>
+<p>Ignore the dbus <i>CloseNotification</i> message. This is useful to enforce the timeout set by dunst configuration. Without this parameter, an application may close the notification sent before the user defined timeout.</p>
 </dd>
 <dt id="override_pause_level-values:-0-100-default:-0"><b>override_pause_level</b> (values: [0-100], default: 0)</dt>
 <dd>
-<p>A Notification will appear whenever notification&#39;s override_pause_level &gt;= dunst&#39;s paused level. Setting this to values other than 0 allows you to create partial pause modes, where more urgent notifications get through, but less urgent stay paused. For example, when you can set a low battery noficiation&#39;s override_pause_level to 60 and then set dunst&#39;s pause level to 60. This will cause dunst to only show battery level notification (and other notifications with override_pause_level &gt;= 60), while suspending others.</p>
+<p>A notification will appear whenever notification&#39;s <i>override_pause_level</i> is greater than the paused level. Setting this to values other than 0 allows you to create partial pause modes, where more urgent notifications get through, but less urgent stay paused.</p>
+<p>For example, when you can set a low battery notification&#39;s override_pause_level to 60 and then set dunst&#39;s pause level to 60. This will cause dunst to only show battery level notification (and other notifications with override_pause_level &gt;= 60), while suspending others.</p>
 </dd>
 </dl>
 <h2 id="Keyboard-shortcuts-X11-only">Keyboard shortcuts (X11 only)</h2>
 <p>Keyboard shortcuts are defined in the following format: &quot;Modifier+key&quot; where the modifier is one of ctrl,mod1,mod2,mod3,mod4 and key is any keyboard key.</p>
 <p>Note that the keyboard shortcuts have been moved to the <b>global</b> section of the config for consistency with other settings.</p>
 <p>Alternatively you can also define shortcuts inside your window manager and bind them to dunstctl(1) commands.</p>
+<p>Wayland does not allow applications to listen to global keyboard events, so this feature can be implemented only for X.</p>
 <dl>
 <dt id="close"><b>close</b></dt>
 <dd>
@@ -562,36 +659,16 @@ horizontal_padding=10</code></pre>
 <p>The urgency sections work in a similar way to rules and can be used to specify attributes for the different urgency levels of notifications (low, normal, critical). Currently only the background, foreground, hightlight, timeout, frame_color and icon attributes can be modified.</p>
 <p>The urgency sections are urgency_low, urgency_normal, urgency_critical for low, normal and critical urgency respectively.</p>
 <p>See the example configuration file for examples.</p>
-<p>The flags for setting the colors notifications of different urgencies have been removed. See issue #328 in the bug tracker for discussions (See REPORTING BUGS).</p>
+<p>Old version of dunst allowed changing the colors of different urgencies through command line options. This has been long removed in favour of RULES, see issue #328.</p>
+<h2 id="Experimental-section">Experimental section</h2>
 <dl>
-<dt id="li-ni-ci-icon-DEPRECATED"><b>-li/ni/ci icon</b> DEPRECATED</dt>
+<dt id="per_monitor_dpi-default:-false"><b>per_monitor_dpi</b> (default: false)</dt>
 <dd>
-<p>Defines the icon for low, normal and critical notifications respectively. This setting will be replaced by the <b>default_icon</b> setting, so it&#39;s recommended to replace it as soon as possible.</p>
-<p>Where <i>icon</i> is a path to an image file containing the icon.</p>
+<p>Use different DPI for each monitor. This setting is currently implemented only for X11.</p>
 </dd>
-<dt id="lf-nf-cf-color-REMOVED"><b>-lf/nf/cf color</b> REMOVED</dt>
+<dt id="pause_on_mouse_over-default:-false"><b>pause_on_mouse_over</b> (default: false)</dt>
 <dd>
-<p>Defines the foreground color for low, normal and critical notifications respectively.</p>
-<p>See COLORS for the value format.</p>
-</dd>
-<dt id="lb-nb-cb-color-REMOVED"><b>-lb/nb/cb color</b> REMOVED</dt>
-<dd>
-<p>Defines the background color for low, normal and critical notifications respectively.</p>
-<p>See COLORS for the value format.</p>
-</dd>
-<dt id="lh-nh-ch-color-REMOVED"><b>-lh/nh/ch color</b> REMOVED</dt>
-<dd>
-<p>Defines the highlight color for low, normal and critical notifications respectively.</p>
-<p>See COLORS for the value format.</p>
-</dd>
-<dt id="lfr-nfr-cfr-color-REMOVED"><b>-lfr/nfr/cfr color</b> REMOVED</dt>
-<dd>
-<p>Defines the frame color for low, normal and critical notifications respectively.</p>
-<p>See COLORS for more information</p>
-</dd>
-<dt id="lto-nto-cto-secs-REMOVED"><b>-lto/nto/cto secs</b> REMOVED</dt>
-<dd>
-<p>Defines the timeout time for low, normal and critical notifications respectively. See TIME FORMAT for valid times.</p>
+<p>Pause notification timeout when hovering with the mouse pointer. This setting is currently implemented only for Wayland.</p>
 </dd>
 </dl>
 <h1 id="DUNSTCTL">DUNSTCTL</h1>
@@ -601,9 +678,10 @@ horizontal_padding=10</code></pre>
 <p>Past notifications are redisplayed in a first-in-last-out order, meaning that pressing the history key once will bring up the most recent notification that had been closed/timed out.</p>
 <h1 id="WAYLAND">WAYLAND</h1>
 <p>Dunst has Wayland support since version 1.6.0. Because the Wayland protocol is more focused on security, some things that are possible in X11 are not possible in Wayland. Those differences are reflected in the configuration. The main things that change are that dunst on Wayland cannot use global hotkeys, use dunstctl instead.</p>
-<p>Some dunst features on wayland might need your compositor to support a certain protocol. Dunst will warn you if an optional feature isn&#39;t supported and will disable the corresponding functionality.</p>
+<p>Some dunst features on Wayland might need your compositor to support a certain protocol. Dunst will warn you if an optional feature isn&#39;t supported and will disable the corresponding functionality.</p>
 <p>Fullscreen detection works on wayland with some limitations (see <b>fullscreen</b>). If you want notifications to appear over fullscreen windows, set <b>layer = overlay</b> in the global options.</p>
-<p>Note that the same limitations exist when using xwayland. If something doesn&#39;t quite work in Wayland, please file a bug report. In the mean time, you can try if the X11 output does work on wayland. Use <b>force_xwayland = true</b> for that.</p>
+<p>Note that the same limitations exist when using XWayland.</p>
+<p>If something doesn&#39;t quite work in Wayland, please file a bug report. In the mean time, you can try if the X11 output does work on wayland. Use <b>force_xwayland = true</b> for that.</p>
 <p>If you have your dunst notifications on the same side of your display as your status bar, you might notice that your notifications appear a bit higher or lower than on X11. This is because the notification cannot be placed on top of your status bar. The notifications are placed relative to your status bar, making them appear higher or lower by the height of your status bar. We cannot do anything about that behavior.</p>
 <p>Note that dunst creates a &quot;desktop layer&quot; using the layer shell protocol and not a regular Wayland window. This has some limitations like stated above. For example you can&#39;t set a window title/class.</p>
 <h1 id="RULES">RULES</h1>
@@ -625,11 +703,16 @@ horizontal_padding=10</code></pre>
 <dd>
 <p>With filtering rules you can match notifications to apply rules to only a subset of notifications.</p>
 <p>For filtering rules that filter based on strings you can use regular expressions. It&#39;s recommended to set <b>enable_posix_regex</b> to true. You can then use the POSIX Extended Regular Expression syntax: https://en.m.wikibooks.org/wiki/Regular_Expressions/POSIX-Extended_Regular_Expressions.</p>
-<p>Notifications can be matched for any of the following attributes.</p>
+<p>A matching rule is made by assigning a filter attribute to the value you want to match. Shell-like globbing is supported when matching values.</p>
+<p>If multiple filter expressions are present, all of them have to match for the rule to be applied (logical AND).</p>
+<p>An example of rule that only operates on messages sent by notify-send is:</p>
+<pre><code>appname=&quot;notify-send&quot;</code></pre>
+<p>The allowed attributes are listed below.</p>
 <dl>
-<dt id="appname-discouraged-see-desktop_entry"><code>appname</code> (discouraged, see desktop_entry)</dt>
+<dt id="appname-see-also-desktop_entry"><code>appname</code> (see also desktop_entry)</dt>
 <dd>
 <p>The name of the application as reported by the client. Be aware that the name can often differ depending on the locale used.</p>
+<p>It&#39;s recommended to use the <code>desktop_entry</code> filter instead.</p>
 </dd>
 <dt id="body"><code>body</code></dt>
 <dd>
@@ -660,6 +743,7 @@ horizontal_padding=10</code></pre>
 <dt id="msg_urgency"><code>msg_urgency</code></dt>
 <dd>
 <p>Matches the urgency of the notification as set by the client or by some other rule.</p>
+<p>It is named so to not conflict with trying to modify the urgency.</p>
 </dd>
 <dt id="stack_tag"><code>stack_tag</code></dt>
 <dd>
@@ -671,15 +755,10 @@ horizontal_padding=10</code></pre>
 <p>Matches the summary, &#39;title&#39;, of the notification.</p>
 </dd>
 </dl>
-<p><code>msg_urgency</code> is the urgency of the notification, it is named so to not conflict with trying to modify the urgency.</p>
-<p>Instead of the appname filter, it&#39;s recommended to use the desktop_entry filter.</p>
-<p>To define a matching rule simply assign the specified value to the value that should be matched, for example:</p>
-<pre><code>appname=&quot;notify-send&quot;</code></pre>
-<p>Matches only messages that were send via notify-send. If multiple filter expressions are present, all of them have to match for the rule to be applied (logical AND).</p>
-<p>Shell-like globbing is supported.</p>
 </dd>
 <dt id="modifying"><b>modifying</b></dt>
 <dd>
+<p>A modifying rule, similarly to a filtering one, is made by assigning a value to a notification attribute in the rule definition.</p>
 <p>The following attributes can be overridden:</p>
 <dl>
 <dt id="background"><code>background</code></dt>
@@ -703,22 +782,20 @@ horizontal_padding=10</code></pre>
 <dd>
 <p>The frame color color of the notification. See COLORS for possible values.</p>
 </dd>
-<dt id="fullscreen"><code>fullscreen</code></dt>
+<dt id="fullscreen-values:-delay-show-pushback-default:-show"><code>fullscreen</code> (values: [delay/show/pushback], default: show)</dt>
 <dd>
-<p>One of show, delay, or pushback.</p>
 <p>This attribute specifies how notifications are handled if a fullscreen window is focused. By default it&#39;s set to show so notifications are being shown.</p>
 <p>Other possible values are delay: Already shown notifications are continued to be displayed until they are dismissed or time out but new notifications will be held back and displayed when the focus to the fullscreen window is lost.</p>
 <p>Or pushback which is equivalent to delay with the difference that already existing notifications are paused and hidden until the focus to the fullscreen window is lost.</p>
-<p>On wayland, if <b>follow</b> is set to mouse or keyboard, the output where the notification is located cannot be determined. So dunst will delay or pushback if any of the outputs is fullscreen. Since the fullscreen protocol is fairly new, you will need a recent version of a compositor that supports it. At the time of writing, you will need the git version of sway. See also <b>layer</b> to change if notifications appear above fullscreen windows in Wayland.</p>
-<p>Default: show</p>
+<p>On Wayland, if <b>follow</b> is set to mouse or keyboard, the output where the notification is located cannot be determined. So dunst will delay or pushback if any of the outputs is fullscreen. Since the fullscreen protocol is fairly new, you will need a recent version of a compositor that supports it. At the time of writing, you will need the git version of sway. See also <b>layer</b> to change if notifications appear above fullscreen windows in Wayland.</p>
 </dd>
-<dt id="min_icon_size-default:-32"><b>min_icon_size</b> (default: 32)</dt>
+<dt id="min_icon_size-default:-32"><code>min_icon_size</code> (default: 32)</dt>
 <dd>
 <p>Defines the minimum size in pixels for the icons. If the icon is larger than or equal to the specified value it won&#39;t be affected. If it&#39;s smaller then it will be scaled up so that the smaller axis is equivalent to the specified size.</p>
 <p>When using recursive icon lookup (see <b>enable_recursive_icon_lookup</b>), all icons from a theme will be this size.</p>
 <p>If <b>icon_position</b> is set to off, this setting is ignored.</p>
 </dd>
-<dt id="max_icon_size-default:-128"><b>max_icon_size</b> (default: 128)</dt>
+<dt id="max_icon_size-default:-128"><code>max_icon_size</code> (default: 128)</dt>
 <dd>
 <p>Defines the maximum size in pixels for the icons. If the icon is smaller than or equal to the specified value it won&#39;t be affected. If it&#39;s larger then it will be scaled down so that the larger axis is equivalent to the specified size.</p>
 <p>Set to 0 to disable icon downscaling.</p>
@@ -749,7 +826,7 @@ horizontal_padding=10</code></pre>
 </dd>
 <dt id="set_category"><code>set_category</code></dt>
 <dd>
-<p>Sets the category of the notification. See https://specifications.freedesktop.org/notification-spec/latest/ar01s06.html for a list of standard categories.</p>
+<p>Sets the category of the notification. For a list of standard categories see https://specifications.freedesktop.org/notification-spec/latest/categories.html.</p>
 </dd>
 <dt id="timeout"><code>timeout</code></dt>
 <dd>
@@ -764,6 +841,10 @@ horizontal_padding=10</code></pre>
 <p>This sets the notification urgency.</p>
 <p><b>IMPORTANT NOTE</b>: This currently DOES NOT re-apply the attributes from the urgency_* sections. The changed urgency will only be visible in rules defined later. Use <code>msg_urgency</code> to match it.</p>
 </dd>
+<dt id="override_pause_level"><code>override_pause_level</code></dt>
+<dd>
+<p>See <b>override_pause_level</b>.</p>
+</dd>
 <dt id="skip_display"><code>skip_display</code></dt>
 <dd>
 <p>Setting this to true will prevent the notification from being displayed initially but will be saved in history for later viewing.</p>
@@ -772,28 +853,27 @@ horizontal_padding=10</code></pre>
 <dd>
 <p>Setting this to true will display the notification initially, but stop it from being recalled via the history.</p>
 </dd>
-<dt id="action_name"><code>action_name</code></dt>
+<dt id="action_name-default:-default"><code>action_name</code> (default: &quot;default&quot;)</dt>
 <dd>
 <p>Sets the name of the action to be invoked on do_action. If not specified, the action set as default action or the only available action will be invoked.</p>
-<p>Default: &quot;default&quot;</p>
 </dd>
-<dt id="word_wrap-values:-true-false-default:-true"><b>word_wrap</b> (values: [true/false], default: true)</dt>
+<dt id="word_wrap-values:-true-false-default:-true"><code>word_wrap</code> (values: [true/false], default: true)</dt>
 <dd>
 <p>Specifies whether to wrap the text if the lines get longer than the maximum notification width. If it&#39;s set to true, long lines will be broken into multiple lines expanding the notification window height as necessary for them to fit. If the text doesn&#39;t fit in the window, it will be ellipsize according to ellipsize.</p>
 </dd>
-<dt id="ellipsize-values:-start-middle-end-default:-middle"><b>ellipsize</b> (values: [start/middle/end], default: middle)</dt>
+<dt id="ellipsize-values:-start-middle-end-default:-middle"><code>ellipsize</code> (values: [start/middle/end], default: middle)</dt>
 <dd>
 <p>Specifies where truncated lines should be ellipsized.</p>
 </dd>
-<dt id="alignment-values:-left-center-right-default:-left"><b>alignment</b> (values: [left/center/right], default: left)</dt>
+<dt id="alignment-values:-left-center-right-default:-left"><code>alignment</code> (values: [left/center/right], default: left)</dt>
 <dd>
 <p>Defines how the text should be aligned within the notification.</p>
 </dd>
-<dt id="hide_text-values:-true-false-default:-false"><b>hide_text</b> (values: [true/false], default: false)</dt>
+<dt id="hide_text-values:-true-false-default:-false"><code>hide_text</code> (values: [true/false], default: false)</dt>
 <dd>
 <p>Setting this to true will skip displaying any text related to the notification. The notification icon and progress bar will still be displayed. This option may be useful for notifications where an icon or progress bar may be sufficient information for the notification, such as audio volume or brightness level.</p>
 </dd>
-<dt id="markup-values:-full-strip-no-default:-no"><b>markup</b> (values: [full/strip/no], default: no)</dt>
+<dt id="markup-values:-full-strip-no-default:-no"><code>markup</code> (values: [full/strip/no], default: no)</dt>
 <dd>
 <p>Defines how markup in notifications is handled.</p>
 <p>It&#39;s important to note that markup in the format option will be parsed regardless of what this is set to.</p>
@@ -806,13 +886,13 @@ horizontal_padding=10</code></pre>
 &lt;i&gt;italic&lt;/i&gt;
 &lt;s&gt;strikethrough&lt;/s&gt;
 &lt;u&gt;underline&lt;/u&gt;</code></pre>
-<p>For a complete reference see &lt;https://docs.gtk.org/Pango/pango_markup.html&gt;</p>
+<p>For a complete reference see https://docs.gtk.org/Pango/pango_markup.html.</p>
 </dd>
 <dt id="strip"><b>strip</b></dt>
 <dd>
 <p>This setting is provided for compatibility with some broken clients that send markup even though it&#39;s not enabled on the server.</p>
 <p>Dunst will try to strip the markup but the parsing is simplistic so using this option outside of matching rules for specific applications <b>IS GREATLY DISCOURAGED</b>.</p>
-<p>See RULES</p>
+<p>See RULES for matching specific broken clients.</p>
 </dd>
 <dt id="no"><b>no</b></dt>
 <dd>
@@ -821,71 +901,86 @@ horizontal_padding=10</code></pre>
 </dl>
 </dd>
 </dl>
-<p>As with the filtering attributes, each one corresponds to the respective notification attribute to be modified.</p>
-<p>As with filtering, to make a rule modify an attribute simply assign it in the rule definition.</p>
-<p>If the format is set to an empty string, the notification will not be suppressed.</p>
 </dd>
 </dl>
 <h2 id="SCRIPTING">SCRIPTING</h2>
 <p>Within rules you can specify a script to be run every time the rule is matched by assigning the &#39;script&#39; option to the name of the script to be run.</p>
-<p>When the script is called details of the notification that triggered it will be passed via environment variables. The following variables are available: <b>DUNST_APP_NAME</b>, <b>DUNST_SUMMARY</b>, <b>DUNST_BODY</b>, <b>DUNST_ICON_PATH</b>, <b>DUNST_URGENCY</b>, <b>DUNST_ID</b>, <b>DUNST_PROGRESS</b>, <b>DUNST_CATEGORY</b>, <b>DUNST_STACK_TAG</b>, <b>DUNST_URLS</b>, <b>DUNST_TIMEOUT</b>, <b>DUNST_TIMESTAMP</b>, <b>DUNST_DESKTOP_ENTRY</b>, and <b>DUNST_STACK_TAG</b>.</p>
+<p>When the script is called details of the notification that triggered it will be passed via environment variables. The following variables are available: <b>DUNST_APP_NAME</b>, <b>DUNST_SUMMARY</b>, <b>DUNST_BODY</b>, <b>DUNST_ICON_PATH</b>, <b>DUNST_URGENCY</b>, <b>DUNST_ID</b>, <b>DUNST_PROGRESS</b>, <b>DUNST_CATEGORY</b>, <b>DUNST_STACK_TAG</b>, <b>DUNST_URLS</b>, <b>DUNST_TIMEOUT</b>, <b>DUNST_TIMESTAMP</b>, and <b>DUNST_DESKTOP_ENTRY</b>.</p>
 <p>Another, less recommended way to get notifcations details from a script is via command line parameters. These are passed to the script in the following order: <b>appname</b>, <b>summary</b>, <b>body</b>, <b>icon_path</b>, <b>urgency</b>.</p>
 <p>Where <b>DUNST_ICON_PATH</b> or <b>icon_path</b> is the absolute path to the icon file if there is one. <b>DUNST_URGENCY</b> or <b>urgency</b> is one of &quot;LOW&quot;, &quot;NORMAL&quot; or &quot;CRITICAL&quot;. <b>DUNST_URLS</b> is a newline-separated list of urls associated with the notification.</p>
 <p>Note that some variables may be empty.</p>
 <p>If the notification is suppressed, the script will not be run unless <b>always_run_script</b> is set to true.</p>
 <p>The script parameter is expanded according to wordexp(3) with command substitution disabled. If the expanded value is not an absolute path, the directories in the PATH variable will be searched for an executable of the same name.</p>
 <h1 id="COLORS">COLORS</h1>
-<p>Colors are interpreted as X11 color values. This includes both verbatim color names such as &quot;Yellow&quot;, &quot;Blue&quot;, &quot;White&quot;, etc as well as #RGB and #RRGGBB values.</p>
-<p>You may also specify a transparency component in #RGBA or #RRGGBBAA format.</p>
-<p><b>NOTE</b>: &#39;#&#39; is interpreted as a comment, to use it the entire value needs to be in quotes like so: separator_color=&quot;#123456&quot;</p>
-<h2 id="NOTIFY-SEND">NOTIFY-SEND</h2>
-<p>dunst is able to get different colors for a message via notify-send. In order to do that you have to add a hint via the -h option. The progress value can be set with a hint, too.</p>
-<p><b>All hints</b></p>
+<p>Colors are values with the format #RGB or #RRGGBB.</p>
+<p>You may also specify a transparency component by using the format #RGBA or #RRGGBBAA.</p>
+<p><b>NOTE</b>: &#39;#&#39; is interpreted as a comment, to use it the entire value needs to be quoted. For example:</p>
+<pre><code>separator_color=&quot;#123456&quot;</code></pre>
+<h1 id="NOTIFY-SEND-HINTS">NOTIFY-SEND HINTS</h1>
+<p>Dunst is able to get different colors for a message via notify-send. In order to do that you have to add a hint via the -h option. The progress value can be set with a hint, too.</p>
+<p>Note: Dunstify is compatible with notify-send and all of these settings work the same way.</p>
+<p>All the accepted hints are listed below.</p>
 <p>See RULES for more detailed explanations for some options.</p>
 <dl>
-<dt id="fgcolor:-Foreground-color"><b>fgcolor</b>: Foreground color.</dt>
+<dt id="fgcolor-type:-string"><b>fgcolor</b> (type: string)</dt>
 <dd>
+<p>Foreground color.</p>
 </dd>
-<dt id="bgcolor:-Background-color"><b>bgcolor</b>: Background color.</dt>
+<dt id="bgcolor-type:-string"><b>bgcolor</b> (type: string)</dt>
 <dd>
+<p>Background color.</p>
 </dd>
-<dt id="frcolor:-Frame-color"><b>frcolor</b>: Frame color.</dt>
+<dt id="frcolor-type:-string"><b>frcolor</b> (type: string)</dt>
 <dd>
+<p>Frame color.</p>
 </dd>
-<dt id="hlcolor:-Highlight-color"><b>hlcolor</b>: Highlight color.</dt>
+<dt id="hlcolor-type:-string-or-string-array"><b>hlcolor</b> (type: string or string array)</dt>
 <dd>
+<p>Highlight color.</p>
 </dd>
-<dt id="value:-Progress-value"><b>value</b>: Progress value.</dt>
+<dt id="value-type:-int-or-uint"><b>value</b> (type: int or uint)</dt>
 <dd>
+<p>Progress value.</p>
 </dd>
-<dt id="image-path:-Icon-name.-This-may-be-a-path-or-just-the-icon-name"><b>image-path</b>: Icon name. This may be a path or just the icon name.</dt>
+<dt id="image-path-type:-string"><b>image-path</b> (type: string)</dt>
 <dd>
+<p>Icon name. This may be a path or just the icon name.</p>
+<p>The alias <b>image_path</b> is also supported.</p>
 </dd>
-<dt id="image-data:-A-stream-of-raw-image-data"><b>image-data</b>: A stream of raw image data.</dt>
+<dt id="image-data-type:-variant"><b>image-data</b> (type: variant)</dt>
 <dd>
+<p>A stream of raw image data.</p>
+<p>The aliases <b>image_data</b> and <b>icon_data</b> are also supported.</p>
 </dd>
-<dt id="category:-The-category"><b>category</b>: The category.</dt>
+<dt id="category-type:-string"><b>category</b> (type: string)</dt>
 <dd>
+<p>The category.</p>
 </dd>
-<dt id="desktop-entry:-The-desktop-entry"><b>desktop-entry</b>: The desktop entry.</dt>
+<dt id="desktop-entry-type:-string"><b>desktop-entry</b> (type: string)</dt>
 <dd>
+<p>The desktop entry.</p>
 </dd>
-<dt id="transient:-The-transient-value"><b>transient</b>: The transient value.</dt>
+<dt id="transient-type:-int-or-boolean"><b>transient</b> (type: int or boolean)</dt>
 <dd>
+<p>The transient value.</p>
+</dd>
+<dt id="x-dunst-stack-tag-type:-string"><b>x-dunst-stack-tag</b> (type: string)</dt>
+<dd>
+<p>The stack tag of the notification. A tagged notification will replace an earlier notification with the same tag.</p>
+</dd>
+<dt id="x-canonical-private-synchronous-type:-string"><b>x-canonical-private-synchronous</b> (type: string)</dt>
+<dd>
+<p>Alias for <b>x-dunst-stack-tag</b>.</p>
 </dd>
 </dl>
-<p><b>Examples</b></p>
-<dl>
-<dt id="notify-send--h-string:fgcolor:-ff4444">notify-send -h string:fgcolor:#ff4444</dt>
-<dd>
-</dd>
-<dt id="notify-send--h-string:bgcolor:-4444ff--h-string:fgcolor:-ff4444--h-string:frcolor:-44ff44">notify-send -h string:bgcolor:#4444ff -h string:fgcolor:#ff4444 -h string:frcolor:#44ff44</dt>
-<dd>
-</dd>
-<dt id="notify-send--h-int:value:42-Working">notify-send -h int:value:42 &quot;Working ...&quot;</dt>
-<dd>
-</dd>
-</dl>
+<p>Some examples:</p>
+<pre><code>notify-send -h string:fgcolor:#ff4444 &quot;hello&quot;
+
+notify-send -h string:bgcolor:#4444ff -h string:fgcolor:#ff4444 -h string:frcolor:#44ff44 &quot;:)&quot;
+
+notify-send -h int:value:42 &quot;Working ...&quot;
+
+notify-send -h string:x-canonical-private-synchronous:volume &quot;Muted&quot;</code></pre>
 <h1 id="ACTIONS">ACTIONS</h1>
 <p>Dunst allows notifiers (i.e.: programs that send the notifications) to specify actions. Dunst has support for both displaying indicators for these, and interacting with these actions.</p>
 <p>If &quot;show_indicators&quot; is true and a notification has an action, an &quot;(A)&quot; will be prepended to the notification format. Likewise, an &quot;(U)&quot; is prepended to notifications with URLs. It is possible to interact with notifications that have actions regardless of this setting, though it may not be obvious which notifications HAVE actions.</p>
@@ -894,16 +989,16 @@ horizontal_padding=10</code></pre>
 <h1 id="TIME-FORMAT">TIME FORMAT</h1>
 <p>A time can be any decimal integer value suffixed with a time unit. If no unit given, seconds (&quot;s&quot;) is taken as default.</p>
 <p>Time units understood by dunst are &quot;ms&quot;, &quot;s&quot;, &quot;m&quot;, &quot;h&quot; and &quot;d&quot;.</p>
-<p>Example time: &quot;1000ms&quot; &quot;10m&quot;</p>
+<p>Example time: &quot;1000ms&quot;, &quot;10m&quot;.</p>
 <h1 id="AUTHORS">AUTHORS</h1>
-<p>Written by Sascha Kruse &lt;knopwob@googlemail.com&gt;</p>
+<p>Written by Sascha Kruse &lt;knopwob@googlemail.com&gt;.</p>
 <h1 id="REPORTING-BUGS">REPORTING BUGS</h1>
-<p>Bugs and suggestions should be reported on GitHub at https://github.com/dunst-project/dunst/issues</p>
+<p>Bugs and suggestions should be reported on GitHub at https://github.com/dunst-project/dunst/issues.</p>
 <h1 id="COPYRIGHT">COPYRIGHT</h1>
-<p>Copyright 2013 Sascha Kruse and contributors (see LICENSE for licensing information)</p>
+<p>Copyright 2013 Sascha Kruse and contributors (see LICENSE for licensing information).</p>
 <p>If you feel that copyrights are violated, please send me an email.</p>
 <h1 id="SEE-ALSO">SEE ALSO</h1>
-<p>dunst(1), dunstctl(1), dmenu(1), notify-send(1)</p>
+<p>dunst(1), dunstctl(1), dmenu(1), notify-send(1), dunstify(1)</p>
 </body>
 </html>
 
@@ -929,9 +1024,7 @@ horizontal_padding=10</code></pre>
     
     </script>
     
-  
-
-
     </body>
 </html>
+
 

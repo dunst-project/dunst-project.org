@@ -1,0 +1,37 @@
+<map id="src/queues.h" name="src/queues.h">
+<area shape="rect" id="Node000001" title="Queues for history, waiting and displayed notifications." alt="" coords="262,5,358,31"/>
+<area shape="rect" id="Node000002" href="$dbus_8h.html" title="DBus support and implementation of the Desktop Notifications Specification." alt="" coords="280,79,340,105"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="313,31,313,63,308,63,308,31"/>
+<area shape="rect" id="Node000003" href="$dunst_8h.html" title="Main event loop logic." alt="" coords="210,153,274,178"/>
+<area shape="poly" id="edge21_Node000001_Node000003" title=" " alt="" coords="302,33,285,54,270,80,258,110,250,138,245,137,253,108,265,78,281,51,298,30"/>
+<area shape="rect" id="Node000008" href="$notification_8h.html" title="Notification type definitions." alt="" coords="330,226,426,252"/>
+<area shape="poly" id="edge22_Node000001_Node000008" title=" " alt="" coords="323,30,340,51,355,78,367,113,374,149,380,210,375,211,369,149,362,114,350,80,336,54,319,33"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="301,107,266,143,262,140,297,103"/>
+<area shape="poly" id="edge20_Node000002_Node000008" title=" " alt="" coords="318,104,369,211,364,213,313,106"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="272,447,324,473"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="211,178,171,196,153,210,139,228,136,239,139,251,156,297,174,330,231,398,271,436,268,440,227,401,170,333,151,299,134,253,131,239,134,225,149,206,168,192,208,173"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="377,447,451,473"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="250,177,281,241,326,324,399,433,394,436,321,327,276,243,245,180"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="149,226,210,252"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="234,180,202,216,198,213,230,177"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="5,226,74,252"/>
+<area shape="poly" id="edge6_Node000003_Node000007" title=" " alt="" coords="210,181,89,223,87,218,209,176"/>
+<area shape="poly" id="edge7_Node000003_Node000008" title=" " alt="" coords="266,177,343,216,340,221,264,181"/>
+<area shape="poly" id="edge8_Node000008_Node000004" title=" " alt="" coords="365,254,344,275,326,301,313,335,306,370,300,432,295,432,300,369,308,333,321,299,340,271,361,251"/>
+<area shape="poly" id="edge9_Node000008_Node000005" title=" " alt="" coords="393,251,410,272,425,299,426,321,418,338,407,354,398,374,396,386,398,399,407,432,401,433,393,400,391,386,393,373,403,351,414,335,421,320,420,301,406,275,389,254"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="654,300,799,326"/>
+<area shape="poly" id="edge10_Node000008_Node000009" title=" " alt="" coords="427,248,653,294,652,299,426,253"/>
+<area shape="rect" id="Node000010" title=" " alt="" coords="535,447,595,473"/>
+<area shape="poly" id="edge11_Node000008_Node000010" title=" " alt="" coords="427,240,460,245,496,256,530,273,558,298,574,331,580,368,579,403,574,433,569,432,573,402,574,368,569,333,553,302,527,277,494,261,459,250,426,245"/>
+<area shape="rect" id="Node000011" href="$markup_8h.html" title="Markup handling for notifications body." alt="" coords="335,300,410,326"/>
+<area shape="poly" id="edge12_Node000008_Node000011" title=" " alt="" coords="380,252,378,285,372,284,375,252"/>
+<area shape="rect" id="Node000012" href="$draw_8h.html" title="Layout and render notifications." alt="" coords="484,300,544,326"/>
+<area shape="poly" id="edge13_Node000008_Node000012" title=" " alt="" coords="402,250,479,290,476,295,400,255"/>
+<area shape="poly" id="edge14_Node000012_Node000005" title=" " alt="" coords="516,327,508,361,491,401,472,423,450,441,446,436,468,419,487,398,503,360,510,326"/>
+<area shape="poly" id="edge15_Node000012_Node000010" title=" " alt="" coords="521,325,558,431,553,433,516,327"/>
+<area shape="rect" id="Node000013" href="$output_8h.html" title="Generic graphics backend wrapper." alt="" coords="408,374,476,399"/>
+<area shape="poly" id="edge16_Node000012_Node000013" title=" " alt="" coords="504,328,467,364,463,361,500,324"/>
+<area shape="poly" id="edge18_Node000013_Node000004" title=" " alt="" coords="419,402,337,442,335,438,417,397"/>
+<area shape="poly" id="edge17_Node000013_Node000005" title=" " alt="" coords="440,401,427,434,422,432,435,399"/>
+<area shape="poly" id="edge19_Node000013_Node000010" title=" " alt="" coords="464,398,533,437,530,442,462,402"/>
+</map>

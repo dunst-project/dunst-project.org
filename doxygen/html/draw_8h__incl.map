@@ -1,0 +1,13 @@
+<map id="src/draw.h" name="src/draw.h">
+<area shape="rect" id="Node000001" title="Layout and render notifications." alt="" coords="90,5,171,31"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,153,80,178"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="122,33,86,80,56,139,51,137,82,78,118,30"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="180,153,241,178"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="144,30,179,78,205,136,200,139,175,80,140,33"/>
+<area shape="rect" id="Node000004" href="$output_8h.html" title="Generic graphics backend wrapper." alt="" coords="96,79,165,105"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="133,31,133,63,128,63,128,31"/>
+<area shape="poly" id="edge4_Node000004_Node000002" title=" " alt="" coords="117,107,71,145,67,141,114,103"/>
+<area shape="poly" id="edge6_Node000004_Node000003" title=" " alt="" coords="146,103,188,140,184,144,142,107"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="104,153,157,178"/>
+<area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="133,105,133,137,128,137,128,105"/>
+</map>
