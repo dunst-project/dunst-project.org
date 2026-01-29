@@ -12,6 +12,12 @@ fi
 
 WIKIREPO="dunst.wiki"
 
+# Generate the file first of all
+make -C "$REPO" doc-doxygen doc
+
+# DOXYGEN
+cp -r "$REPO/docs/internal/html" "static/doxygen"
+
 # CHANGELOG
 cp "helper_files/changelog_header.md" "content/changelog.md"
 # Skip first line
@@ -123,7 +129,3 @@ sed -i "s/DATE/\\\"$date\\\"/" "$dest"
 sed -i "s/DESC/\\\"$title wiki page\\\"/" "$dest"
 sed -i 's/WIKI/true\nweight = 3/' "$dest"
 cat "$WIKIREPO/$from" >> "$dest"
-
-# DOXYGEN
-make -C "$REPO" doc-doxygen
-cp -r "$REPO/docs/internal/html" "static/doxygen"

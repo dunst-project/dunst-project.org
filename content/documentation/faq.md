@@ -3,7 +3,7 @@ title = "Documentation"
 type = "documentation"
 toc = "true"
 subtitle = "FAQ"
-lastdate = "2025-05-05"
+lastdate = "2026-01-23"
 descript = "FAQ wiki page"
 wiki = true
 weight = 3
@@ -114,3 +114,15 @@ alias notify-send="sudo -u USERNAME DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user
 Any other combination, executing `notify-send` with the valid `DBUS_SESSION_BUS_ADDRESS`-variable and user should work.
 
 On the [arch wiki](https://wiki.archlinux.org/title/Desktop_notifications#Send_notifications_to_another_user) you can find alternative approaches using `systemd-run` and [`systembus-notify`](https://github.com/rfjakob/systembus-notify).
+
+
+## Customizing notification body/text colors
+
+You can provide a custom formatting for your notification with the `format` variable.
+You can further customize this with Pango markup, see [text](https://docs.gtk.org/Pango/pango_markup.html#pango-markup).
+
+For example, the title can be made bigger and orange with the following:
+```
+format = "<b><span foreground='orange' size='x-large'>%s</span></b>\n%b"
+```
+
