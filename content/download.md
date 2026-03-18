@@ -5,11 +5,11 @@ menu = "main"
 type = "page"
 +++
 
-The current stable version of Dunst is **1.13.1** released on **January 23 2026**.
+The current stable version of Dunst is **1.13.2** released on **January 23 2026**.
 
 * <i class="fa fa-github" aria-hidden="true"></i> [Github repository](https://github.com/dunst-project/dunst)
 
-* <i class="fa fa-archive" aria-hidden="true"></i> [Source tarball](https://github.com/dunst-project/dunst/archive/v1.13.1.tar.gz)
+* <i class="fa fa-archive" aria-hidden="true"></i> [Source tarball](https://github.com/dunst-project/dunst/archive/v1.13.2.tar.gz)
 
 # Release Notes For v1.13.0
 ***
@@ -29,5 +29,5 @@ While support for make will be kept for future releases, we might eventually
 transitioning fully to the new system.
 Meson support is still considered *experimental* and may still have issues.
 
-Take a look at the [changelog]({{< ref "/changelog#v1.13.1" >}} "Changelog") for all the bug fixes and improvements.
+Take a look at the [changelog]({{< ref "/changelog#v1.13.2" >}} "Changelog") for all the bug fixes and improvements.
 

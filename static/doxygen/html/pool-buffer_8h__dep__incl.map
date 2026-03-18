@@ -1,0 +1,14 @@
+<map id="src/wayland/pool&#45;buffer.h" name="src/wayland/pool&#45;buffer.h">
+<area shape="rect" id="Node000001" title="Wayland rendering buffer pool." alt="" coords="125,5,292,31"/>
+<area shape="rect" id="Node000002" href="$pool-buffer_8c.html" title=" " alt="" coords="5,79,172,105"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="177,42,110,81,108,76,174,37"/>
+<area shape="rect" id="Node000003" href="$wl_8c.html" title=" " alt="" coords="134,153,254,178"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="208,46,198,152,192,152,203,46"/>
+<area shape="rect" id="Node000004" href="$wl__ctx_8h.html" title="Wayland context tracking." alt="" coords="274,79,418,105"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="247,36,324,76,321,81,244,41"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="307,114,221,154,219,150,305,109"/>
+<area shape="rect" id="Node000005" href="$wl__output_8c.html" title=" " alt="" coords="278,153,440,178"/>
+<area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="353,119,360,152,354,153,348,120"/>
+<area shape="rect" id="Node000006" href="$wl__seat_8c.html" title=" " alt="" coords="465,153,616,178"/>
+<area shape="poly" id="edge6_Node000004_Node000006" title=" " alt="" coords="394,108,508,150,506,155,392,113"/>
+</map>

@@ -3,7 +3,7 @@ title = "Documentation"
 type = "documentation"
 toc = "true"
 subtitle = "dunstify"
-lastdate = "2025-01-01"
+lastdate = "2026-02-01"
 descript = "Dunstify manual page"
 wiki = false
 css = [ "documentation.css" ]
@@ -26,6 +26,7 @@ css = [ "documentation.css" ]
   <li><a href="#SYNOPSIS">SYNOPSIS</a></li>
   <li><a href="#DESCRIPTION">DESCRIPTION</a></li>
   <li><a href="#OPTIONS">OPTIONS</a></li>
+  <li><a href="#COPYRIGHT">COPYRIGHT</a></li>
   <li><a href="#SEE-ALSO">SEE ALSO</a></li>
 </ul>
 
@@ -51,10 +52,10 @@ css = [ "documentation.css" ]
 <p>Show help options.</p>
 
 </dd>
-<dt id="a---appname-NAME"><b>-a, --appname=NAME</b></dt>
+<dt id="a---app-name-NAME"><b>-a, --app-name=NAME</b></dt>
 <dd>
 
-<p>Set the app name of the notification.</p>
+<p>Set the app name of the notification. Accepted legacy alias: <b>--appname</b>.</p>
 
 </dd>
 <dt id="u---urgency-URG"><b>-u, --urgency=URG</b></dt>
@@ -63,10 +64,10 @@ css = [ "documentation.css" ]
 <p>Set the urgency level (low, normal, critical) of the notification.</p>
 
 </dd>
-<dt id="h---hints-HINT"><b>-h, --hints=HINT</b></dt>
+<dt id="h---hint-HINT"><b>-h, --hint=HINT</b></dt>
 <dd>
 
-<p>Specifies hints to pass. Valid types are BOOLEAN, INT, DOUBLE, STRING, BYTE and VARIANT.</p>
+<p>Specifies hints to pass. Valid types are BOOLEAN, INT, DOUBLE, STRING, BYTE and VARIANT. Accepted legacy alias: <b>--hints</b>.</p>
 
 </dd>
 <dt id="A---action-ACTION"><b>-A, --action=ACTION</b></dt>
@@ -75,10 +76,16 @@ css = [ "documentation.css" ]
 <p>Specifies the actions to display to the user.</p>
 
 </dd>
-<dt id="t---timeout-TIMEOUT"><b>-t, --timeout=TIMEOUT</b></dt>
+<dt id="e---transient"><b>-e, --transient</b></dt>
 <dd>
 
-<p>The time in milliseconds until the notification expires.</p>
+<p>Mark the notification as transient.</p>
+
+</dd>
+<dt id="t---expire-time-TIMEOUT"><b>-t, --expire-time=TIMEOUT</b></dt>
+<dd>
+
+<p>The time in milliseconds until the notification expires. Accepted legacy alias: <b>--timeout</b>.</p>
 
 </dd>
 <dt id="i---icon-ICON"><b>-i, --icon=ICON</b></dt>
@@ -87,10 +94,10 @@ css = [ "documentation.css" ]
 <p>Specifies an icon to display with the notification.</p>
 
 </dd>
-<dt id="I---raw_icon-PATH"><b>-I, --raw_icon=PATH</b></dt>
+<dt id="I---raw-icon-PATH"><b>-I, --raw-icon=PATH</b></dt>
 <dd>
 
-<p>Path to the icon to be sent as raw image data.</p>
+<p>Path to the icon to be sent as raw image data. Accepted legacy alias: <b>--raw_icon</b>.</p>
 
 </dd>
 <dt id="c---category-TYPE"><b>-c, --category=TYPE</b></dt>
@@ -99,28 +106,16 @@ css = [ "documentation.css" ]
 <p>The category of this notification.</p>
 
 </dd>
-<dt id="capabilities"><b>--capabilities</b></dt>
+<dt id="p---print-id"><b>-p, --print-id</b></dt>
 <dd>
 
-<p>Print the server capabilities and exit.</p>
+<p>Print id, which can be used to update/replace this notification. Accepted legacy alias: <b>--printid</b>.</p>
 
 </dd>
-<dt id="s---serverinfo"><b>-s, --serverinfo</b></dt>
+<dt id="r---replace-id-ID"><b>-r, --replace-id=ID</b></dt>
 <dd>
 
-<p>Print server information and exit.</p>
-
-</dd>
-<dt id="p---printid"><b>-p, --printid</b></dt>
-<dd>
-
-<p>Print id, which can be used to update/replace this notification.</p>
-
-</dd>
-<dt id="r---replace-ID"><b>-r, --replace=ID</b></dt>
-<dd>
-
-<p>Set the id of this notification to The ID of the notification to replace.</p>
+<p>Set the id of this notification to The ID of the notification to replace. Accepted legacy alias: <b>--replace</b>.</p>
 
 </dd>
 <dt id="C---close-ID"><b>-C, --close=ID</b></dt>
@@ -129,13 +124,53 @@ css = [ "documentation.css" ]
 <p>Close the notification with the specified ID.</p>
 
 </dd>
-<dt id="b---block"><b>-b, --block</b></dt>
+<dt id="w---wait"><b>-w, --wait</b></dt>
 <dd>
 
-<p>Block until notification is closed and print close reason.</p>
+<p>Block until notification is closed and print close reason. Accepted legacy alias: <b>-b, --block</b>.</p>
+
+</dd>
+<dt id="stack-tag-TAG"><b>--stack-tag=TAG</b></dt>
+<dd>
+
+<p>Set the dunst stack tag property of the notification to TAG. A tagged notification will replace an earlier notification with the same tag.</p>
+
+<p>The following commands are equivalent:</p>
+
+<pre><code>dunstify -h string:x-dunst-stack-tag:TAG &quot;hello&quot;
+
+dunstify --stack-tag TAG &quot;hello&quot;</code></pre>
+
+</dd>
+<dt id="capabilities"><b>--capabilities</b></dt>
+<dd>
+
+<p>Print the server capabilities and exit.</p>
+
+</dd>
+<dt id="serverinfo"><b>--serverinfo</b></dt>
+<dd>
+
+<p>Print server information and exit.</p>
+
+</dd>
+<dt id="v---version"><b>-v, --version</b></dt>
+<dd>
+
+<p>Print dunstify version information. Not present on Dunst versions prior to v1.13.</p>
 
 </dd>
 </dl>
+
+<h1 id="COPYRIGHT">COPYRIGHT</h1>
+
+<p>Copyright 2011-2014 Sascha Kruse</p>
+
+<p>Copyright 2014-2026 Dunst contributors</p>
+
+<p>Dunst is released under the BSD 3-Clause License, see LICENSE for more information.</p>
+
+<p>If you feel that copyrights are violated, please send an email to the maintainers.</p>
 
 <h1 id="SEE-ALSO">SEE ALSO</h1>
 

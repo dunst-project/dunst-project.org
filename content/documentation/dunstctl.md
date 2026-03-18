@@ -3,7 +3,7 @@ title = "Documentation"
 type = "documentation"
 toc = "true"
 subtitle = "dunstctl"
-lastdate = "2024-12-03"
+lastdate = "2026-02-01"
 descript = "Dunstctl manual page"
 wiki = false
 css = [ "documentation.css" ]
@@ -25,6 +25,8 @@ css = [ "documentation.css" ]
   <li><a href="#NAME">NAME</a></li>
   <li><a href="#SYNOPSIS">SYNOPSIS</a></li>
   <li><a href="#COMMANDS">COMMANDS</a></li>
+  <li><a href="#COPYRIGHT">COPYRIGHT</a></li>
+  <li><a href="#SEE-ALSO">SEE ALSO</a></li>
 </ul>
 
 <h1 id="NAME">NAME</h1>
@@ -152,6 +154,20 @@ css = [ "documentation.css" ]
 
 </dd>
 </dl>
+
+<h1 id="COPYRIGHT">COPYRIGHT</h1>
+
+<p>Copyright 2011-2014 Sascha Kruse</p>
+
+<p>Copyright 2014-2026 Dunst contributors</p>
+
+<p>Dunst is released under the BSD 3-Clause License, see LICENSE for more information.</p>
+
+<p>If you feel that copyrights are violated, please send an email to the maintainers.</p>
+
+<h1 id="SEE-ALSO">SEE ALSO</h1>
+
+<p>dunst(5), dmenu(1), notify-send(1), dunstify(1)</p>
 
 
 </body>

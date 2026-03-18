@@ -1,0 +1,31 @@
+<map id="src/rules.h" name="src/rules.h">
+<area shape="rect" id="Node000001" title="Rules managment and helpers." alt="" coords="360,5,442,31"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="30,374,82,399"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="360,28,262,46,145,75,92,94,48,115,18,139,11,151,8,164,8,240,11,273,20,305,44,359,39,361,15,307,6,274,3,241,3,164,6,149,14,136,45,111,90,89,144,70,261,41,359,23"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="474,374,548,399"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="444,26,496,42,552,69,576,88,596,109,610,135,615,164,615,241,607,279,589,313,565,343,540,366,537,362,561,339,584,310,602,277,609,240,609,164,605,137,592,112,573,92,549,74,494,47,442,31"/>
+<area shape="rect" id="Node000004" href="$notification_8h.html" title="Notification type definitions." alt="" coords="306,153,401,178"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="400,32,365,139,360,137,395,30"/>
+<area shape="rect" id="Node000010" href="$settings_8h.html" title="Type definitions for settings." alt="" coords="394,79,472,105"/>
+<area shape="poly" id="edge16_Node000001_Node000010" title=" " alt="" coords="409,30,424,64,419,66,404,32"/>
+<area shape="poly" id="edge4_Node000004_Node000002" title=" " alt="" coords="305,169,261,173,211,182,161,200,118,228,94,258,77,293,67,328,61,358,56,358,62,327,72,291,89,255,114,224,159,195,210,177,260,167,305,164"/>
+<area shape="poly" id="edge5_Node000004_Node000003" title=" " alt="" coords="402,174,448,192,469,206,487,225,505,257,514,294,517,329,516,358,511,358,512,329,509,294,500,259,483,228,466,211,445,197,400,179"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="145,226,290,252"/>
+<area shape="poly" id="edge6_Node000004_Node000005" title=" " alt="" coords="331,181,255,221,253,216,329,177"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="307,374,368,399"/>
+<area shape="poly" id="edge7_Node000004_Node000006" title=" " alt="" coords="306,176,205,195,161,210,145,219,134,228,124,251,127,273,142,294,166,314,229,347,293,370,291,375,227,351,163,318,138,298,122,275,118,251,130,225,142,214,159,205,204,190,305,170"/>
+<area shape="rect" id="Node000007" href="$markup_8h.html" title="Markup handling for notifications body." alt="" coords="314,226,390,252"/>
+<area shape="poly" id="edge8_Node000004_Node000007" title=" " alt="" coords="356,179,355,211,350,210,350,179"/>
+<area shape="rect" id="Node000008" href="$draw_8h.html" title="Layout and render notifications." alt="" coords="414,226,474,252"/>
+<area shape="poly" id="edge9_Node000004_Node000008" title=" " alt="" coords="370,177,419,215,415,219,367,181"/>
+<area shape="poly" id="edge10_Node000008_Node000003" title=" " alt="" coords="452,251,501,358,496,361,447,253"/>
+<area shape="poly" id="edge11_Node000008_Node000006" title=" " alt="" coords="438,254,386,327,359,363,355,360,382,324,434,251"/>
+<area shape="rect" id="Node000009" href="$output_8h.html" title="Generic graphics backend wrapper." alt="" coords="303,300,372,326"/>
+<area shape="poly" id="edge12_Node000008_Node000009" title=" " alt="" coords="427,255,370,293,367,289,424,250"/>
+<area shape="poly" id="edge14_Node000009_Node000002" title=" " alt="" coords="303,325,98,377,97,372,302,320"/>
+<area shape="poly" id="edge13_Node000009_Node000003" title=" " alt="" coords="368,324,468,365,466,370,366,329"/>
+<area shape="poly" id="edge15_Node000009_Node000006" title=" " alt="" coords="340,326,340,358,335,358,335,326"/>
+<area shape="poly" id="edge17_Node000010_Node000003" title=" " alt="" coords="444,103,466,135,493,182,519,239,535,300,535,326,525,360,520,359,529,325,529,300,514,241,489,185,462,138,440,106"/>
+<area shape="poly" id="edge18_Node000010_Node000004" title=" " alt="" coords="422,107,380,144,376,140,418,103"/>
+<area shape="poly" id="edge19_Node000010_Node000008" title=" " alt="" coords="437,105,445,211,439,211,432,105"/>
+</map>

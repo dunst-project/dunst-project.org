@@ -29,11 +29,7 @@ css = [ "documentation.css" ]
       <li><a href="#Autostarting-dunst">Autostarting dunst</a></li>
     </ul>
   </li>
-  <li><a href="#COMMAND-LINE-OPTIONS">COMMAND LINE OPTIONS</a>
-    <ul>
-      <li><a href="#DEPRECATED-OPTIONS">DEPRECATED OPTIONS</a></li>
-    </ul>
-  </li>
+  <li><a href="#COMMAND-LINE-OPTIONS">COMMAND LINE OPTIONS</a></li>
   <li><a href="#CONFIGURATION">CONFIGURATION</a>
     <ul>
       <li><a href="#NOTIFY-SEND-HINTS">NOTIFY-SEND HINTS</a></li>
@@ -41,7 +37,6 @@ css = [ "documentation.css" ]
   </li>
   <li><a href="#MISCELLANEOUS">MISCELLANEOUS</a></li>
   <li><a href="#FILES">FILES</a></li>
-  <li><a href="#AUTHORS">AUTHORS</a></li>
   <li><a href="#REPORTING-BUGS">REPORTING BUGS</a></li>
   <li><a href="#COPYRIGHT">COPYRIGHT</a></li>
   <li><a href="#SEE-ALSO">SEE ALSO</a></li>
@@ -53,7 +48,7 @@ css = [ "documentation.css" ]
 
 <h1 id="SYNOPSIS">SYNOPSIS</h1>
 
-<p>dunst [-conf file] [-verbosity v] [-print] [--startup_notification]</p>
+<p>dunst [--config FILE] [--verbosity v] [--print] [--startup_notification]</p>
 
 <h1 id="DESCRIPTION">DESCRIPTION</h1>
 
@@ -73,7 +68,7 @@ css = [ "documentation.css" ]
 <p>List all command line flags</p>
 
 </dd>
-<dt id="conf--config-file"><b>-conf/-config file</b></dt>
+<dt id="conf--config---config-FILE"><b>-conf/-config/--config FILE</b></dt>
 <dd>
 
 <p>Use alternative config file. This disables the search for other config files. If it cannot be opened, dunst will issue a warning and fall back on its internal defaults. (Hint: `dunst -conf - &lt;/dev/null` can be used to enforce the defaults, i.e. for testing)</p>
@@ -85,7 +80,7 @@ css = [ "documentation.css" ]
 <p>Print version information.</p>
 
 </dd>
-<dt id="verbosity-values:-crit-warn-mesg-info-debug-default-mesg"><b>-verbosity</b> (values: &#39;crit&#39;, &#39;warn&#39;, &#39;mesg&#39;, &#39;info&#39;, &#39;debug&#39; default &#39;mesg&#39;)</dt>
+<dt id="verbosity---verbosity-values:-crit-warn-mesg-info-debug-default-mesg"><b>-verbosity/--verbosity</b> (values: &#39;crit&#39;, &#39;warn&#39;, &#39;mesg&#39;, &#39;info&#39;, &#39;debug&#39; default &#39;mesg&#39;)</dt>
 <dd>
 
 <p>Do not display log messages, which have lower precedence than specified verbosity. This won&#39;t affect printing notifications on the terminal. Use the &#39;-print&#39; option for this.</p>
@@ -101,50 +96,6 @@ css = [ "documentation.css" ]
 <dd>
 
 <p>Display a notification on startup.</p>
-
-</dd>
-</dl>
-
-<h2 id="DEPRECATED-OPTIONS">DEPRECATED OPTIONS</h2>
-
-<p>Old version of dunst allowed changing the colors of different urgencies through command line options. This has been long removed in favour of RULES, see issue #328.</p>
-
-<dl>
-
-<dt id="li-ni-ci-icon"><b>-li/ni/ci icon</b></dt>
-<dd>
-
-<p>Set notification icon.</p>
-
-</dd>
-<dt id="lf-nf-cf-color"><b>-lf/nf/cf color</b></dt>
-<dd>
-
-<p>Set notification foreground color.</p>
-
-</dd>
-<dt id="lb-nb-cb-color"><b>-lb/nb/cb color</b></dt>
-<dd>
-
-<p>Set notification background color.</p>
-
-</dd>
-<dt id="lh-nh-ch-color"><b>-lh/nh/ch color</b></dt>
-<dd>
-
-<p>Set notification highlight color.</p>
-
-</dd>
-<dt id="lfr-nfr-cfr-color"><b>-lfr/nfr/cfr color</b></dt>
-<dd>
-
-<p>Set notification frame color.</p>
-
-</dd>
-<dt id="lto-nto-cto-secs"><b>-lto/nto/cto secs</b></dt>
-<dd>
-
-<p>Set notification timeout time.</p>
 
 </dd>
 </dl>
@@ -222,9 +173,7 @@ notify-send -h int:value:42 &quot;Working ...&quot;</code></pre>
 
 <p>Only settings from the last base config the corresponding drop-ins get applied. So if a dunstrc is first found in <i>~/.config/dunst/dunstrc</i>, drop-ins will be searched in <i>~/.config/dunst/dunstrc.d/*</i>. Settings in more important files override those in less important ones.</p>
 
-<h1 id="AUTHORS">AUTHORS</h1>
-
-<p>Written by Sascha Kruse &lt;knopwob@googlemail.com&gt;</p>
+<p>If you want to dynamically change the config you can simply use the command <b>dunstctl reload</b> to load the modified files. See more in dunst(5).</p>
 
 <h1 id="REPORTING-BUGS">REPORTING BUGS</h1>
 
@@ -232,9 +181,13 @@ notify-send -h int:value:42 &quot;Working ...&quot;</code></pre>
 
 <h1 id="COPYRIGHT">COPYRIGHT</h1>
 
-<p>Copyright 2013 Sascha Kruse and contributors (see LICENSE for licensing information)</p>
+<p>Copyright 2011-2014 Sascha Kruse</p>
 
-<p>If you feel that copyrights are violated, please send me an email.</p>
+<p>Copyright 2014-2026 Dunst contributors</p>
+
+<p>Dunst is released under the BSD 3-Clause License, see LICENSE for more information.</p>
+
+<p>If you feel that copyrights are violated, please send an email to the maintainers.</p>
 
 <h1 id="SEE-ALSO">SEE ALSO</h1>
 

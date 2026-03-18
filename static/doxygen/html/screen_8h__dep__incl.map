@@ -1,0 +1,10 @@
+<map id="src/x11/screen.h" name="src/x11/screen.h">
+<area shape="rect" id="Node000001" title="Xorg screen managment." alt="" coords="45,5,163,31"/>
+<area shape="rect" id="Node000002" href="$screen_8c.html" title=" " alt="" coords="5,153,123,178"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="99,46,70,153,65,151,94,45"/>
+<area shape="rect" id="Node000003" href="$x_8h.html" title="Xorg output wrapper." alt="" coords="101,79,187,105"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="120,43,140,77,135,80,116,46"/>
+<area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="121,117,79,154,76,150,117,113"/>
+<area shape="rect" id="Node000004" href="$x_8c.html" title=" " alt="" coords="147,153,232,178"/>
+<area shape="poly" id="edge4_Node000003_Node000004" title=" " alt="" coords="162,116,184,151,179,154,157,119"/>
+</map>

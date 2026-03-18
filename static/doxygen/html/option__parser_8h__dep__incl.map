@@ -1,0 +1,20 @@
+<map id="src/option_parser.h" name="src/option_parser.h">
+<area shape="rect" id="Node000001" title="Parser for settings and cmdline arguments." alt="" coords="106,5,239,31"/>
+<area shape="rect" id="Node000002" href="$dunst_8c.html" title=" " alt="" coords="5,79,92,105"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="140,41,71,81,68,76,137,37"/>
+<area shape="rect" id="Node000003" href="$option__parser_8c.html" title=" " alt="" coords="54,153,187,178"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="166,47,127,153,122,151,161,45"/>
+<area shape="rect" id="Node000004" href="$settings_8c.html" title=" " alt="" coords="166,79,267,105"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="190,43,211,77,207,80,186,46"/>
+<area shape="rect" id="Node000005" href="$settings__data_8h.html" title="List of all the valid settings and values." alt="" coords="304,79,436,105"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="221,34,337,76,335,81,219,39"/>
+<area shape="poly" id="edge7_Node000005_Node000003" title=" " alt="" coords="314,112,164,155,162,149,312,107"/>
+<area shape="rect" id="Node000006" href="$dbus_8c.html" title=" " alt="" coords="211,153,294,178"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="339,115,274,154,271,150,336,111"/>
+<area shape="rect" id="Node000007" href="$notification_8c.html" title=" " alt="" coords="318,153,435,178"/>
+<area shape="poly" id="edge6_Node000005_Node000007" title=" " alt="" coords="375,120,378,152,373,152,370,120"/>
+<area shape="rect" id="Node000008" href="$rules_8c.html" title=" " alt="" coords="459,153,542,178"/>
+<area shape="poly" id="edge8_Node000005_Node000008" title=" " alt="" coords="406,110,479,150,477,154,404,115"/>
+<area shape="rect" id="Node000009" href="$utils_8c.html" title=" " alt="" coords="565,153,644,178"/>
+<area shape="poly" id="edge9_Node000005_Node000009" title=" " alt="" coords="425,107,566,150,564,155,423,112"/>
+</map>

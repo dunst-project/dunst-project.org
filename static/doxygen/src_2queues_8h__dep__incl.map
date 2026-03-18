@@ -1,0 +1,38 @@
+<map id="src/queues.h" name="src/queues.h">
+<area shape="rect" id="Node000001" title="Queues for history, waiting and displayed notifications." alt="" coords="457,5,553,31"/>
+<area shape="rect" id="Node000002" href="$src_2dbus_8c.html" title=" " alt="" coords="5,79,88,105"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="442,30,286,52,100,82,88,84,87,79,99,76,286,46,441,25"/>
+<area shape="rect" id="Node000004" href="$src_2draw_8c.html" title=" " alt="" coords="464,79,546,105"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="508,46,508,79,502,79,502,46"/>
+<area shape="rect" id="Node000006" href="$src_2dunst_8c.html" title=" " alt="" coords="570,79,656,105"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="538,38,596,76,593,81,535,42"/>
+<area shape="rect" id="Node000008" href="$src_2input_8c.html" title=" " alt="" coords="112,79,194,105"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="442,35,207,82,195,84,194,79,206,76,441,29"/>
+<area shape="rect" id="Node000010" href="$src_2menu_8c.html" title=" " alt="" coords="681,79,767,105"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="558,34,687,76,686,81,556,39"/>
+<area shape="rect" id="Node000012" href="$src_2notification_8c.html" title=" " alt="" coords="790,79,908,105"/>
+<area shape="poly" id="edge11_Node000001_Node000012" title=" " alt="" coords="569,30,791,76,790,81,568,35"/>
+<area shape="rect" id="Node000014" href="$src_2queues_8c.html" title=" " alt="" coords="344,79,440,105"/>
+<area shape="poly" id="edge13_Node000001_Node000014" title=" " alt="" coords="475,42,413,81,410,76,472,37"/>
+<area shape="rect" id="Node000016" href="$x_8c.html" title=" " alt="" coords="932,79,1017,105"/>
+<area shape="poly" id="edge15_Node000001_Node000016" title=" " alt="" coords="569,25,729,46,920,76,932,79,931,84,919,82,728,51,568,30"/>
+<area shape="rect" id="Node000017" href="$test_2queues_8h_source.html" title=" " alt="" coords="219,79,319,105"/>
+<area shape="poly" id="edge16_Node000001_Node000017" title=" " alt="" coords="451,38,310,81,309,76,450,33"/>
+<area shape="rect" id="Node000003" href="$test_2dbus_8c_source.html" title=" " alt="" coords="18,153,104,178"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="55,119,61,152,56,153,49,120"/>
+<area shape="rect" id="Node000005" href="$test_2draw_8c_source.html" title=" " alt="" coords="456,153,541,178"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="505,120,502,152,497,152,500,120"/>
+<area shape="rect" id="Node000007" href="$test_2dunst_8c_source.html" title=" " alt="" coords="565,153,656,178"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="615,120,614,152,608,152,609,120"/>
+<area shape="rect" id="Node000009" href="$test_2input_8c_source.html" title=" " alt="" coords="181,153,267,178"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="177,114,214,150,210,154,174,117"/>
+<area shape="rect" id="Node000011" href="$test_2menu_8c_source.html" title=" " alt="" coords="680,153,770,178"/>
+<area shape="poly" id="edge10_Node000010_Node000011" title=" " alt="" coords="727,120,728,152,722,152,722,120"/>
+<area shape="rect" id="Node000013" href="$test_2notification_8c_source.html" title=" " alt="" coords="794,153,915,178"/>
+<area shape="poly" id="edge12_Node000012_Node000013" title=" " alt="" coords="854,120,856,152,851,152,849,120"/>
+<area shape="rect" id="Node000015" href="$test_2queues_8c_source.html" title=" " alt="" coords="318,153,418,178"/>
+<area shape="poly" id="edge14_Node000014_Node000015" title=" " alt="" coords="385,120,374,153,369,151,380,119"/>
+<area shape="poly" id="edge17_Node000017_Node000003" title=" " alt="" coords="220,113,97,155,96,150,219,108"/>
+<area shape="poly" id="edge18_Node000017_Node000009" title=" " alt="" coords="256,119,234,154,229,151,251,116"/>
+<area shape="poly" id="edge19_Node000017_Node000015" title=" " alt="" coords="300,112,353,150,350,154,297,116"/>
+</map>

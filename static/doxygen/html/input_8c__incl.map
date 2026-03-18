@@ -1,0 +1,60 @@
+<map id="src/input.c" name="src/input.c">
+<area shape="rect" id="Node000001" title=" " alt="" coords="419,5,501,31"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="503,300,572,326"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="466,31,533,284,528,286,461,32"/>
+<area shape="rect" id="Node000003" href="$input_8h.html" title="Input handling for mouse events." alt="" coords="366,153,426,178"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="457,32,410,140,405,137,452,30"/>
+<area shape="rect" id="Node000005" href="$log_8h.html" title="Logging subsystem and helpers." alt="" coords="258,226,308,252"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="453,33,304,216,300,213,449,30"/>
+<area shape="rect" id="Node000010" href="$menu_8h.html" title="Context menu for actions and helpers." alt="" coords="5,447,70,473"/>
+<area shape="poly" id="edge10_Node000001_Node000010" title=" " alt="" coords="419,28,317,45,194,73,138,92,92,114,60,138,52,151,49,164,49,314,43,432,38,432,44,314,44,164,47,149,57,135,89,109,136,87,193,68,316,39,418,22"/>
+<area shape="rect" id="Node000011" href="$settings_8h.html" title="Type definitions for settings." alt="" coords="798,226,877,252"/>
+<area shape="poly" id="edge12_Node000001_Node000011" title=" " alt="" coords="502,20,594,37,646,53,695,77,736,107,772,144,824,211,820,214,768,147,733,111,692,81,644,58,593,42,501,25"/>
+<area shape="rect" id="Node000018" href="$queues_8h.html" title="Queues for history, waiting and displayed notifications." alt="" coords="607,79,681,105"/>
+<area shape="poly" id="edge28_Node000001_Node000018" title=" " alt="" coords="492,29,600,71,598,75,490,34"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="498,521,572,547"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="397,179,389,236,384,312,384,388,387,409,395,429,421,463,457,491,493,512,490,516,454,496,418,467,390,431,382,410,379,388,379,311,384,236,391,178"/>
+<area shape="poly" id="edge7_Node000005_Node000004" title=" " alt="" coords="290,251,308,299,321,351,326,393,336,431,347,451,365,471,391,492,421,507,483,524,482,529,419,512,388,496,361,475,343,454,331,433,320,394,315,352,303,301,285,253"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="144,300,206,326"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="266,255,208,293,205,289,263,250"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="254,521,306,547"/>
+<area shape="poly" id="edge6_Node000005_Node000007" title=" " alt="" coords="258,245,228,249,193,259,160,276,134,301,122,330,123,359,134,389,152,418,175,445,201,470,251,510,248,514,198,474,171,449,148,421,129,391,118,360,117,329,130,299,157,272,192,254,227,244,257,239"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="419,300,480,326"/>
+<area shape="poly" id="edge8_Node000005_Node000008" title=" " alt="" coords="309,249,408,291,406,296,307,254"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="230,300,293,326"/>
+<area shape="poly" id="edge9_Node000005_Node000009" title=" " alt="" coords="282,253,272,286,267,284,277,251"/>
+<area shape="poly" id="edge11_Node000010_Node000007" title=" " alt="" coords="71,469,240,518,238,523,69,474"/>
+<area shape="poly" id="edge13_Node000011_Node000004" title=" " alt="" coords="843,252,849,281,852,319,848,361,842,382,832,401,808,429,780,454,748,474,715,491,647,514,588,528,587,523,646,509,712,486,745,469,776,449,804,426,827,398,837,380,843,360,847,319,844,281,838,253"/>
+<area shape="rect" id="Node000012" href="$notification_8h.html" title="Notification type definitions." alt="" coords="698,300,793,326"/>
+<area shape="poly" id="edge14_Node000011_Node000012" title=" " alt="" coords="824,255,774,293,771,288,820,250"/>
+<area shape="rect" id="Node000016" href="$draw_8h.html" title="Layout and render notifications." alt="" coords="892,374,951,399"/>
+<area shape="poly" id="edge27_Node000011_Node000016" title=" " alt="" coords="847,251,876,299,910,359,905,362,871,301,842,254"/>
+<area shape="poly" id="edge16_Node000012_Node000004" title=" " alt="" coords="698,326,618,347,584,361,562,375,544,406,535,441,533,475,534,505,529,505,527,475,530,440,539,404,558,372,581,356,616,342,697,321"/>
+<area shape="poly" id="edge15_Node000012_Node000007" title=" " alt="" coords="698,327,623,347,541,376,474,410,410,447,310,514,307,509,407,443,472,405,539,371,621,342,697,322"/>
+<area shape="rect" id="Node000013" title=" " alt="" coords="672,374,817,399"/>
+<area shape="poly" id="edge17_Node000012_Node000013" title=" " alt="" coords="748,326,747,358,742,358,743,326"/>
+<area shape="rect" id="Node000014" title=" " alt="" coords="935,521,996,547"/>
+<area shape="poly" id="edge18_Node000012_Node000014" title=" " alt="" coords="794,318,893,338,937,353,965,372,981,405,985,441,983,477,976,507,971,505,977,476,980,441,976,406,961,375,935,358,891,343,793,323"/>
+<area shape="rect" id="Node000015" href="$markup_8h.html" title="Markup handling for notifications body." alt="" coords="572,374,647,399"/>
+<area shape="poly" id="edge19_Node000012_Node000015" title=" " alt="" coords="724,329,647,368,645,364,721,324"/>
+<area shape="poly" id="edge20_Node000012_Node000016" title=" " alt="" coords="776,324,879,365,877,370,774,329"/>
+<area shape="poly" id="edge21_Node000016_Node000004" title=" " alt="" coords="908,402,858,438,791,475,738,495,684,509,588,528,587,523,683,504,736,489,788,471,855,434,905,398"/>
+<area shape="poly" id="edge22_Node000016_Node000014" title=" " alt="" coords="928,399,943,447,960,505,955,507,938,448,923,400"/>
+<area shape="rect" id="Node000017" href="$output_8h.html" title="Generic graphics backend wrapper." alt="" coords="859,447,928,473"/>
+<area shape="poly" id="edge23_Node000016_Node000017" title=" " alt="" coords="919,401,906,434,901,432,914,399"/>
+<area shape="poly" id="edge24_Node000017_Node000004" title=" " alt="" coords="860,472,841,476,588,525,587,520,840,470,859,466"/>
+<area shape="poly" id="edge25_Node000017_Node000007" title=" " alt="" coords="859,468,322,530,322,525,858,463"/>
+<area shape="poly" id="edge26_Node000017_Node000014" title=" " alt="" coords="907,471,944,508,941,512,904,475"/>
+<area shape="poly" id="edge38_Node000018_Node000012" title=" " alt="" coords="669,103,698,123,722,151,737,185,746,221,750,284,744,284,740,222,732,187,718,154,694,127,666,107"/>
+<area shape="rect" id="Node000019" href="$dbus_8h.html" title="DBus support and implementation of the Desktop Notifications Specification." alt="" coords="647,153,708,178"/>
+<area shape="poly" id="edge29_Node000018_Node000019" title=" " alt="" coords="652,104,668,137,663,140,647,106"/>
+<area shape="rect" id="Node000020" href="$dunst_8h.html" title="Main event loop logic." alt="" coords="577,226,642,252"/>
+<area shape="poly" id="edge37_Node000018_Node000020" title=" " alt="" coords="644,106,619,212,613,210,639,104"/>
+<area shape="poly" id="edge36_Node000019_Node000012" title=" " alt="" coords="685,178,736,285,731,287,681,180"/>
+<area shape="poly" id="edge30_Node000019_Node000020" title=" " alt="" coords="668,180,633,217,629,213,664,177"/>
+<area shape="poly" id="edge34_Node000020_Node000002" title=" " alt="" coords="599,254,562,291,559,287,596,250"/>
+<area shape="poly" id="edge32_Node000020_Node000004" title=" " alt="" coords="620,251,634,286,636,307,631,327,621,339,610,347,586,353,563,359,552,365,542,375,527,407,523,442,525,476,530,506,525,507,519,477,517,441,522,405,538,372,549,361,561,354,585,348,607,342,617,335,626,324,631,307,629,287,615,253"/>
+<area shape="poly" id="edge31_Node000020_Node000007" title=" " alt="" coords="611,253,604,288,597,308,586,327,474,408,313,514,310,510,471,403,582,324,592,306,599,287,606,252"/>
+<area shape="poly" id="edge33_Node000020_Node000008" title=" " alt="" coords="583,255,492,296,489,291,581,250"/>
+<area shape="poly" id="edge35_Node000020_Node000012" title=" " alt="" coords="634,250,710,290,708,295,631,255"/>
+</map>

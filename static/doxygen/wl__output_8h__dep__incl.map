@@ -1,0 +1,9 @@
+<map id="src/wayland/wl_output.h" name="src/wayland/wl_output.h">
+<area shape="rect" id="Node000001" title="Wayland output wrapper." alt="" coords="142,5,304,31"/>
+<area shape="rect" id="Node000002" href="$foreign__toplevel_8c.html" title=" " alt="" coords="5,79,140,120"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="188,41,111,81,108,76,186,36"/>
+<area shape="rect" id="Node000003" href="$wl_8c.html" title=" " alt="" coords="164,86,283,112"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="226,47,226,86,220,86,220,47"/>
+<area shape="rect" id="Node000004" href="$wl__output_8c.html" title=" " alt="" coords="307,86,470,112"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="264,36,364,84,362,88,261,41"/>
+</map>

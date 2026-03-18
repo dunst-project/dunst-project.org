@@ -1,0 +1,26 @@
+<map id="src/settings.h" name="src/settings.h">
+<area shape="rect" id="Node000001" title="Type definitions for settings." alt="" coords="270,5,370,31"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="295,300,369,326"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="270,28,178,44,128,57,82,73,43,93,17,117,10,130,8,144,11,160,20,177,44,207,74,232,108,253,144,269,217,292,280,304,279,309,215,297,142,274,105,258,71,236,41,211,15,180,6,162,3,144,5,128,13,114,40,89,80,68,127,52,177,39,269,23"/>
+<area shape="rect" id="Node000003" href="$notification_8h.html" title="Notification type definitions." alt="" coords="272,79,368,105"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="323,31,323,63,317,63,317,31"/>
+<area shape="rect" id="Node000008" href="$draw_8h.html" title="Layout and render notifications." alt="" coords="400,153,459,178"/>
+<area shape="poly" id="edge15_Node000001_Node000008" title=" " alt="" coords="336,29,382,77,419,138,415,140,378,81,332,33"/>
+<area shape="poly" id="edge4_Node000003_Node000002" title=" " alt="" coords="323,105,333,284,328,285,318,105"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="432,300,485,326"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="330,103,445,286,441,288,325,106"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="30,153,175,178"/>
+<area shape="poly" id="edge5_Node000003_Node000005" title=" " alt="" coords="284,108,155,150,153,145,282,103"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="527,300,587,326"/>
+<area shape="poly" id="edge6_Node000003_Node000006" title=" " alt="" coords="369,100,418,115,473,140,499,156,523,176,544,199,560,225,567,256,566,285,560,285,561,256,555,227,540,202,520,180,496,161,471,145,417,120,367,105"/>
+<area shape="rect" id="Node000007" href="$markup_8h.html" title="Markup handling for notifications body." alt="" coords="200,153,275,178"/>
+<area shape="poly" id="edge7_Node000003_Node000007" title=" " alt="" coords="308,107,264,144,261,140,304,103"/>
+<area shape="poly" id="edge8_Node000003_Node000008" title=" " alt="" coords="340,103,400,142,397,146,337,107"/>
+<area shape="poly" id="edge9_Node000008_Node000002" title=" " alt="" coords="424,180,351,289,346,286,419,177"/>
+<area shape="poly" id="edge10_Node000008_Node000006" title=" " alt="" coords="461,175,499,194,518,208,534,225,550,254,557,284,552,286,545,256,530,228,514,212,496,199,458,180"/>
+<area shape="rect" id="Node000009" href="$output_8h.html" title="Generic graphics backend wrapper." alt="" coords="451,226,519,252"/>
+<area shape="poly" id="edge11_Node000008_Node000009" title=" " alt="" coords="441,177,469,212,464,216,436,180"/>
+<area shape="poly" id="edge12_Node000009_Node000002" title=" " alt="" coords="460,255,373,296,371,291,458,250"/>
+<area shape="poly" id="edge13_Node000009_Node000004" title=" " alt="" coords="483,253,471,286,466,284,478,251"/>
+<area shape="poly" id="edge14_Node000009_Node000006" title=" " alt="" coords="499,250,536,287,532,291,495,254"/>
+</map>

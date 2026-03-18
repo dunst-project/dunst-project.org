@@ -3,7 +3,7 @@ title = "Documentation"
 type = "documentation"
 toc = "true"
 subtitle = "dunst(5)"
-lastdate = "2026-01-23"
+lastdate = "2026-02-19"
 descript = "Dustrc manual page"
 wiki = false
 menu = "main"
@@ -45,7 +45,6 @@ css = [ "documentation.css" ]
   <li><a href="#NOTIFY-SEND-HINTS">NOTIFY-SEND HINTS</a></li>
   <li><a href="#ACTIONS">ACTIONS</a></li>
   <li><a href="#TIME-FORMAT">TIME FORMAT</a></li>
-  <li><a href="#AUTHORS">AUTHORS</a></li>
   <li><a href="#REPORTING-BUGS">REPORTING BUGS</a></li>
   <li><a href="#COPYRIGHT">COPYRIGHT</a></li>
   <li><a href="#SEE-ALSO">SEE ALSO</a></li>
@@ -786,6 +785,12 @@ horizontal_padding=10</code></pre>
 <p>Pause notification timeout when hovering with the mouse pointer. This setting is currently implemented only for Wayland.</p>
 
 </dd>
+<dt id="enable_pcre_regex-default:-false"><b>enable_pcre_regex</b> (default: false)</dt>
+<dd>
+
+<p>Use PCRE regular expressions for filtering rules. For more information see https://en.wikipedia.org/wiki/Perl_Compatible_Regular_Expressions. This setting overrides <b>enable_posix_regex</b>.</p>
+
+</dd>
 </dl>
 
 <h1 id="DUNSTCTL">DUNSTCTL</h1>
@@ -845,7 +850,7 @@ horizontal_padding=10</code></pre>
 
 <p>With filtering rules you can match notifications to apply rules to only a subset of notifications.</p>
 
-<p>For filtering rules that filter based on strings you can use regular expressions. It&#39;s recommended to set <b>enable_posix_regex</b> to true. You can then use the POSIX Extended Regular Expression syntax: https://en.m.wikibooks.org/wiki/Regular_Expressions/POSIX-Extended_Regular_Expressions.</p>
+<p>For filtering rules that filter based on strings you can use regular expressions. It&#39;s recommended to set <b>enable_posix_regex</b> to true. You can then use the POSIX Extended Regular Expression syntax: https://en.m.wikibooks.org/wiki/Regular_Expressions/POSIX-Extended_Regular_Expressions. Eventually <b>enable_posix_regex</b> will be enabled by default.</p>
 
 <p>A matching rule is made by assigning a filter attribute to the value you want to match. Shell-like globbing is supported when matching values.</p>
 
@@ -973,14 +978,16 @@ horizontal_padding=10</code></pre>
 <p>The frame color color of the notification. See COLORS for possible values.</p>
 
 </dd>
-<dt id="fullscreen-values:-delay-show-pushback-default:-show"><code>fullscreen</code> (values: [delay/show/pushback], default: show)</dt>
+<dt id="fullscreen-values:-delay-show-pushback-suppress-default:-show"><code>fullscreen</code> (values: [delay/show/pushback/suppress], default: show)</dt>
 <dd>
 
-<p>This attribute specifies how notifications are handled if a fullscreen window is focused. By default it&#39;s set to show so notifications are being shown.</p>
+<p>This attribute specifies how notifications are handled if a fullscreen window is focused. By default it&#39;s set to <i>show</i> so notifications are being shown.</p>
 
-<p>Other possible values are delay: Already shown notifications are continued to be displayed until they are dismissed or time out but new notifications will be held back and displayed when the focus to the fullscreen window is lost.</p>
+<p>Other possible values are <i>delay</i>: already shown notifications are continued to be displayed until they are dismissed or time out but new notifications will be held back and displayed when the focus to the fullscreen window is lost.</p>
 
-<p>Or pushback which is equivalent to delay with the difference that already existing notifications are paused and hidden until the focus to the fullscreen window is lost.</p>
+<p>Or <i>pushback</i> which is equivalent to delay with the difference that already existing notifications are paused and hidden until the focus to the fullscreen window is lost.</p>
+
+<p>There is additionally the <i>suppress</i> value. Existing notifications will be closed when entering fullscreen and new notifications will go straight to history. This is similar to pushback without redisplaying after leaving fullscreen mode.</p>
 
 <p>On Wayland, if <b>follow</b> is set to mouse or keyboard, the output where the notification is located cannot be determined. So dunst will delay or pushback if any of the outputs is fullscreen. Since the fullscreen protocol is fairly new, you will need a recent version of a compositor that supports it. At the time of writing, you will need the git version of sway. See also <b>layer</b> to change if notifications appear above fullscreen windows in Wayland.</p>
 
@@ -1307,19 +1314,19 @@ notify-send -h string:x-canonical-private-synchronous:volume &quot;Muted&quot;</
 
 <p>Example time: &quot;1000ms&quot;, &quot;10m&quot;.</p>
 
-<h1 id="AUTHORS">AUTHORS</h1>
-
-<p>Written by Sascha Kruse &lt;knopwob@googlemail.com&gt;.</p>
-
 <h1 id="REPORTING-BUGS">REPORTING BUGS</h1>
 
 <p>Bugs and suggestions should be reported on GitHub at https://github.com/dunst-project/dunst/issues.</p>
 
 <h1 id="COPYRIGHT">COPYRIGHT</h1>
 
-<p>Copyright 2013 Sascha Kruse and contributors (see LICENSE for licensing information).</p>
+<p>Copyright 2011-2014 Sascha Kruse</p>
 
-<p>If you feel that copyrights are violated, please send me an email.</p>
+<p>Copyright 2014-2026 Dunst contributors</p>
+
+<p>Dunst is released under the BSD 3-Clause License, see LICENSE for more information.</p>
+
+<p>If you feel that copyrights are violated, please send an email to the maintainers.</p>
 
 <h1 id="SEE-ALSO">SEE ALSO</h1>
 

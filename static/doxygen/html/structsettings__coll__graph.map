@@ -1,0 +1,20 @@
+<map id="settings" name="settings">
+<area shape="rect" id="Node000001" title=" " alt="" coords="251,346,318,372"/>
+<area shape="rect" id="Node000002" href="$structnotification__colors.html" title=" " alt="" coords="37,213,164,238"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="102,254,106,289,113,306,123,320,144,332,177,341,251,352,250,357,176,346,142,337,120,324,108,308,101,290,97,254"/>
+<area shape="rect" id="Node000003" href="$structcolor.html" title=" " alt="" coords="96,5,145,31"/>
+<area shape="poly" id="edge7_Node000001_Node000003" title=" " alt="" coords="97,43,51,95,29,128,12,164,8,184,10,201,28,237,55,285,71,303,95,320,134,338,176,348,251,356,250,361,175,354,132,343,93,325,67,307,51,289,24,240,5,202,3,184,7,162,24,125,46,92,93,40"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="109,46,90,95,87,127,89,160,100,212,94,213,84,161,82,127,85,93,104,44"/>
+<area shape="rect" id="Node000004" href="$structgradient.html" title=" " alt="" coords="132,104,200,129"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="135,44,163,102,158,105,130,46"/>
+<area shape="rect" id="Node000005" href="$structseparator__color__data.html" title=" " alt="" coords="177,163,320,189"/>
+<area shape="poly" id="edge6_Node000005_Node000003" title=" " alt="" coords="161,33,189,53,212,80,229,111,248,162,243,164,224,113,207,83,185,57,157,38"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="137,141,116,164,107,189,104,212,98,212,102,188,112,162,133,137"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="231,203,226,213,224,225,226,238,236,269,251,299,278,345,274,347,246,302,231,271,221,239,218,225,221,212,226,201"/>
+<area shape="rect" id="Node000006" href="$structkeyboard__shortcut.html" title=" " alt="" coords="295,213,423,238"/>
+<area shape="poly" id="edge8_Node000001_Node000006" title=" " alt="" coords="347,253,294,347,289,344,343,251"/>
+<area shape="rect" id="Node000007" href="$structlength.html" title=" " alt="" coords="447,213,503,238"/>
+<area shape="poly" id="edge9_Node000001_Node000007" title=" " alt="" coords="468,254,450,291,436,309,420,324,395,339,369,349,319,358,318,353,368,343,393,334,416,320,432,305,445,288,464,252"/>
+<area shape="rect" id="Node000008" href="$structposition.html" title=" " alt="" coords="527,213,594,238"/>
+<area shape="poly" id="edge10_Node000001_Node000008" title=" " alt="" coords="555,254,538,291,524,309,507,325,472,338,422,348,319,359,318,353,421,343,471,333,505,320,520,306,533,288,550,252"/>
+</map>
