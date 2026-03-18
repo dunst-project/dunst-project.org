@@ -17,7 +17,7 @@ var queues_8c =
     [ "queues_length_waiting", "queues_8c.html#a1fbbe2cff66d03525a5964b5e374a91b", null ],
     [ "queues_notification_close", "queues_8c.html#a5b1afb8fc7d0116f3fb7fc839122c335", null ],
     [ "queues_notification_close_id", "queues_8c.html#a98230ed8242b6df4e19bc142b018e7a1", null ],
-    [ "queues_notification_insert", "queues_8c.html#a011a170fd8deb58f47a4ad6ea41f0ca3", null ],
+    [ "queues_notification_insert", "queues_8c.html#a3db3af822bcf825e9c69b8ec33171600", null ],
     [ "queues_notification_is_finished", "queues_8c.html#a9747d9d66cbea68f789ae7fb009c2826", null ],
     [ "queues_notification_is_ready", "queues_8c.html#a98ae7b31aee38a1d3a78a0af48345738", null ],
     [ "queues_notification_remove", "queues_8c.html#a2059c9df798e229a172d84bb65d64f75", null ],

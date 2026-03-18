@@ -149,9 +149,9 @@ Functions</h2></td></tr>
 <tr class="memitem:a95e06feabf959323e905534bb060cd75" id="r_a95e06feabf959323e905534bb060cd75"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a95e06feabf959323e905534bb060cd75">queues_length_history</a> (void)</td></tr>
 <tr class="memdesc:a95e06feabf959323e905534bb060cd75"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the current amount of notifications, which are already in history.  <br /></td></tr>
 <tr class="separator:a95e06feabf959323e905534bb060cd75"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a011a170fd8deb58f47a4ad6ea41f0ca3" id="r_a011a170fd8deb58f47a4ad6ea41f0ca3"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a011a170fd8deb58f47a4ad6ea41f0ca3">queues_notification_insert</a> (struct <a class="el" href="structnotification.html">notification</a> *n)</td></tr>
-<tr class="memdesc:a011a170fd8deb58f47a4ad6ea41f0ca3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Insert a fully initialized notification into queues.  <br /></td></tr>
-<tr class="separator:a011a170fd8deb58f47a4ad6ea41f0ca3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3db3af822bcf825e9c69b8ec33171600" id="r_a3db3af822bcf825e9c69b8ec33171600"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3db3af822bcf825e9c69b8ec33171600">queues_notification_insert</a> (struct <a class="el" href="structnotification.html">notification</a> *n, struct <a class="el" href="structdunst__status.html">dunst_status</a> status)</td></tr>
+<tr class="memdesc:a3db3af822bcf825e9c69b8ec33171600"><td class="mdescLeft">&#160;</td><td class="mdescRight">Insert a fully initialized notification into queues.  <br /></td></tr>
+<tr class="separator:a3db3af822bcf825e9c69b8ec33171600"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac11e1602b0fc889f0397a3d95e22bde3" id="r_ac11e1602b0fc889f0397a3d95e22bde3"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac11e1602b0fc889f0397a3d95e22bde3">queues_notification_replace_id</a> (struct <a class="el" href="structnotification.html">notification</a> *new)</td></tr>
 <tr class="memdesc:ac11e1602b0fc889f0397a3d95e22bde3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Replace the notification which matches the id field of the new notification.  <br /></td></tr>
 <tr class="separator:ac11e1602b0fc889f0397a3d95e22bde3"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -237,7 +237,7 @@ Copyright 2014-2026 Dunst contributors </dd></dl>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>the <code>id</code> notification or NULL </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="queues_8c_source.html#l00642">642</a> of file <a class="el" href="queues_8c_source.html">queues.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="queues_8c_source.html#l00670">670</a> of file <a class="el" href="queues_8c_source.html">queues.c</a>.</p>
 
 </div>
 </div>
@@ -342,7 +342,7 @@ Copyright 2014-2026 Dunst contributors </dd></dl>
 </ul>
 </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="queues_8c_source.html#l00601">601</a> of file <a class="el" href="queues_8c_source.html">queues.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="queues_8c_source.html#l00629">629</a> of file <a class="el" href="queues_8c_source.html">queues.c</a>.</p>
 
 </div>
 </div>
@@ -363,7 +363,7 @@ Copyright 2014-2026 Dunst contributors </dd></dl>
 
 <p>Removes all notifications from history Returns the number of removed notifications. </p>
 
-<p class="definition">Definition at line <a class="el" href="queues_8c_source.html#l00388">388</a> of file <a class="el" href="queues_8c_source.html">queues.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="queues_8c_source.html#l00400">400</a> of file <a class="el" href="queues_8c_source.html">queues.c</a>.</p>
 
 </div>
 </div>
@@ -384,7 +384,7 @@ Copyright 2014-2026 Dunst contributors </dd></dl>
 
 <p>Pushes the latest notification of history to the displayed queue and removes it from history. </p>
 
-<p class="definition">Definition at line <a class="el" href="queues_8c_source.html#l00396">396</a> of file <a class="el" href="queues_8c_source.html">queues.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="queues_8c_source.html#l00408">408</a> of file <a class="el" href="queues_8c_source.html">queues.c</a>.</p>
 
 </div>
 </div>
@@ -405,7 +405,7 @@ Copyright 2014-2026 Dunst contributors </dd></dl>
 
 <p>Pushes the latest notification found in the history buffer identified by it's assigned id. </p>
 
-<p class="definition">Definition at line <a class="el" href="queues_8c_source.html#l00407">407</a> of file <a class="el" href="queues_8c_source.html">queues.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="queues_8c_source.html#l00419">419</a> of file <a class="el" href="queues_8c_source.html">queues.c</a>.</p>
 
 </div>
 </div>
@@ -432,7 +432,7 @@ Copyright 2014-2026 Dunst contributors </dd></dl>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="queues_8c_source.html#l00434">434</a> of file <a class="el" href="queues_8c_source.html">queues.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="queues_8c_source.html#l00446">446</a> of file <a class="el" href="queues_8c_source.html">queues.c</a>.</p>
 
 </div>
 </div>
@@ -453,7 +453,7 @@ Copyright 2014-2026 Dunst contributors </dd></dl>
 
 <p>Push all waiting and displayed notifications to history. </p>
 
-<p class="definition">Definition at line <a class="el" href="queues_8c_source.html#l00449">449</a> of file <a class="el" href="queues_8c_source.html">queues.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="queues_8c_source.html#l00461">461</a> of file <a class="el" href="queues_8c_source.html">queues.c</a>.</p>
 
 </div>
 </div>
@@ -474,7 +474,7 @@ Copyright 2014-2026 Dunst contributors </dd></dl>
 
 <p>Removes an notification identified by the given id from the history. </p>
 
-<p class="definition">Definition at line <a class="el" href="queues_8c_source.html#l00460">460</a> of file <a class="el" href="queues_8c_source.html">queues.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="queues_8c_source.html#l00472">472</a> of file <a class="el" href="queues_8c_source.html">queues.c</a>.</p>
 
 </div>
 </div>
@@ -592,7 +592,7 @@ Copyright 2014-2026 Dunst contributors </dd></dl>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="queues_8c_source.html#l00369">369</a> of file <a class="el" href="queues_8c_source.html">queues.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="queues_8c_source.html#l00381">381</a> of file <a class="el" href="queues_8c_source.html">queues.c</a>.</p>
 
 </div>
 </div>
@@ -626,12 +626,12 @@ Copyright 2014-2026 Dunst contributors </dd></dl>
 </dl>
 <dl class="section post"><dt>Postcondition</dt><dd>Call wake_up() to synchronize the queues with the UI (which closes the notification on screen) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="queues_8c_source.html#l00344">344</a> of file <a class="el" href="queues_8c_source.html">queues.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="queues_8c_source.html#l00356">356</a> of file <a class="el" href="queues_8c_source.html">queues.c</a>.</p>
 
 </div>
 </div>
-<a id="a011a170fd8deb58f47a4ad6ea41f0ca3" name="a011a170fd8deb58f47a4ad6ea41f0ca3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a011a170fd8deb58f47a4ad6ea41f0ca3">&#9670;&#160;</a></span>queues_notification_insert()</h2>
+<a id="a3db3af822bcf825e9c69b8ec33171600" name="a3db3af822bcf825e9c69b8ec33171600"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3db3af822bcf825e9c69b8ec33171600">&#9670;&#160;</a></span>queues_notification_insert()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -639,8 +639,12 @@ Copyright 2014-2026 Dunst contributors </dd></dl>
         <tr>
           <td class="memname">int queues_notification_insert </td>
           <td>(</td>
-          <td class="paramtype">struct <a class="el" href="structnotification.html">notification</a> *</td>          <td class="paramname"><span class="paramname"><em>n</em></span></td><td>)</td>
+          <td class="paramtype">struct <a class="el" href="structnotification.html">notification</a> *</td>          <td class="paramname"><span class="paramname"><em>n</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">struct <a class="el" href="structdunst__status.html">dunst_status</a></td>          <td class="paramname"><span class="paramname"><em>status</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -649,7 +653,8 @@ Copyright 2014-2026 Dunst contributors </dd></dl>
 <p>Respects stack_duplicates, and notification replacement</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">n</td><td>the notification to insert</td></tr>
+    <tr><td class="paramname">n</td><td>the notification to insert </td></tr>
+    <tr><td class="paramname">status</td><td>the current dunst status</td></tr>
   </table>
   </dd>
 </dl>
@@ -698,7 +703,7 @@ Copyright 2014-2026 Dunst contributors </dd></dl>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="queues_8c_source.html#l00375">375</a> of file <a class="el" href="queues_8c_source.html">queues.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="queues_8c_source.html#l00387">387</a> of file <a class="el" href="queues_8c_source.html">queues.c</a>.</p>
 
 </div>
 </div>
@@ -765,7 +770,7 @@ Copyright 2014-2026 Dunst contributors </dd></dl>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="queues_8c_source.html#l00319">319</a> of file <a class="el" href="queues_8c_source.html">queues.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="queues_8c_source.html#l00331">331</a> of file <a class="el" href="queues_8c_source.html">queues.c</a>.</p>
 
 </div>
 </div>
@@ -786,7 +791,7 @@ Copyright 2014-2026 Dunst contributors </dd></dl>
 
 <p>Reapply all rules to the queue (used when reloading configs) </p>
 
-<p class="definition">Definition at line <a class="el" href="queues_8c_source.html#l00659">659</a> of file <a class="el" href="queues_8c_source.html">queues.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="queues_8c_source.html#l00687">687</a> of file <a class="el" href="queues_8c_source.html">queues.c</a>.</p>
 
 </div>
 </div>
@@ -808,7 +813,7 @@ Copyright 2014-2026 Dunst contributors </dd></dl>
 <p>Remove all notifications from all list and free the notifications. </p>
 <dl class="section pre"><dt>Precondition</dt><dd>At least one time <a class="el" href="#a28e124a6b8d5d663be75b1649f51e44a" title="Initialise necessary queues.">queues_init()</a> called </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="queues_8c_source.html#l00685">685</a> of file <a class="el" href="queues_8c_source.html">queues.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="queues_8c_source.html#l00713">713</a> of file <a class="el" href="queues_8c_source.html">queues.c</a>.</p>
 
 </div>
 </div>
@@ -842,7 +847,7 @@ Copyright 2014-2026 Dunst contributors </dd></dl>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="queues_8c_source.html#l00483">483</a> of file <a class="el" href="queues_8c_source.html">queues.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="queues_8c_source.html#l00495">495</a> of file <a class="el" href="queues_8c_source.html">queues.c</a>.</p>
 
 </div>
 </div>
@@ -852,7 +857,7 @@ Copyright 2014-2026 Dunst contributors </dd></dl>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="queues_8h.html">queues.h</a></li>
-    <li class="footer">Generated on Thu Jan 29 2026 13:52:57 for Dunst by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+    <li class="footer">Generated on Wed Mar 18 2026 11:26:45 for Dunst by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
   </ul>
 </div>
 </body>

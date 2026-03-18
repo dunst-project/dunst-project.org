@@ -1,5 +1,6 @@
 var NAVTREEINDEX1 =
 {
+"structdunst__status.html":[2,0,6],
 "structdunst__status.html#a5a9147cb82d1cbeefadd62beb9e6910b":[2,0,6,0],
 "structdunst__status.html#a97808a9870039f4168da10ecfb5dc472":[2,0,6,1],
 "structdunst__status.html#ac63ad1bd813cd7a6652cdc15c22c9579":[2,0,6,3],

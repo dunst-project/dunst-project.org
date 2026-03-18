@@ -253,25 +253,26 @@ $(function(){initNavTree('ini_8c_source.html',''); initResizable(true); });
 <div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span> </div>
 <div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>                add_entry(<a class="code hl_struct" href="structini.html">ini</a>, current_section, key, value);</div>
 <div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>        }</div>
-<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>        free(line);</div>
-<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>        g_free(current_section);</div>
-<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>        <span class="keywordflow">return</span> <a class="code hl_struct" href="structini.html">ini</a>;</div>
-<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>}</div>
-<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span> </div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span> </div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>        g_free(line);</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>        g_free(current_section);</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>        <span class="keywordflow">return</span> <a class="code hl_struct" href="structini.html">ini</a>;</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>}</div>
 <div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span> </div>
-<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span><span class="keywordtype">void</span> finish_ini(<span class="keyword">struct</span> <a class="code hl_struct" href="structini.html">ini</a> *<a class="code hl_struct" href="structini.html">ini</a>)</div>
-<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>{</div>
-<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code hl_struct" href="structini.html">ini</a>-&gt;section_count; i++) {</div>
-<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; <a class="code hl_struct" href="structini.html">ini</a>-&gt;sections[i].entry_count; j++) {</div>
-<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>                        g_free(<a class="code hl_struct" href="structini.html">ini</a>-&gt;sections[i].entries[j].key);</div>
-<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>                        g_free(<a class="code hl_struct" href="structini.html">ini</a>-&gt;sections[i].entries[j].value);</div>
-<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>                }</div>
-<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>                g_free(<a class="code hl_struct" href="structini.html">ini</a>-&gt;sections[i].entries);</div>
-<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>                g_free(<a class="code hl_struct" href="structini.html">ini</a>-&gt;sections[i].name);</div>
-<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>        }</div>
-<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>        g_clear_pointer(&amp;<a class="code hl_struct" href="structini.html">ini</a>-&gt;sections, g_free);</div>
-<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>        <a class="code hl_struct" href="structini.html">ini</a>-&gt;section_count = 0;</div>
-<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>}</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span> </div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span><span class="keywordtype">void</span> finish_ini(<span class="keyword">struct</span> <a class="code hl_struct" href="structini.html">ini</a> *<a class="code hl_struct" href="structini.html">ini</a>)</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>{</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code hl_struct" href="structini.html">ini</a>-&gt;section_count; i++) {</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; <a class="code hl_struct" href="structini.html">ini</a>-&gt;sections[i].entry_count; j++) {</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>                        g_free(<a class="code hl_struct" href="structini.html">ini</a>-&gt;sections[i].entries[j].key);</div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>                        g_free(<a class="code hl_struct" href="structini.html">ini</a>-&gt;sections[i].entries[j].value);</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>                }</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>                g_free(<a class="code hl_struct" href="structini.html">ini</a>-&gt;sections[i].entries);</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>                g_free(<a class="code hl_struct" href="structini.html">ini</a>-&gt;sections[i].name);</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>        }</div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>        g_clear_pointer(&amp;<a class="code hl_struct" href="structini.html">ini</a>-&gt;sections, g_free);</div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>        <a class="code hl_struct" href="structini.html">ini</a>-&gt;section_count = 0;</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>}</div>
 <div class="ttc" id="aini_8c_html_a9adb132d31e0d322a44a6f7e7eda03f6"><div class="ttname"><a href="ini_8c.html#a9adb132d31e0d322a44a6f7e7eda03f6">next_section</a></div><div class="ttdeci">const char * next_section(const struct ini *ini, const char *section)</div><div class="ttdef"><b>Definition</b> <a href="#l00073">ini.c:73</a></div></div>
 <div class="ttc" id="aini_8h_html"><div class="ttname"><a href="ini_8h.html">ini.h</a></div><div class="ttdoc">Parser for INI config files.</div></div>
 <div class="ttc" id="alog_8h_html"><div class="ttname"><a href="log_8h.html">log.h</a></div><div class="ttdoc">Logging subsystem and helpers.</div></div>
@@ -290,7 +291,7 @@ $(function(){initNavTree('ini_8c_source.html',''); initResizable(true); });
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="ini_8c.html">ini.c</a></li>
-    <li class="footer">Generated on Thu Jan 29 2026 13:52:57 for Dunst by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+    <li class="footer">Generated on Wed Mar 18 2026 11:26:45 for Dunst by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
   </ul>
 </div>
 </body>

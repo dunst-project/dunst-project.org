@@ -17,7 +17,7 @@ var queues_8h =
     [ "queues_length_waiting", "queues_8h.html#a1fbbe2cff66d03525a5964b5e374a91b", null ],
     [ "queues_notification_close", "queues_8h.html#a5b1afb8fc7d0116f3fb7fc839122c335", null ],
     [ "queues_notification_close_id", "queues_8h.html#a98230ed8242b6df4e19bc142b018e7a1", null ],
-    [ "queues_notification_insert", "queues_8h.html#a011a170fd8deb58f47a4ad6ea41f0ca3", null ],
+    [ "queues_notification_insert", "queues_8h.html#a3db3af822bcf825e9c69b8ec33171600", null ],
     [ "queues_notification_remove", "queues_8h.html#a2059c9df798e229a172d84bb65d64f75", null ],
     [ "queues_notification_remove_id", "queues_8h.html#a0b291ec0c42c4886d352b510422eb132", null ],
     [ "queues_notification_replace_id", "queues_8h.html#ac11e1602b0fc889f0397a3d95e22bde3", null ],

@@ -183,10 +183,10 @@ var NAVTREEINDEX0 =
 "output_8h.html":[1,3,2],
 "pages.html":[],
 "pool-buffer_8c.html":[3,0,0,0,2],
+"pool-buffer_8c.html#ab7341093064825f85a972f018f7d5d6c":[3,0,0,0,2,0],
 "pool-buffer_8c_source.html":[3,0,0,0,2],
 "pool-buffer_8h.html":[1,5,1],
 "queues_8c.html":[3,0,0,29],
-"queues_8c.html#a011a170fd8deb58f47a4ad6ea41f0ca3":[3,0,0,29,17],
 "queues_8c.html#a1f89cc27c756569bf4b19cf51616b95e":[3,0,0,29,30],
 "queues_8c.html#a1fbbe2cff66d03525a5964b5e374a91b":[3,0,0,29,14],
 "queues_8c.html#a2059c9df798e229a172d84bb65d64f75":[3,0,0,29,20],
@@ -196,6 +196,7 @@ var NAVTREEINDEX0 =
 "queues_8c.html#a33e21014c7790723f0ad08f75b09ceb8":[3,0,0,29,28],
 "queues_8c.html#a3482db0c1fba6e534d52295971c4b853":[3,0,0,29,1],
 "queues_8c.html#a3791e31bace5d300a6d305bf7f216a2b":[3,0,0,29,6],
+"queues_8c.html#a3db3af822bcf825e9c69b8ec33171600":[3,0,0,29,17],
 "queues_8c.html#a536c2a4e5c8f2d5cbd6f49028ba1da37":[3,0,0,29,26],
 "queues_8c.html#a54345b240249be34e55936ef9a48e035":[3,0,0,29,29],
 "queues_8c.html#a5b1afb8fc7d0116f3fb7fc839122c335":[3,0,0,29,15],
@@ -248,6 +249,5 @@ var NAVTREEINDEX0 =
 "structdbus__method.html":[2,0,2],
 "structdimensions.html":[2,0,3],
 "structdunst__output.html":[2,0,4],
-"structdunst__seat.html":[2,0,5],
-"structdunst__status.html":[2,0,6]
+"structdunst__seat.html":[2,0,5]
 };

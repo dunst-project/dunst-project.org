@@ -6,7 +6,8 @@ var notification_8h =
       [ "FS_NULL", "notification_8h.html#ac266f4915404b7a0afe37962fa31d4d9ac8ef86ff814b3d38b29b65db225bae8a", null ],
       [ "FS_DELAY", "notification_8h.html#ac266f4915404b7a0afe37962fa31d4d9abe36156148dae875d14f2348e4cf96f2", null ],
       [ "FS_PUSHBACK", "notification_8h.html#ac266f4915404b7a0afe37962fa31d4d9a966dc0e4a35d9da46f38d03a8d8e470e", null ],
-      [ "FS_SHOW", "notification_8h.html#ac266f4915404b7a0afe37962fa31d4d9a7fa08668a02c90480a4132955073e352", null ]
+      [ "FS_SHOW", "notification_8h.html#ac266f4915404b7a0afe37962fa31d4d9a7fa08668a02c90480a4132955073e352", null ],
+      [ "FS_SUPPRESS", "notification_8h.html#ac266f4915404b7a0afe37962fa31d4d9a6fdcad5bff89fac7499de87b824d15da", null ]
     ] ],
     [ "urgency", "notification_8h.html#a519e6a0e6cb0414b0432a2bd30ec2a34", [
       [ "URG_NONE", "notification_8h.html#a519e6a0e6cb0414b0432a2bd30ec2a34a4a377f362a5858af0b951dc94106a80f", null ],

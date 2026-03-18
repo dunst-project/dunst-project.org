@@ -5,5 +5,6 @@ var searchData=
   ['and_20event_20loop_2',['Initialization and event loop',['../group__main.html',1,'']]],
   ['and_20options_3',['Settings and options',['../group__config.html',1,'']]],
   ['and_20rendering_4',['Graphics and rendering',['../group__graphics.html',1,'']]],
-  ['assert_5for_5fret_5',['ASSERT_OR_RET',['../utils_8h.html#a962a4f9bc8f20ea995a331f1a197426e',1,'utils.h']]]
+  ['anonymous_5fshm_5fopen_5',['anonymous_shm_open',['../pool-buffer_8c.html#ab7341093064825f85a972f018f7d5d6c',1,'pool-buffer.c']]],
+  ['assert_5for_5fret_6',['ASSERT_OR_RET',['../utils_8h.html#a962a4f9bc8f20ea995a331f1a197426e',1,'utils.h']]]
 ];

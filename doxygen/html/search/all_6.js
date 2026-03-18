@@ -11,5 +11,6 @@ var searchData=
   ['fs_5fnull_8',['FS_NULL',['../notification_8h.html#ac266f4915404b7a0afe37962fa31d4d9ac8ef86ff814b3d38b29b65db225bae8a',1,'notification.h']]],
   ['fs_5fpushback_9',['FS_PUSHBACK',['../notification_8h.html#ac266f4915404b7a0afe37962fa31d4d9a966dc0e4a35d9da46f38d03a8d8e470e',1,'notification.h']]],
   ['fs_5fshow_10',['FS_SHOW',['../notification_8h.html#ac266f4915404b7a0afe37962fa31d4d9a7fa08668a02c90480a4132955073e352',1,'notification.h']]],
-  ['fullscreen_11',['fullscreen',['../structdunst__status.html#a5a9147cb82d1cbeefadd62beb9e6910b',1,'dunst_status::fullscreen'],['../structnotification.html#ac311bc29e3a2b2415e88da620fc98c15',1,'notification::fullscreen']]]
+  ['fs_5fsuppress_11',['FS_SUPPRESS',['../notification_8h.html#ac266f4915404b7a0afe37962fa31d4d9a6fdcad5bff89fac7499de87b824d15da',1,'notification.h']]],
+  ['fullscreen_12',['fullscreen',['../structdunst__status.html#a5a9147cb82d1cbeefadd62beb9e6910b',1,'dunst_status::fullscreen'],['../structnotification.html#ac311bc29e3a2b2415e88da620fc98c15',1,'notification::fullscreen']]]
 ];
