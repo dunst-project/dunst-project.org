@@ -3,7 +3,7 @@ title = "Documentation"
 type = "documentation"
 toc = "true"
 subtitle = "Installation"
-lastdate = "2024-12-05"
+lastdate = "2026-05-01"
 descript = "Installation wiki page"
 wiki = true
 weight = 2
@@ -75,7 +75,7 @@ There is a Nix package available [here](https://mynixos.com/nixpkgs/package/duns
 
 ## Building it yourself
 
-After you have installed all the [dependencies](./Dependencies) needed, you can build dunst:
+After you have installed all the [dependencies](Dependencies) needed, you can build dunst:
 
 ```sh
 # clone the repository
